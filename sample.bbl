@@ -1,0 +1,285 @@
+\begin{thebibliography}{10}
+\providecommand{\bibauthor}[1]{#1}
+\providecommand{\bibeditor}[1]{#1}
+\providecommand{\bibtranslator}[1]{#1}
+\providecommand{\bibtitle}[1]{#1}
+\providecommand{\bibbooktitle}[1]{#1}
+\providecommand{\bibjournal}[1]{#1}
+\providecommand{\bibmark}[1]{#1}
+\providecommand{\bibcountry}[1]{#1}
+\providecommand{\bibpatentid}[1]{#1}
+\providecommand{\bibedition}[1]{#1}
+\providecommand{\biborganization}[1]{#1}
+\providecommand{\bibaddress}[1]{#1}
+\providecommand{\bibpublisher}[1]{#1}
+\providecommand{\bibinstitution}[1]{#1}
+\providecommand{\bibschool}[1]{#1}
+\providecommand{\bibvolume}[1]{#1}
+\providecommand{\bibnumber}[1]{#1}
+\providecommand{\bibversion}[1]{#1}
+\providecommand{\bibpages}[1]{#1}
+\providecommand{\bibmodifydate}[1]{#1}
+\providecommand{\bibcitedate}[1]{#1}
+\providecommand{\bibyear}[1]{#1}
+\providecommand{\bibdate}[1]{#1}
+\providecommand{\biburl}[1]{\newline\url{#1}}
+
+\bibitem{DBLP:books/daglib/0013521}
+\bibauthor{EVANS E}\@. \bibbooktitle{Doain-design - tackling complexity in the
+  heart of software}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Addison-Wesley}\@, \bibyear{2004}\@.
+
+\bibitem{millett2015patterns}
+\bibauthor{MILLETT S\@, TUNE N}\@. \bibbooktitle{Patterns, principles, and
+  practices of domain-driven design}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{John Wiley \&
+  Sons}\@, \bibyear{2015}\@.
+
+\bibitem{nadareishvili2016microservice}
+\bibauthor{NADAREISHVILI I\@, MITRA R\@, MCLARTY M, et~al}\@.
+  \bibbooktitle{Microservice architecture: aligning principles, practices, and
+  culture}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{O'Reilly Media, Inc.}\@, \bibyear{2016}\@.
+
+\bibitem{vernon2013implementing}
+\bibauthor{VERNON V}\@. \bibbooktitle{Implementing domain-driven
+  design}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Addison-Wesley}\@, \bibyear{2013}\@.
+
+\bibitem{frank2013domain}
+\bibauthor{FRANK U}\@. \bibtitle{Domain-specific modeling languages:
+  requirements analysis and design guidelines}\bibmark{[G]}
+  //\thinspace{}\bibbooktitle{Domain engineering}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Springer}\@,
+  \bibyear{2013}\thinspace{}\textnormal{:
+  }\bibpages{133\thinspace{}\textnormal{--}\thinspace{}157}\@.
+
+\bibitem{wu2018workflow}
+\bibauthor{WU H\@, HINSBERGER L\@, TIMONEY J}\@. \bibtitle{A workflow for
+  healthcare systems via OCL and SMT solving: short paper}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the International Workshop on
+  Software Engineering in Healthcare Systems}\@.
+  \bibyear{2018}\thinspace{}\textnormal{:
+  }\bibpages{42\thinspace{}\textnormal{--}\thinspace{}45}\@.
+
+\bibitem{kuhlwein2019firmware}
+\bibauthor{K{\"U}HLWEIN A\@, PAULE A\@, HIELSCHER L, et~al}\@.
+  \bibtitle{Firmware Synthesis for Ultra-Thin IoT Devices Based on Model
+  Integration}\bibmark{[C]} //\thinspace{}\bibbooktitle{2019 ACM/IEEE 22nd
+  International Conference on Model Driven Engineering Languages and Systems
+  Companion (MODELS-C)}\@. \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{339\thinspace{}\textnormal{--}\thinspace{}346}\@.
+
+\bibitem{jumagaliyev2019modelling}
+\bibauthor{JUMAGALIYEV A\@, ELKHATIB Y}\@. \bibtitle{A Modelling Language to
+  Support the Evolution of Multi-Tenant Cloud Data Architectures}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2019 ACM/IEEE 22nd International Conference on
+  Model Driven Engineering Languages and Systems (MODELS)}\@.
+  \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{139\thinspace{}\textnormal{--}\thinspace{}149}\@.
+
+\bibitem{kolovos2010epsilon}
+\bibauthor{KOLOVOS D\@, ROSE L\@, PAIGE R, et~al}\@. \bibtitle{The epsilon
+  book}\bibmark{[J]}\@. \bibjournal{Structure}\@, \bibyear{2010}\@,
+  \bibvolume{178}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}10}\@.
+
+\bibitem{rademacher2017towards}
+\bibauthor{RADEMACHER F\@, SACHWEH S\@, Z{\"U}NDORF A}\@. \bibtitle{Towards a
+  uml profile for domain-driven design of microservice
+  architectures}\bibmark{[C]} //\thinspace{}\bibbooktitle{International
+  Conference on Software Engineering and Formal Methods}\@.
+  \bibyear{2017}\thinspace{}\textnormal{:
+  }\bibpages{230\thinspace{}\textnormal{--}\thinspace{}245}\@.
+
+\bibitem{hippchen2019systematic}
+\bibauthor{HIPPCHEN B\@, SCHNEIDER M\@, GIESSLER P, et~al}\@.
+  \bibtitle{Systematic Application of Domain-Driven Design for a
+  Business-Driven Microservice Architecture}\bibmark{[J]}\@.
+  \bibjournal{International Journal on Advances in Software}\@,
+  \bibyear{2019}\@, \bibvolume{12}\bibnumber{(3--4)}\@.
+
+\bibitem{diepenbrock2017ontology}
+\bibauthor{DIEPENBROCK A\@, RADEMACHER F\@, SACHWEH S}\@. \bibtitle{An
+  ontology-based approach for domain-driven design of microservice
+  architectures}\bibmark{[J]}\@. \bibjournal{INFORMATIK 2017}\@,
+  \bibyear{2017}\@.
+
+\bibitem{smith2003ontology}
+\bibauthor{SMITH B}\@. \bibtitle{Ontology}\bibmark{[J]}\@, \bibyear{2003}\@.
+
+\bibitem{刘辉2008元建模技术研究进展}
+\bibauthor{刘辉\@, 麻志毅\@, 邵维忠}\@.
+  \bibtitle{元建模技术研究进展}\bibmark{[D]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibschool{Citeseer}\@,
+  \bibyear{2008}\@.
+
+\bibitem{guerriero2018streamgen}
+\bibauthor{GUERRIERO M\@, NESTA A\@, DI~NITTO E}\@. \bibtitle{Streamgen: a
+  UML-based tool for developing streaming applications}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 10th International Workshop on
+  Modelling in Software Engineering}\@. \bibyear{2018}\thinspace{}\textnormal{:
+  }\bibpages{57\thinspace{}\textnormal{--}\thinspace{}58}\@.
+
+\bibitem{la2019towards}
+\bibauthor{LA~FOSSE T~B\@, TISI M\@, BOUSSE E, et~al}\@. \bibtitle{Towards
+  platform specific energy estimation for executable domain-specific modeling
+  languages}\bibmark{[C]} //\thinspace{}\bibbooktitle{2019 ACM/IEEE 22nd
+  International Conference on Model Driven Engineering Languages and Systems
+  Companion (MODELS-C)}\@. \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{314\thinspace{}\textnormal{--}\thinspace{}317}\@.
+
+\bibitem{le2018domain}
+\bibauthor{LE D~M\@, DANG D-H\@, NGUYEN V-H}\@. \bibtitle{On domain driven
+  design using annotation-based domain specific language}\bibmark{[J]}\@.
+  \bibjournal{Computer Languages, Systems \& Structures}\@, \bibyear{2018}\@,
+  \bibvolume{54}\thinspace{}\textnormal{:
+  }\bibpages{199\thinspace{}\textnormal{--}\thinspace{}235}\@.
+
+\bibitem{kapferer2020domain}
+\bibauthor{KAPFERER S\@, ZIMMERMANN O}\@. \bibtitle{Domain-specific Language
+  and Tools for Strategic Domain-driven Design, Context Mapping and Bounded
+  Context Modeling.}\bibmark{[C]} //\thinspace{}\bibbooktitle{MODELSWARD}\@.
+  \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{299\thinspace{}\textnormal{--}\thinspace{}306}\@.
+
+\bibitem{DBLP:conf/icsa/MersonY20}
+\bibauthor{MERSON P\@, YODER J~W}\@. \bibtitle{Modeling Microservices with
+  {DDD}}\bibmark{[C]} //\thinspace{}\bibbooktitle{2020 {IEEE} International
+  Conference on Software Architecture Companion, {ICSA} Companion 2020,
+  Salvador, Brazil, March 16-20, 2020}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{{IEEE}}\@,
+  \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{7\thinspace{}\textnormal{--}\thinspace{}8}\@.
+
+\bibitem{emerson2006techniques}
+\bibauthor{EMERSON M\@, SZTIPANOVITS J}\@. \bibtitle{Techniques for metamodel
+  composition}\bibmark{[C]} //\thinspace{}\bibbooktitle{OOPSLA--6th Workshop on
+  Domain Specific Modeling}\@. \bibyear{2006}\thinspace{}\textnormal{:
+  }\bibpages{123\thinspace{}\textnormal{--}\thinspace{}139}\@.
+
+\bibitem{soley2000model}
+\bibauthor{SOLEY R\@, OTHERS}\@. \bibtitle{Model driven
+  architecture}\bibmark{[J]}\@. \bibjournal{OMG white paper}\@,
+  \bibyear{2000}\@, \bibvolume{308}\bibnumber{(308)}\thinspace{}\textnormal{:
+  }\bibpages{5}\@.
+
+\bibitem{coad1991object}
+\bibauthor{COAD P\@, YOURDON E\@, COAD P}\@. \bibbooktitle{Object-oriented
+  analysis\thinspace{}\textnormal{: }Vol~2}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Yourdon press
+  Englewood Cliffs, NJ}\@, \bibyear{1991}\@.
+
+\bibitem{jacobson1995use}
+\bibauthor{JACOBSON I}\@. \bibtitle{The use-case construct in object-oriented
+  software engineering}\bibmark{[G]} //\thinspace{}\bibbooktitle{Scenario-based
+  design: envisioning work and technology in system development}\@.
+  \bibyear{1995}\thinspace{}\textnormal{:
+  }\bibpages{309\thinspace{}\textnormal{--}\thinspace{}336}\@.
+
+\bibitem{王文玲1999uml}
+\bibauthor{王文玲\@, 金茂忠}\@. \bibtitle{UML
+  模型及其应用}\bibmark{[D]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibschool{[s.n.]}\@,
+  \bibyear{1999}\@.
+
+\bibitem{pahl2016microservices}
+\bibauthor{PAHL C\@, JAMSHIDI P}\@. \bibtitle{Microservices: A Systematic
+  Mapping Study.}\bibmark{[C]} //\thinspace{}\bibbooktitle{CLOSER (1)}\@.
+  \bibyear{2016}\thinspace{}\textnormal{:
+  }\bibpages{137\thinspace{}\textnormal{--}\thinspace{}146}\@.
+
+\bibitem{cabot2012object}
+\bibauthor{CABOT J\@, GOGOLLA M}\@. \bibtitle{Object constraint language (OCL):
+  a definitive guide}\bibmark{[C]} //\thinspace{}\bibbooktitle{International
+  school on formal methods for the design of computer, communication and
+  software systems}\@. \bibyear{2012}\thinspace{}\textnormal{:
+  }\bibpages{58\thinspace{}\textnormal{--}\thinspace{}90}\@.
+
+\bibitem{sobernig2016extracting}
+\bibauthor{SOBERNIG S\@, HOISL B\@, STREMBECK M}\@. \bibtitle{Extracting
+  reusable design decisions for UML-based domain-specific languages: A
+  multi-method study}\bibmark{[J]}\@. \bibjournal{Journal of Systems and
+  Software}\@, \bibyear{2016}\@, \bibvolume{113}\thinspace{}\textnormal{:
+  }\bibpages{140\thinspace{}\textnormal{--}\thinspace{}172}\@.
+
+\bibitem{bezivin2004search}
+\bibauthor{B{\'E}ZIVIN J}\@. \bibtitle{In search of a basic principle for model
+  driven engineering}\bibmark{[J]}\@. \bibjournal{Novatica Journal, Special
+  Issue}\@, \bibyear{2004}\@,
+  \bibvolume{5}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{21\thinspace{}\textnormal{--}\thinspace{}24}\@.
+
+\bibitem{kardas2018domain}
+\bibauthor{KARDAS G\@, TEZEL B~T\@, CHALLENGER M}\@. \bibtitle{Domain-specific
+  modelling language for belief--desire--intention software
+  agents}\bibmark{[J]}\@. \bibjournal{IET Software}\@, \bibyear{2018}\@,
+  \bibvolume{12}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{356\thinspace{}\textnormal{--}\thinspace{}364}\@.
+
+\bibitem{bialecki2012apache}
+\bibauthor{BIA{\L}ECKI A\@, MUIR R\@, INGERSOLL G, et~al}\@. \bibtitle{Apache
+  lucene 4}\bibmark{[C]} //\thinspace{}\bibbooktitle{SIGIR 2012 workshop on
+  open source information retrieval}\@. \bibyear{2012}\thinspace{}\textnormal{:
+  }\bibpages{17}\@.
+
+\bibitem{fattahi2018focus}
+\bibauthor{FATTAHI E\@, BIDAR M\@, KANAN H~R}\@. \bibtitle{Focus group: an
+  optimization algorithm inspired by human behavior}\bibmark{[J]}\@.
+  \bibjournal{International Journal of Computational Intelligence and
+  Applications}\@, \bibyear{2018}\@,
+  \bibvolume{17}\bibnumber{(01)}\thinspace{}\textnormal{:
+  }\bibpages{1850002}\@.
+
+\bibitem{evans2014domain}
+\bibauthor{EVANS E}\@. \bibbooktitle{Domain-Driven Design Reference:
+  Definitions and Pattern Summaries}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Dog Ear
+  Publishing}\@, \bibyear{2014}\@.
+
+\bibitem{giachetti2009integration}
+\bibauthor{GIACHETTI G\@, MAR{\'I}N B\@, PASTOR O}\@. \bibtitle{Integration of
+  domain-specific modelling languages and UML through UML profile extension
+  mechanism.}\bibmark{[J]}\@. \bibjournal{IJCSA}\@, \bibyear{2009}\@,
+  \bibvolume{6}\bibnumber{(5)}\thinspace{}\textnormal{:
+  }\bibpages{145\thinspace{}\textnormal{--}\thinspace{}174}\@.
+
+\bibitem{giachetti2009using}
+\bibauthor{GIACHETTI G\@, MAR{\'I}N B\@, PASTOR O}\@. \bibtitle{Using UML as a
+  domain-specific modeling language: a proposal for automatic generation of UML
+  profiles}\bibmark{[C]} //\thinspace{}\bibbooktitle{International Conference
+  on Advanced Information Systems Engineering}\@.
+  \bibyear{2009}\thinspace{}\textnormal{:
+  }\bibpages{110\thinspace{}\textnormal{--}\thinspace{}124}\@.
+
+\bibitem{files2013omg}
+\bibauthor{FILES A~N M~C}\@. \bibtitle{Omg unified modeling language tm (omg
+  uml)}\bibmark{[J]}\@. \bibjournal{Object Management Group}\@,
+  \bibyear{2013}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}752}\@.
+
+\bibitem{divya2013elasticsearch}
+\bibauthor{DIVYA M~S\@, GOYAL S~K}\@. \bibtitle{ElasticSearch: An advanced and
+  quick search technique to handle voluminous data}\bibmark{[J]}\@.
+  \bibjournal{Compusoft}\@, \bibyear{2013}\@,
+  \bibvolume{2}\bibnumber{(6)}\thinspace{}\textnormal{: }\bibpages{171}\@.
+
+\bibitem{王君2007基于}
+\bibauthor{王君}\@. \bibtitle{基于 Struts+ Spring+ Hibernate 的企业级
+  WEB 应用框架的研究}\bibmark{[D]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibschool{合肥:
+  合肥工业大学}\@, \bibyear{2007}\@.
+
+\bibitem{richardson2008restful}
+\bibauthor{RICHARDSON L\@, RUBY S}\@. \bibbooktitle{RESTful web
+  services}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{O'Reilly Media, Inc.}\@, \bibyear{2008}\@.
+
+\bibitem{martin2018clean}
+\bibauthor{MARTIN R~C}\@. \bibbooktitle{Clean architecture: a craftsman's guide
+  to software structure and design}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Prentice Hall}\@,
+  \bibyear{2018}\@.
+
+\end{thebibliography}

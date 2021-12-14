@@ -1,0 +1,748 @@
+% !Mode:: "TeX:UTF-8"
+%# -*- coding:utf-8 -*-
+
+%% 南京大学学位论文的示例文档
+%% 作者：njuhan: https://github.com/njuHan
+%% 源模版repo: https://github.com/njuHan/njuthesis-nju-thesis-template
+
+\documentclass[macfonts,master,oneside]{njuthesis}
+%% 审阅模式很重要，命令是下方使用的/blind
+%% njuthesis 文档类的可选参数有：
+%%   winfonts, linuxfonts, macfonts, adobefonts winfonts 选项使得文档使用Windows 系统提供的字体；linuxfonts 选项使得文档使用Linux 系统提供的字体；macfonts 选项使得文档使用Mac 系统提供的字体；adobefonts 选项使得文档使用Adobe提供的OTF中文字体(需自行下载安转)
+%%   phd/master/bachelor 选择博士/硕士/学士论文
+%%   twoside 或 oneside 指定排版的文档为双面打印或单面打印格式（twoside会使得chapter 章节从奇数页开始，即纸张的正面开始，因此会出现一些空白的页面）
+%%   nobackinfo 取消封二页导师签名信息。注意，按照南大的规定，是需要签名页的。
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% set up labelformat and labelsep for subfigure 详见： http://www.latexstudio.net/archives/8652.html
+\captionsetup[subfigure]{labelformat=simple, labelsep=space}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置《国家图书馆封面》的内容，仅博士论文才需要填写
+
+% 设置论文按照《中国图书资料分类法》的分类编号
+%\classification{0175.2}
+% 设置论文按照《国际十进分类法UDC》的分类编号
+% 该编号可在下述网址查询：http://www.udcc.org/udcsummary/php/index.php?lang=chi
+%\udc{004.72}
+% 国家图书馆封面上的论文标题第一行，不可换行。此属性可选，默认值为通过\title设置的标题。
+%\nlctitlea{论文标题第一行}
+% 国家图书馆封面上的论文标题第二行，不可换行。此属性可选，默认值为空白。
+%\nlctitleb{论文标题第二行}
+% 国家图书馆封面上的论文标题第三行，不可换行。此属性可选，默认值为空白。
+%\nlctitlec{}
+% 导师的单位名称及地址
+%\supervisorinfo{南京大学计算机科学与技术系~~南京市汉口路22号~~210093}
+% 答辩委员会主席
+%\chairman{张三丰~~教授}
+% 第一位评阅人
+%\reviewera{阳顶天~~教授}
+% 第二位评阅人
+%\reviewerb{张无忌~~副教授}
+% 第三位评阅人
+%\reviewerc{黄裳~~教授}
+% 第四位评阅人
+%\reviewerd{郭靖~~研究员}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置论文的中文封面
+
+
+% % 单行论文标题，不可换行
+\title{}
+
+% 如果论文标题过长，可以分两行，第一行用\titlea{}定义，第二行用\titleb{}定义，
+% 使用以下3行：
+%\title{} %用于覆盖单行标题内容为空
+%\titlea{长标题第一行}  %第一行标题写这里
+%\titleb{长标题第二行用于长标题换行} %第二行标题写这里
+% 注意： \title 不能都注释，它用于控制标题选择双行还是单行。\title{}如果内容为空，则编译\titlea{},titleb{}双行标题，否则编译单行标题
+
+
+% 论文作者姓名
+\author{张富利}
+% 论文作者联系电话
+\telphone{18851751795}
+% 论文作者电子邮件地址
+\email{MG1932016@smail.nju.edu.cn}
+% 论文作者学生证号
+\studentnum{MG1932016}
+% 论文作者入学年份（年级）
+\grade{2019}
+% 论文作者毕业年份（届）, 出版授权书的学位年度
+\graduateyear{2022}
+% 导师姓名职称
+\supervisor{张贺~~教授}
+% 导师的联系电话
+\supervisortelphone{}
+% 论文作者的学科与专业方向
+\major{软件工程}
+% 论文作者的研究方向
+\researchfield{DevOps、区块链}
+% 论文作者所在院系的中文名称
+\department{软件学院}
+% 论文作者所在学校或机构的名称。此属性可选，默认值为``南京大学''。
+\institute{南京大学}
+% 论文的提交日期，需设置年、月、日。
+\submitdate{xxxx年 xx 月 xx 日}
+% 论文的答辩日期，需设置年、月、日。
+\defenddate{xxxx年 xx 月 xx 日}
+% 论文的定稿日期，需设置年、月、日。
+% 此属性可选，若注释\date{}，则默认值为最后一次编译时的日期，精确到日。
+% \date{2019年5月20日}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置论文的英文封面
+
+% 论文的英文标题，不可换行
+\englishtitle{}
+\englishabstracttitlea{Modeling Support Method and Tool for}
+\englishabstracttitleb{ Domain-Driven Design}
+% 论文作者姓名的拼音
+\englishauthor{Fuli Zhang}
+% 导师姓名职称的英文
+\englishsupervisor{Professor~~He Zhang}
+% 论文作者学科与专业的英文名
+\englishmajor{Software Engineering}
+% 论文作者所在院系的英文名称
+\englishdepartment{Software Institute}
+% 论文作者所在学校或机构的英文名称。此属性可选，默认值为``Nanjing University''。
+\englishinstitute{Nanjing University}
+% 论文完成日期的英文形式，它将出现在英文封面下方。需设置年、月、日。日期格式使用美国的日期
+% 格式，即``Month day, year''，其中``Month''为月份的英文名全称，首字母大写；``day''为
+% 该月中日期的阿拉伯数字表示；``year''为年份的四位阿拉伯数字表示。
+% 此属性可选，若注释掉\englishdate{}，则默认值为最后一次编译时的日期。
+% \englishdate{May 20, 2019}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置论文的中文摘要
+
+% 设置中文摘要页面的论文标题及副标题的第一行。
+% 此属性可选，其默认值为使用|\title|命令所设置的论文标题
+%\abstracttitlea{标题第一行}
+% 设置中文摘要页面的论文标题及副标题的第二行。
+% 此属性可选，其默认值为空白
+%\abstracttitleb{标题第二行用于长标题换行}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 设置论文的英文摘要
+
+% 设置英文摘要页面的论文标题及副标题的第一行。
+% 此属性可选，其默认值为使用|\englishtitle|命令所设置的论文标题
+%\englishabstracttitlea{englishabstracttitlea}
+% 设置英文摘要页面的论文标题及副标题的第二行。
+% 此属性可选，其默认值为空白
+%\englishabstracttitleb{nglishabstracttitleb}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 盲审命令，空白字段设置请看 .cls文件 \newcommand*{\blind}
+%% 此外，请按照盲审要求自行去掉个人简历、致谢等页面中的个人信息
+%%**********************！！！非常重要的盲审命令，送审前必选！！！****************
+% \blind
+%%**********************！！！非常重要的盲审命令，送审前必选！！！****************
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 制作国家图书馆封面（博士学位论文才需要）
+%\makenlctitle
+% 制作中文封面
+\maketitle
+% 制作英文封面
+\makeenglishtitle
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 开始前言部分
+\frontmatter
+
+\begin{abstract}
+  领域驱动设计是一种针对复杂业务流程的软件设计方法，
+  它可以帮助架构师和软件开发人员提炼业务流程和构建复杂软件系统。
+  近年来，
+  越来越多的团队将领域驱动设计应用到大型分布式系统的设计与实现中。
+
+  然而，作为领域驱动设计的核心内容，战术建模的应用却存在诸多问题与挑战。
+  其一，战术建模模式的实践过程仍缺少标准且统一的规范，
+  使得实践者无法准确地使用这些模式建模业务流程；
+  其二，战术建模实践过程所缺少的规范，
+  也使得开发人员和架构设计人员在使用这些建模模式时具有不同的理解，
+  从而带来了一系列项目团队沟通问题；
+  其三，现有的大多数建模平台对领域建模过程的支持仍不完善，
+  极大地阻碍了领域战术建模的应用。
+
+  为了解决上述问题与挑战，本文首先调研了现阶段有关领域驱动设计战术建模的理论文献，
+  对具有相关实践经验的从业者进行访谈，
+  提炼出一系列面向战术建模过程的实践规范作为战术建模指南。
+  所提炼的建模指南包含一系列战术建模中使用到的战术模式、这些战术模式的属性、
+  使用时机与实现技术。
+  然后，基于UML扩展机制定义标准的领域驱动设计战术建模元模型作为战术建模语言。
+  上述建模指南和战术建模语言共同组成本文所提出的战术建模支持方法。
+  最后，基于所提出的战术建模支持方法，
+  本文还实现了一个可视化战术建模工具DDDD（Draw for Domain-Driven Design），
+  该工具支持标准化的战术建模、对建模结果的验证、复用以及扩展，
+  帮助实践者更规范地进行战术建模。
+
+  本文采用案例研究对提出的建模支持方法及工具进行验证。
+  结果表明本文提出的战术建模支持方法及工具，
+  能够帮助领域驱动设计的实践者开展更规范化的战术建模过程，
+  从而解决战术建模实践过程缺少规范带来的一系列挑战，
+  一定程度上促进了战术建模的应用。
+	% 同时应该注意到，空白页是故意留白，以便章节开头能够出现在偶数页。
+	% 中文关键词。关键词之间用中文全角分号隔开，末尾无标点符号。
+	\keywords{领域驱动设计；战术建模；建模工具；特定领域建模语言}
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 论文的英文摘要
+\begin{englishabstract}
+  As a software design approach for complex business process, Domain-Driven Design (DDD) enables architects and developers building complex software system.
+  In recent years, more and more teams have applied DDD to the design and implementation of large-scale distributed systems.
+
+  However, as the core means of DDD, 
+  tactical modeling are facing many challenges in its application.
+  Firstly, the practicing process of tactical modeling patterns still lacks standard and unified specifications,
+   making it hard for practitioners to use these patterns to model business processes accurately; 
+  secondly, the lack of specifications also makes developers and architects have different understandings when using the modeling patterns,
+   leading to a series of communication problems in project team; 
+   thirdly, most of the existing modeling platforms have incomplete support for the tactical modeling process, 
+   severely impeding the application of DDD.
+
+
+  In order to solve the aforementioned challenges, 
+  this thesis first reviews theoretical literature on tactical modeling,
+   then interviews practitioners with relevant practical experience, 
+  and finally extracts a series of practical specifications for the tactical modeling process.
+   As a guide for tactical modeling, the specifications contain a series of tactical patterns used in tactical modeling, 
+   their attributes, time of using, and implementation techniques. 
+   Furthermore, the standard tactical modeling metamodel is defined based on UML profile mechanism, as a tactical modeling language. 
+   The above modeling guide and tactical modeling language together constitute the tactical modeling support method proposed in this thesis. 
+   Based on the proposed method, this thesis also implements a visual tactical modeling tool called Draw for Domain-Driven Design, or DDDD. 
+   The tool supports standardized tactical modeling, verification, reuse and extension of modeling results to help practitioners develop tactical modeling in a more standardized way.
+
+
+  This thesis uses case studies to verify the proposed modeling support method and tool. 
+  Results show that the proposed method and tool can help DDD practitioners to conduct a more standardized tactical modeling process, 
+  thus solving the challenges caused by lack of specification in the tactical modeling process, 
+  and promoting the application of tactical modeling to a certain extent.
+  
+  \englishkeywords{Domain-driven design, Tactical modeling, Modeling tool, Domain-specific modeling language}
+\end{englishabstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 论文的前言，应放在目录之前，中英文摘要之后，一般不需要
+%
+%\begin{preface}
+%
+%在过去的40年中，手写中文文本领域识别（HCTR）取得了很大的进展[1,2]。
+%
+%\vspace{1cm}
+%\begin{flushright}
+%饶安逸\\
+%2018年5月15日于南大仙林
+%\end{flushright}
+%
+%\end{preface}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 生成论文目录
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 生成插图清单。如无需插图清单则可注释掉下述语句。
+\listoffigures
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 生成附表清单。如无需附表清单则可注释掉下述语句。
+\listoftables
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 开始正文部分
+\mainmatter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 学位论文的正文应以《绪论》作为第一章，本模板是按照自身功能模块组织的，并非论文中的章节安排
+
+
+\input{chapters/Introduction.tex}
+
+\input{chapters/Theory and technical support.tex}
+
+\input{chapters/Modeling Framework Design.tex}
+
+\input{chapters/Modeling Tools Design And implementation.tex}
+
+\input{chapters/Test And Compare.tex}
+
+\input{chapters/Conclusion.tex}
+
+% \input{chapters/Reference.tex}
+
+% \input{chapter/Title.tex}
+
+% \input{chapter/MainBody.tex}
+
+% \input{chapter/Table.tex}
+
+% \input{chapter/Figure.tex}
+
+% \input{chapter/Formula.tex}
+
+
+% \input{chapter/Reference.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 致谢，应放在结论之后
+\begin{acknowledgement}
+在本篇论文最后，我想真诚地感谢在我撰写论文过程中指导和帮助我的老师、同学们，
+还有支持我、鼓励我的家人和朋友们。
+
+首先，我要感谢在我毕设研究工作中，张贺教授对我的悉心指导和帮助，
+在跟随您的两年研究生学习工作中，您总是教导我们要多去实践，
+要以严谨认真的态度踏踏实实地完成科研学习工作，
+还要努力阅读大量学术文献，提高自己看问题的层次，
+还为我们提供了很多与工业界交流的机会，这些都为我的毕设工作和日常工作学习带来了很大的好处。
+
+然后，我要感谢实验室的师兄师姐和同学们，
+感谢你们这两年中在学习、工作和生活中带给我的帮助与鼓励，
+特别是指导我毕设工作的师姐，对我的问题一一解答，对我的论文工作耐心指导，
+启发我进行深度的思考，反复与我评估和讨论论文研究的问题，
+得益于她的帮助，我的论文才能保质保量地顺利完成。
+
+最后，还要感谢我的父母和家人，感谢你们在背后默默支持和陪伴我。
+很幸运，在研究生阶段遇到了相互扶持，互相鼓励的伴侣，
+在生活和学习上我们互相帮助，给予彼此很大的动力与希望。
+也要感谢我的舍友们，让我的生活中充满了乐趣。
+
+在论文工作中，访谈和焦点小组中付出了大量的精力时间，
+实现工具时也遇到过困难与问题，但我依然坚持尽力做到最好，
+马上就要从学校步入社会，我将坚持“诚朴雄伟，励学敦行”的精神，
+不畏艰难，努力奋斗出属于自己的一片天地。
+  
+\end{acknowledgement}
+
+
+
+
+% 参考文献。应放在\backmatter之前。
+% 推荐使用BibTeX，若不使用BibTeX时注释掉下面一句。
+%\nocite{*}
+\bibliography{sample}
+
+
+% 附录，必须放在参考文献后，backmatter前
+\appendix
+\chapter{访谈问题}\label{app:1}
+\section{战术建模访谈问题}
+
+\noindent 一、个人信息
+
+\noindent 1.您的职位是？
+
+\noindent
+A.开发人员
+
+\noindent
+B.	架构师
+
+\noindent
+C.	项目管理者
+
+\noindent
+D.	运维人员
+
+\noindent
+E.	其他
+
+\noindent
+2.	您所在团队的人员规模？
+
+\noindent
+A.		5人以下
+
+\noindent
+B.	5-10人
+
+\noindent
+ C.	10-20人
+
+\noindent
+ D.	20-50人
+
+\noindent
+ E.	50人以上
+
+\noindent
+ 3.	您所在团队业务关注的领域？
+
+\noindent
+A.	软件/IT领域
+
+\noindent
+B.	通信领域
+
+\noindent
+C.	软件提供商
+
+\noindent
+D.	电商领域
+
+\noindent
+E.	银行和金融领域
+
+\noindent
+F.	其他
+
+\noindent
+二、	DDD建模总体实践
+
+\noindent
+1.	您的团队按照领域驱动设计进行领域建模的流程是什么？
+
+\noindent
+a)	分析建模、设计建模和实现建模的顺序
+
+\noindent
+b)	领域模型图和代码实现之间的关系
+
+\noindent
+2.	您的团队是否有使用某种建模工具进行领域建模？是什么建模工具？它的优缺点是什么？ 
+
+\noindent
+a)	DDD专用的建模套件工具
+
+\noindent
+b)	传统的类图工具，如EA、PlantUML、visual paradigm
+
+\noindent
+c)	使用纸和笔直接进行建模
+
+\noindent
+三、	DDD战术建模模式实践
+
+\noindent
+1.	关于实体
+
+\noindent
+a)	您认为何时应该使用实体？
+
+\noindent
+b)	您认为实体应该包含哪些重要属性？
+
+\noindent
+i.	实体应该拥有唯一标识，方便跟踪和与其他实体区分
+
+\noindent
+ii.	实体在其生命周期内可以连续变化
+
+\noindent
+c)	除上述属性外，还应该包括哪些属性？
+
+\noindent
+d)	您的团队在实现实体时有哪些最佳实践？
+
+\noindent
+i.	如何建模唯一标识
+
+\noindent
+ii.	唯一标识通常由哪些组成部分
+
+\noindent
+iii.	如何为标识生成唯一值，即如何生成唯一标识
+
+\noindent
+iv.	什么时候生成唯一标识
+
+\noindent
+v.	如何存储唯一标识
+
+\noindent
+vi.	如何保证唯一标识的稳定性
+
+\noindent
+e)	您认为在建模实体时有哪些不好的实践是需要避免的？
+
+\noindent
+2.	关于值对象
+
+\noindent
+a)	您认为何时应该使用值对象？
+
+\noindent
+b)	您认为值对象应该包含哪些重要属性？
+
+\noindent
+i.	不变性
+
+\noindent
+ii.	可替换性
+
+\noindent
+iii.	值对象相等性
+
+\noindent
+iv.	无副作用行为
+
+\noindent
+v.	是一个概念整体
+
+\noindent
+c)	除上述属性外，还应该包括哪些属性？
+
+\noindent
+d)	您的团队在实现值对象时有哪些最佳实践？
+
+\noindent
+i.	如何保证值对象的不可变性
+
+\noindent
+ii.	如何实现无副作用行为
+
+\noindent
+iii.	如何存储值对象集合
+
+\noindent
+e)	您认为在建模值对象时有哪些不好的实践是需要避免的？
+
+\noindent
+3.	关于服务
+
+\noindent
+a)	您认为何时应该使用服务？
+
+\noindent
+b)	您认为领域服务应该包含哪些重要属性？
+
+\noindent
+i.	无状态
+
+\noindent
+c)	除上述属性外，还应该包括哪些属性？
+
+\noindent
+d)	您的团队在实现领域服务时有哪些最佳实践？
+
+\noindent
+i.	如何组织领域服务，领域服务放在项目中的什么位置
+
+\noindent
+e)	您认为在建模领域服务时有哪些不好的实践是需要避免的？
+
+\noindent
+4.	关于领域事件
+
+\noindent
+a)	您认为何时应该使用领域事件？
+
+\noindent
+b)	您认为领域事件应该具有哪些属性
+
+\noindent
+i.	事件发生时间
+
+\noindent
+ii.	事件的发送方或造成事件的对象
+
+\noindent
+iii.	不变性
+
+\noindent
+iv.	唯一标识
+
+\noindent
+c)	除上述属性外，还应该包括哪些属性？
+
+\noindent
+d)	是否应该将领域事件建模成聚合？
+
+\noindent
+e)	您的团队在实现领域事件时有哪些最佳实践？
+
+\noindent
+i.	如何命名领域事件
+
+\noindent
+ii.	如何存储事件发生的时间
+
+\noindent
+iii.	如何保证领域事件的不变性
+
+\noindent
+iv.	如何避免将领域模型暴露给消息设施
+
+\noindent
+v.	如何保证在事件发布前完成订阅
+
+\noindent
+vi.	如何保证领域模型和事件存储的一致性
+
+\noindent
+vii.	存储的领域事件有何作用
+
+\noindent
+viii.	如何转发领域事件
+
+\noindent
+ix.	何时应该把领域事件建模成聚合
+
+\noindent
+f)	您认为在建模领域事件时有哪些不好的实践是需要避免的？
+
+\noindent
+5.	关于模块
+
+\noindent
+a)	您认为何时应该使用模块？
+
+\noindent
+b)	您认为模块应该具有哪些属性？
+
+\noindent
+c)	您的团队在实现模块时有哪些最佳实践？
+
+\noindent
+i.	如何命名模块
+
+\noindent
+ii.	模块的表现形式，Java中的包，C++命名空间
+
+\noindent
+iii.	如何组织模块
+
+\noindent
+d)	您认为在建模模块时有哪些不好的实践是需要避免的？
+
+\noindent
+6.	关于聚合
+
+\noindent
+a)	您认为何时应该使用聚合？
+
+\noindent
+b)	您认为聚合应该包含哪些重要属性？
+
+\noindent
+i.	边界内保持一致性
+
+\noindent
+ii.	根实体
+
+\noindent
+iii.	值对象/其他实体
+
+\noindent
+c)	除上述属性外，还应该包括哪些属性？
+
+\noindent
+d)	您的团队在实现聚合时有哪些最佳实践？
+
+\noindent
+i.	如何设计一个聚合
+
+\noindent
+ii.	聚合中如何使用其他聚合或对象（对象的导航性）
+
+\noindent
+iii.	如何保证一致性边界
+
+\noindent
+iv.	何时允许在单个事务中修改多个聚合
+
+\noindent
+v.	如何隐藏聚合内部信息
+
+\noindent
+vi.	如何引用其他聚合
+
+\noindent
+e)	您认为在建模聚合时有哪些不好的实践是需要避免的？
+
+\noindent
+7.	关于资源库
+
+\noindent
+a)	您认为何时应该使用资源库？
+
+\noindent
+b)	您认为资源库应该具有哪些属性？
+
+\noindent
+i.	只为聚合提供资源库（一种和其他pattern的关系，能否算作属性）
+
+\noindent
+c)	您的团队在实现资源库时有哪些最佳实践？
+
+\noindent
+i.	如何设计资源库，面向集合还是面向持久化
+
+\noindent
+d)	资源库经常与聚合相关，是否应该将领域对象的关联关系作为属性？
+
+\noindent
+e)	您认为在建模资源库时有哪些不好的实践是需要避免的？
+
+
+\noindent
+8.	关于工厂
+
+\noindent
+a)	您认为何时应该使用工厂？
+
+\noindent
+i.	委托其他对象创建复杂对象对性能的影响可以忽略时
+
+\noindent
+ii.	需要减轻客户端在创建聚合实例的负担
+
+\noindent
+iii.	确保创建实例处于正确状态时
+
+\noindent
+b)	您认为工厂应该具有哪些属性？
+
+\noindent
+c)	您的团队在实现工厂时有哪些最佳实践？
+
+\noindent
+i.	工厂应该放在何处，作为聚合的一部分还是独立成领域服务
+
+\noindent
+d)	您认为在建模工厂时有哪些不好的实践是需要避免的？
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 书籍附件
+\backmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 作者简历与科研成果页，应放在backmatter之后
+\begin{resume}
+% 论文作者身份简介，一句话即可。
+\begin{authorinfo}
+\noindent 李质颖，男，汉族，1997年2月出生，山东省济宁人。
+\end{authorinfo}
+% 论文作者教育经历列表，按日期从近到远排列，不包括将要申请的学位。
+\begin{education}
+\item[2015年9月 --- 2019年6月] 重庆大学大数据与软件学院 \hfill 本科
+\end{education}
+% 论文作者在攻读学位期间所发表的文章的列表，按发表日期从近到远排列。
+% \begin{publications}
+% \item Fuli Zhang, Peiyu Hou,  ``一种智能合约微服务化框架'' 
+%   in \textsl{Proc. IEEE International Conference on Communications (ICC) 2010}, May. 2010.
+% \end{publications}
+% 论文作者在攻读学位期间参与的科研课题的列表，按照日期从近到远排列。
+% \begin{projects}
+% % \item 国家自然科学基金面上项目``问题研究''
+% % （课题年限~2010年1月 --- 2012年12月），负责相关问题的研究。
+% \end{projects}
+\end{resume}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 生成《学位论文出版授权书》页面，应放在最后一页
+%\makelicense
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
