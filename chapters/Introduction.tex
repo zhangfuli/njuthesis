@@ -2,90 +2,72 @@
 
 \section{研究背景及意义}
 
-在应对大型复杂软件系统的设计与实现时，
-越来越多的企业选择借鉴领域驱动设计中的思想与方法。
-领域驱动设计（Domain-Driven Design, DDD）
-是一种针对大型复杂软件系统的分析与建模方法，
-由Eric Evans于2004年在其著作
-《领域驱动设计：软件核心复杂性应对之道》\cite{DBLP:books/daglib/0013521}
-中首次提出。
-与传统的系统设计方式相比，领域驱动设计更加聚焦领域中的业务流程而非系统操作的数据，
-强调领域模型的重要性。
-% 领域模型中的每个领域对象都是高内聚的完整业务对象，可以直接进行复用；
-领域驱动设计遵循关注点分离的原则，对领域对象进行了明确的策略和职责划分，
-可以将现实业务映射到领域对象上，为领域专家与开发人员搭建沟通的桥梁。
-通过领域驱动设计，开发团队和领域专家\cite{DBLP:books/daglib/0013521}深入交谈，
-对业务了解更加准确，领域专家借助领域驱动设计的方法与开发团队进行沟通，
-可以更好地对领域进行建模，并对建模的领域对象进行快速迭代修改，
-同时将修改同步到实现层次上，
-更加适应快速迭代的敏捷软件开发节奏。
+区块链(Blockchain)是一种按照时间顺序将数据区块以链条的方式组成的特定数据结构,被视为一个分布式的共享账本和数据库。它能够使用户无需相互信任与可信第三方的条件下完成可信的价值传输\cite{SurveyofEnterpriseBlockchains}。作为区块链2.0 的以太坊\footnotemark[1]\footnotetext[1]{\href{http://github.com/ethereum/wiki/wiki/White-Paper/}{以太坊白皮书}}重新将智能合约描述为图灵完备的、部署于区块链网络中合同条款代码。这意味着传统的合同条款可以进入实体计算机中,且在区块链网络去中心化、不可伪造、不可篡改的特性下严格执行。区块链推进了人与企业之间和线上与线下之间的全方面互联,其被成为下一代的新型生产关系。随着区块链的快速发展, 智能合约极大地丰富和扩展了区块链应用场景。它们为供应链、金融等传统领域带来重大变革, 已经快速渗入到人们生活的方方面面。
 
-领域驱动设计主要被分为战略建模（Strategic Modeling）
-和战术建模（Tactical Modeling）两个层次\cite{millett2015patterns}，
-战略建模层次指导架构师及领域专家构架大型复杂软件系统并进行拆分，
-战术建模层次指导开发者对拆分出的子系统进行落地。
-战略建模层次的主要思想与方法十分契合当今流行的微服务架构（Microservice Architecture, MSA）\cite{nadareishvili2016microservice}，且使用者多为经验丰富的架构师及领域专家，
-所以战略建模能在高层次业务流程分析与系统划分时发挥作用；
-战术建模层次则更加侧重于单个微服务或微服务中某一模块的落地，
-并给出建模与实现过程中应该遵循的原则与约束。
-战术建模是基于战略建模的结果，进行进一步抽象设计，
-充当战略建模与最终技术实现的中间过渡阶段。
-战术模式（Tactical Patterns）是战术建模中常用的表达业务问题的一种方式。
-战术建模相比战略建模更加依赖领域模型（Domain Model）\cite{vernon2013implementing}
-和通用语言（Ubiquitous Language）\cite{vernon2013implementing}，
-因为其需要通过战术模式将领域模型和通用语言中的概念映射到代码实现中，
-代码实现也会随着领域模型的变化而重构，体现领域模型的改变。
-战术建模还可以借助标准通用的战术模式，
-让开发人员甚至非技术人员与架构师进行合作，参与到建模过程中来。
+当前, 区块链分为公有区块链、联盟区块链和私有区块链。如表\ref{blockchain_type}所示, 公有链没有准入限制, 没有监管方可以组织参与, 任何人都可以参与共识, 常见的两种共识协议为工作量证明机制(Proof of work, 简称PoW)和权益证明机制(Proof of stake, 简称PoS)。由于任何人都可以自由加入, 因此公有链网络具有高度分布式的拓扑结构。但是, 公有链在安全性和性能方面也进行了权衡。公有链上的许多服务器遇到了扩展瓶颈, 吞吐量相对较弱; 与公有区块链的无准入限制形成鲜明对比的是, 私有区块链建立了准入规则, 规定谁可以查看和写入区块链。因为在控制方面有明确的层次结构, 私有链也不是去中心化系统。在某些私有链中, 具备安全模型的背景下，共识协议是多余的。因此在私有区块链中，不使用PoW并不会造成很严重的威胁, 因为每个参与者的身份都是已知的, 是手动进行管理的; 联盟区块链是介于公有链和私有链之间的，结合了两者的特征要素。在共识方面, 联盟链将少数同等权力的参与方视为验证者，而不是像公有链那样开放的系统, 让任何人都可以验证区块, 也不是像私有链那样, 通过一个封闭的系统, 只允许某一个实体来任命区块的生产者。对于从事各类活动的个人和企业来说，存在大量的区块链选择。即使在公有链、私有链和联盟链中，根据复杂性的不同，也会出现许多不同的用户体验。根据实际使用情况，企业可以选择最适合实现自己目标的产品。供应链、电商、医疗等需要彼此之间需要相互沟通的场景下, 联盟链可减轻私有链中交易对手的风险, 并且较少的节点数通常可使它们能够比公共链更有效率的运行, 通常选择联盟链作为企业级区块链的底层。
 
-% 根据Vaughn Vernon的《实现领域驱动设计》\cite{vernon2013implementing}一书所述，
-% 战术建模层次包括的重要概念有实体（Entity）、值对象（Value Object）、
-% 领域服务（Domain Service）、领域事件（Domain Event）、聚合（Aggregate）等，
-% 这些概念统称为战术建模模式。
+{\footnotesize
+\begin{longtable}[h]{m{70pt}|m{70pt}|m{70pt}|m{70pt}}
+    \caption[区块链类型]{区块链类型} \label{blockchain_type} \\
+        \hline  
+        &公有区块链&私有区块链&联盟区块链\\
+        \hline
+        准入限制&无&有&有\\
+        \hline
+        读取者&任何人&仅限受邀用户&相关联用户\\
+        \hline
+        写入者&任何人&获批参与者&获批参与者\\
+        \hline
+        所属者&无&单一实体&多方实体\\
+        \hline
+        交易速度&慢&快&快\\
+        \hline
+    \end{longtable}
+}
 
-上述领域驱动设计的两个层次都强调领域模型的重要性。
-领域模型（Domain Model）是对领域中概念或对象的可视化表示，
-专注于领域本身，可以用来分析业务，
-发掘重要的业务领域概念，并建立业务领域概念之间的关系。
-领域模型通常以从业务流程中分析提炼出的通用语言
-为基础进行构建，并作为通用语言的核心。
-通用语言（Ubiquitous Language）是将团队沟通与软件实现紧密联系到一起的一种基于模型的语言，
-在应用通用语言进行领域建模时，领域专家和开发人员可以更好地
-讨论需求、制定开发计划和描述系统特性。
+与此同时, 云原生(Cloud Native)作为一种基于云的基础之上的软件架构思想,以及基于云进行软件开发实践的一组方法论。因其弹性和分布式的优势成为当今流行的软件服务模式。区块链即服务(Blockchain as a Service, 简称BaaS)则是基于云的一种构建、管理、托管和运维区块链网络及其应用的云服务平台\cite{onik2019performance}。BaaS支持将任何企业级区块链实施到云环境，而无需任何IT专业知识。这大大降低了区块链技术的使用门槛, 是促使区块链技术更广泛、更深入地渗透到各个行业和企业的催化剂, 其市值预计从2018年的6.23亿美元猛增2023年的150亿美元\footnotemark[1]\footnotetext[1]{\href{https://www.reportbuyer.com/product/5486837/global-blockchain-as-a-service-market.html}{Global Blockchain-as-a-Service Market 2018-2022}}。其中, 云厂商提供了大多数的BaaS平台\cite{KuernetesbasedFabricChaincodeManagementAndHihgAvailabilityTechnology}, 如表\ref{major_BaaS_platforms}所示, 其底层区块链支撑技术大多数选择IBM开源的跨企业级联盟链Hyperledger Fabric, 这也是本文选择Hyperledger Fabric的原因。
 
+{\footnotesize
+\begin{longtable}[h]{m{150pt}|m{200pt}}
+    \caption[主要公有云的BaaS平台]{主要公有云的BaaS平台} \label{major_BaaS_platforms} \\
+        \hline  
+        BaaS平台&区块链平台\\
+        \hline
+        AWS区块链服务&Hyperledger Fabric, Ethereum\\
+        \hline
+        Azure区块链服务&Ethereum\\
+        \hline
+        Google Cloud Platform&不支持\\
+        \hline
+        IBM区块链服务&Hyperledger Fabric\\
+        \hline
+        阿里云区块链服务&Hyperledger Fabric, 蚂蚁区块链, Ethereum\\
+        \hline
+        腾讯云区块链服务TBaaS&Hyperledger Fabric, FISCO BCOS, Tencent TrustSQL\\
+        \hline
+        华为云区块链服务BCS&Hyperledger Fabric\\
+        \hline
+    \end{longtable}
+}
 
+% 挑战
+然而, 当前BaaS平台的发展尤其是底层的区块链基础设施的建设依旧存在诸多挑战。
+第一, 基础商业化应用工具并不完善\footnotemark[1]\footnotetext[1]{\href{http://www.caict.ac.cn/kxyj/qwfb/ztbg/202107/P020210726503897354430.pdf}{区块链基础设施研究报告(2021年)}}。虽然市场上存在多种可选择的BaaS平台解决方案, 但是这些BaaS平台由商业巨头把控, 行业马太效应明显\cite{KuernetesbasedFabricChaincodeManagementAndHihgAvailabilityTechnology}。BaaS平台的构建需要专业的区块链以及云原生的技术能力, 只有实力雄厚的云厂商进行BaaS平台的研发, 这些BaaS服务往往与云计算节点捆绑, 用户租用BaaS服务计费高昂, 这并不利于中小型企业构建自身私有BaaS平台以及区块链应用。
+第二, 现阶段BaaS平台利用云能力对区块链基础设施赋能乏力。对于BaaS平台市场规模的不断膨胀, 需要找到解决当前区块链网络部署、备份、升级以及数据存储以及可扩展性的方法。然而当前BaaS平台仅提供了一种基于开源区块链平台的一键化自动部署管理方案, 未深入到区块链与云基础设施的底层。这并不是有效的云化方式, 浪费了云原生技术的潜力。
 
-% 使用模型驱动的方式来进行设计与实现，可以保障领域模型和具体实现代码的一致性，
-% 并不断完善迭代领域模型，使其含义更加贴合业务流程，优化实现代码。
+% 意义、愿景
+针对上述问题, 本文选择面向联盟链场景开源框架Hyperledger Fabric和Kubernetes构建BaaS平台的区块链基础设施。通过对Hyperledger Fabric的ca、peer、orderer组件进行抽象适配使其更原生的运行于Kubernetes。
 
-然而，领域驱动设计，特别是战术建模层次在领域建模实践时却面临许多挑战。
-第一，战术建模中每种模式都是知识高度凝练的结果，包含了复杂的概念知识，
-学习成本很高，没有大量的实践经验基本无法理解。
-在建模实践时，难以准确把握各种模式的规范和约束，
-无法正确地将战术建模模式与业务流程中的业务对象对应，
-导致战术建模结果不标准、不统一，甚至战术建模结果错误，
-难以发挥战术建模的优势；
-第二，开发人员和架构师在使用战术建模时对业务的理解程度不同，
-对模式的应用时机和实现技术看法不同，
-导致架构师和开发人员无法在建模时进行顺畅地沟通，
-不同开发人员的开发水平、经验也有差距，同一开发团队也往往很难让建模结果保持标准和统一；
-第三，实施战术建模没有规范化的标准流程指导，
-当前的一些建模工具（如Enterprise Architect\footnotemark[1]\footnotetext[1]{Enterprise Architect官网：https://sparxsystems.com}、
-PlantUML \footnotemark[2]\footnotetext[2]{plantUML官网：https://plantuml.com}）
-对领域建模规则与约束的支持也不够完善，无法建立起足够通用的模型，
-最终导致战术建模的结果无法规范化、标准化地应用。
-上述挑战阻碍了开发者正确使用领域驱动设计战术建模。
+本课题拟实现Hyperledger Fabric Operator能够对fabric网络进行主动的持续管理，包括故障转移、备份、升级和自动缩放，使用户通过专家提供的知识获得类似云的自我管理。具体一点就是，如果我们采用Blockchain Automation Framework发布了一个POD，然后我们在K8S中误删了POD，那么其是不会替我们自动重建POD的，这是该项目的的主要问题所在。
 
-% 导致战术建模难以实践的原因有很多。第一，战术建模这一概念本身就很复杂，
-% 战术建模层次包含的概念知识十分丰富，且每一种模式都很复杂，
-% 没有大量的实战经验基本无法理解，学习战术建模的成本很高；
-% 第二，由于一线开发人员开发水平、经验差距较大，对领域驱动设计的理解也不够深入，
-% 同一开发团队也往往很难让建模结果保持标准和统一；
-% 第三，在实际应用战术建模时也没有工具支持规范化的流程和标准化的规则与约束，
-% 当前的一些建模工具（如Enterprise Architect\footnote{Enterprise Architect官网：https://sparxsystems.com}、
-% PlantUML \footnote{plantUML官网：https://plantuml.com}）
-% 对领域建模支持不够完善，对不熟悉战术建模的开发人员也没有指引与提示，
-% 导致战术建模难以规范化、标准化地应用到实际建模设计当中。
+为解决上述挑战, 本文
+Hyperledger Fabric Operator: 云原生时代下Fabric管理工具
+利用Kubernetes,72\%的工程师在云原生生产中使用Kubernetes[3],可以方便的迁移到支持Kubernetes的任何云 
+更简单、更原生的: 使用kubectl命令管理Fabric, 显示于k8s-dashboard;复用Kubernetes, API公共功能如CRUD、watch、内置认证
+管理Fabric: 声明式自动化配置静态组件，如: CA、HF网络组件.命令式创建动态通道、链码
+
+由linux基金会牵头，包括 IBM等30家初始企业成员共同成立的Hyperledger Fabric项目成为流行的面向联盟链场景开源框架之一。该项目定位是面向企业的分布式账本平台，引入权限管理，设计上支持可插拔、可扩展，自开源依赖广受欢迎，github上已经有12.7k star。然而云原生时代下，Fabric缺乏一个成熟的、一站式的解决方案来解决在云计算平台上构建区块链联盟链(私有链)。即区块链如何和云计算快速深度结合，利用云计算伸缩性、可移植性和高可用性价值来提供“高质量”的区块链服务，是当前仍然遗留的挑战。
+
 
 为了解决上述挑战，本文提出了一种面向领域驱动设计的战术建模支持方法及工具，
 具体工作内容如图\ref{workresult}所示。
@@ -109,6 +91,25 @@ PlantUML \footnotemark[2]\footnotetext[2]{plantUML官网：https://plantuml.com}
 
 
 \section{国内外研究现状}
+
+云原生背景下的区块链自诞生以来就受到了学术界与工业界的广泛关注。在区块链与云原生深度结合方面都进行了积极的探索。
+
+% 学术
+基于 Kubernetes 的 Fabric 链码管理及高可用技术[5]
+(1)比较全面地研究了底层基础设施,尤其是生产环境下的高可用性 Kubernetes 平台
+(2)设计并实现了Fabric在 Kubernetes上的云化部署,尤其是链码部分通过一个全新的容器控制插件实现了对 Kubernetes在代码级别上的支持,并完成了将链码纳入 Kubernetes环境管理的目标
+云化的链码管理局限在链码层面, 无法实现对fabric网络进行主动的持续管理,包括故障转移、备份、升级和自动缩放
+
+% 工业界
+ Cello[6]: 一个区块链供应和操作系统，帮助人们以更高效的方式使用和管理区块链。Cello基于先进的区块链技术和现代PaaS工具，提供以下主要功能：
+（1）管理区块链网络的生命周期
+（2）支持自定义区块链网络配置，如网络大小、共识类型。
+（3）支持多种底层基础设施，包括裸机、虚拟机、vSphere、本机Docker主机、swarm和Kubernetes
+Cello当前阶段重点关注在Docker安装, 对Kubernetes operator支持方面的仍处在相对初级阶段，配置项简单灵活性不足且老旧，对CRD的最新更新在2年前；缺少对Operator的监控
+
+Blockchain Automation Framework利用Ansible、Helm和Kubernetes部署生产DLT(分布式记账)网络。具体来说，使用helm charts作为Kubernetes部署模板、利用Ansible对网络进行配置。Blockchain Automation Framework框架目前支持Corda、Hyperledger Fabric、Hyperledger Indy和Quorum。然而，该项目采用的Ansible-Playbooks配置部署。本质上还是描述为一个需要希望远程主机执行命令的方案,或者一组IT程序运行的命令集合。虽然采用执行命令脚本的方式大大提升了自动化程度，但其远没有发挥k8s的潜力。
+
+% 总结
 
 
 领域驱动设计自提出以来，受到了学术界与工业界的广泛关注。

@@ -6,13 +6,11 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: sample.bib
-Warning--Require address: DBLP:books/daglib/0013521
-Warning--Require address: millett2015patterns
-Warning--Require address: nadareishvili2016microservice
-Warning--Require address: vernon2013implementing
 Warning--Require address: frank2013domain
 Warning--Require journal: smith2003ontology
 Warning--Require address: 刘辉2008元建模技术研究进展
+Warning--Require address: DBLP:books/daglib/0013521
+Warning--Require address: vernon2013implementing
 Warning--Require address: DBLP:conf/icsa/MersonY20
 Warning--Require address: coad1991object
 Warning--Require address: 王文玲1999uml
@@ -21,45 +19,45 @@ Warning--Require address: evans2014domain
 Warning--Require address: 王君2007基于
 Warning--Require address: richardson2008restful
 Warning--Require address: martin2018clean
-You've used 39 entries,
+You've used 40 entries,
             3107 wiz_defined-function locations,
-            920 strings with 12570 characters,
-and the built_in function-call counts, 62110 in all, are:
-= -- 6774
-> -- 125
-< -- 289
-+ -- 5538
-- -- 407
-* -- 1724
-:= -- 7078
+            932 strings with 12896 characters,
+and the built_in function-call counts, 64919 in all, are:
+= -- 7080
+> -- 129
+< -- 298
++ -- 5739
+- -- 428
+* -- 1781
+:= -- 7329
 add.period$ -- 0
-call.type$ -- 39
-change.case$ -- 172
+call.type$ -- 40
+change.case$ -- 178
 chr.to.int$ -- 0
-cite$ -- 54
-duplicate$ -- 8540
-empty$ -- 2347
-format.name$ -- 344
-if$ -- 16718
+cite$ -- 53
+duplicate$ -- 9003
+empty$ -- 2488
+format.name$ -- 356
+if$ -- 17437
 int.to.chr$ -- 0
-int.to.str$ -- 39
+int.to.str$ -- 40
 missing$ -- 0
-newline$ -- 144
-num.names$ -- 39
-pop$ -- 822
+newline$ -- 147
+num.names$ -- 40
+pop$ -- 892
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 639
+skip$ -- 658
 stack$ -- 0
-substring$ -- 7203
-swap$ -- 1706
+substring$ -- 7570
+swap$ -- 1795
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 15
-while$ -- 790
-width$ -- 41
-write$ -- 522
-(There were 15 warnings)
+warning$ -- 13
+while$ -- 842
+width$ -- 42
+write$ -- 540
+(There were 13 warnings)

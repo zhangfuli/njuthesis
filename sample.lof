@@ -2,47 +2,47 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{1}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 战术建方法及支持工具\relax }}{3}{figure.caption.4}%
+\contentsline {figure}{\numberline {{1}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 战术建方法及支持工具\relax }}{4}{figure.caption.4}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 战术模式关系图\footnotemark [1]\relax }}{9}{figure.caption.5}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 特定领域建模语言提出方法\relax }}{13}{figure.caption.6}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces MOF四层架构与UML类图\footnotemark [4]\relax }}{14}{figure.caption.7}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces UML profile扩展类图实例\relax }}{14}{figure.caption.8}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 两种建模工具实施方式\relax }}{15}{figure.caption.9}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 响应式设计追踪变化\relax }}{17}{figure.caption.10}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 战术模式关系图\footnotemark [1]\relax }}{11}{figure.caption.5}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 特定领域建模语言提出方法\relax }}{15}{figure.caption.6}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces MOF四层架构与UML类图\footnotemark [4]\relax }}{16}{figure.caption.7}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces UML profile扩展类图实例\relax }}{16}{figure.caption.8}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 两种建模工具实施方式\relax }}{17}{figure.caption.9}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 响应式设计追踪变化\relax }}{19}{figure.caption.10}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 战术建模支持方法研究过程图\relax }}{20}{figure.caption.11}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 焦点小组实施过程\relax }}{23}{figure.caption.12}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 领域事件实现流程图\footnotemark [1]\relax }}{27}{figure.caption.13}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 战术建模指南\relax }}{29}{figure.caption.14}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 战术建模扩展元类profile\relax }}{31}{figure.caption.15}%
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces DomainEvent约束实现\relax }}{32}{figure.caption.16}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 战术建模支持方法研究过程图\relax }}{22}{figure.caption.11}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 焦点小组实施过程\relax }}{25}{figure.caption.12}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 领域事件实现流程图\footnotemark [1]\relax }}{29}{figure.caption.13}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 战术建模指南\relax }}{31}{figure.caption.14}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 战术建模扩展元类profile\relax }}{33}{figure.caption.15}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces DomainEvent约束实现\relax }}{34}{figure.caption.16}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 建模支持工具业务流程\relax }}{35}{figure.caption.17}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 工具总体功能\relax }}{35}{figure.caption.18}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 可视化建模模块用例图\relax }}{36}{figure.caption.19}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 模型校验模块用例图\relax }}{38}{figure.caption.20}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 模型存储与转化模块用例图\relax }}{39}{figure.caption.21}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 支持工具整体架构图\relax }}{41}{figure.caption.22}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 支持工具前端整洁架构图\relax }}{42}{figure.caption.23}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 可视化建模模块类图\relax }}{43}{figure.caption.24}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces 可视化建模模块顺序图\relax }}{43}{figure.caption.25}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{10}}{\ignorespaces 初始化ToolBar代码\relax }}{44}{figure.caption.26}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{11}}{\ignorespaces 模型校验模块类图\relax }}{45}{figure.caption.27}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{12}}{\ignorespaces 模型校验部分实现代码\relax }}{47}{figure.caption.28}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{13}}{\ignorespaces 模型存储与转化类图\relax }}{48}{figure.caption.29}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{14}}{\ignorespaces 模型存储与转化顺序图\relax }}{48}{figure.caption.30}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{15}}{\ignorespaces 模型存储部分实现代码\relax }}{49}{figure.caption.31}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 建模支持工具业务流程\relax }}{37}{figure.caption.17}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 工具总体功能\relax }}{37}{figure.caption.18}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 可视化建模模块用例图\relax }}{38}{figure.caption.19}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 模型校验模块用例图\relax }}{40}{figure.caption.20}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 模型存储与转化模块用例图\relax }}{41}{figure.caption.21}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 支持工具整体架构图\relax }}{43}{figure.caption.22}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 支持工具前端整洁架构图\relax }}{44}{figure.caption.23}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 可视化建模模块类图\relax }}{45}{figure.caption.24}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces 可视化建模模块顺序图\relax }}{45}{figure.caption.25}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{10}}{\ignorespaces 初始化ToolBar代码\relax }}{46}{figure.caption.26}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{11}}{\ignorespaces 模型校验模块类图\relax }}{47}{figure.caption.27}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{12}}{\ignorespaces 模型校验部分实现代码\relax }}{49}{figure.caption.28}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{13}}{\ignorespaces 模型存储与转化类图\relax }}{50}{figure.caption.29}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{14}}{\ignorespaces 模型存储与转化顺序图\relax }}{50}{figure.caption.30}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{15}}{\ignorespaces 模型存储部分实现代码\relax }}{51}{figure.caption.31}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 图形化建模测试结果图\relax }}{51}{figure.caption.32}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 建模约束校验测试结果图\relax }}{52}{figure.caption.33}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 工具帮助页面图\relax }}{55}{figure.caption.34}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 工具主页\relax }}{56}{figure.caption.35}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 可视化建模过程\relax }}{56}{figure.caption.36}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 模型校验\relax }}{57}{figure.caption.37}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 保存导出模型\relax }}{57}{figure.caption.38}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 加载历史模型\relax }}{58}{figure.caption.39}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces 建模结果图\relax }}{58}{figure.caption.40}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 图形化建模测试结果图\relax }}{53}{figure.caption.32}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 建模约束校验测试结果图\relax }}{54}{figure.caption.33}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 工具帮助页面图\relax }}{57}{figure.caption.34}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 工具主页\relax }}{58}{figure.caption.35}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 可视化建模过程\relax }}{58}{figure.caption.36}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 模型校验\relax }}{59}{figure.caption.37}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 保存导出模型\relax }}{59}{figure.caption.38}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 加载历史模型\relax }}{60}{figure.caption.39}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces 建模结果图\relax }}{60}{figure.caption.40}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

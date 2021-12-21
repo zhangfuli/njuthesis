@@ -24,28 +24,26 @@
 \providecommand{\bibdate}[1]{#1}
 \providecommand{\biburl}[1]{\newline\url{#1}}
 
-\bibitem{DBLP:books/daglib/0013521}
-\bibauthor{EVANS E}\@. \bibbooktitle{Doain-design - tackling complexity in the
-  heart of software}\bibmark{[M]}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{Addison-Wesley}\@, \bibyear{2004}\@.
+\bibitem{SurveyofEnterpriseBlockchains}
+\bibauthor{邵奇峰\@, 张召\@, 朱燕超, et~al}\@.
+  \bibtitle{企业级区块链技术综述}\bibmark{[J]}\@.
+  \bibjournal{软件学报}\@, \bibyear{2019}\@,
+  \bibvolume{30}\bibnumber{(9)}\thinspace{}\textnormal{:
+  }\bibpages{2571\thinspace{}\textnormal{--}\thinspace{}2592}\@.
 
-\bibitem{millett2015patterns}
-\bibauthor{MILLETT S\@, TUNE N}\@. \bibbooktitle{Patterns, principles, and
-  practices of domain-driven design}\bibmark{[M]}\@.
-  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{John Wiley \&
-  Sons}\@, \bibyear{2015}\@.
+\bibitem{onik2019performance}
+\bibauthor{ONIK M~M~H\@, MIRAZ M~H}\@. \bibtitle{Performance analytical
+  comparison of blockchain-as-a-service (baas) platforms}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{International Conference for Emerging
+  Technologies in Computing}\@. \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{3\thinspace{}\textnormal{--}\thinspace{}18}\@.
 
-\bibitem{nadareishvili2016microservice}
-\bibauthor{NADAREISHVILI I\@, MITRA R\@, MCLARTY M, et~al}\@.
-  \bibbooktitle{Microservice architecture: aligning principles, practices, and
-  culture}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{O'Reilly Media, Inc.}\@, \bibyear{2016}\@.
-
-\bibitem{vernon2013implementing}
-\bibauthor{VERNON V}\@. \bibbooktitle{Implementing domain-driven
-  design}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{Addison-Wesley}\@, \bibyear{2013}\@.
+\bibitem{KuernetesbasedFabricChaincodeManagementAndHihgAvailabilityTechnology}
+\bibauthor{刘宏宇\@, 梁秀波\@, 吴俊涵}\@.
+  \bibtitle{基于Kubernetes的Fabric链码管理及高可用技术}\bibmark{[J]}\@.
+  \bibjournal{计算机应用}\@, \bibyear{2021}\@,
+  \bibvolume{41}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{956\thinspace{}\textnormal{--}\thinspace{}962}\@.
 
 \bibitem{frank2013domain}
 \bibauthor{FRANK U}\@. \bibtitle{Domain-specific modeling languages:
@@ -143,6 +141,17 @@
   Context Modeling.}\bibmark{[C]} //\thinspace{}\bibbooktitle{MODELSWARD}\@.
   \bibyear{2020}\thinspace{}\textnormal{:
   }\bibpages{299\thinspace{}\textnormal{--}\thinspace{}306}\@.
+
+\bibitem{DBLP:books/daglib/0013521}
+\bibauthor{EVANS E}\@. \bibbooktitle{Domain-driven design - tackling complexity
+  in the heart of software}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Addison-Wesley}\@, \bibyear{2004}\@.
+
+\bibitem{vernon2013implementing}
+\bibauthor{VERNON V}\@. \bibbooktitle{Implementing domain-driven
+  design}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Addison-Wesley}\@, \bibyear{2013}\@.
 
 \bibitem{DBLP:conf/icsa/MersonY20}
 \bibauthor{MERSON P\@, YODER J~W}\@. \bibtitle{Modeling Microservices with
