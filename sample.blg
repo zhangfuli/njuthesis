@@ -6,58 +6,65 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: sample.bib
-Warning--Require address: frank2013domain
-Warning--Require journal: smith2003ontology
-Warning--Require address: 刘辉2008元建模技术研究进展
-Warning--Require address: DBLP:books/daglib/0013521
-Warning--Require address: vernon2013implementing
-Warning--Require address: DBLP:conf/icsa/MersonY20
-Warning--Require address: coad1991object
-Warning--Require address: 王文玲1999uml
-Warning--Require school: 王文玲1999uml
-Warning--Require address: evans2014domain
-Warning--Require address: 王君2007基于
-Warning--Require address: richardson2008restful
-Warning--Require address: martin2018clean
-You've used 40 entries,
+Warning--I didn't find a database entry for "divya2013elasticsearch"
+Warning--I didn't find a database entry for "王君2007基于"
+Warning--I didn't find a database entry for "richardson2008restful"
+Warning--I didn't find a database entry for "martin2018clean"
+Warning--I didn't find a database entry for "vernon2013implementing"
+Warning--Require address: DBLP:conf/coins/GerritsKKFV21
+Warning--Require citedate: DBLP:conf/coins/GerritsKKFV21
+Warning--Require citedate: DBLP:journals/comcom/XieZZWH21
+Warning--Require address: DBLP:conf/smartcloud/SunWY20
+Warning--Require citedate: DBLP:conf/smartcloud/SunWY20
+Warning--Require citedate: 8457813
+Warning--Require year: liangeduchain
+Warning--Require address: caili2018
+Warning--Require citedate: 9582270
+Warning--Require citedate: ZHANG20121791
+Warning--Require address: calcote2019istio
+Warning--Require citedate: Yilmaz2021
+Warning--Require journal: henning2021reproducible
+Warning--Require journal: d2020design
+Warning--Require citedate: 8249485
+You've used 37 entries,
             3107 wiz_defined-function locations,
-            932 strings with 12896 characters,
-and the built_in function-call counts, 64919 in all, are:
-= -- 7080
-> -- 129
-< -- 298
-+ -- 5739
-- -- 428
-* -- 1781
-:= -- 7329
+            934 strings with 13733 characters,
+and the built_in function-call counts, 65651 in all, are:
+= -- 7249
+> -- 132
+< -- 301
++ -- 5921
+- -- 455
+* -- 1747
+:= -- 7499
 add.period$ -- 0
-call.type$ -- 40
-change.case$ -- 178
+call.type$ -- 37
+change.case$ -- 190
 chr.to.int$ -- 0
-cite$ -- 53
-duplicate$ -- 9003
-empty$ -- 2488
-format.name$ -- 356
-if$ -- 17437
+cite$ -- 52
+duplicate$ -- 9128
+empty$ -- 2394
+format.name$ -- 380
+if$ -- 17601
 int.to.chr$ -- 0
-int.to.str$ -- 40
+int.to.str$ -- 37
 missing$ -- 0
-newline$ -- 147
-num.names$ -- 40
-pop$ -- 892
+newline$ -- 138
+num.names$ -- 37
+pop$ -- 888
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 658
+skip$ -- 597
 stack$ -- 0
-substring$ -- 7570
-swap$ -- 1795
+substring$ -- 7723
+swap$ -- 1703
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 13
-while$ -- 842
-width$ -- 42
-write$ -- 540
-(There were 13 warnings)
+warning$ -- 15
+while$ -- 859
+width$ -- 39
+write$ -- 528
+(There were 20 warnings)

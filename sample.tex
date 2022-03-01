@@ -8,7 +8,7 @@
 \documentclass[macfonts,master,oneside]{njuthesis}
 %% 审阅模式很重要，命令是下方使用的/blind
 %% njuthesis 文档类的可选参数有：
-%%   winfonts, linuxfonts, macfonts, adobefonts winfonts 选项使得文档使用Windows 系统提供的字体；linuxfonts 选项使得文档使用Linux 系统提供的字体；macfonts 选项使得文档使用Mac 系统提供的字体；adobefonts 选项使得文档使用Adobe提供的OTF中文字体(需自行下载安转)
+%%   winfonts, linuxfonts, macfonts, adobefonts winfonts b选项使得文档使用Windows 系统提供的字体；linuxfonts 选项使得文档使用Linux 系统提供的字体；macfonts 选项使得文档使用Mac 系统提供的字体；adobefonts 选项使得文档使用Adobe提供的OTF中文字体(需自行下载安转)
 %%   phd/master/bachelor 选择博士/硕士/学士论文
 %%   twoside 或 oneside 指定排版的文档为双面打印或单面打印格式（twoside会使得chapter 章节从奇数页开始，即纸张的正面开始，因此会出现一些空白的页面）
 %%   nobackinfo 取消封二页导师签名信息。注意，按照南大的规定，是需要签名页的。
@@ -53,6 +53,8 @@
 
 % % 单行论文标题，不可换行
 \title{}
+\titlea{基于Hyperledger Fabric的}
+\titleb{区块链云化框架的研究与实现}
 
 % 如果论文标题过长，可以分两行，第一行用\titlea{}定义，第二行用\titleb{}定义，
 % 使用以下3行：
@@ -272,7 +274,7 @@
 
 \input{chapters/Theory and technical support.tex}
 
-\input{chapters/Modeling Framework Design.tex}
+\input{chapters/Framework Design.tex}
 
 \input{chapters/Modeling Tools Design And implementation.tex}
 
@@ -326,8 +328,6 @@
 \end{acknowledgement}
 
 
-
-
 % 参考文献。应放在\backmatter之前。
 % 推荐使用BibTeX，若不使用BibTeX时注释掉下面一句。
 %\nocite{*}
@@ -335,384 +335,9 @@
 
 
 % 附录，必须放在参考文献后，backmatter前
-\appendix
-\chapter{访谈问题}\label{app:1}
-\section{战术建模访谈问题}
-
-\noindent 一、个人信息
-
-\noindent 1.您的职位是？
-
-\noindent
-A.开发人员
-
-\noindent
-B.	架构师
-
-\noindent
-C.	项目管理者
-
-\noindent
-D.	运维人员
-
-\noindent
-E.	其他
-
-\noindent
-2.	您所在团队的人员规模？
-
-\noindent
-A.		5人以下
-
-\noindent
-B.	5-10人
-
-\noindent
- C.	10-20人
-
-\noindent
- D.	20-50人
-
-\noindent
- E.	50人以上
-
-\noindent
- 3.	您所在团队业务关注的领域？
-
-\noindent
-A.	软件/IT领域
-
-\noindent
-B.	通信领域
-
-\noindent
-C.	软件提供商
-
-\noindent
-D.	电商领域
-
-\noindent
-E.	银行和金融领域
-
-\noindent
-F.	其他
-
-\noindent
-二、	DDD建模总体实践
-
-\noindent
-1.	您的团队按照领域驱动设计进行领域建模的流程是什么？
-
-\noindent
-a)	分析建模、设计建模和实现建模的顺序
-
-\noindent
-b)	领域模型图和代码实现之间的关系
-
-\noindent
-2.	您的团队是否有使用某种建模工具进行领域建模？是什么建模工具？它的优缺点是什么？ 
-
-\noindent
-a)	DDD专用的建模套件工具
-
-\noindent
-b)	传统的类图工具，如EA、PlantUML、visual paradigm
-
-\noindent
-c)	使用纸和笔直接进行建模
-
-\noindent
-三、	DDD战术建模模式实践
-
-\noindent
-1.	关于实体
-
-\noindent
-a)	您认为何时应该使用实体？
-
-\noindent
-b)	您认为实体应该包含哪些重要属性？
-
-\noindent
-i.	实体应该拥有唯一标识，方便跟踪和与其他实体区分
-
-\noindent
-ii.	实体在其生命周期内可以连续变化
-
-\noindent
-c)	除上述属性外，还应该包括哪些属性？
-
-\noindent
-d)	您的团队在实现实体时有哪些最佳实践？
-
-\noindent
-i.	如何建模唯一标识
-
-\noindent
-ii.	唯一标识通常由哪些组成部分
-
-\noindent
-iii.	如何为标识生成唯一值，即如何生成唯一标识
-
-\noindent
-iv.	什么时候生成唯一标识
-
-\noindent
-v.	如何存储唯一标识
-
-\noindent
-vi.	如何保证唯一标识的稳定性
-
-\noindent
-e)	您认为在建模实体时有哪些不好的实践是需要避免的？
-
-\noindent
-2.	关于值对象
-
-\noindent
-a)	您认为何时应该使用值对象？
-
-\noindent
-b)	您认为值对象应该包含哪些重要属性？
-
-\noindent
-i.	不变性
-
-\noindent
-ii.	可替换性
-
-\noindent
-iii.	值对象相等性
-
-\noindent
-iv.	无副作用行为
-
-\noindent
-v.	是一个概念整体
-
-\noindent
-c)	除上述属性外，还应该包括哪些属性？
-
-\noindent
-d)	您的团队在实现值对象时有哪些最佳实践？
-
-\noindent
-i.	如何保证值对象的不可变性
-
-\noindent
-ii.	如何实现无副作用行为
-
-\noindent
-iii.	如何存储值对象集合
-
-\noindent
-e)	您认为在建模值对象时有哪些不好的实践是需要避免的？
-
-\noindent
-3.	关于服务
-
-\noindent
-a)	您认为何时应该使用服务？
-
-\noindent
-b)	您认为领域服务应该包含哪些重要属性？
-
-\noindent
-i.	无状态
-
-\noindent
-c)	除上述属性外，还应该包括哪些属性？
-
-\noindent
-d)	您的团队在实现领域服务时有哪些最佳实践？
-
-\noindent
-i.	如何组织领域服务，领域服务放在项目中的什么位置
-
-\noindent
-e)	您认为在建模领域服务时有哪些不好的实践是需要避免的？
-
-\noindent
-4.	关于领域事件
-
-\noindent
-a)	您认为何时应该使用领域事件？
-
-\noindent
-b)	您认为领域事件应该具有哪些属性
-
-\noindent
-i.	事件发生时间
-
-\noindent
-ii.	事件的发送方或造成事件的对象
-
-\noindent
-iii.	不变性
-
-\noindent
-iv.	唯一标识
-
-\noindent
-c)	除上述属性外，还应该包括哪些属性？
-
-\noindent
-d)	是否应该将领域事件建模成聚合？
-
-\noindent
-e)	您的团队在实现领域事件时有哪些最佳实践？
-
-\noindent
-i.	如何命名领域事件
-
-\noindent
-ii.	如何存储事件发生的时间
-
-\noindent
-iii.	如何保证领域事件的不变性
-
-\noindent
-iv.	如何避免将领域模型暴露给消息设施
-
-\noindent
-v.	如何保证在事件发布前完成订阅
-
-\noindent
-vi.	如何保证领域模型和事件存储的一致性
-
-\noindent
-vii.	存储的领域事件有何作用
-
-\noindent
-viii.	如何转发领域事件
-
-\noindent
-ix.	何时应该把领域事件建模成聚合
-
-\noindent
-f)	您认为在建模领域事件时有哪些不好的实践是需要避免的？
-
-\noindent
-5.	关于模块
-
-\noindent
-a)	您认为何时应该使用模块？
-
-\noindent
-b)	您认为模块应该具有哪些属性？
-
-\noindent
-c)	您的团队在实现模块时有哪些最佳实践？
-
-\noindent
-i.	如何命名模块
-
-\noindent
-ii.	模块的表现形式，Java中的包，C++命名空间
-
-\noindent
-iii.	如何组织模块
-
-\noindent
-d)	您认为在建模模块时有哪些不好的实践是需要避免的？
-
-\noindent
-6.	关于聚合
-
-\noindent
-a)	您认为何时应该使用聚合？
-
-\noindent
-b)	您认为聚合应该包含哪些重要属性？
-
-\noindent
-i.	边界内保持一致性
-
-\noindent
-ii.	根实体
-
-\noindent
-iii.	值对象/其他实体
-
-\noindent
-c)	除上述属性外，还应该包括哪些属性？
-
-\noindent
-d)	您的团队在实现聚合时有哪些最佳实践？
-
-\noindent
-i.	如何设计一个聚合
-
-\noindent
-ii.	聚合中如何使用其他聚合或对象（对象的导航性）
-
-\noindent
-iii.	如何保证一致性边界
-
-\noindent
-iv.	何时允许在单个事务中修改多个聚合
-
-\noindent
-v.	如何隐藏聚合内部信息
-
-\noindent
-vi.	如何引用其他聚合
-
-\noindent
-e)	您认为在建模聚合时有哪些不好的实践是需要避免的？
-
-\noindent
-7.	关于资源库
-
-\noindent
-a)	您认为何时应该使用资源库？
-
-\noindent
-b)	您认为资源库应该具有哪些属性？
-
-\noindent
-i.	只为聚合提供资源库（一种和其他pattern的关系，能否算作属性）
-
-\noindent
-c)	您的团队在实现资源库时有哪些最佳实践？
-
-\noindent
-i.	如何设计资源库，面向集合还是面向持久化
-
-\noindent
-d)	资源库经常与聚合相关，是否应该将领域对象的关联关系作为属性？
-
-\noindent
-e)	您认为在建模资源库时有哪些不好的实践是需要避免的？
-
-
-\noindent
-8.	关于工厂
-
-\noindent
-a)	您认为何时应该使用工厂？
-
-\noindent
-i.	委托其他对象创建复杂对象对性能的影响可以忽略时
-
-\noindent
-ii.	需要减轻客户端在创建聚合实例的负担
-
-\noindent
-iii.	确保创建实例处于正确状态时
-
-\noindent
-b)	您认为工厂应该具有哪些属性？
-
-\noindent
-c)	您的团队在实现工厂时有哪些最佳实践？
-
-\noindent
-i.	工厂应该放在何处，作为聚合的一部分还是独立成领域服务
-
-\noindent
-d)	您认为在建模工厂时有哪些不好的实践是需要避免的？
-
+% \appendix
+% \chapter{访谈问题}\label{app:1}
+% \section{战术建模访谈问题}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 书籍附件
@@ -721,23 +346,26 @@ d)	您认为在建模工厂时有哪些不好的实践是需要避免的？
 % 作者简历与科研成果页，应放在backmatter之后
 \begin{resume}
 % 论文作者身份简介，一句话即可。
-\begin{authorinfo}
-\noindent 李质颖，男，汉族，1997年2月出生，山东省济宁人。
-\end{authorinfo}
-% 论文作者教育经历列表，按日期从近到远排列，不包括将要申请的学位。
-\begin{education}
-\item[2015年9月 --- 2019年6月] 重庆大学大数据与软件学院 \hfill 本科
-\end{education}
-% 论文作者在攻读学位期间所发表的文章的列表，按发表日期从近到远排列。
-% \begin{publications}
-% \item Fuli Zhang, Peiyu Hou,  ``一种智能合约微服务化框架'' 
-%   in \textsl{Proc. IEEE International Conference on Communications (ICC) 2010}, May. 2010.
-% \end{publications}
-% 论文作者在攻读学位期间参与的科研课题的列表，按照日期从近到远排列。
-% \begin{projects}
-% % \item 国家自然科学基金面上项目``问题研究''
-% % （课题年限~2010年1月 --- 2012年12月），负责相关问题的研究。
-% \end{projects}
+  \begin{authorinfo}
+    \noindent 张富利，男，汉族，1997年8月出生，山东省临沂人。
+  \end{authorinfo}
+  % 论文作者教育经历列表，按日期从近到远排列，不包括将要申请的学位。
+  \begin{education}
+    \item[2015年9月 --- 2019年6月] 中国石油大学(华东)计算机与通信工程学院 \hfill 本科
+  \end{education}
+  % 论文作者在攻读学位期间所发表的文章的列表，按发表日期从近到远排列。
+  \begin{publications}
+    \item Fuli Zhang, Peiyu Hou,  ``一种智能合约微服务化框架''
+    3篇论文！！ 
+    in \textsl{Proc. IEEE International Conference on Communications (ICC) 2010}, May. 2010.
+    \item  论文作者在攻读学位期间参与的科研课题的列表，按照日期从近到远排列。
+  \end{publications}
+ 
+
+  % \begin{projects}
+  % % \item 国家自然科学基金面上项目``问题研究''
+  % % （课题年限~2010年1月 --- 2012年12月），负责相关问题的研究。
+  % \end{projects}
 \end{resume}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
