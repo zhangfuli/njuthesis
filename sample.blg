@@ -6,6 +6,10 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: sample.bib
+Repeated entry---line 406 of file sample.bib
+ : @article{larsson2020impact
+ :                           ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "divya2013elasticsearch"
 Warning--I didn't find a database entry for "王君2007基于"
 Warning--I didn't find a database entry for "richardson2008restful"
@@ -20,51 +24,54 @@ Warning--Require citedate: 8457813
 Warning--Require year: liangeduchain
 Warning--Require address: caili2018
 Warning--Require citedate: 9582270
+Warning--Require journal: henning2021reproducible
 Warning--Require citedate: ZHANG20121791
 Warning--Require address: calcote2019istio
+Warning--Require address: cartaxo2020rapid
+Warning--Require citedate: Shenoy2022496
+Warning--Require address: sharma2020proposed
 Warning--Require citedate: Yilmaz2021
-Warning--Require journal: henning2021reproducible
 Warning--Require journal: d2020design
 Warning--Require citedate: 8249485
-You've used 37 entries,
+You've used 53 entries,
             3107 wiz_defined-function locations,
-            934 strings with 13733 characters,
-and the built_in function-call counts, 65651 in all, are:
-= -- 7249
-> -- 132
-< -- 301
-+ -- 5921
-- -- 455
-* -- 1747
-:= -- 7499
+            1025 strings with 17885 characters,
+and the built_in function-call counts, 97484 in all, are:
+= -- 10780
+> -- 192
+< -- 437
++ -- 8785
+- -- 673
+* -- 2541
+:= -- 11097
 add.period$ -- 0
-call.type$ -- 37
-change.case$ -- 190
+call.type$ -- 53
+change.case$ -- 278
 chr.to.int$ -- 0
-cite$ -- 52
-duplicate$ -- 9128
-empty$ -- 2394
-format.name$ -- 380
-if$ -- 17601
+cite$ -- 71
+duplicate$ -- 13642
+empty$ -- 3589
+format.name$ -- 556
+if$ -- 26175
 int.to.chr$ -- 0
-int.to.str$ -- 37
+int.to.str$ -- 53
 missing$ -- 0
-newline$ -- 138
-num.names$ -- 37
-pop$ -- 888
+newline$ -- 186
+num.names$ -- 53
+pop$ -- 1365
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 597
+skip$ -- 870
 stack$ -- 0
-substring$ -- 7723
-swap$ -- 1703
+substring$ -- 11489
+swap$ -- 2491
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 15
-while$ -- 859
-width$ -- 39
-write$ -- 528
-(There were 20 warnings)
+warning$ -- 18
+while$ -- 1295
+width$ -- 55
+write$ -- 739
+(There was 1 error message)

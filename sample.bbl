@@ -55,6 +55,47 @@
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}6}\@.
   \newline\url{https://doi.org/10.1109/COINS51742.2021.9524264}\@.
 
+\bibitem{gai2020blockchain}
+\bibauthor{GAI K\@, GUO J\@, ZHU L, et~al}\@. \bibtitle{Blockchain meets cloud
+  computing: A survey}\bibmark{[J]}\@. \bibjournal{IEEE Communications Surveys
+  \& Tutorials}\@, \bibyear{2020}\@,
+  \bibvolume{22}\bibnumber{(3)}\thinspace{}\textnormal{:
+  }\bibpages{2009\thinspace{}\textnormal{--}\thinspace{}2030}\@.
+
+\bibitem{mccorry2017smart}
+\bibauthor{MCCORRY P\@, SHAHANDASHTI S~F\@, HAO F}\@. \bibtitle{A smart
+  contract for boardroom voting with maximum voter privacy}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{International conference on financial
+  cryptography and data security}\@. \bibyear{2017}\thinspace{}\textnormal{:
+  }\bibpages{357\thinspace{}\textnormal{--}\thinspace{}375}\@.
+
+\bibitem{chang2020blockchain}
+\bibauthor{CHANG S~E\@, CHEN Y}\@. \bibtitle{When blockchain meets supply
+  chain: A systematic literature review on current development and potential
+  applications}\bibmark{[J]}\@. \bibjournal{IEEE Access}\@, \bibyear{2020}\@,
+  \bibvolume{8}\thinspace{}\textnormal{:
+  }\bibpages{62478\thinspace{}\textnormal{--}\thinspace{}62494}\@.
+
+\bibitem{zhang2017iot}
+\bibauthor{ZHANG Y\@, WEN J}\@. \bibtitle{The IoT electric business model:
+  Using blockchain technology for the internet of things}\bibmark{[J]}\@.
+  \bibjournal{Peer-to-Peer Networking and Applications}\@, \bibyear{2017}\@,
+  \bibvolume{10}\bibnumber{(4)}\thinspace{}\textnormal{:
+  }\bibpages{983\thinspace{}\textnormal{--}\thinspace{}994}\@.
+
+\bibitem{leka2019systematic}
+\bibauthor{LEKA E\@, SELIMI B\@, LAMANI L}\@. \bibtitle{Systematic literature
+  review of blockchain applications: Smart contracts}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2019 International Conference on Information
+  Technologies (InfoTech)}\@. \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}3}\@.
+
+\bibitem{christidis2016blockchains}
+\bibauthor{CHRISTIDIS K\@, DEVETSIKIOTIS M}\@. \bibtitle{Blockchains and smart
+  contracts for the internet of things}\bibmark{[J]}\@. \bibjournal{Ieee
+  Access}\@, \bibyear{2016}\@, \bibvolume{4}\thinspace{}\textnormal{:
+  }\bibpages{2292\thinspace{}\textnormal{--}\thinspace{}2303}\@.
+
 \bibitem{DBLP:journals/comcom/XieZZWH21}
 \bibauthor{XIE H\@, ZHANG Z\@, ZHANG Q, et~al}\@. \bibtitle{{HBRSS:} Providing
   high-secure data communication and manipulation in insecure cloud
@@ -108,6 +149,49 @@
   \bibyear{2021}\thinspace{}\textnormal{:
   }\bibpages{456\thinspace{}\textnormal{--}\thinspace{}466}\@.
   \newline\url{http://dx.doi.org/10.1109/CLOUD53861.2021.00060}\@.
+
+\bibitem{henning2021reproducible}
+\bibauthor{HENNING S\@, WETZEL B\@, HASSELBRING W}\@. \bibtitle{Reproducible
+  Benchmarking of Cloud-Native Applications with the Kubernetes Operator
+  Pattern}\bibmark{[J]}\@, \bibyear{2021}\@.
+
+\bibitem{huang2021fly}
+\bibauthor{HUANG W\@, ZHOU J\@, ZHANG D}\@. \bibtitle{On-the-Fly Fusion of
+  Remotely-Sensed Big Data Using an Elastic Computing Paradigm with a
+  Containerized Spark Engine on Kubernetes}\bibmark{[J]}\@.
+  \bibjournal{Sensors}\@, \bibyear{2021}\@,
+  \bibvolume{21}\bibnumber{(9)}\thinspace{}\textnormal{: }\bibpages{2971}\@.
+
+\bibitem{zhou2021container}
+\bibauthor{ZHOU N\@, GEORGIOU Y\@, POSPIESZNY M, et~al}\@. \bibtitle{Container
+  orchestration on HPC systems through Kubernetes}\bibmark{[J]}\@.
+  \bibjournal{Journal of Cloud Computing}\@, \bibyear{2021}\@,
+  \bibvolume{10}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}14}\@.
+
+\bibitem{arouk20205g}
+\bibauthor{AROUK O\@, NIKAEIN N}\@. \bibtitle{5G Cloud-Native: Network
+  Management \& Automation}\bibmark{[C]} //\thinspace{}\bibbooktitle{NOMS
+  2020-2020 IEEE/IFIP Network Operations and Management Symposium}\@.
+  \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}2}\@.
+
+\bibitem{wiranata2020automation}
+\bibauthor{WIRANATA F~A\@, SHALANNANDA W\@, MULYAWAN R, et~al}\@.
+  \bibtitle{Automation of virtualized 5g infrastructure using mosaic 5g
+  operator over kubernetes supporting network slicing}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2020 14th International Conference on
+  Telecommunication Systems, Services, and Applications (TSSA}\@.
+  \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}5}\@.
+
+\bibitem{rouzbeh2020unified}
+\bibauthor{ROUZBEH F\@, GRAMA A\@, GRIFFIN P, et~al}\@. \bibtitle{A Unified
+  Cloud-Native Architecture For Heterogeneous Data Aggregation And
+  Computation}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the 11th
+  ACM International Conference on Bioinformatics, Computational Biology and
+  Health Informatics}\@. \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}1}\@.
 
 \bibitem{1016383}
 \bibauthor{袁勇\@, 王飞跃}\@.
@@ -179,53 +263,96 @@
   \bibvolume{50}\bibnumber{(10)}\thinspace{}\textnormal{:
   }\bibpages{1986\thinspace{}\textnormal{--}\thinspace{}2007}\@.
 
-\bibitem{mccorry2017smart}
-\bibauthor{MCCORRY P\@, SHAHANDASHTI S~F\@, HAO F}\@. \bibtitle{A smart
-  contract for boardroom voting with maximum voter privacy}\bibmark{[C]}
-  //\thinspace{}\bibbooktitle{International conference on financial
-  cryptography and data security}\@. \bibyear{2017}\thinspace{}\textnormal{:
-  }\bibpages{357\thinspace{}\textnormal{--}\thinspace{}375}\@.
+\bibitem{cartaxo2020rapid}
+\bibauthor{CARTAXO B\@, PINTO G\@, SOARES S}\@. \bibtitle{Rapid Reviews in
+  Software Engineering}\bibmark{[G]} //\thinspace{}\bibbooktitle{Contemporary
+  Empirical Methods in Software Engineering}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Springer}\@,
+  \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{357\thinspace{}\textnormal{--}\thinspace{}384}\@.
 
-\bibitem{chang2020blockchain}
-\bibauthor{CHANG S~E\@, CHEN Y}\@. \bibtitle{When blockchain meets supply
-  chain: A systematic literature review on current development and potential
-  applications}\bibmark{[J]}\@. \bibjournal{IEEE Access}\@, \bibyear{2020}\@,
-  \bibvolume{8}\thinspace{}\textnormal{:
-  }\bibpages{62478\thinspace{}\textnormal{--}\thinspace{}62494}\@.
+\bibitem{lisboa2010systematic}
+\bibauthor{LISBOA L~B\@, GARCIA V~C\@, LUCR{\'E}DIO D, et~al}\@. \bibtitle{A
+  systematic review of domain analysis tools}\bibmark{[J]}\@.
+  \bibjournal{Information and Software Technology}\@, \bibyear{2010}\@,
+  \bibvolume{52}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}13}\@.
 
-\bibitem{zhang2017iot}
-\bibauthor{ZHANG Y\@, WEN J}\@. \bibtitle{The IoT electric business model:
-  Using blockchain technology for the internet of things}\bibmark{[J]}\@.
-  \bibjournal{Peer-to-Peer Networking and Applications}\@, \bibyear{2017}\@,
-  \bibvolume{10}\bibnumber{(4)}\thinspace{}\textnormal{:
-  }\bibpages{983\thinspace{}\textnormal{--}\thinspace{}994}\@.
+\bibitem{Shenoy2022496}
+\bibauthor{P.S.P. S\@, S.S. V\@, R.P. K, et~al}\@. \bibtitle{Enhancement of
+  observability using Kubernetes operator}\bibmark{[J/OL]}\@.
+  \bibjournal{Indonesian Journal of Electrical Engineering and Computer
+  Science}\@, \bibyear{2022}\@,
+  \bibvolume{25}\bibnumber{(1)}\thinspace{}\textnormal{: }\bibpages{496 –
+  503}\@.
+  \newline\url{https://www.scopus.com/inward/record.uri?eid=2-s2.0-85121999433&doi=10.11591%2fijeecs.v25.i1.pp496-503&partnerID=40&md5=0d91c7bebd3feeac26336b32a85cc4fc}\@.
 
-\bibitem{leka2019systematic}
-\bibauthor{LEKA E\@, SELIMI B\@, LAMANI L}\@. \bibtitle{Systematic literature
-  review of blockchain applications: Smart contracts}\bibmark{[C]}
-  //\thinspace{}\bibbooktitle{2019 International Conference on Information
-  Technologies (InfoTech)}\@. \bibyear{2019}\thinspace{}\textnormal{:
-  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}3}\@.
+\bibitem{kanso2021designing}
+\bibauthor{KANSO A\@, PALENCIA E\@, PATRA K, et~al}\@. \bibtitle{Designing a
+  Kubernetes Operator for Machine Learning Applications}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the Seventh International Workshop
+  on Container Technologies and Container Clouds}\@.
+  \bibyear{2021}\thinspace{}\textnormal{:
+  }\bibpages{7\thinspace{}\textnormal{--}\thinspace{}12}\@.
 
-\bibitem{christidis2016blockchains}
-\bibauthor{CHRISTIDIS K\@, DEVETSIKIOTIS M}\@. \bibtitle{Blockchains and smart
-  contracts for the internet of things}\bibmark{[J]}\@. \bibjournal{Ieee
-  Access}\@, \bibyear{2016}\@, \bibvolume{4}\thinspace{}\textnormal{:
-  }\bibpages{2292\thinspace{}\textnormal{--}\thinspace{}2303}\@.
+\bibitem{pino2021validation}
+\bibauthor{PINO A\@, KHODASHENAS P\@, HESSELBACH X, et~al}\@.
+  \bibtitle{Validation and Benchmarking of CNFs in OSM for pure Cloud Native
+  applications in 5G and beyond}\bibmark{[C]} //\thinspace{}\bibbooktitle{2021
+  International Conference on Computer Communications and Networks (ICCCN)}\@.
+  \bibyear{2021}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}9}\@.
 
-\bibitem{zhao2017dao}
-\bibauthor{ZHAO X\@, CHEN Z\@, CHEN X, et~al}\@. \bibtitle{The DAO attack
-  paradoxes in propositional logic}\bibmark{[C]}
-  //\thinspace{}\bibbooktitle{2017 4th International Conference on Systems and
-  Informatics (ICSAI)}\@. \bibyear{2017}\thinspace{}\textnormal{:
-  }\bibpages{1743\thinspace{}\textnormal{--}\thinspace{}1746}\@.
+\bibitem{yue2021role}
+\bibauthor{YUE W\@, CHOONHWA L}\@. \bibtitle{A Role-Based Orchestration
+  Approach for Cloud Applications}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2021 International Conference on Information
+  Networking (ICOIN)}\@. \bibyear{2021}\thinspace{}\textnormal{:
+  }\bibpages{693\thinspace{}\textnormal{--}\thinspace{}698}\@.
 
-\bibitem{gai2020blockchain}
-\bibauthor{GAI K\@, GUO J\@, ZHU L, et~al}\@. \bibtitle{Blockchain meets cloud
-  computing: A survey}\bibmark{[J]}\@. \bibjournal{IEEE Communications Surveys
-  \& Tutorials}\@, \bibyear{2020}\@,
-  \bibvolume{22}\bibnumber{(3)}\thinspace{}\textnormal{:
-  }\bibpages{2009\thinspace{}\textnormal{--}\thinspace{}2030}\@.
+\bibitem{lee2021design}
+\bibauthor{LEE J\@, KIM Y}\@. \bibtitle{A Design of MANO System for Cloud
+  Native Infrastructure}\bibmark{[C]} //\thinspace{}\bibbooktitle{2021
+  International Conference on Information and Communication Technology
+  Convergence (ICTC)}\@. \bibyear{2021}\thinspace{}\textnormal{:
+  }\bibpages{1336\thinspace{}\textnormal{--}\thinspace{}1339}\@.
+
+\bibitem{koziolek2021dynamic}
+\bibauthor{KOZIOLEK H\@, BURGER A\@, ABDULLA P, et~al}\@. \bibtitle{Dynamic
+  Updates of Virtual PLCs deployed as Kubernetes Microservices}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{European Conference on Software Architecture}\@.
+  \bibyear{2021}\thinspace{}\textnormal{:
+  }\bibpages{3\thinspace{}\textnormal{--}\thinspace{}19}\@.
+
+\bibitem{mahajan2020suture}
+\bibauthor{MAHAJAN A\@, BENSON T~A}\@. \bibtitle{Suture: Stitching safety onto
+  kubernetes operators}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of
+  the Student Workshop}\@. \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{19\thinspace{}\textnormal{--}\thinspace{}20}\@.
+
+\bibitem{sharma2020proposed}
+\bibauthor{SHARMA A\@, YADAV S\@, GUPTA N, et~al}\@. \bibtitle{Proposed model
+  for distributed storage automation system using kubernetes
+  operators}\bibmark{[G]} //\thinspace{}\bibbooktitle{Advances in Data
+  Sciences, Security and Applications}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{Springer}\@,
+  \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{341\thinspace{}\textnormal{--}\thinspace{}351}\@.
+
+\bibitem{baumann2019monitoring}
+\bibauthor{BAUMANN L\@, BENZ S\@, MILITANO L, et~al}\@. \bibtitle{Monitoring
+  resilience in a rook-managed containerized cloud storage system}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2019 European Conference on Networks and
+  Communications (EuCNC)}\@. \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{89\thinspace{}\textnormal{--}\thinspace{}94}\@.
+
+\bibitem{patel2019pivotal}
+\bibauthor{PATEL J\@, TADI G\@, BASARIR O, et~al}\@. \bibtitle{Pivotal
+  Greenplum{\copyright} for Kubernetes: Demonstration of Managing Greenplum
+  Database on Kubernetes}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings
+  of the 2019 International Conference on Management of Data}\@.
+  \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{1969\thinspace{}\textnormal{--}\thinspace{}1972}\@.
 
 \bibitem{zhangfuli2021smartcontract}
 \bibauthor{张富利\@, 侯培宇\@, 李杉杉, et~al}\@.
@@ -242,11 +369,6 @@
   }\bibpages{99\thinspace{}\textnormal{--}\thinspace{}141}\@.
   \newline\url{https://doi.org/10.1007/978-1-4842-7095-0_4}\@.
 
-\bibitem{henning2021reproducible}
-\bibauthor{HENNING S\@, WETZEL B\@, HASSELBRING W}\@. \bibtitle{Reproducible
-  Benchmarking of Cloud-Native Applications with the Kubernetes Operator
-  Pattern}\bibmark{[J]}\@, \bibyear{2021}\@.
-
 \bibitem{d2020design}
 \bibauthor{D'AQUINO A}\@. \bibtitle{Design, prototyping and validation of a
   Kubernetes operator for an IoT platform based on Red Hat
@@ -258,12 +380,13 @@
   \bibjournal{CLOUD COMPUTING 2020}\@, \bibyear{2020}\thinspace{}\textnormal{:
   }\bibpages{83}\@.
 
-\bibitem{zhou2021container}
-\bibauthor{ZHOU N\@, GEORGIOU Y\@, POSPIESZNY M, et~al}\@. \bibtitle{Container
-  orchestration on HPC systems through Kubernetes}\bibmark{[J]}\@.
-  \bibjournal{Journal of Cloud Computing}\@, \bibyear{2021}\@,
-  \bibvolume{10}\bibnumber{(1)}\thinspace{}\textnormal{:
-  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}14}\@.
+\bibitem{li2019service}
+\bibauthor{LI W\@, LEMIEUX Y\@, GAO J, et~al}\@. \bibtitle{Service mesh:
+  Challenges, state of the art, and future research opportunities}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2019 IEEE International Conference on
+  Service-Oriented System Engineering (SOSE)}\@.
+  \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{122\thinspace{}\textnormal{--}\thinspace{}1225}\@.
 
 \bibitem{8249485}
 \bibauthor{VUKASOVIć M\@, VESELINOVIć B\@, STANISAVLJEVIć �}\@. \bibtitle{A
