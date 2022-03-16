@@ -360,6 +360,30 @@
   \bibjournal{软件学报}\@, \bibyear{2021}\@,
   \bibvolume{32}\bibnumber{(11)}\thinspace{}\textnormal{: }\bibpages{17}\@.
 
+\bibitem{shah2019building}
+\bibauthor{SHAH J\@, DUBARIA D}\@. \bibtitle{Building modern clouds: using
+  docker, kubernetes \& Google cloud platform}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2019 IEEE 9th Annual Computing and Communication
+  Workshop and Conference (CCWC)}\@. \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{0184\thinspace{}\textnormal{--}\thinspace{}0189}\@.
+
+\bibitem{lopez2018access}
+\bibauthor{LOPEZ J\@, RUBIO J~E}\@. \bibtitle{Access control for cyber-physical
+  systems interconnected to the cloud}\bibmark{[J]}\@. \bibjournal{Computer
+  Networks}\@, \bibyear{2018}\@, \bibvolume{134}\thinspace{}\textnormal{:
+  }\bibpages{46\thinspace{}\textnormal{--}\thinspace{}54}\@.
+
+\bibitem{sukhija2019towards}
+\bibauthor{SUKHIJA N\@, BAUTISTA E}\@. \bibtitle{Towards a framework for
+  monitoring and analyzing high performance computing environments using
+  kubernetes and prometheus}\bibmark{[C]} //\thinspace{}\bibbooktitle{2019 IEEE
+  SmartWorld, Ubiquitous Intelligence \& Computing, Advanced \& Trusted
+  Computing, Scalable Computing \& Communications, Cloud \& Big Data Computing,
+  Internet of People and Smart City Innovation
+  (SmartWorld/SCALCOM/UIC/ATC/CBDCom/IOP/SCI)}\@.
+  \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{257\thinspace{}\textnormal{--}\thinspace{}262}\@.
+
 \bibitem{Yilmaz2021}
 \bibauthor{YILMAZ O}\@. \bibtitle{Extending the Kubernetes API}\bibmark{[M/OL]}
   //\thinspace{}\bibbooktitle{Extending Kubernetes: Elevate Kubernetes with
@@ -395,16 +419,5 @@
   Telecommunication Forum (TELFOR)}\@. \bibyear{2017}\thinspace{}\textnormal{:
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}4}\@.
   \newline\url{http://dx.doi.org/10.1109/TELFOR.2017.8249485}\@.
-
-\bibitem{sukhija2019towards}
-\bibauthor{SUKHIJA N\@, BAUTISTA E}\@. \bibtitle{Towards a framework for
-  monitoring and analyzing high performance computing environments using
-  kubernetes and prometheus}\bibmark{[C]} //\thinspace{}\bibbooktitle{2019 IEEE
-  SmartWorld, Ubiquitous Intelligence \& Computing, Advanced \& Trusted
-  Computing, Scalable Computing \& Communications, Cloud \& Big Data Computing,
-  Internet of People and Smart City Innovation
-  (SmartWorld/SCALCOM/UIC/ATC/CBDCom/IOP/SCI)}\@.
-  \bibyear{2019}\thinspace{}\textnormal{:
-  }\bibpages{257\thinspace{}\textnormal{--}\thinspace{}262}\@.
 
 \end{thebibliography}

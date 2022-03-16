@@ -56,7 +56,7 @@ BaaS基于云的弹性可伸缩的能力屏蔽了底层区块链技术, 为上�
 
 % 学术
 % 应用场景 BaaS平台往云上迁移
-在学术研究方面, 研究人员在探究如何有效利用云平台来部署区块链平台。Gerrits等人\cite{DBLP:conf/coins/GerritsKKFV21}在Kubernetes中部署了分布式账本Hyperledger Sawtooth\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/sawtooth-core}{Hyperledger Sawtooth github地址}}, 并运行了一个用例。他们旨在探讨该用例在真实场景云部署中的可行性和可扩展性。Liang等人\cite{liangeduchain}针对教育领域数据共享和信息欺骗的问题构建了一个高可用的教育联盟区块链平台, 并实现了基于Kubernetes的Fabric部署, 实现了将链码纳入Kubernetes环境管理的目标。然而, Wan等人\cite{wan2018novel}指出当前主流的BaaS提供商通常采用API进行用户访问, 或者简单地将区块链应用迁移到云, 这会侵蚀不可信的机制并带来锁定风险。他们随后提出了一种新的服务范式来克服现有BaaS的局限性。基于Hyperledger的实施表明, 该范式可以缓解当前BaaS对区块链特征的侵蚀。在云原生底层基础设施方面研究人员关注与区块链结合的Kubernetes调度问题。才\cite{caili2018}在Kubernetes上面对PBFT和区块链的本身特性提出了静态调度和自适应算法。Shi等人\cite{9582270}为了解决云端现实PoS区块链工作负载的高效调度问题, 首次在云计算中设计和实现了基于Kubernetes的解决PoS区块链应用程序迁移成本的系统, 最大限度地减少了使用的Kubernetes工作节点数量以降低总体费用,而且还提出了一种高性能的Kubernetes调度方案HPKS以最大限度地利用工作节点进行在线pod管理。
+在学术研究方面, 研究人员在探究如何有效利用云平台来部署区块链平台。Gerrits等人\cite{DBLP:conf/coins/GerritsKKFV21}在Kubernetes中部署了分布式账本Hyperledger Sawtooth\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/sawtooth-core}{Hyperledger Sawtooth github地址}}, 并运行了一个用例。他们旨在探讨该用例在真实场景云部署中的可行性和可扩展性。Liang等人\cite{liangeduchain}针对教育领域数据共享和信息欺骗的问题构建了一个高可用的教育联盟区块链平台, 并实现了基于Kubernetes的Fabric部署, 实现了将链码纳入Kubernetes环境管理的目标。然而, Wan等人\cite{wan2018novel}指出当前主流的BaaS提供商通常采用API进行用户访问, 或者简单地将区块链应用迁移到云, 这会侵蚀不可信的机制并带来锁定风险。他们随后提出了一种新的服务范式来克服现有BaaS的局限性。基于Hyperledger的实施表明, 该范式可以缓解当前BaaS对区块链特征的侵蚀。在云原生底层基础设施方面研究人员关注与区块链结合的Kubernetes调度问题。才丽\cite{caili2018}在Kubernetes上面对PBFT和区块链的本身特性提出了静态调度和自适应算法。Shi等人\cite{9582270}为了解决云端现实PoS区块链工作负载的高效调度问题, 首次在云计算中设计和实现了基于Kubernetes的解决PoS区块链应用程序迁移成本的系统, 最大限度地减少了使用的Kubernetes工作节点数量以降低总体费用,而且还提出了一种高性能的Kubernetes调度方案HPKS以最大限度地利用工作节点进行在线pod管理。
 
 % 工业界
 相比于学术研究, 工业领域的探索更加注重自动化实践。Hyperledger Cello\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/cello}{Hyperledger Cello github地址}}支持在多种底层基础设施上从头快速构建BaaS平台, 提供管理区块链网络的生命周期、自定义区块链网络配置等功能帮助人们以更高效的方式使用和管理区块链。Hyperledger Cello当前阶段重点关注在Docker安装, 对于Kubernetes支持方面的仍处在相对初级阶段, 配置项简单灵活性不足且老旧。Blockchain Automation Framework\footnotemark[2]\footnotetext[2]{\href{https://github.com/nikoturin/blockchain-automation-framework}{Blockchain Automation Framework github地址}}提供了一个自动化框架, 利用Ansible\footnotemark[3]\footnotetext[3]{\href{https://github.com/ansible/ansible}{Ansible github地址}}以及Helm\footnotemark[4]\footnotetext[4]{\href{https://github.com/helm/helm}{Helm github地址}}快速地、一致地将生产就绪的分布式账本技术(Distributed ledger technology, 简称DLT)平台部署到云基础设施。虽然, Blockchain Automation Framework提供了一个自动化框架将区块链平台部署于Kubernetes, 但本质上还是描述为一个需要希望远程主机执行命令的方案,或者一组IT程序运行的命令集合。这大大提升了自动化程度，但其远没有发挥Kubernetes的潜力。
@@ -64,7 +64,7 @@ BaaS基于云的弹性可伸缩的能力屏蔽了底层区块链技术, 为上�
 % 总结
 尽管学术界以及工业界目前已有一些关于区块链云化的探索与研究, 研究重点多为如何自动化地将区块链平台向云上迁移, 研究缺少构建支持云和区块链一体化的有效服务模型\cite{9582270}。
 
-与此同时, 一部分研究利用Kubernetes operator方法将云底层的效率、灵活性等多方面优势拓展到多种领域。Kubernetes operator是将领域知识集成到Kubernetes API编排过程中的最新方法\cite{henning2021reproducible}。Huang等人\cite{huang2021fly}提出了一个轻量级的遥感大数据处理云原生框架。该框架利用Kubernetes operator融合Spark, 自动化配置Spark参数, 提升并行遥感图像融合算法的效率。Zhou等人\cite{zhou2021container}提出了Torque operator对高性能(High Performance Computing, 简称HPC)的负载进行管理, 利用容器化来提升HPC的效率及灵活性。除此之外, 在5G领域\cite{arouk20205g}\cite{wiranata2020automation}、医疗\cite{rouzbeh2020unified}等领域, Kubernetes operator也发挥出其强大的自动化与编排能力, 利用云原生的可迁移性、可伸缩性、安全性等特性进行赋能, 但在区块链领域的Kubernetes operator相关工作较少。
+在将应用程序部署进Kubernetes时需要部署多种资源, 如Deployment、Service等。虽然这些资源有标准定义的模板只需要在不同程序上定义不同的参数, 但目前用户人为创造定义这些资源会导致大量重复的代码并引入人为错误, 错误的资源定义会直接影响Kubernetes中应用程序的工作。Kubernetes operator是将领域知识集成到Kubernetes API编排过程中的最新方法\cite{henning2021reproducible}。一部分研究利用Kubernetes operator方法通过自动化的方式将云底层的效率、灵活性等多方面优势拓展到多种领域。Huang等人\cite{huang2021fly}提出了一个轻量级的遥感大数据处理云原生框架。该框架利用Kubernetes operator融合Spark, 自动化配置Spark参数, 提升并行遥感图像融合算法的效率。Zhou等人\cite{zhou2021container}提出了Torque operator对高性能(High Performance Computing, 简称HPC)的负载进行管理, 利用容器化来提升HPC的效率及灵活性。除此之外, 在5G领域\cite{arouk20205g}\cite{wiranata2020automation}、医疗\cite{rouzbeh2020unified}等领域, Kubernetes operator也发挥出其强大的自动化与编排能力, 利用云原生的可迁移性、可伸缩性、安全性等特性进行赋能, 但在区块链领域的Kubernetes operator相关工作较少。
 
 
 \section{本文主要研究工作}
@@ -73,6 +73,8 @@ BaaS基于云的弹性可伸缩的能力屏蔽了底层区块链技术, 为上�
 % 管理Ray群集需要一组复杂的操作和配置参数，这些操作和参数必须由领域专家执行和设置，群集才能正常运行。这些知识嵌入到KubeRay操作符中，以减轻Ray用户的群集管理负担，并将其转移到操作符本身
 % 虽然fabric和Kubernetes形成了理想的匹配，但许多开发ML应用程序的科学家缺乏必要的Kubernetes专业知识，无法在Kubernetes上设置Ray群集，并监控、调试和操作在此类环境中运行的应用程序
 % 使用预先打包并经过工厂测试的映像，以最少的时间部署集群，而不是按照几页的说明仔细配置系统
+
+% 本章首先详细介绍了目前区块链基础设施的现状, 其中包括基础商业化应用工具不完善以及当前云能力对区块链基础设施的赋能乏力。
 
 
 

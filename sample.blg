@@ -10,10 +10,6 @@ Repeated entry---line 406 of file sample.bib
  : @article{larsson2020impact
  :                           ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "divya2013elasticsearch"
-Warning--I didn't find a database entry for "王君2007基于"
-Warning--I didn't find a database entry for "richardson2008restful"
-Warning--I didn't find a database entry for "martin2018clean"
 Warning--I didn't find a database entry for "vernon2013implementing"
 Warning--Require address: DBLP:conf/coins/GerritsKKFV21
 Warning--Require citedate: DBLP:conf/coins/GerritsKKFV21
@@ -33,45 +29,45 @@ Warning--Require address: sharma2020proposed
 Warning--Require citedate: Yilmaz2021
 Warning--Require journal: d2020design
 Warning--Require citedate: 8249485
-You've used 53 entries,
+You've used 55 entries,
             3107 wiz_defined-function locations,
-            1025 strings with 17885 characters,
-and the built_in function-call counts, 97484 in all, are:
-= -- 10780
-> -- 192
-< -- 437
-+ -- 8785
-- -- 673
-* -- 2541
-:= -- 11097
+            1032 strings with 18161 characters,
+and the built_in function-call counts, 100302 in all, are:
+= -- 11066
+> -- 198
+< -- 451
++ -- 8981
+- -- 695
+* -- 2629
+:= -- 11370
 add.period$ -- 0
-call.type$ -- 53
-change.case$ -- 278
+call.type$ -- 55
+change.case$ -- 286
 chr.to.int$ -- 0
-cite$ -- 71
-duplicate$ -- 13642
-empty$ -- 3589
-format.name$ -- 556
-if$ -- 26175
+cite$ -- 73
+duplicate$ -- 14058
+empty$ -- 3738
+format.name$ -- 572
+if$ -- 26914
 int.to.chr$ -- 0
-int.to.str$ -- 53
+int.to.str$ -- 55
 missing$ -- 0
-newline$ -- 186
-num.names$ -- 53
-pop$ -- 1365
+newline$ -- 192
+num.names$ -- 55
+pop$ -- 1420
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 870
+skip$ -- 902
 stack$ -- 0
-substring$ -- 11489
-swap$ -- 2491
+substring$ -- 11820
+swap$ -- 2588
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 18
-while$ -- 1295
-width$ -- 55
-write$ -- 739
+while$ -- 1343
+width$ -- 57
+write$ -- 765
 (There was 1 error message)

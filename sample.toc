@@ -4,8 +4,8 @@
 \contentsline {chapter}{\numberline {1}绪论}{1}{chapter.1}%
 \contentsline {section}{\numberline {1\,.\,1}研究背景及意义}{1}{section.1.1}%
 \contentsline {section}{\numberline {1\,.\,2}研究现状}{3}{section.1.2}%
-\contentsline {section}{\numberline {1\,.\,3}本文主要研究工作}{5}{section.1.3}%
-\contentsline {section}{\numberline {1\,.\,4}本文组织结构}{5}{section.1.4}%
+\contentsline {section}{\numberline {1\,.\,3}本文主要研究工作}{6}{section.1.3}%
+\contentsline {section}{\numberline {1\,.\,4}本文组织结构}{6}{section.1.4}%
 \contentsline {section}{\numberline {1\,.\,5}本章小节}{6}{section.1.5}%
 \contentsline {chapter}{\numberline {2}理论与技术支持}{7}{chapter.2}%
 \contentsline {section}{\numberline {2\,.\,1}区块链技术}{7}{section.2.1}%
@@ -19,42 +19,38 @@
 \contentsline {subsection}{\numberline {2\,.\,3\,.\,1}Helm}{18}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2\,.\,3\,.\,2}Istio}{19}{subsection.2.3.2}%
 \contentsline {section}{\numberline {2\,.\,4}本章小结}{20}{section.2.4}%
-\contentsline {chapter}{\numberline {3}基于Hyperledger Fabric的区块链云化框架}{21}{chapter.3}%
+\contentsline {chapter}{\numberline {3}区块链云化框架调研分析}{21}{chapter.3}%
 \contentsline {section}{\numberline {3\,.\,1}快速评审}{21}{section.3.1}%
 \contentsline {section}{\numberline {3\,.\,2}设计原则}{23}{section.3.2}%
-\contentsline {section}{\numberline {3\,.\,3}基于Hyperledger Fabric的区块链云化框架}{24}{section.3.3}%
-\contentsline {subsection}{\numberline {3\,.\,3\,.\,1}Custom Resource Definition}{25}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3\,.\,3\,.\,2}Manager}{27}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3\,.\,3\,.\,3}Fabric网络}{30}{subsection.3.3.3}%
-\contentsline {section}{\numberline {3\,.\,4}本章小结}{31}{section.3.4}%
-\contentsline {chapter}{\numberline {4}原型工具设计与实现}{32}{chapter.4}%
-\contentsline {section}{\numberline {4\,.\,1}概述}{32}{section.4.1}%
-\contentsline {section}{\numberline {4\,.\,2}需求分析}{35}{section.4.2}%
-\contentsline {subsection}{\numberline {4\,.\,2\,.\,1}工具总体功能}{35}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4\,.\,2\,.\,2}可视化建模模块需求分析}{36}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4\,.\,2\,.\,3}模型校验模块需求分析}{37}{subsection.4.2.3}%
-\contentsline {subsection}{\numberline {4\,.\,2\,.\,4}模型存储与转化模块需求分析}{39}{subsection.4.2.4}%
-\contentsline {section}{\numberline {4\,.\,3}工具设计与实现}{40}{section.4.3}%
-\contentsline {subsection}{\numberline {4\,.\,3\,.\,1}总体设计}{40}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4\,.\,3\,.\,2}可视化建模模块详细设计与实现}{42}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4\,.\,3\,.\,3}模型校验模块详细设计与实现}{44}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4\,.\,3\,.\,4}模型存储与转化详细设计与实现}{47}{subsection.4.3.4}%
-\contentsline {section}{\numberline {4\,.\,4}本章小结}{50}{section.4.4}%
-\contentsline {chapter}{\numberline {5}建模支持工具测试与案例研究}{51}{chapter.5}%
-\contentsline {section}{\numberline {5\,.\,1}建模支持工具测试}{51}{section.5.1}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,1}可视化建模测试}{51}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,2}建模约束校验测试}{52}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,3}模型存储测试}{53}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,4}生成项目测试}{54}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,5}性能测试}{54}{subsection.5.1.5}%
-\contentsline {section}{\numberline {5\,.\,2}案例研究}{55}{section.5.2}%
-\contentsline {subsection}{\numberline {5\,.\,2\,.\,1}验证步骤}{56}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5\,.\,2\,.\,2}验证过程}{56}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5\,.\,3}本章小结}{60}{section.5.3}%
-\contentsline {chapter}{\numberline {6}总结与展望}{61}{chapter.6}%
-\contentsline {section}{\numberline {6\,.\,1}总结}{61}{section.6.1}%
-\contentsline {section}{\numberline {6\,.\,2}展望}{62}{section.6.2}%
-\contentsline {chapter}{致\hspace {2em}谢}{63}{chapter*.43}%
-\contentsline {chapter}{参考文献}{64}{chapter*.44}%
-\contentsline {chapter}{简历与科研成果}{70}{chapter*.45}%
+\contentsline {section}{\numberline {3\,.\,3}策略集应用}{24}{section.3.3}%
+\contentsline {section}{\numberline {3\,.\,4}本章小结}{28}{section.3.4}%
+\contentsline {chapter}{\numberline {4}基于Hyperledger Fabric的区块链云化框架}{29}{chapter.4}%
+\contentsline {section}{\numberline {4\,.\,1}基于Hyperledger Fabric的区块链云化框架}{29}{section.4.1}%
+\contentsline {subsection}{\numberline {4\,.\,1\,.\,1}Custom Resource Definition}{30}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4\,.\,1\,.\,2}Manager}{31}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4\,.\,1\,.\,3}Fabric网络}{34}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4\,.\,2}原型工具}{35}{section.4.2}%
+\contentsline {subsection}{\numberline {4\,.\,2\,.\,1}工具概述}{35}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4\,.\,2\,.\,2}需求分析}{36}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4\,.\,2\,.\,2\,.\,1}功能性需求分析}{36}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4\,.\,2\,.\,2\,.\,2}非功能性需求分析}{40}{subsubsection.4.2.2.2}%
+\contentsline {subsection}{\numberline {4\,.\,2\,.\,3}设计与实现}{40}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4\,.\,3}本章小节}{44}{section.4.3}%
+\contentsline {chapter}{\numberline {5}建模支持工具测试与案例研究}{47}{chapter.5}%
+\contentsline {section}{\numberline {5\,.\,1}建模支持工具测试}{47}{section.5.1}%
+\contentsline {subsection}{\numberline {5\,.\,1\,.\,1}可视化建模测试}{47}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5\,.\,1\,.\,2}建模约束校验测试}{48}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5\,.\,1\,.\,3}模型存储测试}{49}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5\,.\,1\,.\,4}生成项目测试}{50}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5\,.\,1\,.\,5}性能测试}{50}{subsection.5.1.5}%
+\contentsline {section}{\numberline {5\,.\,2}案例研究}{51}{section.5.2}%
+\contentsline {subsection}{\numberline {5\,.\,2\,.\,1}验证步骤}{52}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5\,.\,2\,.\,2}验证过程}{52}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5\,.\,3}本章小结}{56}{section.5.3}%
+\contentsline {chapter}{\numberline {6}总结与展望}{57}{chapter.6}%
+\contentsline {section}{\numberline {6\,.\,1}总结}{57}{section.6.1}%
+\contentsline {section}{\numberline {6\,.\,2}展望}{58}{section.6.2}%
+\contentsline {chapter}{致\hspace {2em}谢}{59}{chapter*.36}%
+\contentsline {chapter}{参考文献}{60}{chapter*.37}%
+\contentsline {chapter}{简历与科研成果}{66}{chapter*.38}%
 \contentsfinish 
