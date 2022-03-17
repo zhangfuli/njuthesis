@@ -45,12 +45,13 @@ Fabric作为一种去中心化的多方信息对接的网络, 具有一套标准
         & ChannelParticipation & 通道管理对系统链码的依赖 \\\cline{2-3}
         & Secret & 包含Orderer的数字签名以及与Ca通信所需的基本信息\\\cline{2-3}
         \hline 
-        \multirow{6}*{\parbox[c]{60pt}{Peer Resource \\ Definition}}
+        \multirow{7}*{\parbox[c]{60pt}{Peer Resource \\ Definition}}
         & Gossip & 确保Peer间通过Gossip协议来达到所有账本的最终一致性 \\\cline{2-3}
         & LevelDB/CouchDB & Fabric提供levelDB与CouchDB用以保存Fabric账本信息, 用以灵活适应Peer不同数据库之间的转换 \\\cline{2-3}
         & CouchDBExporter & 采集CouchDB的监控数据 \\\cline{2-3}
         & ExternalChaincodeBuilder & 提供外部链码构建的能力 \\\cline{2-3}
         & Secret & 包含Peer的数字签名以及与Ca通信所需的基本信息\\\cline{2-3}
+        & MSP & 所属的组织信息\\\cline{2-3}
         \hline 
     \end{longtable} 
 }
@@ -66,7 +67,7 @@ CRs本身仅为特定应用程序提供声明式API的数据项的集合, contro
     \label{manager} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-如图\ref{manager}所展示的是Manager监听CRs的全过程。首先, 需要在CRs中指定Fabric网络各节点所期望的状态, CRD会注册进入Scheme, 其提供了ApiServer对应的集群中GVK(Group Version Kind, Kubernetes集群资源定义方式)与CRs资源类型的映射, 通过资源类型controllers就能获取CRs所定义的期望状态; 其次, cache通过List-Watch机制与ApiServer进行通信用以同步监听Fabric网络各节点在Kubernetes集群中的创建、删除、更新等操作, cache可以获取Fabric网络各节点的实际状态; 最后, controller循环监听期望状态与实际状态, 若期望状态与实际状态不一致, 则通过调用clients更新、缩放、扩展、备份等操作进行协调一致。
+在Manager内部管理了多个CRD, 就需要使用多个控制器进行协调循环。这有助于关注点分离和代码的可读性。如图\ref{manager}所展示的是Manager监听CRs的全过程。首先, 需要在CRs中指定Fabric网络各节点所期望的状态, CRD会注册进入Scheme, 其提供了ApiServer对应的集群中GVK(Group Version Kind, Kubernetes集群资源定义方式)与CRs资源类型的映射, 通过资源类型controllers就能获取CRs所定义的期望状态; 其次, cache通过List-Watch机制与ApiServer进行通信用以同步监听Fabric网络各节点在Kubernetes集群中的创建、删除、更新等操作, cache可以获取Fabric网络各节点的实际状态; 最后, controller循环监听期望状态与实际状态, 若期望状态与实际状态不一致, 则通过调用clients更新、缩放、扩展、备份等操作进行协调一致。
 
 为提升区块链云化框架的生产效率, 本文设计了一套针对Fabric网络各节点helm的通用CRD与controller, 直接将提前配置好的helm随CRD以及controller一起部署进Kubernetes。Helm通过调用Kubernetes的ApiServer逐个将helm chart中的yaml推送给Kubernetes, 当且仅能进行安装。所以helm的弊端是缺乏对资源的全生命期监控, 只有CRD才能持续的监听Kubernetes资源对象的变化事件, 进行全生命期的监控响应, 高可靠的完成部署交付。一旦创建新的CR, controller根据对应的资源对象更新helm的模板参数并重新部署入Kubernetes集群。图\ref{controller}以spec.size为例展示了controller更新helm的流程。本框架不仅通过helm简化部署流程, 并且还能实现带全生命周期管理的helm效果。
 
@@ -85,7 +86,8 @@ CRs本身仅为特定应用程序提供声明式API的数据项的集合, contro
 % 可插入图
 
 % 安全性
-在安全性方面区块链云化框架复用Kubernetes的原生安全保障体系, 主要涉及到两方面。 一方面是Kubernetes集群用户对框架操作的访问控制限制, 区块链云化框架会生成很多清单文件向Kubernetes集群中部署Fabric网络, 同时Kubernetes集群需要向已部署的区块链云化框架授予在Fabric网络中生命周期内执行各种任务的权限。Kubernetes没有以用户身份进行身份验证, 本框架将所有Fabric网络资源限制在同一命名空间下, 同时采用基于角色的权限控制(Role-Based Access Control, 简称RBAC)将对Kubernetes资源操作的最小权限映射到框架中的Manager及Fabric网络节点。值得注意的是, 区块链云化框架在确保在允许Fabric网络正常工作的同时, 应尽可能限制访问; 另一方面是Fabric网络运行环境均受Kubernetes安全容器保护。在密码管理方面, 框架避免使用直接向节点镜像中注入环境变量的方式管理密码信息。本框架采用Secret配合x509\cite{8249485}存储管理导出的敏感数据, 这种方式不但能提高灵活性而且增加了密码的传输、存储、访问安全, 增强隐私保护。
+在安全性方面区块链云化框架复用Kubernetes的原生安全保障体系, 主要涉及到两方面。 一方面是Kubernetes集群用户对框架操作的访问控制限制, 区块链云化框架会生成很多清单文件向Kubernetes集群中部署Fabric网络, 同时Kubernetes集群需要向已部署的区块链云化框架授予在Fabric网络中生命周期内执行各种任务的权限。Kubernetes没有以用户身份进行身份验证, 本框架将所有Fabric网络资源限制在同一命名空间下, 同时采用基于角色的权限控制(Role-Based Access Control, 简称RBAC)将对Kubernetes资源操作的最小权限映射到框架中的Manager及Fabric网络节点。值得注意的是, 区块链云化框架无需以root身份运行, 在确保在允许Fabric网络正常工作的同时, 应尽可能限制访问; 另一方面是Fabric网络运行环境均受Kubernetes安全容器保护。在密码管理方面, 框架避免使用直接向节点镜像中注入环境变量的方式管理密码信息。本框架采用Secret配合x509\cite{8249485}存储管理导出的敏感数据, 这种方式不但能提高灵活性而且增加了密码的传输、存储、访问安全, 增强隐私保护。
+
 
 % 可视化运维
 本框架采用非介入式的云上监控方案Prometheus以及Grafana进行可视运维, 在CRD中预留exporter、ServiceMonitor等属性, 对应的在helm chart中定制抓取周期的相关配置对Fabric网络中的Ca、Orderer、Peer、CouchDB等进行可视化监控。同时, Grafana开源特性能够创建自定义插件, 一定程度上能提升本框架的可视运维能力。
@@ -223,16 +225,13 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
     \end{longtable} 
 }
 
-
-除管理Fabric网络节点外, 如图\ref{chan_cc_use_case}所示, Fabric开发人员期望能够通过原型工具
-动态、灵活且低成本的完成通道以及链码的各项操作。
-
 \begin{figure}[!htbp] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
     \includegraphics[width=1.0\textwidth]{FIGs/chapter4/chan_cc_use_case.pdf} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
     \caption{通道管理及链码管理用例图} %caption是用来给图片加上图题的
     \label{chan_cc_use_case} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
+
 
 {\footnotesize
 \begin{longtable}[h]{m{60pt}|m{280pt}}
@@ -289,7 +288,11 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
     \end{longtable} 
 }
 
+除管理Fabric网络节点外, 如图\ref{chan_cc_use_case}所示, Fabric开发人员期望能够通过原型工具
+动态、灵活且低成本的完成通道以及链码的各项操作。
+
 表\ref{chan_use_case}展示了通道管理的用例描述, 通道管理需为Fabric开发人员屏蔽大量证书文件提供灵活方便的开启通道的功能, 应以kubectl内置命令行参数配置的方式在配置通道, 包含对通道内部锚节点、创世区块、账本的管理。表\ref{cc_use_case}展示了链码管理的用例描述, 链码管理需为Fabric网络管理人员提供灵活方便的安装、提交链码等功能。
+
 
 \subsubsection{非功能性需求分析}
 
@@ -314,18 +317,60 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
 基于Hyperledger Fabric的区块链云化工具是一个基于Kubernetes operator的应用, 其整合结合Helm完成Fabric网络的快速部署和节点的全生命周期管理以及Cobra\footnotemark[1]\footnotetext[1]{\href{https://github.com/spf13/cobra}{cobra github地址}}完成命令的封装。由于原型工具在管理Ca、Orderer、Peer各组件时存在逻辑上的重复性, 故本节将以Ca为例介绍功能性需求、非功能性需求的设计与实现。
 
 % create CRD
-当Fabric网络管理员需要创建Ca并输入对应的命令及参数时, 如图\ref{create_crd}。原型工具首先会解析管理员输入参数的合法性, 然后将对应的输入参数填充到已经定义好的FabricCA模版中,最后调用Kubernetes client将Fabric Ca Reource依据CRD的规则部署进入集群中。 
+当Fabric网络管理员需要创建Ca并输入对应的命令及参数时, 如图\ref{create_crd}。原型工具首先会解析管理员输入参数的合法性, 然后将对应的输入参数填充到已经定义好的FabricCA模版中,最后调用Kubernetes client将Fabric Ca Resource依据CRD的规则部署进入集群中。伪代码\ref{code1}展示了创建Ca Resource的伪代码。
 
 \begin{figure}[!htbp] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
     \includegraphics[width=0.7\textwidth]{FIGs/chapter4/create_crd.pdf} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
-    \caption{创建Ca Rource时序图} %caption是用来给图片加上图题的
+    \caption{创建Ca Resource时序图} %caption是用来给图片加上图题的
     \label{create_crd} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-当Fabric Ca Resource一旦被部署到集群中就会被处理单元Manager探查到其存活。如图\ref{reconcile}所示, Ca controller一直在集群中探听Ca Resource。由于资源被删除后再也无法获取到被删除资源的信息, 所以利用Finalizer字段进行标识, 一旦探听到Ca Resource的存在就会先处理Finalizer字段。随后, Ca controller会检查当前是否存在Ca helm release, 若不存在则将当前状态Ca Resource所定义的TLS、CFG等信息生成helm chart并将其部署进入集群中; 若存在则先获取当前Ca Resource的状态并对其进行更新之后再生成helm chart部署。helm chart中定义了Ca启动所需要的全部如Deployment、Service、Istio、ServiceMonitor等yaml, 通过启动helm就可以一次性将其全部启动部署。
+\begin{algorithm}[!htbp]
+    \floatname{algorithm}{\footnotesize 伪代码}
+    \caption{\footnotesize 创建Ca Resource伪代码}
+    \label{code1}
+    {\footnotesize
+    \begin{algorithmic}
+        \renewcommand{\algorithmicrequire}{ \textbf{Input:}}
+        \REQUIRE  
+        “kubeclt ca create” with args
 
-当Ca成功在Kubernetes中启动后, 可以通过命令形式完成用户注册、用户登记的功能。如图\ref{enroll}所示, Fabric网络管理员输入Enroll命令以及相关参数, 原型工具会对其进行参数解析。当解析成功后, 原型工具会获取集群中Ca对外接口的相关信息, 包含URL、端口等。随后, 原型工具会生成Ca client, 并将管理员输入的用户信息通过接口传递给Ca Server。Ca Server就是原Fabric Ca在集群中服务的状态所以其具备完整的Ca的功能, 当Enroll完成后会返回key以及cert, 原型工具会利用X509对其编码并保存到yaml中返回给管理员。
+        \renewcommand{\algorithmicensure}{\textbf{Output:}}
+        \ENSURE
+        Success or Fail
+
+        \STATE{err := ParseArgs()}
+        \IF{err != nil}
+            \STATE{return fail} 
+        \ENDIF
+
+        \STATE{client, err  := GetKubeOperatorClient()}
+        \IF{err != nil}
+            \STATE{return fail} 
+        \ENDIF
+
+        \STATE{fabricCa := \&v1alpha1.FabricCA\{}
+        \STATE{\quad Initialization according to parameters}
+        \STATE{\}}
+
+
+        \IF{args.output}
+            \STATE{out, err := yaml.Marshal(\&fabricCa)} 
+        \ELSE
+            \STATE{err := client.FabricCA(namespaces).Create(fabricCa)}
+            \IF{err != nil}
+                \STATE{return fail} 
+            \ENDIF
+        \ENDIF
+
+        \STATE{return success}
+    \end{algorithmic}
+    }
+\end{algorithm}
+
+当Fabric Ca Resource一旦被部署到集群中就会被处理单元Manager中的Ca  controller探查到其存活。如图\ref{reconcile}所示, Ca controller通过Reconcile循环探听Ca Resource。由于资源被删除后再也无法获取到被删除资源的信息, 所以利用Finalizer字段进行标识, GetDeletetionTimeStamp()用于获取CR被删除时的时间戳。一旦探听到Ca Resource的存在就会先处理Finalizer字段。DeletionTimestamp不为空时, controller会轮询该CR的更新请求执行处理所有的Finalizer。随后, Ca controller会检查当前是否存在Ca helm release, 若不存在则将当前状态Ca Resource所定义的TLS、CFG等信息生成helm chart并将其部署进入集群中; 若存在则先获取当前Ca Resource的状态并对其进行更新之后再生成helm chart部署。helm chart中定义了Ca启动所需要的全部如Deployment、Service、Istio、ServiceMonitor等yaml, 通过启动helm就可以一次性将其全部启动部署。伪代码\ref{code2}展示了Ca Controller Reconcile的伪代码。
+
 
 % Manager
 \begin{figure}[!htbp] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
@@ -335,6 +380,75 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
     \label{reconcile} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
+
+\begin{algorithm}[!htbp]
+    \floatname{algorithm}{\footnotesize 伪代码}
+    \caption{\footnotesize Ca Controller Reconcile伪代码}
+    \label{code2}
+    {\footnotesize
+    \begin{algorithmic}
+        \renewcommand{\algorithmicrequire}{ \textbf{Input:}}
+        \REQUIRE  
+        nil
+
+        \renewcommand{\algorithmicensure}{\textbf{Output:}}
+        \ENSURE
+        nil
+
+        \STATE{fabricCa := \&v1alpha1.FabricCA\{\}}
+        \IF{fabricCa.GetDeletetionTimestamp() != nil}
+            \IF{fabricCa.GetFinalizers().contains(caFinalizer)}
+                \STATE{RemoveFinalizer(fabricCa, caFinalizer)} 
+            \ENDIF
+        \ENDIF
+
+        \IF{!fabricCa.GetFinalizers().contains(caFinalizer)}
+            \STATE{AddFinalizer(fabricCa, caFinalizer)} 
+        \ENDIF
+
+        \STATE{exits, err  := status.Run(caReleaseName)}
+        \IF{err != nil}
+            \STATE{return err} 
+        \ENDIF
+
+        \IF{exits}
+            \STATE{c, err := GetCurrentSpecConfig(caReleaseName)}
+            \IF{err != nil}
+                \STATE{return err} 
+            \ENDIF
+            \STATE{s, err := GetExistingStatus(caReleaseName)}
+            \IF{err != nil}
+                \STATE{return err} 
+            \ENDIF
+            \STATE{newCa := fabricCa.DeepCopy()}
+            \STATE{newCa.Status = s.Status}
+
+            \STATE{release, err  := cmd.Run(caReleaseName, c)}
+            \IF{!reflect.DeepEqual(newCa.Status, release.Status)}
+                \STATE{\_, err := status().Update(newCa)}
+                \IF{err != nil}
+                    \STATE{return err} 
+                \ENDIF
+            \ENDIF 
+            
+        \ELSE
+            \STATE{c, err := GetCurrentSpecConfig(caReleaseName)}
+            \IF{err != nil}
+                \STATE{return err} 
+            \ENDIF
+            \STATE{release, err  := cmd.Run(caReleaseName, c)}
+            \IF{err != nil}
+                \STATE{return err} 
+            \ENDIF
+
+        \ENDIF
+      
+    \end{algorithmic}
+    }
+\end{algorithm}
+
+当Ca成功在Kubernetes中启动后, 可以通过命令形式完成用户注册、用户登记的功能。如图\ref{enroll}所示, Fabric网络管理员输入Enroll命令以及相关参数, 原型工具会对其进行参数解析。当解析成功后, 原型工具会获取集群中Ca对外接口的相关信息, 包含URL、端口等。随后, 原型工具会生成Ca client, 并将管理员输入的用户信息通过接口传递给Ca Server。Ca Server就是原Fabric Ca在集群中服务的状态所以其具备完整的Ca的功能, 当Enroll完成后会返回key以及cert, 原型工具会利用X509对其编码并保存到yaml中返回给管理员。伪代码\ref{code3}展示了Ca Enroll User的伪代码。
+
 % Manager
 \begin{figure}[!htbp] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -342,6 +456,56 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
     \caption{Ca Enroll User逻辑时序图} %caption是用来给图片加上图题的
     \label{enroll} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
+
+\begin{algorithm}[!htbp]
+    \floatname{algorithm}{\footnotesize 伪代码}
+    \caption{\footnotesize Ca Enroll User伪代码}
+    \label{code3}
+    {\footnotesize
+    \begin{algorithmic}
+        \renewcommand{\algorithmicrequire}{ \textbf{Input:}}
+        \REQUIRE  
+        “kubeclt ca enroll” with args
+
+        \renewcommand{\algorithmicensure}{\textbf{Output:}}
+        \ENSURE
+        User key\&cert yaml
+
+        \STATE{err := ParseArgs()}
+        \IF{err != nil}
+            \STATE{return fail} 
+        \ENDIF
+
+        \STATE{client, err  := GetKubeOperatorClient()}
+        \IF{err != nil}
+            \STATE{return fail} 
+        \ENDIF
+
+        \STATE{url, err  := GetURLForCa()}
+        \IF{err != nil}
+            \STATE{return fail} 
+        \ENDIF
+
+        \STATE{crt, pk , err:= client.EnrollUser(args.Name, args.Secret, url)}
+
+        \IF{err != nil}
+            \STATE{return fail} 
+        \ENDIF
+ 
+        \STATE{crtPem := EncodeX509Certificate(crt)}
+        \STATE{pkPem := EncodePrivateKey(pk)}
+
+        \STATE{userYaml := yaml.Marshal(\{}
+        \STATE{\quad "key": pkPem,} 
+        \STATE{\quad "cert": crtPem} 
+        \STATE{\})}
+
+        \STATE{io.writeFile(args.output, userYaml)}
+
+        \STATE{return nil}
+    \end{algorithmic}
+    }
+\end{algorithm}
 
 原型工具为Fabric网络的各组件提供了标准化的helm chart模板。除Deployment以及Service外, 在访问权限控制方面采用RBAC的方式。原型工具将所有资源放入同一命名空间下, 对于自定义生成的资源, 设置了两种类型的角色(ClusterRole)分别是editor以及viewer, 如图\ref{safety}-I展示了viewer角色的权限, editor相较于viewer则增加了create、delete、update、patch的权限, 使用ClusterRoleBinding将角色与用户(ServiceAccount)进行捆绑。如图\ref{safety}-II所示, 原型工具通过Secret保存Fabric网络生成的敏感密钥数据。
 
@@ -361,104 +525,66 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
     \label{pvc_sc} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
+最后, 原型工具利用Prometheus监控体系给所有Fabric网络组件以及工具本身提供监控能力。利用Prometheus并在Helm chart中配置ServiceMonitor、PodMonitor可以为监控对象实时采集数据并存储。 此外, 搭配Grafna提供可视化面板方便对Fabric网络各项指标进行监控。
+
 \section{本章小节}
 
 本章介绍了基于Hyperledger Fabric的区块链云化框架及其原型工具。首先, 根据\ref{section: policy_set_application}所得的策略具体实施方案给出了云化框架的云化框架的工作流程、输入单元CRD、处理单元Manager以及输出单元Fabric网络节点运行状态。然后结合云化框架介绍了搭配原型工具的需求分析、设计与实现。
 
 
-\begin{algorithm}[!htbp]
-    \floatname{algorithm}{\footnotesize 算法}
-    \caption{\footnotesize 模型校验算法}
-    \label{algorithm1}
-    {\footnotesize
-    \begin{algorithmic}
-        \renewcommand{\algorithmicrequire}{ \textbf{Input:}}
-        \REQUIRE  
-        mxCells:HTMLCollectionOf<Element>
 
-        \REQUIRE
-        patterns:PatternData
+% \begin{algorithm}[!htbp]
+%     \floatname{algorithm}{\footnotesize 算法}
+%     \caption{\footnotesize 模型校验算法}
+%     \label{algorithm1}
+%     {\footnotesize
+%     \begin{algorithmic}
+%         \renewcommand{\algorithmicrequire}{ \textbf{Input:}}
+%         \REQUIRE  
+%         mxCells:HTMLCollectionOf<Element>
 
-        \renewcommand{\algorithmicensure}{\textbf{Output:}}
-        \ENSURE
-        models:Map<String, Pattern>
+%         \REQUIRE
+%         patterns:PatternData
 
-        \STATE{Boolean success = true;}
-        \FOR{mxCell in mxCells}
+%         \renewcommand{\algorithmicensure}{\textbf{Output:}}
+%         \ENSURE
+%         models:Map<String, Pattern>
 
-        \STATE{patterns.setSourceToTarget(mxCell.getId, mxCell.getTarget);}
+%         \STATE{Boolean success = true;}
+%         \FOR{mxCell in mxCells}
 
-        \STATE{patterns.setTargetToSource(mxCell.getSource, mxCell.getId);}
+%         \STATE{patterns.setSourceToTarget(mxCell.getId, mxCell.getTarget);}
+
+%         \STATE{patterns.setTargetToSource(mxCell.getSource, mxCell.getId);}
         
-        \ENDFOR
+%         \ENDFOR
 
-        \FOR{mxCell in mxCells}
-            \IF{patterns.isParentCell(mxCell)}
-                \IF{patterns.validation(mxCell)}
-                    \STATE{newPattern = new Pattern(mxCell);}
-                    \STATE{patterns.models.add(mxCell.getId, newPattern);}
-                \ELSE
-                    \STATE{success = false;}
-                    \STATE{break;}
-                \ENDIF
-            \STATE{skip loopStep;}
-            \ELSE
-            \STATE{continue loop;}
-            \ENDIF
-        \ENDFOR
+%         \FOR{mxCell in mxCells}
+%             \IF{patterns.isParentCell(mxCell)}
+%                 \IF{patterns.validation(mxCell)}
+%                     \STATE{newPattern = new Pattern(mxCell);}
+%                     \STATE{patterns.models.add(mxCell.getId, newPattern);}
+%                 \ELSE
+%                     \STATE{success = false;}
+%                     \STATE{break;}
+%                 \ENDIF
+%             \STATE{skip loopStep;}
+%             \ELSE
+%             \STATE{continue loop;}
+%             \ENDIF
+%         \ENDFOR
           
-        \IF{success}
+%         \IF{success}
 
-            \STATE{sendSuccessMessage();}
+%             \STATE{sendSuccessMessage();}
 
-            \STATE{return patterns.models;}
+%             \STATE{return patterns.models;}
 
-        \ELSE
-            \STATE{sendErrorMessage();}
+%         \ELSE
+%             \STATE{sendErrorMessage();}
         
-        \ENDIF
+%         \ENDIF
         
-    \end{algorithmic}
-    }
-\end{algorithm}
-
-
-
-
-最后部署operator的时候
-在Kubernetes集群中部署«操作员»时，使用了Helm工具[17]。该工具允许使用一个命令部署应用程序（图6）。我们可以为Helm开发特殊的清单（图表），以表示Kubernetes中的«操作员»应用程序。这些清单包含有关应用程序的所有必要信息，因此Kubernetes可以正确地部署它。例如，我们可以指定应该在Kubernetes集群上部署多少个应用程序副本
-
-计算资源管理层支持公有云、专有云以及混合云，为区块链服务及上层应用提供所需要的云基础资源。
-
-区块链底层平台是BaaS平台的核心，构建于云容器服务集群之上，支持超级账本、以太坊等不同区块链底层架构。
-区块链服务层依托底层区块链的支持，抽象封装一系列服务模块，简化开发工作，帮助企业快速部署区块链应用，降低区块链开发门槛。
-
-管理服务为用户提供基本管理功能，包括平台用户权限管理功能、服务使用计费管理功能、通知功能等。
-运维服务提供图形化的区块链管理运维服务能力，实时监控区块链网络运行数据，帮助运维人员及时发现并解决问题。
-
-区块链云化降低开发门槛。区块链技术与其他技术不同之处在于它是融合密码学、P2P网络、分布式存储等多种技术的组合体，技术门槛高致使其开发成本高。而区块链云化产品BaaS平台将区块链技术封装在底层，使功能模块化，开发人员直接调用封装后的API接口即可完成一键部署，降低中小企业用区块链技术的门槛，从而推动区块链应用的落地。
-
-区块链云化实现个性化定制。区块链云化产品BaaS平台可依托云服务商强大的业务能力，在提供标准服务基础上再根据开发者业务需求提供不同的配置，扩展开发者自定义的功能，满足其个性化需求，提高灵活性。同时通过BaaS平台可以沉淀出一层标准的区块链应用解决方案模板，为用户快速匹配建链场景。
-
-市场前景广阔，发展迅速。区块链技术的不断成熟加速了区块链行业应用落地，不断扩大BaaS市场规模，对全球云计算的服务市场促进作用明显。特别是云服务开放性和资源可扩展性使其成为区块链应用落地的最佳载体，区块链与云计算结合愈发紧密。云链协同在加快区块链产业发展的同时，也成为云计算产业发展的关键性新动能。
-
-负责实现云资源的管理调度，该模块会调用云资源管理适配模块的统一接口，所以底层不同云平台接口的差异性对该模块是透明的。该模块的主要功能有创建及删除虚拟机（Docker容器） 和网络资源、进行初始化配置、对已有资源进行扩容或缩容等操作。
-
-对区块链节点的跨云部署支持，需要由该模块来实现对不同公有云、私有云的虚拟机、Docker容器等资源调度API的封装，屏蔽各种云平台API的差异性，对上层调用模块提供统一的资源管理接口。
-
-
-华为云区块链服务基于可信、开放、服务全球的华为云上运行，华为云产品和服务具有华为独有的新技术，以降低成本、弹性灵活、电信级安全、高效自助管理等优势惠及用户，BCS 可以和华为云技术产品和行业解决方案无缝对接，帮助企业在安全、高效、不可篡改等基础上轻松跨入云时代，快速部署新解决方案和应用。
-
-为解决上述挑战, 本文
-Hyperledger Fabric Operator: 云原生时代下Fabric管理工具
-利用Kubernetes,72\%的工程师在云原生生产中使用Kubernetes[3],可以方便的迁移到支持Kubernetes的任何云 
-更简单、更原生的: 使用kubectl命令管理Fabric, 显示于k8s-dashboard;复用Kubernetes, API公共功能如CRUD、watch、内置认证
-管理Fabric: 声明式自动化配置静态组件，如: CA、HF网络组件.命令式创建动态通道、链码
-
-
-
-
-
-
-
-
+%     \end{algorithmic}
+%     }
+% \end{algorithm}

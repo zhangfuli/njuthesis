@@ -420,4 +420,18 @@
   }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}4}\@.
   \newline\url{http://dx.doi.org/10.1109/TELFOR.2017.8249485}\@.
 
+\bibitem{tashakkori1998mixed}
+\bibauthor{TASHAKKORI A\@, TEDDLIE C\@, TEDDLIE C~B}\@. \bibbooktitle{Mixed
+  methodology: Combining qualitative and quantitative
+  approaches\thinspace{}\textnormal{: }Vol~46}\bibmark{[M]}\@.
+  \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{sage}\@,
+  \bibyear{1998}\@.
+
+\bibitem{duan2021case}
+\bibauthor{DUAN R\@, ZHANG F\@, KHAN S~U}\@. \bibtitle{A Case Study on Five
+  Maturity Levels of A Kubernetes Operator}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{2021 IEEE Cloud Summit (Cloud Summit)}\@.
+  \bibyear{2021}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}6}\@.
+
 \end{thebibliography}

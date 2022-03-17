@@ -35,22 +35,25 @@
 \contentsline {subsubsection}{\numberline {4\,.\,2\,.\,2\,.\,1}功能性需求分析}{36}{subsubsection.4.2.2.1}%
 \contentsline {subsubsection}{\numberline {4\,.\,2\,.\,2\,.\,2}非功能性需求分析}{40}{subsubsection.4.2.2.2}%
 \contentsline {subsection}{\numberline {4\,.\,2\,.\,3}设计与实现}{40}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4\,.\,3}本章小节}{44}{section.4.3}%
-\contentsline {chapter}{\numberline {5}建模支持工具测试与案例研究}{47}{chapter.5}%
-\contentsline {section}{\numberline {5\,.\,1}建模支持工具测试}{47}{section.5.1}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,1}可视化建模测试}{47}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,2}建模约束校验测试}{48}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,3}模型存储测试}{49}{subsection.5.1.3}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,4}生成项目测试}{50}{subsection.5.1.4}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,5}性能测试}{50}{subsection.5.1.5}%
-\contentsline {section}{\numberline {5\,.\,2}案例研究}{51}{section.5.2}%
-\contentsline {subsection}{\numberline {5\,.\,2\,.\,1}验证步骤}{52}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5\,.\,2\,.\,2}验证过程}{52}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5\,.\,3}本章小结}{56}{section.5.3}%
-\contentsline {chapter}{\numberline {6}总结与展望}{57}{chapter.6}%
-\contentsline {section}{\numberline {6\,.\,1}总结}{57}{section.6.1}%
-\contentsline {section}{\numberline {6\,.\,2}展望}{58}{section.6.2}%
-\contentsline {chapter}{致\hspace {2em}谢}{59}{chapter*.36}%
-\contentsline {chapter}{参考文献}{60}{chapter*.37}%
-\contentsline {chapter}{简历与科研成果}{66}{chapter*.38}%
+\contentsline {section}{\numberline {4\,.\,3}本章小节}{46}{section.4.3}%
+\contentsline {chapter}{\numberline {5}测试与评估}{47}{chapter.5}%
+\contentsline {section}{\numberline {5\,.\,1}原型工具测试}{47}{section.5.1}%
+\contentsline {section}{\numberline {5\,.\,2}原型工具评估}{47}{section.5.2}%
+\contentsline {subsection}{\numberline {5\,.\,2\,.\,1}五层成熟度模型}{47}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5\,.\,3}建模支持工具测试}{49}{section.5.3}%
+\contentsline {subsection}{\numberline {5\,.\,3\,.\,1}可视化建模测试}{49}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5\,.\,3\,.\,2}建模约束校验测试}{50}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5\,.\,3\,.\,3}模型存储测试}{51}{subsection.5.3.3}%
+\contentsline {subsection}{\numberline {5\,.\,3\,.\,4}生成项目测试}{52}{subsection.5.3.4}%
+\contentsline {subsection}{\numberline {5\,.\,3\,.\,5}性能测试}{52}{subsection.5.3.5}%
+\contentsline {section}{\numberline {5\,.\,4}案例研究}{53}{section.5.4}%
+\contentsline {subsection}{\numberline {5\,.\,4\,.\,1}验证步骤}{54}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5\,.\,4\,.\,2}验证过程}{54}{subsection.5.4.2}%
+\contentsline {section}{\numberline {5\,.\,5}本章小结}{58}{section.5.5}%
+\contentsline {chapter}{\numberline {6}总结与展望}{61}{chapter.6}%
+\contentsline {section}{\numberline {6\,.\,1}总结}{61}{section.6.1}%
+\contentsline {section}{\numberline {6\,.\,2}展望}{62}{section.6.2}%
+\contentsline {chapter}{致\hspace {2em}谢}{63}{chapter*.37}%
+\contentsline {chapter}{参考文献}{64}{chapter*.38}%
+\contentsline {chapter}{简历与科研成果}{71}{chapter*.39}%
 \contentsfinish 
