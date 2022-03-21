@@ -10,7 +10,6 @@ Repeated entry---line 406 of file sample.bib
  : @article{larsson2020impact
  :                           ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "vernon2013implementing"
 Warning--Require address: DBLP:conf/coins/GerritsKKFV21
 Warning--Require citedate: DBLP:conf/coins/GerritsKKFV21
 Warning--Require citedate: DBLP:journals/comcom/XieZZWH21
@@ -32,7 +31,7 @@ Warning--Require citedate: 8249485
 Warning--Require address: tashakkori1998mixed
 You've used 57 entries,
             3107 wiz_defined-function locations,
-            1043 strings with 18478 characters,
+            1042 strings with 18456 characters,
 and the built_in function-call counts, 104551 in all, are:
 = -- 11553
 > -- 206

@@ -38,22 +38,15 @@
 \contentsline {section}{\numberline {4\,.\,3}本章小节}{46}{section.4.3}%
 \contentsline {chapter}{\numberline {5}测试与评估}{47}{chapter.5}%
 \contentsline {section}{\numberline {5\,.\,1}原型工具测试}{47}{section.5.1}%
-\contentsline {section}{\numberline {5\,.\,2}原型工具评估}{47}{section.5.2}%
-\contentsline {subsection}{\numberline {5\,.\,2\,.\,1}五层成熟度模型}{47}{subsection.5.2.1}%
-\contentsline {section}{\numberline {5\,.\,3}建模支持工具测试}{49}{section.5.3}%
-\contentsline {subsection}{\numberline {5\,.\,3\,.\,1}可视化建模测试}{49}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5\,.\,3\,.\,2}建模约束校验测试}{50}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5\,.\,3\,.\,3}模型存储测试}{51}{subsection.5.3.3}%
-\contentsline {subsection}{\numberline {5\,.\,3\,.\,4}生成项目测试}{52}{subsection.5.3.4}%
-\contentsline {subsection}{\numberline {5\,.\,3\,.\,5}性能测试}{52}{subsection.5.3.5}%
-\contentsline {section}{\numberline {5\,.\,4}案例研究}{53}{section.5.4}%
-\contentsline {subsection}{\numberline {5\,.\,4\,.\,1}验证步骤}{54}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5\,.\,4\,.\,2}验证过程}{54}{subsection.5.4.2}%
-\contentsline {section}{\numberline {5\,.\,5}本章小结}{58}{section.5.5}%
-\contentsline {chapter}{\numberline {6}总结与展望}{61}{chapter.6}%
-\contentsline {section}{\numberline {6\,.\,1}总结}{61}{section.6.1}%
-\contentsline {section}{\numberline {6\,.\,2}展望}{62}{section.6.2}%
-\contentsline {chapter}{致\hspace {2em}谢}{63}{chapter*.37}%
-\contentsline {chapter}{参考文献}{64}{chapter*.38}%
-\contentsline {chapter}{简历与科研成果}{71}{chapter*.39}%
+\contentsline {subsection}{\numberline {5\,.\,1\,.\,1}测试环境}{47}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5\,.\,1\,.\,2}测试流程}{47}{subsection.5.1.2}%
+\contentsline {section}{\numberline {5\,.\,2}原型工具评估}{52}{section.5.2}%
+\contentsline {subsection}{\numberline {5\,.\,2\,.\,1}五层成熟度模型}{52}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5\,.\,3}本章小结}{54}{section.5.3}%
+\contentsline {chapter}{\numberline {6}总结与展望}{55}{chapter.6}%
+\contentsline {section}{\numberline {6\,.\,1}总结}{55}{section.6.1}%
+\contentsline {section}{\numberline {6\,.\,2}展望}{56}{section.6.2}%
+\contentsline {chapter}{致\hspace {2em}谢}{58}{chapter*.34}%
+\contentsline {chapter}{参考文献}{59}{chapter*.35}%
+\contentsline {chapter}{简历与科研成果}{66}{chapter*.36}%
 \contentsfinish 

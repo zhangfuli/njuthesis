@@ -18,13 +18,12 @@
 \contentsline {table}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 通道管理用例表}}{39}{table.4.5}%
 \contentsline {table}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 链码管理用例表}}{39}{table.4.6}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 可视化建模测试用例}}{50}{table.5.1}%
-\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 建模约束校验测试用例}}{50}{table.5.2}%
-\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 模型存储测试用例}}{51}{table.5.3}%
-\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 生成项目测试用例}}{52}{table.5.4}%
-\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 测试环境}}{52}{table.5.5}%
-\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 接口性能测试}}{53}{table.5.6}%
-\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 案例验证结果}}{58}{table.5.7}%
+\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 配置详情}}{47}{table.5.1}%
+\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 创建Org1测试用例}}{48}{table.5.2}%
+\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 创建Orderer测试用例}}{49}{table.5.3}%
+\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 注册、登记用户测试用例}}{49}{table.5.4}%
+\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 创建通道测试用例}}{50}{table.5.5}%
+\contentsline {table}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 链码相关测试用例}}{51}{table.5.6}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
