@@ -53,7 +53,7 @@
 
 % % 单行论文标题，不可换行
 \title{}
-\titlea{基于Hyperledger Fabric的}
+\titlea{面向Hyperledger Fabric的}
 \titleb{区块链云化框架的研究与实现}
 
 % 如果论文标题过长，可以分两行，第一行用\titlea{}定义，第二行用\titleb{}定义，
@@ -101,8 +101,8 @@
 
 % 论文的英文标题，不可换行
 \englishtitle{}
-\englishabstracttitlea{Modeling Support Method and Tool for}
-\englishabstracttitleb{ Domain-Driven Design}
+\englishabstracttitlea{Research and implementation of blockchain cloudification framework}
+\englishabstracttitleb{ for Hyperledger Fabric}
 % 论文作者姓名的拼音
 \englishauthor{Fuli Zhang}
 % 导师姓名职称的英文
@@ -163,76 +163,31 @@
 \frontmatter
 
 \begin{abstract}
-  领域驱动设计是一种针对复杂业务流程的软件设计方法，
-  它可以帮助架构师和软件开发人员提炼业务流程和构建复杂软件系统。
-  近年来，
-  越来越多的团队将领域驱动设计应用到大型分布式系统的设计与实现中。
+  区块链具有去中心化、不可伪造、不可篡改的特性, 被誉为下一代的新型生产关系。区块链的发展为传统领域带来了巨大变革, 去中心化应用逐步从理论论证阶段转变为工程化实践阶段。BaaS作为基于云原生技术体系的一种构建、管理、托管和运维区块链网络及去中心化应用的云服务平台大大降低了去中心化应用落地的门槛。
 
-  然而，作为领域驱动设计的核心内容，战术建模的应用却存在诸多问题与挑战。
-  其一，战术建模模式的实践过程仍缺少标准且统一的规范，
-  使得实践者无法准确地使用这些模式建模业务流程；
-  其二，战术建模实践过程所缺少的规范，
-  也使得开发人员和架构设计人员在使用这些建模模式时具有不同的理解，
-  从而带来了一系列项目团队沟通问题；
-  其三，现有的大多数建模平台对领域建模过程的支持仍不完善，
-  极大地阻碍了领域战术建模的应用。
+  然而, 当前BaaS平台的发展尤其是底层区块链基础设施层的建设依旧存在诸多问题。首先, 基础商业应用工具并不完善。BaaS平台尚在初级阶段, 研发投入巨大, 市场上BaaS平台被头部云厂商垄断, 行业马太效用明显。不同BaaS平台缺乏统一的顶层规划, 形成数据、信息孤岛。其次, BaaS平台利用云能力赋能区块链乏力。BaaS平台仅将云平台作为部署场所, 提供一种基于开源区块链平台的自动部署方案, 未深入区块链与云基础设施底层。无法挖掘云原生技术的潜力, 为区块链网络提供提供安全、可扩展、高可用的服务。
+  
+  国内, 云原生生产环境中72\%的工程师使用Kubernetes作为云基础设施, 同时Kubernetes Operator是将领域知识集成到Kubernetes API编排过程中的最新方法。针对上述问题, 本文通过快速评审的方法, 调研学术界如何利用Kubernetes Operator有效赋能传统领域。最终整理出12条赋能策略集, 再结合区块链云化的原则以及区块链本身特性筛选并获得区块链云化实施方案。基于区块链云化实施方案本文设计实现了面向Hyperledger Fabric的区块链云化框架及其原型平台。
 
-  为了解决上述问题与挑战，本文首先调研了现阶段有关领域驱动设计战术建模的理论文献，
-  对具有相关实践经验的从业者进行访谈，
-  提炼出一系列面向战术建模过程的实践规范作为战术建模指南。
-  所提炼的建模指南包含一系列战术建模中使用到的战术模式、这些战术模式的属性、
-  使用时机与实现技术。
-  然后，基于UML扩展机制定义标准的领域驱动设计战术建模元模型作为战术建模语言。
-  上述建模指南和战术建模语言共同组成本文所提出的战术建模支持方法。
-  最后，基于所提出的战术建模支持方法，
-  本文还实现了一个可视化战术建模工具DDDD（Draw for Domain-Driven Design），
-  该工具支持标准化的战术建模、对建模结果的验证、复用以及扩展，
-  帮助实践者更规范地进行战术建模。
+  本文通过典型案例分析对原型工具进行了功能性与非功能性测试。通过Kubernetes Operator五层成熟度模型进行了定性评估, 通过与官方BaaS平台Cello对比进行了定量评估。测试与评估结果表明, 本文提出的框架及原型平台能够兼容基本BaaS功能前提下充分利用云的特性提升Hyperledger Fabric网络的可扩展性、安全性以及可视运维能力, 基本满足五层成熟度的能力要求并且拥有更优的网络部署时间。
 
-  本文采用案例研究对提出的建模支持方法及工具进行验证。
-  结果表明本文提出的战术建模支持方法及工具，
-  能够帮助领域驱动设计的实践者开展更规范化的战术建模过程，
-  从而解决战术建模实践过程缺少规范带来的一系列挑战，
-  一定程度上促进了战术建模的应用。
 	% 同时应该注意到，空白页是故意留白，以便章节开头能够出现在偶数页。
 	% 中文关键词。关键词之间用中文全角分号隔开，末尾无标点符号。
-	\keywords{领域驱动设计；战术建模；建模工具；特定领域建模语言}
+	\keywords{区块链, 云原生, BaaS, Kubernetes Operator}
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 论文的英文摘要
 \begin{englishabstract}
-  As a software design approach for complex business process, Domain-Driven Design (DDD) enables architects and developers building complex software system.
-  In recent years, more and more teams have applied DDD to the design and implementation of large-scale distributed systems.
+  Blockchain has the advantages of decentralization, unforgeablity and immutability. It is known as the new production relationship of the next generation. The development of blockchain has brought great changes to the traditional field, and decentralized applications have gradually shifted from the theoretical demonstration stage to the engineering practice stage.As a cloud service platform for building, managing, hosting and operating blockchain networks and decentralized applications, BaaS greatly reduces the threshold for the implementation of decentralized applications.
 
-  However, as the core means of DDD, 
-  tactical modeling are facing many challenges in its application.
-  Firstly, the practicing process of tactical modeling patterns still lacks standard and unified specifications,
-   making it hard for practitioners to use these patterns to model business processes accurately; 
-  secondly, the lack of specifications also makes developers and architects have different understandings when using the modeling patterns,
-   leading to a series of communication problems in project team; 
-   thirdly, most of the existing modeling platforms have incomplete support for the tactical modeling process, 
-   severely impeding the application of DDD.
+  However, there are still many problems in the current development of BaaS platform, especially in the construction of the blockchain infrastructure layer. First, the basic business application tools are not perfect. The BaaS platform is still in its infancy, with huge R\&D investment. In the market, the BaaS platform is monopolized by the top cloud manufacturers, and the Matthew effect of the industry is obvious. Different BaaS platforms lack unified top-level planning, esulting in isolated islands of data and information. Secondly, the BaaS platform is weak in empowering the blockchain with cloud capabilities. The BaaS platform only uses the cloud platform as the deployment site, and provides an automatic deployment solution based on the open source blockchain platform, without going deep into the principles of the blockchain and cloud infrastructure. It is difficult to tap the potential of cloud native technology to provide secure, scalable and highly available services for blockchain networks.
 
+  In China, 72\% of engineers use Kubernetes as cloud infrastructure, and Kubernetes Operator is the latest method to integrate domain knowledge into the Kubernetes API orchestration process. In response to the above problems, this thesis surveys how academia use Kubernetes Operator to empower traditional fields through a rapid review method. Finally, twelve enabling strategy sets are sorted out, and then the blockchain cloudification implementation plan is obtained by filtering the principles of blockchain cloudification and the characteristics of blockchain itself. Based on the blockchain cloud implementation plan, this thesis designs and implements the blockchain cloudification framework and its prototype platform for Hyperledger Fabric.
 
-  In order to solve the aforementioned challenges, 
-  this thesis first reviews theoretical literature on tactical modeling,
-   then interviews practitioners with relevant practical experience, 
-  and finally extracts a series of practical specifications for the tactical modeling process.
-   As a guide for tactical modeling, the specifications contain a series of tactical patterns used in tactical modeling, 
-   their attributes, time of using, and implementation techniques. 
-   Furthermore, the standard tactical modeling metamodel is defined based on UML profile mechanism, as a tactical modeling language. 
-   The above modeling guide and tactical modeling language together constitute the tactical modeling support method proposed in this thesis. 
-   Based on the proposed method, this thesis also implements a visual tactical modeling tool called Draw for Domain-Driven Design, or DDDD. 
-   The tool supports standardized tactical modeling, verification, reuse and extension of modeling results to help practitioners develop tactical modeling in a more standardized way.
-
-
-  This thesis uses case studies to verify the proposed modeling support method and tool. 
-  Results show that the proposed method and tool can help DDD practitioners to conduct a more standardized tactical modeling process, 
-  thus solving the challenges caused by lack of specification in the tactical modeling process, 
-  and promoting the application of tactical modeling to a certain extent.
+  This thesis conduct functional and non-functional testing of prototype tools through typical case studies. The qualitative evaluation is carried out through the five maturity levels of the operator, and the quantitative evaluation is carried out through the comparison with the official BaaS platform named Cello. The test and evaluation results show that the framework and prototype platform proposed in this thesis can make full use of the characteristics of the cloud to improve the scalability, security and visual operation and maintenance capabilities of Hyperledger Fabric network. The prototype tool basically meets the capability requirements of five maturity levels and has better network deployment time.
   
-  \englishkeywords{Domain-driven design, Tactical modeling, Modeling tool, Domain-specific modeling language}
+  \englishkeywords{Blockchain, Cloud Native, BaaS, Kubernetes Operator}
 \end{englishabstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -300,30 +255,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 致谢，应放在结论之后
 \begin{acknowledgement}
-在本篇论文最后，我想真诚地感谢在我撰写论文过程中指导和帮助我的老师、同学们，
-还有支持我、鼓励我的家人和朋友们。
+% 在本篇论文最后，我想真诚地感谢在我撰写论文过程中指导和帮助我的老师、同学们，
+% 还有支持我、鼓励我的家人和朋友们。
 
-首先，我要感谢在我毕设研究工作中，张贺教授对我的悉心指导和帮助，
-在跟随您的两年研究生学习工作中，您总是教导我们要多去实践，
-要以严谨认真的态度踏踏实实地完成科研学习工作，
-还要努力阅读大量学术文献，提高自己看问题的层次，
-还为我们提供了很多与工业界交流的机会，这些都为我的毕设工作和日常工作学习带来了很大的好处。
+% 首先，我要感谢在我毕设研究工作中，张贺教授对我的悉心指导和帮助，
+% 在跟随您的两年研究生学习工作中，您总是教导我们要多去实践，
+% 要以严谨认真的态度踏踏实实地完成科研学习工作，
+% 还要努力阅读大量学术文献，提高自己看问题的层次，
+% 还为我们提供了很多与工业界交流的机会，这些都为我的毕设工作和日常工作学习带来了很大的好处。
 
-然后，我要感谢实验室的师兄师姐和同学们，
-感谢你们这两年中在学习、工作和生活中带给我的帮助与鼓励，
-特别是指导我毕设工作的师姐，对我的问题一一解答，对我的论文工作耐心指导，
-启发我进行深度的思考，反复与我评估和讨论论文研究的问题，
-得益于她的帮助，我的论文才能保质保量地顺利完成。
+% 然后，我要感谢实验室的师兄师姐和同学们，
+% 感谢你们这两年中在学习、工作和生活中带给我的帮助与鼓励，
+% 特别是指导我毕设工作的师姐，对我的问题一一解答，对我的论文工作耐心指导，
+% 启发我进行深度的思考，反复与我评估和讨论论文研究的问题，
+% 得益于她的帮助，我的论文才能保质保量地顺利完成。
 
-最后，还要感谢我的父母和家人，感谢你们在背后默默支持和陪伴我。
-很幸运，在研究生阶段遇到了相互扶持，互相鼓励的伴侣，
-在生活和学习上我们互相帮助，给予彼此很大的动力与希望。
-也要感谢我的舍友们，让我的生活中充满了乐趣。
+% 最后，还要感谢我的父母和家人，感谢你们在背后默默支持和陪伴我。
+% 很幸运，在研究生阶段遇到了相互扶持，互相鼓励的伴侣，
+% 在生活和学习上我们互相帮助，给予彼此很大的动力与希望。
+% 也要感谢我的舍友们，让我的生活中充满了乐趣。
 
-在论文工作中，访谈和焦点小组中付出了大量的精力时间，
-实现工具时也遇到过困难与问题，但我依然坚持尽力做到最好，
-马上就要从学校步入社会，我将坚持“诚朴雄伟，励学敦行”的精神，
-不畏艰难，努力奋斗出属于自己的一片天地。
+% 在论文工作中，访谈和焦点小组中付出了大量的精力时间，
+% 实现工具时也遇到过困难与问题，但我依然坚持尽力做到最好，
+% 马上就要从学校步入社会，我将坚持“诚朴雄伟，励学敦行”的精神，
+% 不畏艰难，努力奋斗出属于自己的一片天地。
   
 \end{acknowledgement}
 
@@ -355,18 +310,23 @@
   \end{education}
   % 论文作者在攻读学位期间所发表的文章的列表，按发表日期从近到远排列。
   \begin{publications}
-    \item Fuli Zhang, Peiyu Hou,  ``一种智能合约微服务化框架''
-    3篇论文！！ 
-    in \textsl{Proc. IEEE International Conference on Communications (ICC) 2010}, May. 2010.
-    \item  论文作者在攻读学位期间参与的科研课题的列表，按照日期从近到远排列。
+
+      \item Lanxin Yang, He Zhang, \textbf{Fuli Zhang}, Xiaodong Zhang, Guoping Rong, ``An Industrial Experience Report on Retro-inspection,'' in \textsl{Proc. International Conference on Software Engineering, Software Engineering in Practice(ICSE-SEIP)}, Jan. 2022.(Accept for Publication)
+
+      \item Guoping Rong, Yifan Zhang, Lanxin Yang, \textbf{Fuli Zhang}, Hongyu Kuang, He Zhang, ``Modeling Review History for Reviewer Recommendation: A Hypergraph Approach,'' in \textsl{Proc. International Conference on Software Engineering(ICSE)}, Dec. 2021.(Accept for Publication)
+
+      \item \textbf{张富利},侯培宇,李杉杉,荣国平,李质颖,丁梦洁, ``一种智能合约微服务化框架, '' \textsl{软件学报},2021,32(11):3423-3439.
+
   \end{publications}
  
 
-  % \begin{projects}
-  % % \item 国家自然科学基金面上项目``问题研究''
-  % % （课题年限~2010年1月 --- 2012年12月），负责相关问题的研究。
-  % \end{projects}
-  \end{resume}
+  \begin{projects}
+    \item 国家重点研发计划(政府间国际科技创新合作)项目:中挪联合面向供
+应链的高性能区块链系统支撑平台关键技术研究(2019YFE0105500), 2020-2022, 负责智能合约微服务化开发方法
+    \item 通信软件系统的微服务架构提升, 2019-2020.
+
+  \end{projects}
+\end{resume}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 生成《学位论文出版授权书》页面，应放在最后一页

@@ -40,7 +40,7 @@
 当前, 区块链分为公有区块链、联盟区块链和私有区块链。如表\ref{blockchain_type}所示, 公有链没有准入限制, 没有监管方可以组织参与, 任何人都可以参与共识, 常见的两种共识协议为工作量证明机制(Proof of work, 简称PoW)和权益证明机制(Proof of stake, 简称PoS)。由于任何人都可以自由加入, 因此公有链网络具有高度分布式的拓扑结构。但是, 公有链在安全性和性能方面也进行了权衡。公有链上的许多服务器遇到了扩展瓶颈, 吞吐量相对较弱; 与公有区块链的无准入限制形成鲜明对比的是, 私有区块链建立了准入规则, 规定谁可以查看和写入区块链。因为在控制方面有明确的层次结构, 私有链也不是去中心化系统。在某些私有链中, 具备安全模型的背景下，共识协议是多余的。因此在私有区块链中，不使用PoW并不会造成很严重的威胁, 因为每个参与者的身份都是已知的, 是手动进行管理的; 联盟区块链是介于公有链和私有链之间的，结合了两者的特征要素。在共识方面, 联盟链将少数同等权力的参与方视为验证者，而不是像公有链那样开放的系统, 让任何人都可以验证区块, 也不是像私有链那样, 通过一个封闭的系统, 只允许某一个实体来任命区块的生产者。对于从事各类活动的个人和企业来说，存在大量的区块链选择。即使在公有链、私有链和联盟链中，根据复杂性的不同，也会出现许多不同的用户体验。根据实际使用情况，企业可以选择最适合实现自己目标的产品。供应链、电商、医疗等需要彼此之间需要相互沟通的场景下, 联盟链可减轻私有链中交易对手的风险, 并且较少的节点数通常可使它们能够比公共链更有效率的运行, 通常选择联盟链作为企业级区块链的底层。
 
 \subsection{Hyperledger Fabric}
-Hyperledger Fabric\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/fabric}{Hyperledger Fabric github地址}}是一种企业级联盟链解决方案, 因其可插拔模块化、可伸缩、可扩展的架构、多编程语言的智能合约受到业界广泛追捧。
+Hyperledger Fabric\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/fabric}{Hyperledger Fabric}}(简称HF)是一种企业级联盟链解决方案, 因其可插拔模块化、可伸缩、可扩展的架构、多编程语言的智能合约受到业界广泛追捧。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -49,43 +49,43 @@ Hyperledger Fabric\footnotemark[1]\footnotetext[1]{\href{https://github.com/hype
     \label{hyperledger_fabric} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境 
 
-如图\ref{hyperledger_fabric}所示, Fabric网络通过组织划分, 每个组织内包含多种不同角色的Peer节点, 每个Peer节点又可以担任多种角色, 所有的组织共用排序服务。Fabric多种节点通过网络相互链接组成联盟链网络完成链上交易。
+如图\ref{hyperledger_fabric}所示, HF网络通过组织划分, 每个组织内包含多种不同角色的Peer节点, 每个Peer节点又可以担任多种角色, 所有的组织共用排序服务。HF多种节点通过网络相互链接组成联盟链网络完成链上交易。
 
 \textbf{网络节点}
 \begin{enumerate}[fullwidth,itemindent=2em,label=(\arabic*)]
-    \item 客户端节点: 在Fabric网络外部用于主动与区块链交互实现区块链操作的组件。常见的包含软件开发工具包(Software Development Kit, 简称SDK)\footnotemark[2]\footnotetext[2]{\href{https://github.com/hyperledger/fabric-sdk-go}{Hyperledger Fabric Go版本的SDK}}、fabric-cli\footnotemark[3]\footnotetext[3]{\href{https://github.com/hyperledger/fabric-cli}{fabric-cli github地址}}、REST API\footnotemark[4]\footnotetext[4]{\href{https://github.com/hyperledger/fabric/blob/v0.6/docs/source/API/CoreAPI.rst}{fabric api github地址}};
+    \item 客户端节点: 在HF网络外部用于主动与区块链交互实现区块链操作的组件。常见的包含软件开发工具包(Software Development Kit, 简称SDK)\footnotemark[2]\footnotetext[2]{\href{https://github.com/hyperledger/fabric-sdk-go}{Hyperledger Fabric Go版本的SDK}}、Fabric-CLI\footnotemark[3]\footnotetext[3]{\href{https://github.com/hyperledger/fabric-cli}{fabric cli}}、REST API\footnotemark[4]\footnotetext[4]{\href{https://github.com/hyperledger/fabric/blob/v0.6/docs/source/API/CoreAPI.rst}{fabric api}};
 
-    \item Ca节点: fabric-ca\footnotemark[5]\footnotetext[5]{\href{https://github.com/hyperledger/fabric-ca}{fabric-ca github地址}}是一个官方可选的Membership Service Provider组件, 对Fabric网络中各实体(Identity)的数字身份证书进行管理。完成实体身份注册、数字证书的签发续签或吊销;
+    \item Ca节点: Fabric-Ca\footnotemark[5]\footnotetext[5]{\href{https://github.com/hyperledger/fabric-ca}{fabric ca}}是一个官方可选的Membership Service Provider组件, 对Fabric网络中各实体(Identity)的数字身份证书进行管理。完成实体身份注册、数字证书的签发续签或吊销;
 
-    \item Peer节点: Fabric网络的每个组织都包含一个或多个Peer节点, 每个Peer节点可以通过配置文件担任一个或同时担任多种角色。
+    \item Peer节点: HF网络的每个组织都包含一个或多个Peer节点, 每个Peer节点可以通过配置文件担任一个或同时担任多种角色。
 
     \begin{itemize}[itemindent=2em]
         \item 锚节点(Anchor Peer): 负责与其他组织的锚节点进行通信;
 
         \item 记账/提交节点(Committing Peer): 负责对区块及区块交易进行验证, 验证通过后将区块写入账本中, 同时提交节点会定期与其他节点通过Gossip协议进行信息交换;
 
-        \item 背书节点(Endorsing Peer): 负责对客户端发送的提案进行签名背书。背书节点与具体的链码(chaincode)绑定, 其通过调用链码模拟执行交易并向生成提案的客户端返回提案响应。背书节点是动态的, 在客户端发起提案时才会根据背书策略(Endorsement policy)成为背书节点, 其他时候为记账节点。
+        \item 背书节点(Endorsing Peer): 负责对客户端发送的提案进行签名背书。背书节点与具体的链码(ChainCode)绑定, 其通过调用链码模拟执行交易并向生成提案的客户端返回提案响应。背书节点是动态的, 在客户端发起提案时才会根据背书策略(Endorsement policy)成为背书节点, 其他时候为记账节点。
     \end{itemize}
 
     \item Orderer节点: 排序服务节点接收经过背书签名的交易并对未打包的交易进行排序生成新区块, 最终通过原子广播到记账节点。排序服务采取支持可插拔设计, 支持Solo、Kafka等分布式共识协议。
 
 \end{enumerate}
 
-Fabric区块链支持在通信节点之间启用传输层安全性协议(Transport Layer Security, 简称TLS)保证两通信节点的数据保密性和完整性。TLS采用X.509证书进行身份验证并生成会话密钥, 不仅支持客户端节点对服务节点的身份验证, 同时也可以支持服务节点来验证客户端的身份的双向验证。
+HF区块链支持在通信节点之间启用传输层安全性协议(Transport Layer Security, 简称TLS)保证两通信节点的数据保密性和完整性。TLS采用X.509证书进行身份验证并生成会话密钥, 不仅支持客户端节点对服务节点的身份验证, 同时也可以支持服务节点来验证客户端的身份的双向验证。
 
 \textbf{账本结构}
 
-Fabric中智能合约被称为链码, 通过通道(channel)允许参与者同时履行不同的链码。Fabric网络子链通常按照由“1个通道+1个账本+N个成员”组成。不同组织及其成员能够在通道中完成特定的交易, 限制信息传播范围。建立一个通道就相当于创建了一条子链, 这条子链上只拥有唯一的一份账本。
+HF中智能合约被称为链码, 通过通道(Channel)允许参与者同时履行不同的链码。HF网络子链通常按照由“1个通道+1个账本+N个成员”组成。不同组织及其成员能够在通道中完成特定的交易, 限制信息传播范围。建立一个通道就相当于创建了一条子链, 这条子链上只拥有唯一的一份账本。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
     \includegraphics[width=0.45\textwidth]{FIGs/chapter2/ledger.pdf} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
-    \caption{Fabric账本结构} %caption是用来给图片加上图题的
+    \caption{Hyperledger Fabric账本结构} %caption是用来给图片加上图题的
     \label{fabric_ledger} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-如图\ref{fabric_ledger}所示, Fabric账本由区块链以及世界状态(World State)组成, 其中世界状态由区块链决定。
-首先, 世界状态是一个可插拔的键值对(key-value, 简称k-v)数据库, 提供简单、快速、丰富的账本状态的检索和存储方式。通过世界状态, 客户端能够直接定位访问账本状态的某个值, 不需要遍历计算整个交易日志。为解决不同类型的问题, Fabric提供了LevelDB和CouchDB来保障账本状态类型的灵活性。当账本状态是简单的键值对时, 使用LevelDB合适; 当账本状态结构为 JSON时, 使用CouchDB合适。
+如图\ref{fabric_ledger}所示, HF账本由区块链以及世界状态(World State)组成, 其中世界状态由区块链决定。
+首先, 世界状态是一个可插拔的键值对(key-value, 简称k-v)数据库, 提供简单、快速、丰富的账本状态的检索和存储方式。通过世界状态, 客户端能够直接定位访问账本状态的某个值, 不需要遍历计算整个交易日志。为解决不同类型的问题, HF提供了LevelDB和CouchDB来保障账本状态类型的灵活性。当账本状态是简单的键值对时, 使用LevelDB合适; 当账本状态结构为 JSON时, 使用CouchDB合适。
 其次, 这里的区块链指的是交易日志, 是指区块形成的链。区块记录了世界状态改变的历史, 并以文件的方式进行持久化。交易数据一旦写入区块链就无法篡改。
 
 \subsection{Blockchain as a Service}\label{section: BaaS}
@@ -99,7 +99,7 @@ Fabric中智能合约被称为链码, 通过通道(channel)允许参与者同时
 
 随着区块链以及云原生的发展, BaaS也悄然兴起。云提供了一种抽象、汇集和共享整个网络中的按需的、虚拟的、资源可伸缩的IT环境, BaaS则提供了一种基于云的区块链服务。BaaS能够在云上构建、管理、托管和运维区块链技术的各个方面, 提供快速部署区块链网络及其开发环境、编写智能合约、构建去中心化应用(即区块链应用, Decentralized application, 简称 Dapp)。基于云基础设施, BaaS屏蔽了底层区块链与云原生的逻辑, 消除了用户构建开发去中心化应用的壁垒, 尤其是部署区块链网络所需的大量硬件和专业知识的前期成本, 为用户提供便捷的、一体化的区块链的能力。如图\ref{BaaS_PaaS_SaaS}所示, 根据BaaS的实施方式, BaaS在云环境中的位置会有所不同\cite{onik2019performance}。BaaS可以从使用平台即服务(Platform as a Service, 简称PaaS)获得基础设施支持的同时也可以通过软件即服务(Software as a Service, SaaS)获得软件服务。
 
-微软在推出由Azure云驱动的开放式区块链平台Bletchley, 该项目保证服务对于所有平台、合作者和客户来讲都是开放的、灵活的\cite{BlockchainasaServiceNextGenerationofCloudServices}。IBM推出了名为Bluemix的云计算平台, 依托于PaaS云将帮助开发者更快的进行应用开发和部署。随后AWS、Google、阿里云等也相继推出自家的区块链即服务平台。以Hyperledger Fabric为例, BaaS平台通用的架构如\ref{BaaS_Architecture}所示, 本质上BaaS以计算、存储资源等资源为基础, 联合上层的区块链基础设施以及相关能力, 如共识能力、记账能力、智能合约等转化为可编程接口, 使得区块链网络的部署以及去中心化应用开发过程简单而高效。同时, BaaS通过底层标准化的云基础设施能力为上层的区块链及其去中心化应用提供安全可靠的支撑, 解决弹性、网络、安全性、性能等难题。本文重点关注于基础设施层中Kubernetes上的区块链云化服务模型的研究。
+微软在推出由Azure云驱动的开放式区块链平台Bletchley, 该项目保证服务对于所有平台、合作者和客户来讲都是开放的、灵活的\cite{BlockchainasaServiceNextGenerationofCloudServices}。IBM推出了名为Bluemix的云计算平台, 依托于PaaS云将帮助开发者更快的进行应用开发和部署。随后AWS、Google、阿里云等也相继推出自家的区块链即服务平台。以HF为例, BaaS平台通用的架构如\ref{BaaS_Architecture}所示, 本质上BaaS以计算、存储资源等资源为基础, 联合上层的区块链基础设施以及相关能力, 如共识能力、记账能力、智能合约等转化为可编程接口, 使得区块链网络的部署以及去中心化应用开发过程简单而高效。同时, BaaS通过底层标准化的云基础设施能力为上层的区块链及其去中心化应用提供安全可靠的支撑, 解决弹性、网络、安全性、性能等难题。本文重点关注于基础设施层中Kubernetes上的区块链云化服务模型的研究。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -160,11 +160,11 @@ Fabric中智能合约被称为链码, 通过通道(channel)允许参与者同时
     \label{workshop} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-如图\ref{workshop}所示, 本文根据上述7类云原生技术范畴, 对2020-2021年国内外重点技术会议的共442场分享进行了系统化Review, 其中包括国内云原生社区MeeUp城市站以及Cloud Native+Open Source Virtual Summit China共131场分享, 国际(欧洲、北美)KubeCon+CloudNativeCon Europe以及KubeCon+CloudNativeCon North America 共311篇场分享。从表中可知, 目前国内外研究重点关注于云应用编排以及运行时, 国内对云应用编排与管理的讨论要大于国际并且云应用定义与开发流程、可观测性与分析、平台与无服务器国内外相关分享在比例上差距并不是很大, 云原生技术体系已经成为当代软件工程技术发展的主流技术体系。
+如图\ref{workshop}所示, 本文根据上述7类云原生技术范畴, 对2020-2021年国内外重点技术会议的共442场分享进行了系统化分析, 其中包括国内云原生社区MeeUp城市站以及Cloud Native+Open Source Virtual Summit China共131场分享, 国际(欧洲、北美)KubeCon+CloudNativeCon Europe以及KubeCon+CloudNativeCon North America 共311篇场分享。从表中可知, 目前国内外研究重点关注于云应用编排以及运行时, 国内对云应用编排与管理的讨论要大于国际并且云应用定义与开发流程、可观测性与分析、平台与无服务器国内外相关分享在比例上差距并不是很大, 云原生技术体系已经成为当代软件工程技术发展的主流技术体系。
 
 \subsection{Kubernetes}
 
-Kubernetes(简称k8s)是Google开源的容器集群管理平台。在Docker容器化技术之上, k8s为容器化的云原生应用提供部署运行、资源调度、服务发现、弹性伸缩等一系列基础功能, 提升了大规模容器集群管理的便捷性。自开源来, k8s成为一种全新的基于容器技术的分数时架构解决方案, 在云原生领域具有举足轻重的地位。2019年, 在我国72\%的工程师已经在云原生生产环境中使用大规模使用k8s来进行容器\footnotemark[1]\footnotetext[1]{\href{https://www.cncf.io/blog/2020/10/13/cncf-cloud-native-survey-china-2019/}{CNCF Cloud Native Survey China 2019}}。
+Kubernetes(简称k8s)是Google开源的容器集群管理平台。在Docker容器化技术之上, Kubernetes为容器化的云原生应用提供部署运行、资源调度、服务发现、弹性伸缩等一系列基础功能, 提升了大规模容器集群管理的便捷性。自开源来, Kubernetes成为一种全新的基于容器技术的分数时架构解决方案, 在云原生领域具有举足轻重的地位。2019年, 在我国72\%的工程师已经在云原生生产环境中使用大规模使用Kubernetes来进行容器\footnotemark[1]\footnotetext[1]{\href{https://www.cncf.io/blog/2020/10/13/cncf-cloud-native-survey-china-2019/}{CNCF Cloud Native Survey China 2019}}。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -173,12 +173,12 @@ Kubernetes(简称k8s)是Google开源的容器集群管理平台。在Docker容�
     \label{k8s} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-k8s是基于主从式的分布式存储系统, 由节点代理(kubelet)和Master组件组成。如图\ref{k8s}所示, k8s主要由以下核心组件构成:
+Kubernetes由节点代理(kubelet)和Master节点组成。如图\ref{k8s}所示, Kubernetes节点主要由以下核心组件构成:
 
 \begin{itemize}[itemindent=2em]
     \item Etcd: 用于保存集群中一切网络配置和状态信息;
 
-    \item ApiServer: 是资源配额控制的入口, 具备完备的集群安全机制并且提供用于集群管理的REST API接口;
+    \item APIServer: 是资源配额控制的入口, 具备完备的集群安全机制并且提供用于集群管理的REST API接口;
 
     \item Controller Manager: 集群内部的所有资源的管理控制中心, 负责集群内的Node、Pod副本、Endpoint、Namespace、ServiceAccount、ResourceQuota的管理, 实现自动扩展、自动滚动更新、故障检测等功能;
 
@@ -191,14 +191,14 @@ k8s是基于主从式的分布式存储系统, 由节点代理(kubelet)和Master
     \item kube-proxy: 为Service提供集群内部的负载均衡和服务发现。
 \end{itemize}
 
-k8s拥有独特的声明式API设计, 即声明式地告诉k8s所需资源的状态, 而不是告诉它如何做。在k8s中对象(Object)是持久化的实体, k8s使用这些实体去表示整个集群的状态, 同时这些对象可以在Yaml\cite{ben2009yaml}文件中作为一种声明式API类型来灵活的创建并配置。典型的, k8s的对象主要有以下几种: 
+Kubernetes拥有独特的声明式API设计, 即声明式地告诉Kubernetes所需资源的状态, 而不是告诉它如何做。在Kubernetes中对象(Object)是持久化的实体, Kubernetes使用这些实体去表示整个集群的状态, 同时这些对象可以在Yaml\cite{ben2009yaml}文件中作为一种声明式API类型来灵活的创建并配置。典型的, Kubernetes的对象主要有以下几种: 
 
 \begin{itemize}[itemindent=2em]
-    \item Namespace: 能够隔离资源。k8s集群可以拥有多个命名空间, 这些命名空间在逻辑上彼此隔离, 实现了对多用户的资源隔离;
+    \item Namespace: 能够隔离资源。Kubernetes集群可以拥有多个命名空间, 这些命名空间在逻辑上彼此隔离, 实现了对多用户的资源隔离;
 
-    \item Pod: k8s中最基本的操作单元, 包含一个或多个容器。k8s为每个Pod分配一个唯一的IP地址, Pod内部的多个容器共享该IP地址。并且每个Pod都能设定自己的计算资源, 即CPU和Memory;
+    \item Pod: Kubernetes中最基本的操作单元, 包含一个或多个容器。Kubernetes为每个Pod分配一个唯一的IP地址, Pod内部的多个容器共享该IP地址。并且每个Pod都能设定自己的计算资源, 即CPU和Memory;
 
-    \item Replication Controller(简称RC): 确保任意时间k8s集群中运行指定数量的Pod副本;
+    \item Replication Controller(简称RC): 确保任意时间Kubernetes集群中运行指定数量的Pod副本;
 
     \item Deployment: 保证Pod的数量和健康, 绝大多数的功能与RC完全一样, 能够被当作全新一代的RC;
 
@@ -214,21 +214,21 @@ k8s拥有独特的声明式API设计, 即声明式地告诉k8s所需资源的状
 
     \item Volume: Pod中能够被多个容器访问的持久化共享目录;
 
-    \item Persistent Volume(简称PV): 类似于Volume, k8s提供的存储资源的抽象管理集群存储, 其API内包含存储的细节实现;
+    \item Persistent Volume(简称PV): 类似于Volume, Kubernetes提供的存储资源的抽象管理集群存储, 其API内包含存储的细节实现;
 
     \item Persistent Volume Claim(简称PVC): 对存储资源的请求声明, PVC不关心底层存储实现的细节, 只消耗PV资源。
 
 \end{itemize}
 
-随着k8s生态的持续发展, 上述常规的资源类型仅代表通用的对象, 并不能适应多变的业务需求。为提升自身的扩展能力, k8s提供用户资源定义(Custom Resource Definition, 简称CRD)向k8s API中增加定制化的资源类型。用户的自定义资源(Custom Resource, 简称CR)创建并注册到k8s API后, 其与常规通用资源对象都是原生的、存在于etcd中的同等资源, 可以采用k8s原生方式进行创建、查看。CRD本质上用于声明用户自定义资源对象, 开发人员还需要针对CRD提供关联的Operator对CR进行完整生命周期管控。
+随着Kubernetes生态的持续发展, 上述常规的资源类型仅代表通用的对象, 并不能适应多变的业务需求。为提升自身的扩展能力, Kubernetes提供用户资源定义(Custom Resource Definition, 简称CRD)向Kubernetes API中增加定制化的资源类型。用户的自定义资源(Custom Resource, 简称CR)创建并注册到Kubernetes API后, 其与常规通用资源对象都是原生的、存在于etcd中的同等资源, 可以采用Kubernetes原生方式进行创建、查看。CRD本质上用于声明用户自定义资源对象, 开发人员还需要针对CRD提供关联的Operator对CR进行完整生命周期管控。
 
-Operator主要负责有状态应用(即CR)及其组件的部署、更新、自动扩展、维护、数据备份等, 保证其可用性。其作为k8s的一种扩展形式, 基于k8s的资源和控制器(controller)概念构建, 遵循k8s原则, 功能类似于Controller Manager, 但同时又包含了特定领域知识。
+Operator主要负责有状态应用(即CR)及其组件的部署、更新、自动扩展、维护、数据备份等, 保证其可用性。其作为Kubernetes的一种扩展形式, 基于Kubernetes的资源和控制器(controller)概念构建, 遵循Kubernetes原则, 功能类似于Controller Manager, 但同时又包含了特定领域知识。
 
 \section{其他相关技术}\label{section: other_technologies}
 
 \subsection{Helm}
 
-Helm是一种基于k8s云计算平台的打包和部署复杂软件应用程序的技术\cite{spillner2019quality}。随着云原生及微服务架构的发展, 开发人员倾向于将大的单体应用分解成多个可以独立开发、部署、运维的微服务部署于k8s之上。服务数量的增加为k8s编排带来了复杂性, Helm则通过软件打包的方式极大的简化了k8s应用部署和管理的复杂性。
+Helm是一种基于Kubernetes云计算平台的打包和部署复杂软件应用程序的技术\cite{spillner2019quality}。随着云原生及微服务架构的发展, 开发人员倾向于将大的单体应用分解成多个可以独立开发、部署、运维的微服务部署于Kubernetes之上。服务数量的增加为Kubernetes编排带来了复杂性, Helm则通过软件打包的方式极大的简化了Kubernetes应用部署和管理的复杂性。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -240,20 +240,20 @@ Helm是一种基于k8s云计算平台的打包和部署复杂软件应用程序�
 Helm存在三个核心概念:
 
 \begin{itemize}[itemindent=2em]
-    \item chart: 即一系列包含创建k8s应用实例必要信息的文件;
+    \item chart: 即一系列包含创建Kubernetes应用实例必要信息的文件;
 
     \item config: 包含应用发布的相关配置信息;
 
     \item release: chart及其配置的运行实例。
 \end{itemize}
 
-如图\ref{helm}所示, Helm将k8s资源(如Deployment、Service)打包到chart中, chart将会被保存到仓库中。Tiller是部署于k8s中的Helm的服务端, 负责接受Helm请求并于ApiServer进行交互, 根据chart生成并管理release。开发者使用Helm可以简化应用配置及版本管理, 使得在k8s上部署、升级、回滚、卸载应用程序更加方便。
+如图\ref{helm}所示, Helm将Kubernetes资源(如Deployment、Service)打包到chart中, chart将会被保存到仓库中。Tiller是部署于Kubernetes中的Helm的服务端, 负责接受Helm请求并于APIServer进行交互, 根据chart生成并管理release。开发者使用Helm可以简化应用配置及版本管理, 使得在Kubernetes上部署、升级、回滚、卸载应用程序更加方便。
 
 \subsection{Istio}
 
-随着技术下沉, 传统由软件本身负责的负载均衡、路由等功能下沉到云原生基础设施。服务网格(Service Mesh)通过在不断变化的条件和拓扑结构面前强制执行所需的网络行为, 为网络连接的工作负载提供基于策略的网络服务\cite{calcote2019istio}。istio\footnotemark[1]\footnotetext[1]{\href{https://github.com/istio/istio}{istio github地址}}是Service Mesh架构的一种实现方式, 其是一个用于保证容器服务间连接、安全、控制和观测的网络代理组件, 具有负载均衡、服务间认证、监控等功能。
+随着技术下沉, 传统由软件本身负责的负载均衡、路由等功能下沉到云原生基础设施。服务网格(Service Mesh)通过在不断变化的条件和拓扑结构面前强制执行所需的网络行为, 为网络连接的工作负载提供基于策略的网络服务\cite{calcote2019istio}。Istio\footnotemark[1]\footnotetext[1]{\href{https://github.com/istio/istio}{istio}}是Service Mesh架构的一种实现方式, 其是一个用于保证容器服务间连接、安全、控制和观测的网络代理组件, 具有负载均衡、服务间认证、监控等功能。
 
-istio分为两个逻辑部分\cite{larsson2020impact}: 数据平面(Data Plane)与控制平面(Control Plane)。数据平面由代理程序Envoy(通常被称为Sidercar)组成, 其受控制平面组件控制, 通常与业务容器捆绑, 来劫持业务应用容器的流量完成针对特性应用程序的控制与治理; 控制平面提供服务发现、配置和证书管理等功能, istio对其进行了进一步细分:
+Istio分为两个逻辑部分\cite{larsson2020impact}: 数据平面(Data Plane)与控制平面(Control Plane)。数据平面由代理程序Envoy(通常被称为Sidercar)组成, 其受控制平面组件控制, 通常与业务容器捆绑, 来劫持业务应用容器的流量完成针对特性应用程序的控制与治理; 控制平面提供服务发现、配置和证书管理等功能, Istio对其进行了进一步细分:
 
 \begin{itemize}[itemindent=2em]
     \item Mixer: 负责策略、访问控制和请求追踪;

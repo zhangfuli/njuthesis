@@ -150,6 +150,15 @@
   }\bibpages{456\thinspace{}\textnormal{--}\thinspace{}466}\@.
   \newline\url{http://dx.doi.org/10.1109/CLOUD53861.2021.00060}\@.
 
+\bibitem{8790849}
+\bibauthor{SHI Z\@, ZHOU H\@, HU Y, et~al}\@. \bibtitle{Operating Permissioned
+  Blockchain in Clouds: A Performance Study of Hyperledger
+  Sawtooth}\bibmark{[C/OL]} //\thinspace{}\bibbooktitle{2019 18th International
+  Symposium on Parallel and Distributed Computing (ISPDC)}\@.
+  \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{50\thinspace{}\textnormal{--}\thinspace{}57}\@.
+  \newline\url{http://dx.doi.org/10.1109/ISPDC.2019.00010}\@.
+
 \bibitem{henning2021reproducible}
 \bibauthor{HENNING S\@, WETZEL B\@, HASSELBRING W}\@. \bibtitle{Reproducible
   Benchmarking of Cloud-Native Applications with the Kubernetes Operator

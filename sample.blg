@@ -6,7 +6,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: sample.bib
-Repeated entry---line 406 of file sample.bib
+Repeated entry---line 416 of file sample.bib
  : @article{larsson2020impact
  :                           ,
 I'm skipping whatever remains of this entry
@@ -19,6 +19,7 @@ Warning--Require citedate: 8457813
 Warning--Require year: liangeduchain
 Warning--Require address: caili2018
 Warning--Require citedate: 9582270
+Warning--Require citedate: 8790849
 Warning--Require journal: henning2021reproducible
 Warning--Require citedate: ZHANG20121791
 Warning--Require address: calcote2019istio
@@ -29,45 +30,45 @@ Warning--Require citedate: Yilmaz2021
 Warning--Require journal: d2020design
 Warning--Require citedate: 8249485
 Warning--Require address: tashakkori1998mixed
-You've used 57 entries,
+You've used 58 entries,
             3107 wiz_defined-function locations,
-            1042 strings with 18456 characters,
-and the built_in function-call counts, 104551 in all, are:
-= -- 11553
-> -- 206
-< -- 469
-+ -- 9395
-- -- 722
-* -- 2729
-:= -- 11882
+            1048 strings with 18762 characters,
+and the built_in function-call counts, 106325 in all, are:
+= -- 11742
+> -- 210
+< -- 478
++ -- 9542
+- -- 737
+* -- 2782
+:= -- 12078
 add.period$ -- 0
-call.type$ -- 57
-change.case$ -- 298
+call.type$ -- 58
+change.case$ -- 304
 chr.to.int$ -- 0
-cite$ -- 76
-duplicate$ -- 14647
-empty$ -- 3870
-format.name$ -- 596
-if$ -- 28070
+cite$ -- 78
+duplicate$ -- 14896
+empty$ -- 3945
+format.name$ -- 608
+if$ -- 28544
 int.to.chr$ -- 0
-int.to.str$ -- 57
+int.to.str$ -- 58
 missing$ -- 0
-newline$ -- 198
-num.names$ -- 57
-pop$ -- 1471
+newline$ -- 201
+num.names$ -- 58
+pop$ -- 1501
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 940
+skip$ -- 954
 stack$ -- 0
-substring$ -- 12322
-swap$ -- 2676
+substring$ -- 12525
+swap$ -- 2722
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 19
-while$ -- 1392
-width$ -- 59
-write$ -- 789
+warning$ -- 20
+while$ -- 1420
+width$ -- 60
+write$ -- 803
 (There was 1 error message)

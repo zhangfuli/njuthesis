@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.11.15)  21 MAR 2022 10:11
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.11.15)  1 APR 2022 11:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1473,6 +1473,11 @@ Underfull \hbox (badness 5359) detected at line 157
 \TU/STKaiti(0)/m/n/26.1 研 究 生 毕 业 论 文
  []
 
+
+Underfull \hbox (badness 10000) detected at line 157
+\TU/STKaiti(0)/m/n/26.1 申 请 硕 士 学 位
+ []
+
 LaTeX Font Info:    Trying to load font information for OT1+txr on input line 1
 57.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/txfonts/ot1txr.fd
@@ -1646,11 +1651,6 @@ Overfull \hbox (0.93959pt too wide) in paragraph at lines 165--165
  []
 
 
-Overfull \hbox (28.1396pt too wide) in paragraph at lines 165--165
-|   []\TU/STKaiti(0)/m/n/14.05 专 业|   []级 工 学 硕 士 生 姓 名：| |   [] 
- []
-
-
 Overfull \hbox (1.1896pt too wide) in paragraph at lines 165--165
 \TU/STKaiti(0)/m/n/14.05 指 导 教 师  |（姓 名、|  职 称）|：| |   [] 
  []
@@ -1661,31 +1661,37 @@ Package fontspec Warning: Font "STHeiti" does not contain requested Script
 
 [1
 
-]
-Overfull \hbox (1.22794pt too wide) in paragraph at lines 204--204
+] [2]
+Overfull \hbox (1.22794pt too wide) in paragraph at lines 181--181
 \TU/Times(0)/m/n/14.05 SPECIALIZATION: |   [] 
  []
 
-[2
+[3
 
-] [3] (./sample.toc [4
+]
+Overfull \hbox (2.25214pt too wide) in paragraph at lines 188--189
+[]\TU/Times(0)/m/n/12.05 This thesis conduct functional and non-functional test
+ing of prototype tools through
+ []
+
+[4] (./sample.toc [5
 
 
 ])
 \tf@toc=\write4
 \openout4 = `sample.toc'.
 
- [5] (./sample.lof [6
+ [6] (./sample.lof [7
 
 ])
 \tf@lof=\write5
 \openout5 = `sample.lof'.
 
- [7] (./sample.lot)
+ [8] (./sample.lot)
 \tf@lot=\write6
 \openout6 = `sample.lot'.
 
- [8
+ [9
 
 ]
 (./chapters/Introduction.tex
@@ -1712,84 +1718,65 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 ] [2]
-File: FIGs/chapter1/framework_tool.pdf Graphic file (type pdf)
-<use FIGs/chapter1/framework_tool.pdf>
+File: FIGs/chapter1/process.png Graphic file (type bmp)
+<FIGs/chapter1/process.png>
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 51.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 51.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 51.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 52.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 51.
-
-[3] [4]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 70.
+(hyperref)                removed on input line 52.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 70.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 70.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 52.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 70.
+(hyperref)                removed on input line 52.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 113.
-
+[3] [4] [5]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 113.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 113.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 71.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 113.
-
-[5]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 129.
+(hyperref)                removed on input line 71.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 129.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 129.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 71.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 129.
+(hyperref)                removed on input line 71.
 
-) (./chapters/Theory and technical support.tex [6]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 82.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 82.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 82.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 82.
+
+[6]) (./chapters/Theory and technical support.tex [7]
 {第\CJKnumber {2}章} 2.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1847,9 +1834,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 File: FIGs/chapter2/blockchain_example.pdf Graphic file (type pdf)
 <use FIGs/chapter2/blockchain_example.pdf>
-[7
+[8
 
-] [8]
+] [9]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 42.
@@ -1888,10 +1875,14 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 File: FIGs/chapter2/hyperledger_fabric.pdf Graphic file (type pdf)
 <use FIGs/chapter2/hyperledger_fabric.pdf>
-[9]
+[10]
 File: FIGs/chapter2/ledger.pdf Graphic file (type pdf)
 <use FIGs/chapter2/ledger.pdf>
- [10]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 91.
@@ -1930,7 +1921,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 File: FIGs/chapter2/BaaS_PaaS_SaaS.pdf Graphic file (type pdf)
 <use FIGs/chapter2/BaaS_PaaS_SaaS.pdf>
-[11]
+[12]
 File: FIGs/chapter2/BaaS_Architecture.pdf Graphic file (type pdf)
 <use FIGs/chapter2/BaaS_Architecture.pdf>
 
@@ -1988,24 +1979,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 113.
 
-[12]
+[13]
 File: FIGs/chapter2/cloud_native_development.pdf Graphic file (type pdf)
 <use FIGs/chapter2/cloud_native_development.pdf>
- [13]
+ [14]
 File: FIGs/chapter2/cloud_native_landscape.pdf Graphic file (type pdf)
 <use FIGs/chapter2/cloud_native_landscape.pdf>
- [14]
+ [15]
 File: FIGs/chapter2/workshop.pdf Graphic file (type pdf)
 <use FIGs/chapter2/workshop.pdf>
- [15]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 165.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 165.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2034,9 +2019,23 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 165.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 165.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 165.
+
+[16]
 File: FIGs/chapter2/k8s.pdf Graphic file (type pdf)
 <use FIGs/chapter2/k8s.pdf>
-[16] [17]
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17] [18]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 227.
@@ -2093,10 +2092,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 File: FIGs/chapter2/helm.pdf Graphic file (type pdf)
 <use FIGs/chapter2/helm.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[18]
+[19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 252.
@@ -2133,6 +2129,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 252.
 
+[20]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 266.
@@ -2151,7 +2148,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 266.
 
-[19]) (./chapters/Research And Analysis.tex [20]
+) (./chapters/Research And Analysis.tex [21]
 {第\CJKnumber {3}章} 3.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2171,18 +2168,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 5.
 
-[21
+[22
 
-] [22]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 122.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 122.
-
+] [23]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 122.
@@ -2192,7 +2180,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 122.
 
-[23]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 122.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 122.
+
+[24]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 140.
@@ -2211,7 +2208,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 140.
 
-[24] [25]
+[25] [26]
 Overfull \hbox (0.57323pt too wide) in paragraph at lines 166--166
 []|\TU/Times(0)/m/n/9.03 MAC| 
  []
@@ -2226,14 +2223,11 @@ Overfull \hbox (5.08823pt too wide) in paragraph at lines 170--170
 []|\TU/Times(0)/m/n/9.03 ABAC| 
  []
 
-[26]
+[27] [28]
 File: FIGs/chapter3/policy_characteristics.pdf Graphic file (type pdf)
 <use FIGs/chapter3/policy_characteristics.pdf>
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\leavevmode@ifvmode' on input line 197.
 
@@ -2251,7 +2245,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 197.
 
-) [27] (./chapters/Framework Design And implementation.tex [28]
+) (./chapters/Framework Design And implementation.tex [29]
 {第\CJKnumber {4}章} 4.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2271,7 +2265,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 5.
 
-[29
+[30
 
 ]
 File: FIGs/chapter4/framework.pdf Graphic file (type pdf)
@@ -2313,264 +2307,259 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 20.
 
-[30]
+[31]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 59.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 59.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 59.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 61.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 59.
+(hyperref)                removed on input line 61.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 59.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 59.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 59.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 61.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 59.
+(hyperref)                removed on input line 61.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 61.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 61.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 61.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 61.
 
 File: FIGs/chapter4/manager.pdf Graphic file (type pdf)
 <use FIGs/chapter4/manager.pdf>
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[31] [32]
+[32] [33]
 File: FIGs/chapter4/controller.pdf Graphic file (type pdf)
 <use FIGs/chapter4/controller.pdf>
- [33]
+ [34]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 96.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 96.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 96.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 96.
+(hyperref)                removed on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 96.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 96.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 96.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 96.
-
-[34]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 110.
+(hyperref)                removed on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 110.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 110.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 110.
+(hyperref)                removed on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 112.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 112.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 112.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 100.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 112.
+(hyperref)                removed on input line 100.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 112.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 112.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 112.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 112.
-
-File: FIGs/chapter4/tool.pdf Graphic file (type pdf)
-<use FIGs/chapter4/tool.pdf>
 [35]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 127.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 114.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 127.
+(hyperref)                removed on input line 114.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 127.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 127.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 127.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 114.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 127.
+(hyperref)                removed on input line 114.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 127.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 116.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 127.
+(hyperref)                removed on input line 116.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 116.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 116.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 116.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 116.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 116.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 116.
+
+File: FIGs/chapter4/tool.pdf Graphic file (type pdf)
+<use FIGs/chapter4/tool.pdf>
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 129.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 129.
+
+[36]
 File: FIGs/chapter4/fabric_use_case.pdf Graphic file (type pdf)
 <use FIGs/chapter4/fabric_use_case.pdf>
-[36] [37]
-File: FIGs/chapter4/chan_cc_use_case.pdf Graphic file (type pdf)
-<use FIGs/chapter4/chan_cc_use_case.pdf>
- [38] [39]
+ [37] [38]
+File: FIGs/chapter4/chan_usecase.pdf Graphic file (type pdf)
+<use FIGs/chapter4/chan_usecase.pdf>
+ [39]
+File: FIGs/chapter4/cc_use_case.pdf Graphic file (type pdf)
+<use FIGs/chapter4/cc_use_case.pdf>
+ [40] [41]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 314.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 314.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 314.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 318.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 314.
+(hyperref)                removed on input line 318.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 314.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 314.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 314.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 318.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 314.
+(hyperref)                removed on input line 318.
 
-[40]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 318.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 318.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 318.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 318.
+
 File: FIGs/chapter4/create_crd.pdf Graphic file (type pdf)
 <use FIGs/chapter4/create_crd.pdf>
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 330.
- [41]
+put line 334.
 File: FIGs/chapter4/reconcile.pdf Graphic file (type pdf)
 <use FIGs/chapter4/reconcile.pdf>
- [42]
+[42] [43] [44]
 File: FIGs/chapter4/enroll.pdf Graphic file (type pdf)
 <use FIGs/chapter4/enroll.pdf>
- [43] [44]
+ [45]
 File: FIGs/chapter4/safety.pdf Graphic file (type pdf)
 <use FIGs/chapter4/safety.pdf>
+ [46]
 File: FIGs/chapter4/pvc_sc.pdf Graphic file (type pdf)
 <use FIGs/chapter4/pvc_sc.pdf>
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[45]
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 529.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 504.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 529.
+(hyperref)                removed on input line 504.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 529.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 504.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 529.
+(hyperref)                removed on input line 504.
 
-) (./chapters/Test And Compare.tex [46]
+) (./chapters/Test And Compare.tex [47]
 {第\CJKnumber {5}章} 5.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2628,49 +2617,47 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 36.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 33.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 36.
+(hyperref)                removed on input line 33.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 36.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 36.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 36.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 33.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 36.
+(hyperref)                removed on input line 33.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 36.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 33.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 36.
+(hyperref)                removed on input line 33.
 
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 33.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 33.
+
+[48
+
+]
 File: FIGs/chapter5/fabric_net.pdf Graphic file (type pdf)
 <use FIGs/chapter5/fabric_net.pdf>
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[47
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 60--62
+Underfull \hbox (badness 10000) in paragraph at lines 57--59
 \TU/Times(0)/m/n/9.03 (2) \TU/STSong(0)/m/n/9.03 创 建 \TU/Times(0)/m/n/9.03 Peer
  \TU/STSong(0)/m/n/9.03 节 点\TU/Times(0)/m/n/9.03 : |\TU/STSong(0)/m/n/9.03 “\TU
 /Times(0)/m/n/9.03 kubectl-hlf peer create –name=org1-peer0 –
@@ -2678,39 +2665,42 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--62
 
 File: FIGs/chapter5/peer.png Graphic file (type bmp)
 <FIGs/chapter5/peer.png>
-[48]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[49]
 File: FIGs/chapter5/orderer.png Graphic file (type bmp)
 <FIGs/chapter5/orderer.png>
-
-Underfull \hbox (badness 4366) in paragraph at lines 118--122
+ [50]
+Underfull \hbox (badness 4366) in paragraph at lines 116--120
 \TU/Times(0)/m/n/9.03 (2) \TU/STSong(0)/m/n/9.03 注 册 用 户\TU/Times(0)/m/n/9.03 :
  |\TU/STSong(0)/m/n/9.03 “\TU/Times(0)/m/n/9.03 kubectl-hlf ca register –name=o
 rd-ca –user=ordereruser –
  []
 
 
-Underfull \hbox (badness 6893) in paragraph at lines 118--122
+Underfull \hbox (badness 6893) in paragraph at lines 116--120
 \TU/Times(0)/m/n/9.03 (3) \TU/STSong(0)/m/n/9.03 登 记 用 户\TU/Times(0)/m/n/9.03 :
  |\TU/STSong(0)/m/n/9.03 “\TU/Times(0)/m/n/9.03 kubectl-hlf ca enroll –name=ord
 -ca –user=ordereruser –
  []
 
-[49]
-Underfull \hbox (badness 7030) in paragraph at lines 145--151
+
+Underfull \hbox (badness 7030) in paragraph at lines 141--147
 []|\TU/Times(0)/m/n/9.03 (1) \TU/STSong(0)/m/n/9.03 创 建 通 道\TU/Times(0)/m/n/9.0
 3 : |\TU/STSong(0)/m/n/9.03 “\TU/Times(0)/m/n/9.03 kubectl-hlf channel generate
  –output=demo.block –
  []
 
 
-Underfull \hbox (badness 1838) in paragraph at lines 145--151
+Underfull \hbox (badness 1838) in paragraph at lines 141--147
 \TU/Times(0)/m/n/9.03 (3) \TU/STSong(0)/m/n/9.03 将 \TU/Times(0)/m/n/9.03 Peer \
 TU/STSong(0)/m/n/9.03 加 入 通 道\TU/Times(0)/m/n/9.03 : |\TU/STSong(0)/m/n/9.03 “\
 TU/Times(0)/m/n/9.03 kubectl-hlf channel join –name=testchannel –
  []
 
 
-Underfull \hbox (badness 5548) in paragraph at lines 145--151
+Underfull \hbox (badness 5548) in paragraph at lines 141--147
 \TU/Times(0)/m/n/9.03 (6) \TU/STSong(0)/m/n/9.03 查 看 通 道 高 度\TU/Times(0)/m/n/9.
 03 : |\TU/STSong(0)/m/n/9.03 “\TU/Times(0)/m/n/9.03 kubectl-hlf channel top –na
 me=testchannel –
@@ -2718,108 +2708,210 @@ me=testchannel –
 
 File: FIGs/chapter5/channel.png Graphic file (type bmp)
 <FIGs/chapter5/channel.png>
-[50]
-Underfull \hbox (badness 3049) in paragraph at lines 179--185
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[51]
+Underfull \hbox (badness 3049) in paragraph at lines 176--182
 \TU/Times(0)/m/n/9.03 (2) \TU/STSong(0)/m/n/9.03 查 询 链 码\TU/Times(0)/m/n/9.03 :
  |\TU/STSong(0)/m/n/9.03 “\TU/Times(0)/m/n/9.03 kubectl-hlf chaincode queryinst
 alled –user=peeruser –
  []
 
 
-Underfull \hbox (badness 2512) in paragraph at lines 179--185
+Underfull \hbox (badness 2512) in paragraph at lines 176--182
 \TU/Times(0)/m/n/9.03 (3) \TU/STSong(0)/m/n/9.03 审 批 链 码\TU/Times(0)/m/n/9.03 :
  |\TU/STSong(0)/m/n/9.03 “\TU/Times(0)/m/n/9.03 kubectl-hlf chaincode approvefo
 rmyorg –user=peeruser
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 179--185
+Underfull \hbox (badness 10000) in paragraph at lines 176--182
 \TU/Times(0)/m/n/9.03 –config=org1.yaml –peer=org1-peer0 –package-id=PACKAGEID 
 –
  []
 
 File: FIGs/chapter5/chaincode.png Graphic file (type bmp)
 <FIGs/chapter5/chaincode.png>
+[52]
 File: FIGs/chapter5/fabric_result.png Graphic file (type bmp)
 <FIGs/chapter5/fabric_result.png>
-[51]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 223.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 223.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 223.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 212.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 223.
+(hyperref)                removed on input line 212.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 225.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 225.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 225.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 212.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 225.
+(hyperref)                removed on input line 212.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 225.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 225.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 225.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 212.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 225.
+(hyperref)                removed on input line 212.
 
-[52]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 212.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 212.
+
+File: FIGs/chapter5/monitoring.png Graphic file (type bmp)
+<FIGs/chapter5/monitoring.png>
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[53]
+File: FIGs/chapter5/db.png Graphic file (type bmp)
+<FIGs/chapter5/db.png>
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 242.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 242.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 242.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 242.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 244.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 244.
+
+[54]
 File: FIGs/chapter5/maturity.pdf Graphic file (type pdf)
 <use FIGs/chapter5/maturity.pdf>
- [53]
+ [55]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 273.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 273.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 273.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 290.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 273.
+(hyperref)                removed on input line 290.
 
-) (./chapters/Conclusion.tex [54]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 290.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 290.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 290.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 290.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 290.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 290.
+
+[56]
+File: FIGs/chapter5/cello.png Graphic file (type bmp)
+<FIGs/chapter5/cello.png>
+ [57]
+Overfull \hbox (1.12pt too wide) in paragraph at lines 333--334
+[]|[]| 
+ []
+
+
+Overfull \hbox (5.0pt too wide) in paragraph at lines 343--344
+[]|[]| 
+ []
+
+[58]
+File: FIGs/chapter5/plt_deployment.png Graphic file (type bmp)
+<FIGs/chapter5/plt_deployment.png>
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 371.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 371.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 371.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 371.
+
+) (./chapters/Conclusion.tex [59]
 {第\CJKnumber {6}章} 6.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -2839,79 +2931,103 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
 (hyperref)                removed on input line 3.
 
+[60
+
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 38.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 38.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 38.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 18.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.00876pt
-(hyperref)                removed on input line 38.
+(hyperref)                removed on input line 18.
 
-[55
 
-] [56]) [57] (./sample.bbl [58
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 18.
 
-] [59
 
-] [60] [61]
-Underfull \hbox (badness 1163) in paragraph at lines 267--273
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 18.
+
+[61]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 37.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 37.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 37.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.00876pt
+(hyperref)                removed on input line 37.
+
+[62]) [63] (./sample.bbl [64
+
+] [65
+
+] [66] [67]
+Underfull \hbox (badness 1163) in paragraph at lines 276--282
 \TU/Times(0)/m/n/12.05 ing[G] //Contemporary Empirical Methods in Software Engi
 neering. [S.l.]:
  []
 
 
-Underfull \hbox (badness 1168) in paragraph at lines 282--289
+Underfull \hbox (badness 1168) in paragraph at lines 291--298
 \TU/Times(0)/m/n/12.05 operator[J/OL]. Indonesian Journal of Electrical Enginee
 ring and Computer
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--289
+Underfull \hbox (badness 10000) in paragraph at lines 291--298
 []$[][][][][] [] [] [] [][][] [] [][][][][][] [] [][][] [] [][][][][][] [] [][]
 [][][][] [] [][][] [] [][][] [] [] [][] [][] [] [] [][] [][][][][][][][][][][] 
 []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 282--289
+Underfull \hbox (badness 10000) in paragraph at lines 291--298
 [][][] [] [][] [] [][][][][] [] [][][][][][][][] [] [][][] [] [][] [] [][][][][
 ] [][] [][][] [] [][][][][][][][][] [] [][] [] [][][] []
  []
 
-[62]
-Underfull \hbox (badness 1648) in paragraph at lines 350--356
+[68]
+Underfull \hbox (badness 1648) in paragraph at lines 359--365
 []\TU/Times(0)/m/n/12.05 PATEL J, TADI G, BASARIR O, et al. Pivotal Greenplum© 
 for Kuber-
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 350--356
+Underfull \hbox (badness 1158) in paragraph at lines 359--365
 \TU/Times(0)/m/n/12.05 netes: Demonstration of Managing Greenplum Database on K
 ubernetes[C]
  []
 
-[63]
-Invalid UTF-8 byte or sequence at line 416 replaced by U+FFFD.
+[69]
+Invalid UTF-8 byte or sequence at line 425 replaced by U+FFFD.
 Missing character: There is no � (U+FFFD) in font Times Roman/AAT:mapping=tex-t
 ext;!
- [64]) [65]
+ [70]) [71]
 LaTeX Font Info:    Font shape `TU/Times(0)/m/sl' in size <12.05> not available
 
 (Font)              Font shape `TU/Times(0)/m/it' tried instead on input line 3
-60.
+14.
+LaTeX Font Info:    Font shape `TU/STSong(0)/m/sl' in size <12.05> not availabl
+e
+(Font)              Font shape `TU/STSong(0)/m/it' tried instead on input line 
+318.
  
 AED: lastpage setting LastPage
-[66
+[72
 
 
 ]
@@ -2928,15 +3044,15 @@ LaTeX Font Warning: Size substitutions with differences
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 Package rerunfilecheck Info: File `sample.out' has not changed.
-(rerunfilecheck)             Checksum: BFF836A4730C54F9F3EFDC2C76A65EEB;6386.
+(rerunfilecheck)             Checksum: 2E8DD5D4429425ABC39EEF100385A0D2;6648.
  ) 
 Here is how much of TeX's memory you used:
- 25869 strings out of 476919
- 489366 string characters out of 5821839
- 1007103 words of memory out of 5000000
- 45218 multiletter control sequences out of 15000+600000
- 445187 words of font info for 241 fonts, out of 8000000 for 9000
+ 25827 strings out of 476919
+ 484800 string characters out of 5821839
+ 1014311 words of memory out of 5000000
+ 45170 multiletter control sequences out of 15000+600000
+ 445195 words of font info for 242 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 117i,12n,116p,1020b,910s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 117i,12n,116p,1068b,908s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sample.pdf (77 pages).
+Output written on sample.pdf (84 pages).
