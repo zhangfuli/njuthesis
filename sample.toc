@@ -22,28 +22,26 @@
 \contentsline {section}{\numberline {3\,.\,1}快速评审}{22}{section.3.1}%
 \contentsline {section}{\numberline {3\,.\,2}设计原则}{24}{section.3.2}%
 \contentsline {section}{\numberline {3\,.\,3}策略集应用}{25}{section.3.3}%
-\contentsline {section}{\numberline {3\,.\,4}本章小结}{29}{section.3.4}%
-\contentsline {chapter}{\numberline {4}面向Hyperledger Fabric的区块链云化框架}{30}{chapter.4}%
-\contentsline {section}{\numberline {4\,.\,1}面向Hyperledger Fabric的区块链云化框架}{30}{section.4.1}%
-\contentsline {subsection}{\numberline {4\,.\,1\,.\,1}Custom Resource Definition}{31}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4\,.\,1\,.\,2}Manager}{33}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4\,.\,1\,.\,3}Fabric网络}{35}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4\,.\,2}原型工具}{36}{section.4.2}%
-\contentsline {subsection}{\numberline {4\,.\,2\,.\,1}工具概述}{36}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4\,.\,2\,.\,2}需求分析}{37}{subsection.4.2.2}%
-\contentsline {subsubsection}{\numberline {4\,.\,2\,.\,2\,.\,1}功能性需求分析}{37}{subsubsection.4.2.2.1}%
-\contentsline {subsubsection}{\numberline {4\,.\,2\,.\,2\,.\,2}非功能性需求分析}{41}{subsubsection.4.2.2.2}%
-\contentsline {subsection}{\numberline {4\,.\,2\,.\,3}设计与实现}{42}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4\,.\,3}本章小节}{47}{section.4.3}%
-\contentsline {chapter}{\numberline {5}测试与评估}{48}{chapter.5}%
-\contentsline {section}{\numberline {5\,.\,1}原型工具测试}{48}{section.5.1}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,1}测试环境}{48}{subsection.5.1.1}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,2}功能性测试}{49}{subsection.5.1.2}%
-\contentsline {subsection}{\numberline {5\,.\,1\,.\,3}非功能性测试}{53}{subsection.5.1.3}%
-\contentsline {section}{\numberline {5\,.\,2}原型工具评估}{55}{section.5.2}%
-\contentsline {subsection}{\numberline {5\,.\,2\,.\,1}五层成熟度模型}{55}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5\,.\,2\,.\,2}工具对比}{57}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5\,.\,3}本章小结}{59}{section.5.3}%
+\contentsline {section}{\numberline {3\,.\,4}本章小结}{31}{section.3.4}%
+\contentsline {chapter}{\numberline {4}面向Hyperledger Fabric的区块链云化框架}{32}{chapter.4}%
+\contentsline {section}{\numberline {4\,.\,1}面向Hyperledger Fabric的区块链云化框架}{32}{section.4.1}%
+\contentsline {subsection}{\numberline {4\,.\,1\,.\,1}Custom Resource Definition}{33}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4\,.\,1\,.\,2}Manager}{35}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4\,.\,1\,.\,3}Fabric网络}{39}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4\,.\,2}原型工具}{39}{section.4.2}%
+\contentsline {subsection}{\numberline {4\,.\,2\,.\,1}工具概述}{39}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4\,.\,2\,.\,2}需求分析}{40}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4\,.\,2\,.\,3}设计与实现}{44}{subsection.4.2.3}%
+\contentsline {section}{\numberline {4\,.\,3}本章小节}{48}{section.4.3}%
+\contentsline {chapter}{\numberline {5}测试与评估}{49}{chapter.5}%
+\contentsline {section}{\numberline {5\,.\,1}测试环境}{49}{section.5.1}%
+\contentsline {section}{\numberline {5\,.\,2}原型工具测试}{49}{section.5.2}%
+\contentsline {subsection}{\numberline {5\,.\,2\,.\,1}案例分析}{49}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5\,.\,2\,.\,2}非功能性测试}{53}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5\,.\,3}原型工具评估}{55}{section.5.3}%
+\contentsline {subsection}{\numberline {5\,.\,3\,.\,1}五层成熟度模型}{55}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5\,.\,3\,.\,2}工具对比}{57}{subsection.5.3.2}%
+\contentsline {section}{\numberline {5\,.\,4}本章小结}{59}{section.5.4}%
 \contentsline {chapter}{\numberline {6}总结与展望}{60}{chapter.6}%
 \contentsline {section}{\numberline {6\,.\,1}总结}{60}{section.6.1}%
 \contentsline {section}{\numberline {6\,.\,2}局限}{61}{section.6.2}%

@@ -101,8 +101,8 @@
 
 % 论文的英文标题，不可换行
 \englishtitle{}
-\englishabstracttitlea{Research and implementation of blockchain cloudification framework}
-\englishabstracttitleb{ for Hyperledger Fabric}
+\englishabstracttitlea{Research and implementation of }
+\englishabstracttitleb{ blockchain cloudification framework for Hyperledger Fabric}
 % 论文作者姓名的拼音
 \englishauthor{Fuli Zhang}
 % 导师姓名职称的英文
@@ -124,10 +124,10 @@
 
 % 设置中文摘要页面的论文标题及副标题的第一行。
 % 此属性可选，其默认值为使用|\title|命令所设置的论文标题
-%\abstracttitlea{标题第一行}
+\abstracttitlea{面向Hyperledger Fabric的}
 % 设置中文摘要页面的论文标题及副标题的第二行。
 % 此属性可选，其默认值为空白
-%\abstracttitleb{标题第二行用于长标题换行}
+\abstracttitleb{ 区块链云化框架的研究与实现 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 设置论文的英文摘要
@@ -167,7 +167,7 @@
 
   然而, 当前BaaS平台的发展尤其是底层区块链基础设施层的建设依旧存在诸多问题。首先, 基础商业应用工具并不完善。BaaS平台尚在初级阶段, 研发投入巨大, 市场上BaaS平台被头部云厂商垄断, 行业马太效用明显。不同BaaS平台缺乏统一的顶层规划, 形成数据、信息孤岛。其次, BaaS平台利用云能力赋能区块链乏力。BaaS平台仅将云平台作为部署场所, 提供一种基于开源区块链平台的自动部署方案, 未深入区块链与云基础设施底层。无法挖掘云原生技术的潜力, 为区块链网络提供提供安全、可扩展、高可用的服务。
   
-  国内, 云原生生产环境中72\%的工程师使用Kubernetes作为云基础设施, 同时Kubernetes Operator是将领域知识集成到Kubernetes API编排过程中的最新方法。针对上述问题, 本文通过快速评审的方法, 调研学术界如何利用Kubernetes Operator有效赋能传统领域。最终整理出12条赋能策略集, 再结合区块链云化的原则以及区块链本身特性筛选并获得区块链云化实施方案。基于区块链云化实施方案本文设计实现了面向Hyperledger Fabric的区块链云化框架及其原型平台。
+  国内, 云原生生产环境中72\%的工程师使用Kubernetes作为云基础设施, 同时Kubernetes Operator是将领域知识集成到Kubernetes API编排过程中的最新方法。针对上述问题, 本文通过快速评审的方法, 调研学术界如何利用Kubernetes Operator有效赋能传统领域。最终整理出11条赋能策略集, 再结合区块链云化的原则以及区块链本身特性筛选并获得区块链云化实施方案。基于区块链云化实施方案本文设计实现了面向Hyperledger Fabric的区块链云化框架及其原型平台。
 
   本文通过典型案例分析对原型工具进行了功能性与非功能性测试。通过Kubernetes Operator五层成熟度模型进行了定性评估, 通过与官方BaaS平台Cello对比进行了定量评估。测试与评估结果表明, 本文提出的框架及原型平台能够兼容基本BaaS功能前提下充分利用云的特性提升Hyperledger Fabric网络的可扩展性、安全性以及可视运维能力, 基本满足五层成熟度的能力要求并且拥有更优的网络部署时间。
 
@@ -183,7 +183,7 @@
 
   However, there are still many problems in the current development of BaaS platform, especially in the construction of the blockchain infrastructure layer. First, the basic business application tools are not perfect. The BaaS platform is still in its infancy, with huge R\&D investment. In the market, the BaaS platform is monopolized by the top cloud manufacturers, and the Matthew effect of the industry is obvious. Different BaaS platforms lack unified top-level planning, esulting in isolated islands of data and information. Secondly, the BaaS platform is weak in empowering the blockchain with cloud capabilities. The BaaS platform only uses the cloud platform as the deployment site, and provides an automatic deployment solution based on the open source blockchain platform, without going deep into the principles of the blockchain and cloud infrastructure. It is difficult to tap the potential of cloud native technology to provide secure, scalable and highly available services for blockchain networks.
 
-  In China, 72\% of engineers use Kubernetes as cloud infrastructure, and Kubernetes Operator is the latest method to integrate domain knowledge into the Kubernetes API orchestration process. In response to the above problems, this thesis surveys how academia use Kubernetes Operator to empower traditional fields through a rapid review method. Finally, twelve enabling strategy sets are sorted out, and then the blockchain cloudification implementation plan is obtained by filtering the principles of blockchain cloudification and the characteristics of blockchain itself. Based on the blockchain cloud implementation plan, this thesis designs and implements the blockchain cloudification framework and its prototype platform for Hyperledger Fabric.
+  In China, 72\% of engineers use Kubernetes as cloud infrastructure, and Kubernetes Operator is the latest method to integrate domain knowledge into the Kubernetes API orchestration process. In response to the above problems, this thesis surveys how academia use Kubernetes Operator to empower traditional fields through a rapid review method. Finally, eleven enabling strategy sets are sorted out, and then the blockchain cloudification implementation plan is obtained by filtering the principles of blockchain cloudification and the characteristics of blockchain itself. Based on the blockchain cloud implementation plan, this thesis designs and implements the blockchain cloudification framework and its prototype platform for Hyperledger Fabric.
 
   This thesis conduct functional and non-functional testing of prototype tools through typical case studies. The qualitative evaluation is carried out through the five maturity levels of the operator, and the quantitative evaluation is carried out through the comparison with the official BaaS platform named Cello. The test and evaluation results show that the framework and prototype platform proposed in this thesis can make full use of the characteristics of the cloud to improve the scalability, security and visual operation and maintenance capabilities of Hyperledger Fabric network. The prototype tool basically meets the capability requirements of five maturity levels and has better network deployment time.
   

@@ -1,12 +1,12 @@
 \chapter{测试与评估}
 
-本章将介绍面向Hyperledger Fabric的区块链云化框架的测试与评估工作。首先, 本章以典型案例的方式对原型工具进行功能性与非功能性测试;其次, 采用定性与定量方法论\cite{tashakkori1998mixed}结合五层成熟度模型以及与官方工具Cello\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/cello}{Hyperledger Cello}}进行对比评估。
+本章将介绍面向Hyperledger Fabric的区块链云化框架的测试与评估工作。首先, 本章以典型案例的方式对原型工具进行测试;其次, 采用定性与定量方法论\cite{tashakkori1998mixed}结合五层成熟度模型以及与官方工具Cello\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/cello}{Hyperledger Cello}}进行对比评估。
 
-\section{原型工具测试}
 
-\subsection{测试环境}
 
-为全面对本文提出的区块链云化框架与工具进行测试, 本文对原型工具进行了功能性、非功能性测试以及工具对比测试, 由于在本机环境下搭建Cello会出现诸多问题, 如文件挂载权限、编译等, 所以本文准备了两套测试环境。本文首先在本地环境进行第\ref{section:functional_test}节的功能性测试, 本地机器为MacBook Pro, 并采用Docker for Desktop搭建的单节点Kubernetes充当集群环境; 其次, 在第\ref{section: tool_comparison}节中, 为顺利运行对比工具Cello, 本文利用云主机Ubuntu 18.04搭建Minikube充当集群环境。上述两种环境具体配置如表\ref{computer}所示。
+\section{测试环境}
+
+为全面对本文提出的区块链云化框架与工具进行测试, 本文对原型工具进行了功能性测试以及工具对比测试, 由于在本机环境下搭建Cello会出现诸多问题, 如文件挂载权限、编译等, 所以本文准备了两套测试环境。本文首先在本地环境进行第\ref{section:functional_test}节的功能性测试, 本地机器为MacBook Pro, 并采用Docker for Desktop搭建的单节点Kubernetes充当集群环境; 其次, 在第\ref{section: tool_comparison}节中, 为顺利运行对比工具Cello, 本文利用云主机Ubuntu 18.04搭建Minikube充当集群环境。上述两种环境具体配置如表\ref{computer}所示。
 
 {\footnotesize
 \begin{longtable}[h]{m{40pt}|m{100pt}|m{100pt}}
@@ -14,25 +14,24 @@
         \hline   
         \textbf{环境}&\textbf{配置项目}&\textbf{配置详情}\\
         \hline
-        \multirow{4}*{\parbox[c]{40pt}{本机环境}}    
+        \multirow{2}*{\parbox[c]{40pt}{本机环境}}    
         & Docker for Desktop&Version 4.7.0\\     
         & Kubernetes&v1.22.5\\
-        & CPU & 4C \\
-        & 内存 & 8G \\
         \hline
-        \multirow{5}*{\parbox[c]{40pt}{云主机}} 
+        \multirow{3}*{\parbox[c]{40pt}{云主机}} 
         & Docker & Community 20.10.13 \\
         & minikube & v1.25.2 \\
         & Kubernetes & v1.23.3 \\
-        & CPU & 2C \\
-        & 内存 & 4G\\
         \hline 
     \end{longtable} 
 }
 
-\subsection{功能性测试}\label{section:functional_test}
 
-本小节主要对原型工具进行功能性测试。如图\ref{fabric_net}所示, 本节将以搭建最经典、简单的HF网络案例的方式进行完整的功能测试。测试重点针对于Ca、Peer、Orderer启动、创建通道、部署链码的全部过程, 验证HF网络启动及链码部署的正确性。
+\section{原型工具测试}
+
+\subsection{案例分析}\label{section:functional_test}
+
+本小节主要以案例分析的形式对原型工具进行功能性测试。如图\ref{fabric_net}所示, 本节将以搭建最经典、简单的HF网络案例的方式针对\ref{section: requirement}节的用例进行完整的功能测试。测试重点针对于Ca、Peer、Orderer启动、创建通道、部署链码的全部过程, 验证HF网络启动及链码部署的正确性。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -41,28 +40,29 @@
     \label{fabric_net} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
+\textbf{前置条件：}原型工具首先将编写好的HF网络各节点的CRDs注入Kubernetes。注入的CRDs可以通过原生kubectl命令进行管理。如图\ref{crdresult}所示为部署之后的结果, 已经将Ca、Peer、Orderer的CRD部署入集群。
 
-\textbf{步骤一：} 将原型工具部署入Kubernetes, 原型工具首先将内置的HF网络各节点的CRDs注入Kubernetes。如表\ref{org1_test}所示, HF网络管理员首先为org1创建了名为“org1-ca”的Ca节点; 其次, 在org1中创建了名为“org1-peer0”的Peer节点,并利用链外存储CouchDB作为账本存储单元。如图\ref{testcase1result}所示为测试结果, 原型工具可以为Fabric网络管理员创建Org1的Ca与Peer节点。
+\begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
+    \centering %使图片居中显示
+    \includegraphics[width=0.9\textwidth]{FIGs/chapter5/peer.png} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
+    \caption{CRD部署结果} %caption是用来给图片加上图题的
+    \label{crdresult} %这是添加标签，方便在文章中引用图片。
+\end{figure}%figure环境
+
+\textbf{步骤一：} 创建一个含有一个Peer节点的Org1, 这个组织内含有一个Ca认证节点。如表\ref{org1_test}所示, HF网络管理员首先为org1创建了名为“org1-ca”的Ca节点; 其次, 在org1中创建了名为“org1-peer0”的Peer节点,并利用链外存储CouchDB作为账本存储单元。如图\ref{testcase1result}所示为测试结果, 原型工具可以为Fabric网络管理员创建Org1的Ca与Peer节点。
 
 {\footnotesize
-\begin{longtable}[h]{m{60pt}|m{280pt}}
+\begin{longtable}[h]{m{45pt} m{45pt} m{180pt} m{50pt} m{20pt}}
     \caption[创建Org1测试用例]{Org1测试用例} \label{org1_test}\\
         \hline  
-        ID&TC1\\
+        用例编号&测试编号&用户输入&预期结果&实际\\
         \hline
-        测试目标&创建含有一个Ca一个Peer的组织Org1\\
+        UC-Ca & TC1.1 & 创建名为org1-ca的Ca节点 & 成功启动Ca节点 & 通过 \\
         \hline
-        前置条件&原型工具已正常启动, Fabric网络各CRDs已经部署进Kubernetes\\
-        \hline
-        输入& (1)创建Ca节点:“kubectl-hlf ca create --name=org1-ca”
-        \newline (2)创建Peer节点:“kubectl-hlf peer create --name=org1-peer0 --mspid=Org1MSP --ca-name=org1-ca.default --db=CouchDB”\\
-
-        \hline 
-        预期输出& Org1内包含一个Ca节点以及一个Peer节点\\
+        UC-Peer & TC1.2 & 创建名为org1-peer0的Peer节点, 其拥有外部存储CouchDB, 所属于Org1MSP & 成功启动Peer节点 & 通过 \\
         \hline
     \end{longtable} 
 }
-
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -74,20 +74,14 @@
 \textbf{步骤二：} 如表\ref{orderer_test}所示, HF网络管理员需要首先为OrdererMSP创建名为“ord-ca”的Ca节点; 其次, 在OrdererMSP中创建了名为“ord-node1”的Peer节点。如图\ref{testcase2result}所示为测试结果, 原型工具可以为Fabric网络管理员创建Orderer的Ca与Orderer节点, 其中包含但不限于Deployment、Service、Pod、Secret等。
 
 {\footnotesize
-\begin{longtable}[h]{m{60pt}|m{280pt}}
+\begin{longtable}[h]{m{45pt} m{45pt} m{180pt} m{50pt} m{20pt}}
     \caption[创建Orderer测试用例]{创建Orderer测试用例} \label{orderer_test}\\
         \hline  
-        ID&TC1\\
+        用例编号&测试编号&用户输入&预期结果&实际\\
         \hline
-        测试目标&创建含有一个Ca一个Orderer的组织OrdererMSP\\
+        UC-Ca & TC2.1 & 创建名为ord-ca的Ca节点 & 成功启动Ca节点 & 通过 \\
         \hline
-        前置条件&原型工具已正常启动, Fabric网络各CRDs已经部署进Kubernetes\\
-        \hline
-        输入& (1)创建Ca节点:“kubectl-hlf ca create --name=ord-ca”;
-        \newline (2)创建Orderer节点:“kubectl-hlf ordnode create --name=ord-node1 --mspid=OrdererMSP --ca-name=ord-ca.default” \\
-
-        \hline 
-        预期输出& OrdererMSP内包含一个Ca节点以及一个Orderer节点\\
+        UC-Orderer & TC2.2 & 创建名为ord-node1的Orderer节点, 所属于OrdererMSP & 成功启动Orderer节点 & 通过 \\
         \hline
     \end{longtable} 
 }
@@ -99,57 +93,38 @@
     \label{testcase2result} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-\textbf{步骤三：} 如表\ref{reg_enroll_test}所示, HF网络管理员需要为OrdererMSP以及Org1注册并登记若干用户, 并将用户的证书密钥信息导到yaml文件中。表中仅展示在Orderer中注册用户, Org1中步骤相似(Org1信息输出为org1.yaml)。测试结果表明, 可以成功将用户及OrdererMSP信息导出。
-
-\newpage
+\textbf{步骤三：} 如表\ref{reg_enroll_test}所示, HF网络管理员需要为OrdererMSP以及Org1注册并登记若干用户, 并将用户的证书密钥信息导到yaml文件中。表中仅展示在Orderer中注册用户, Org1中步骤相似, 注册名为peeruser的用户。测试结果表明, 可以成功将用户及OrdererMSP信息导出。
 
 {\footnotesize
-\begin{longtable}[h]{m{40pt}|m{300pt}}
+\begin{longtable}[h]{m{45pt} m{45pt} m{180pt} m{50pt} m{20pt}}
     \caption[注册、登记用户测试用例]{注册、登记用户测试用例} \label{reg_enroll_test}\\
         \hline  
-        ID&TC1\\
+        用例编号&测试编号&用户输入&预期结果&实际\\
         \hline
-        测试目标&分别为Orderer以及Org1注册、登记用户\\
+        UC-Ca & TC3.1 & 为OrdererMSP注册名为ordereruser的用户, 其密码为ordererpw & 成功注册 & 通过 \\
         \hline
-        前置条件&已经部署完成Orderer、以及Org1中的节点\\
-        \hline
-        输入& (1)导出Orderer信息:“kubectl-hlf inspect --output=orderer.yaml -o=OrdererMSP”
-        \newline (2)注册用户:“kubectl-hlf ca register --name=ord-ca --user=ordereruser --secret=ordererpw --mspid=OrdererMSP”
-        \newline (3)登记用户:“kubectl-hlf ca enroll --name=ord-ca --user=ordereruser --secret=ordererpw --mspid=OrdererMSP --output=orderer\_user.yaml”
-        \newline (4)加入orderer.yaml:“kubectl-hlf utils adduser --userPath=orderer\_user.yaml --config=orderer.yaml --user=ordereruser --mspid=OrdererMSP”\\
-
-        \hline 
-        预期输出& (1)包含ordereruser用户密钥证书信息的orderer\_user.yaml
-        \newline (2)包含OrdererMSP所有信息的orderer.yaml\\
+        UC-Ca & TC3.2 & 输入用户名密码, 为ordereruser用户登记 & 成功登记,输出证书文件 & 通过 \\
         \hline
     \end{longtable} 
 }
 
-
 \textbf{步骤四：} 如表\ref{channel_test}所示, HF开发人员需要在新创建的HF网络上创建通道, 并初始化该通道内的创世区块。当通道被创建完成之后, 需要将在该通道内进行交易的的Orderer、Peer加入该通道。最后, HF开发人员可以指定锚节点并查看通道的高度。如图\ref{channel_test_result}所示为测试结果, 展示了新创建的通道的高度。
 
 {\footnotesize
-\begin{longtable}[h]{m{60pt}|m{280pt}}
+\begin{longtable}[h]{m{45pt} m{45pt} m{180pt} m{50pt} m{20pt}}
     \caption[创建通道测试用例]{创建通道测试用例} \label{channel_test}\\
         \hline  
-        ID&TC1\\
+        用例编号&测试编号&用户输入&预期结果&实际\\
         \hline
-        测试目标&创建通道并将创世节点、org1-peer0加入通道\\
+        UC-Chan & TC4.1 & 选择OrdererMSP为排序组织在Org1MSP上创建通道并创建创世节点 & 成功创建通道 & 通过 \\
         \hline
-        前置条件&已经查创建组织并生成相应用户\\
+        UC-Orderer & TC4.2 & 将ord-node1加入通道 & 加入成功 & 通过 \\
         \hline
-        输入& (1)创建通道:“kubectl-hlf channel generate --output=demo.block --organizations Org1MSP --ordererOrganizations OrdererMSP”
-        \newline (2)将Orderer加入通道:“kubectl-hlf ordnode join --name=ord-node1”
-        \newline (3)将Peer加入通道:“kubectl-hlf channel join --name=testchannel --user=peeruser --config=org1.yaml -p=org1-peer0”
-        \newline (4)检视通道:“kubectl-hlf channel inspect --name=testchannel --user=peeruser --config=org1.yaml -p=org1-peer0 > testchannel.json”
-        \newline (5)指定锚节点:“kubectl-hlf channel addanchorpeer --name=testchannel --user=peeruser --config=org1.yaml -p=org1-peer0”
-        \newline (6)查看通道高度:“kubectl-hlf channel top --name=testchannel --config=org1.yaml --user=admin -p=org1-peer0”\\
-
-        \hline 
-        预期输出& (1)成功创建通道
-        \newline (2)成功将创世节点、org1-peer0加入通道
-        \newline (3)成功获取通道信息testchannel.json
-        \newline (4)成功展示通道高度\\
+        UC-Peer & TC4.3 & 将org1-peer0加入通道 & 加入成功 & 通过 \\
+        \hline
+        UC-Chan & TC4.4 & 指定锚节点 & 指定成功 & 通过 \\
+        \hline
+        UC-Chan & TC4.5 & 查看通道高度 & 查看成功 & 通过 \\
         \hline
     \end{longtable} 
 }
@@ -164,23 +139,20 @@
 \textbf{步骤五：} 如表\ref{chaincode_test}所示, 为测试通道内所有的参与节点按照链码的合同规则执行, HF开发人员需要在新创建的通道内安装官方提供的asset\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/fabric-samples/blob/main/asset-transfer-basic/chaincode-go/chaincode/smartcontract.go}{asset链码}}链码, 安装完链码之后, 需要对其进行审批、提交。最后, HF开发人员可以调用链码接口对其进行初始化、查询等一系列操作。如图\ref{chaincode_test_result}所示为测试结果, 展示了查询链码之后的结果。
 
 {\footnotesize
-\begin{longtable}[h]{m{60pt}|m{280pt}}
-    \caption[链码相关测试用例]{链码相关测试用例} \label{chaincode_test}\\
+\begin{longtable}[h]{m{45pt} m{45pt} m{180pt} m{50pt} m{20pt}}
+    \caption[创建通道测试用例]{创建通道测试用例} \label{channel_test}\\
         \hline  
-        ID&TC1\\
+        用例编号&测试编号&用户输入&预期结果&实际\\
         \hline
-        测试目标&安装、审批、提交、调用、查询链码\\
+        UC-CC & TC5.1 & 安装链码并指定语言、label & 安装成功 & 通过 \\
         \hline
-        前置条件&已经成功启动通道\\
+        UC-CC & TC5.2 & 查询已经安装的链码 & 查询成功 & 通过 \\
         \hline
-        输入& (1)安装链码:“kubectl-hlf chaincode install --path=asset --user=peeruser --config=org1.yaml --language=golang --label=asset --peer=org1-peer0
-        \newline (2)查询链码:“kubectl-hlf chaincode queryinstalled --user=peeruser --config=org1.yaml --peer=org1-peer0”
-        \newline (3)审批链码:“kubectl-hlf chaincode approveformyorg --user=peeruser --config=org1.yaml --peer=org1-peer0 --package-id=PACKAGEID --name=asset --policy=POLICY --channel=testchannel”
-        \newline (4)提交链码:“kubectl-hlf chaincode commit --config=org1.yaml --peer=org1-peer0 --name=asset --policy=\$POLICY --channel=testchannel”
-        \newline (5)调用链码:“kubectl-hlf chaincode invoke --config=org1.yaml --peer=org1-peer0 --chaincode=asset --channel=testchannel --function=\$FUNCTION”
-        \newline (6)查询链码:“kubectl-hlf chaincode query --config=org1.yaml --peer=org1-peer0 --chaincode=asset --channel=testchannel --function=\$FUNCTION”\\
-        \hline 
-        预期输出& 成功安装、查询、审批、提交、调用、查询链码\\
+        UC-CC & TC5.3 & 审批链码, 并提供链码ID以及策略 & 审批成功 & 通过 \\
+        \hline
+        UC-CC & TC5.4 & 提交链码, 并提供链码ID以及策略 & 指定成功 & 通过 \\
+        \hline
+        UC-CC & TC5.5 & 调用链码, 并提供链码调用函数 & 调用成功 & 通过 \\
         \hline
     \end{longtable} 
 }
@@ -193,12 +165,7 @@
 \end{figure}%figure环境
 
 
-经过上述步骤1-5, 最终的网络节点状态如图\ref{fabric_result}所示, 本文搭建了一个单Orderer以及单Org、单Peer的简单的Fabric网络, 并分别Orderer、以及Peer搭
-
-\newpage
-
-\noindent
-配Ca证书认证。在搭建了基本的网络之后, 分别为Orderer、Peer注册并登记用户, 最后在组织Org中搭建了一个通道并成功安装调用链码。测试结果可知, 本文的原型工具能够正常成功搭建HF网络及部署链码。
+经过上述步骤1-5, 最终的网络节点状态如图\ref{fabric_result}所示, 本文搭建了一个单Orderer以及单Org、单Peer的简单的Fabric网络, 并分别Orderer、以及Peer搭配Ca证书认证。在搭建了基本的网络之后, 分别为Orderer、Peer注册并登记用户, 最后在组织Org中搭建了一个通道并成功安装调用链码。测试结果可知, 本文的原型工具能够正常成功搭建HF网络及部署链码。
 
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
@@ -209,7 +176,7 @@
 \end{figure}%figure环境
 
 
-\subsection{非功能性测试}
+\subsection{质量属性影响测试}
 
 本文接下来对原型工具的非功能性需求进行测试, 查看原型工具是否满足第\ref{section: requirement}节所提到的易用性、可扩展性、安全性等非功能性需求。
 

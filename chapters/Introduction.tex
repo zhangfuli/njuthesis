@@ -72,7 +72,7 @@ BaaS基于云的自动化的能力屏蔽了底层区块链技术, 为上层去�
 
 本文的主要研究工作分为以下三个方面: 
 
-1. 本文首先基于当前BaaS平台存在的挑战结合Kubernetes Operator进行了快速评审。快速评审的范围涵盖了计算机与软件工程领域的权威全文数据库。经过快速评审, 本文得到了12条Kubernetes Operator赋能传统领域提升软件质量属性的策略集。根据区块链云化设计原则, 结合区块链网络的特性, 最终形成了区块链云化具体实施方案。
+1. 本文首先基于当前BaaS平台存在的挑战结合Kubernetes Operator进行了快速评审。快速评审的范围涵盖了计算机与软件工程领域的权威全文数据库。经过快速评审, 本文得到了11条Kubernetes Operator赋能传统领域提升软件质量属性的策略集。根据区块链云化设计原则, 结合区块链网络的特性, 最终形成了区块链云化具体实施方案。
 
 2. 基于上述具体实施方案, 本文设计实现了面向Hyperledger Fabric的区块链云化框架及其原型平台。框架为Fabric网络编写三种用户自定义资源(Custom Resource Defination, 简称CRD), 包含Ca、Peer、Orderer。这些CRDs将区块链领域知识注入Kubernetes基础设施, 通过这种方式可以自动化配置网络, 消除人为错误, 提升云化框架的易用性。其次, Manager作为框架中枢处理单元对利用Helm对Hyperledger Fabric网络中的节点进行全生命周期管理, 并根据实施方案, 复用Kubernetes原生手段提升框架及Hyperledger Fabric网络的可扩展性、安全性以及可视运维的能力。最后, Hyperledger Fabric网络作为框架的输出单元, 包含了维持Hyperledger Fabric网络节点运行的各种配置以及合理的运行状态。
 
