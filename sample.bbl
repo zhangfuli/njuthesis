@@ -436,6 +436,13 @@
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{sage}\@,
   \bibyear{1998}\@.
 
+\bibitem{huhonglei2004}
+\bibauthor{胡红雷\@, 毋国庆\@, 梁正平, et~al}\@.
+  \bibtitle{软件体系结构评估方法的研究}\bibmark{[J]}\@.
+  \bibjournal{计算机应用研究}\@, \bibyear{2004}\@,
+  \bibvolume{21}\bibnumber{(6)}\thinspace{}\textnormal{:
+  }\bibpages{11\thinspace{}\textnormal{--}\thinspace{}14}\@.
+
 \bibitem{duan2021case}
 \bibauthor{DUAN R\@, ZHANG F\@, KHAN S~U}\@. \bibtitle{A Case Study on Five
   Maturity Levels of A Kubernetes Operator}\bibmark{[C]}

@@ -30,45 +30,45 @@ Warning--Require citedate: Yilmaz2021
 Warning--Require journal: d2020design
 Warning--Require citedate: 8249485
 Warning--Require address: tashakkori1998mixed
-You've used 58 entries,
+You've used 59 entries,
             3107 wiz_defined-function locations,
-            1048 strings with 18762 characters,
-and the built_in function-call counts, 106325 in all, are:
-= -- 11742
-> -- 210
-< -- 478
-+ -- 9542
-- -- 737
-* -- 2782
-:= -- 12078
+            1055 strings with 18897 characters,
+and the built_in function-call counts, 108580 in all, are:
+= -- 11998
+> -- 214
+< -- 487
++ -- 9760
+- -- 752
+* -- 2831
+:= -- 12340
 add.period$ -- 0
-call.type$ -- 58
-change.case$ -- 304
+call.type$ -- 59
+change.case$ -- 310
 chr.to.int$ -- 0
-cite$ -- 78
-duplicate$ -- 14896
-empty$ -- 3945
-format.name$ -- 608
-if$ -- 28544
+cite$ -- 79
+duplicate$ -- 15212
+empty$ -- 4018
+format.name$ -- 620
+if$ -- 29152
 int.to.chr$ -- 0
-int.to.str$ -- 58
+int.to.str$ -- 59
 missing$ -- 0
-newline$ -- 201
-num.names$ -- 58
-pop$ -- 1501
+newline$ -- 204
+num.names$ -- 59
+pop$ -- 1534
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 954
+skip$ -- 972
 stack$ -- 0
-substring$ -- 12525
-swap$ -- 2722
+substring$ -- 12793
+swap$ -- 2777
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 20
-while$ -- 1420
-width$ -- 60
-write$ -- 803
+while$ -- 1450
+width$ -- 61
+write$ -- 818
 (There was 1 error message)

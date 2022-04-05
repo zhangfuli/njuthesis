@@ -36,17 +36,16 @@
 \contentsline {chapter}{\numberline {5}测试与评估}{49}{chapter.5}%
 \contentsline {section}{\numberline {5\,.\,1}测试环境}{49}{section.5.1}%
 \contentsline {section}{\numberline {5\,.\,2}原型工具测试}{49}{section.5.2}%
-\contentsline {subsection}{\numberline {5\,.\,2\,.\,1}案例分析}{49}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5\,.\,2\,.\,2}非功能性测试}{53}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5\,.\,3}原型工具评估}{55}{section.5.3}%
-\contentsline {subsection}{\numberline {5\,.\,3\,.\,1}五层成熟度模型}{55}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5\,.\,3\,.\,2}工具对比}{57}{subsection.5.3.2}%
-\contentsline {section}{\numberline {5\,.\,4}本章小结}{59}{section.5.4}%
-\contentsline {chapter}{\numberline {6}总结与展望}{60}{chapter.6}%
-\contentsline {section}{\numberline {6\,.\,1}总结}{60}{section.6.1}%
-\contentsline {section}{\numberline {6\,.\,2}局限}{61}{section.6.2}%
-\contentsline {section}{\numberline {6\,.\,3}展望}{62}{section.6.3}%
-\contentsline {chapter}{致\hspace {2em}谢}{64}{chapter*.39}%
-\contentsline {chapter}{参考文献}{65}{chapter*.40}%
-\contentsline {chapter}{简历与科研成果}{72}{chapter*.41}%
+\contentsline {section}{\numberline {5\,.\,3}原型工具评估}{53}{section.5.3}%
+\contentsline {subsection}{\numberline {5\,.\,3\,.\,1}架构评估}{53}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5\,.\,3\,.\,2}五层成熟度模型}{56}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5\,.\,3\,.\,3}工具对比}{58}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5\,.\,4}本章小结}{60}{section.5.4}%
+\contentsline {chapter}{\numberline {6}总结与展望}{61}{chapter.6}%
+\contentsline {section}{\numberline {6\,.\,1}总结}{61}{section.6.1}%
+\contentsline {section}{\numberline {6\,.\,2}局限}{62}{section.6.2}%
+\contentsline {section}{\numberline {6\,.\,3}展望}{63}{section.6.3}%
+\contentsline {chapter}{致\hspace {2em}谢}{65}{chapter*.38}%
+\contentsline {chapter}{参考文献}{66}{chapter*.39}%
+\contentsline {chapter}{简历与科研成果}{73}{chapter*.40}%
 \contentsfinish 

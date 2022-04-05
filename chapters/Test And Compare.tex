@@ -1,6 +1,6 @@
 \chapter{测试与评估}
 
-本章将介绍面向Hyperledger Fabric的区块链云化框架的测试与评估工作。首先, 本章以典型案例的方式对原型工具进行测试;其次, 采用定性与定量方法论\cite{tashakkori1998mixed}结合五层成熟度模型以及与官方工具Cello\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/cello}{Hyperledger Cello}}进行对比评估。
+本章将介绍面向Hyperledger Fabric的区块链云化框架的测试与评估工作。首先, 本章以典型案例的方式对原型工具进行测试;其次, 采用SAAM、定性与定量方法论\cite{tashakkori1998mixed}结合五层成熟度模型以及与官方工具Cello\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/cello}{Hyperledger Cello}}进行对比评估。
 
 
 
@@ -27,9 +27,7 @@
 }
 
 
-\section{原型工具测试}
-
-\subsection{案例分析}\label{section:functional_test}
+\section{原型工具测试}\label{section: tool_test}
 
 本小节主要以案例分析的形式对原型工具进行功能性测试。如图\ref{fabric_net}所示, 本节将以搭建最经典、简单的HF网络案例的方式针对\ref{section: requirement}节的用例进行完整的功能测试。测试重点针对于Ca、Peer、Orderer启动、创建通道、部署链码的全部过程, 验证HF网络启动及链码部署的正确性。
 
@@ -44,12 +42,12 @@
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
-    \includegraphics[width=0.9\textwidth]{FIGs/chapter5/peer.png} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
+    \includegraphics[width=0.9\textwidth]{FIGs/chapter5/crds.png} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
     \caption{CRD部署结果} %caption是用来给图片加上图题的
     \label{crdresult} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-\textbf{步骤一：} 创建一个含有一个Peer节点的Org1, 这个组织内含有一个Ca认证节点。如表\ref{org1_test}所示, HF网络管理员首先为org1创建了名为“org1-ca”的Ca节点; 其次, 在org1中创建了名为“org1-peer0”的Peer节点,并利用链外存储CouchDB作为账本存储单元。如图\ref{testcase1result}所示为测试结果, 原型工具可以为Fabric网络管理员创建Org1的Ca与Peer节点。
+\textbf{步骤一：} 如表\ref{org1_test}所示, HF网络管理员首先为org1创建了名为“org1-ca”的Ca节点; 其次, 在org1中创建了名为“org1-peer0”的Peer节点,并利用链外存储CouchDB作为账本存储单元。如图\ref{testcase1result}所示为测试结果。
 
 {\footnotesize
 \begin{longtable}[h]{m{45pt} m{45pt} m{180pt} m{50pt} m{20pt}}
@@ -95,6 +93,8 @@
 
 \textbf{步骤三：} 如表\ref{reg_enroll_test}所示, HF网络管理员需要为OrdererMSP以及Org1注册并登记若干用户, 并将用户的证书密钥信息导到yaml文件中。表中仅展示在Orderer中注册用户, Org1中步骤相似, 注册名为peeruser的用户。测试结果表明, 可以成功将用户及OrdererMSP信息导出。
 
+\newpage
+
 {\footnotesize
 \begin{longtable}[h]{m{45pt} m{45pt} m{180pt} m{50pt} m{20pt}}
     \caption[注册、登记用户测试用例]{注册、登记用户测试用例} \label{reg_enroll_test}\\
@@ -136,11 +136,9 @@
     \label{channel_test_result} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-\textbf{步骤五：} 如表\ref{chaincode_test}所示, 为测试通道内所有的参与节点按照链码的合同规则执行, HF开发人员需要在新创建的通道内安装官方提供的asset\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/fabric-samples/blob/main/asset-transfer-basic/chaincode-go/chaincode/smartcontract.go}{asset链码}}链码, 安装完链码之后, 需要对其进行审批、提交。最后, HF开发人员可以调用链码接口对其进行初始化、查询等一系列操作。如图\ref{chaincode_test_result}所示为测试结果, 展示了查询链码之后的结果。
-
 {\footnotesize
 \begin{longtable}[h]{m{45pt} m{45pt} m{180pt} m{50pt} m{20pt}}
-    \caption[创建通道测试用例]{创建通道测试用例} \label{channel_test}\\
+    \caption[创建通道测试用例]{创建通道测试用例} \label{chaincode_test}\\
         \hline  
         用例编号&测试编号&用户输入&预期结果&实际\\
         \hline
@@ -156,6 +154,8 @@
         \hline
     \end{longtable} 
 }
+
+\textbf{步骤五：} 如表\ref{chaincode_test}所示, 为测试通道内所有的参与节点按照链码的合同规则执行, HF开发人员需要在新创建的通道内安装官方提供的asset\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/fabric-samples/blob/main/asset-transfer-basic/chaincode-go/chaincode/smartcontract.go}{asset链码}}链码, 安装完链码之后, 需要对其进行审批、提交。最后, HF开发人员可以调用链码接口对其进行初始化、查询等一系列操作。如图\ref{chaincode_test_result}所示为测试结果, 展示了查询链码之后的结果。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -175,26 +175,61 @@
     \label{fabric_result} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
+\section{原型工具评估}
 
-\subsection{质量属性影响测试}
+\subsection{架构评估}
 
-本文接下来对原型工具的非功能性需求进行测试, 查看原型工具是否满足第\ref{section: requirement}节所提到的易用性、可扩展性、安全性等非功能性需求。
+在软件工程中, 常见的评估软件体系结构的方法有Software Architecture Analysis Method(SAAM)、Architecture Trade-off Analysis Method(ATAM), 以上都是基于场景的质量属性评估方法。SAAM相较于ATAM而言其结构以及评估过程相对简单, 需要准备的工作较少并且SAAM适用于对软件最终版本的的评估\cite{huhonglei2004}。本文首先对第\ref{section: framework_characteristics}节所涉及到的设计原则的描述映射到对应的质量属性, 然后采取SAAM方法对其进行评估。
 
-易用性, 本文邀请了5位熟悉HF基本概念及网络搭建流程的开发人员对本文的原型工具进行易用性测试。为了排除网络的影响,
-本文提前下载好原型工具搭建HF网络所需要的Docker镜像。在介绍了本工具的基本原理以及命令行的基本使用方法后, 5位测试的开发人员分别独立自行搭建不同规格的HF网络, 最终5位测试的开发人员都能够在30分钟内学习并掌握原型工具的使用方法。
+在SAAM评估方法开始之前, 本文邀请了4位熟悉HF基本概念及网络搭建流程的软件开发工程师分别两两扮演HF网络管理员、HF开发人员, 1位熟悉Kubernetes操作的集群运维工程师扮演集群管理员, 以上5位分别为本次SAAM评估方法的风险承担者。本节实施SAAM评估方法涉及以下步骤:
 
-为测试本工具的可靠性, 本文在使用原型工具搭建HF网络过程中有意输入错误的命令行参数, 输入不正确的密钥文件等, 原型工具都能在1s内给出参数的异常情况; 同时, 原型工具能够有效利用Prometheus监控体系对工具本身以及HF网络的所有节点、智能合约以及DB进行监控, 如图\ref{monitoring}展示了利用Prometheus与Grafana对Fabric Ca Resource进行监控的画面, 图中展示了Fabric Ca Resource的API、内存以及CPU的使用情况。在搭建完HF网络之后, 原型工具在两周内仅崩溃1次, 且能通过日志以及Prometheus的告警设置在5分钟内进行恢复。
+\textbf{1. 场景开发: }所有的风险承担者通过头脑风暴的方式, 提出反应自己需求的场景, 产出结果见步骤3。
 
-为提升原型工具的可迁移性, 本文通过Dockerfile将本工具打包成Docker镜像, 使用预先打包并经过检验的镜像, 并为该原型工具配备专用的Helm chart, 其中包含有关原型工具构建的所有必要信息, 这样可以以最少的时间部署。结果表明, 原型工具可以通过helm在支持Kubernetes 1.18版本以上的云平台上运行, 原型平台具备良好的可迁移性。
+\textbf{2. 软件架构描述: }本文详细的为各位风险承担者介绍第四节的面向Hyperledger Fabric的区块链云化框架及其原型工具, 包括框架设计理念与原理、原型工具功能与工具实现结构。
 
-\begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
-    \centering %使图片居中显示
-    \includegraphics[width=1.0\textwidth]{FIGs/chapter5/monitoring.png} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
-    \caption{Fabric Ca Resource监控图} %caption是用来给图片加上图题的
-    \label{monitoring} %这是添加标签，方便在文章中引用图片。
-\end{figure}%figure环境
+\textbf{3. 场景分类: }在这个过程中, 如表\ref{saam_step3}所示, 本文对步骤1所产出的场景进行分类并设定优先级。同时, 在分析时根据场景是否需要修改特定的体系结构把场景分为直接场景与间接场景。
 
-在数据存储及其可扩展性方面, 如图\ref{db}所示, 原型工具为每个HF网络中的工作节点设置了专属存储单元。每个存储单元配置专属的PVC管理, 由于原型工具基础的StorageClass的“allowVolumeExpansion”字段设置为“true”。HF网络管理员可以通过修改已经部署的HF网络节点的CRs进行扩容, 其中可以包含节点资源类型的扩容以及存储单元的扩容。值得注意的是, 由于存储单元PVC扩容依赖于Kubernetes所以当前只有AWS-EBS、GCE-PD、Azure磁盘、Azure文件、Glusterfs、Cinder、Portworx和Ceph RBD数据卷插件才能支撑数据扩容操作。
+{\footnotesize
+\begin{longtable}[h]{m{20pt} m{60pt} m{90pt} m{40pt} m{40pt} m{40pt} m{30pt}}
+    \caption[场景分类结果]{场景分类结果} \label{saam_step3}\\
+        \hline  
+        编号&风险承担者&场景描述&设计原则 & 质量属性 & 场景分类 & 优先级\\
+        \hline
+        T1&  HF网络管理员 & 命令式启停HF网络中的任意节点 & 简单易用  & 功能需求 & 直接需求 &  高 \\
+        \hline
+        T2&  HF网络管理员 & 命令创建HF网络用户 & 简单易用 & 功能需求 & 直接需求 &  高 \\
+        \hline
+        T3&  HF开发人员 & 命令式创建通道 & 简单易用 & 功能需求 & 直接需求 &  高 \\
+        \hline
+        T4&  HF开发人员 & 命令式操作链码 & 简单易用 & 功能需求 & 直接需求 &  高 \\
+        \hline
+        T5&  HF网络管理员 & 扩容HF节点资源 & 灵活扩展 & 可扩展性 & 间接需求 &  中 \\
+        \hline
+        T6&  HF网络管理员 & 扩容账本存储单元 & 灵活扩展 & 可扩展性 & 间接需求 &  高 \\
+        \hline
+        T7&  HF开发人员 & 保存用户密钥 & 安全可靠 & 安全性 & 间接需求 &  高 \\
+        \hline
+        T8&  HF开发人员 & 操作网络时需要身份认证 & 安全可靠 & 安全性 & 间接需求 &  高 \\
+        \hline    
+        T9&  k8s管理员 & HF网络与其他集群程序进行隔离 & 安全可靠 & 安全性 & 间接需求 &  高 \\
+        \hline
+        T10&  k8s管理员 & Operator限定管理HF网络节点 & 安全可靠 & 安全性 & 间接需求 &  高 \\
+        \hline
+        T11&  HF网络管理员 \newline HF开发人员 & 良好异常反馈机制 & 安全可靠 & 可靠性 & 间接需求 &  高 \\
+        \hline
+        T12&  HF网络管理员 \newline HF开发人员 & HF网络节点的全面监控能力 & 可视运维 & 可靠性 & 间接需求 &  高 \\
+        \hline
+        T13&  HF网络管理员 \newline HF开发人员 & Operator在不同云平台之间迁移的便捷性 & 云链结合 & 可迁移性 & 间接需求 &  中 \\
+        \hline
+    \end{longtable} 
+}
+
+\textbf{4. 场景评估: }这个过程重点针对间接场景, 并对其进行评估。针对直接场景, 第\ref{section: tool_test}节已经对其进行了较为全面的功能性测试。
+
+简单易用, 本文同时邀请了这5位风险承担者对本文的原型工具进行易用性测试。为了排除网络的影响,
+本文提前下载好原型工具搭建HF网络所需要的Docker镜像。在介绍了本工具的基本原理以及命令行的基本使用方法后, 5位风险承担者分别独立自行搭建不同规格的HF网络, 最终5位风险承担者都能够在30分钟内学习并掌握原型工具的使用方法。
+
+灵活扩展, 在HF网络节点资源方面, 由于HF网络节点的CRs中配置了HF网络节点运行态时所需的资源(CPU、Mem)大小, 所以当对节点CR进行修改时, Controller会监听到CR的变化并更新运行中节点Deployment的资源大小。在数据存储的可扩展性方面,如图\ref{db}所示, 原型工具为每个HF网络中的工作节点设置了专属存储单元。每个存储单元配置专属的PVC管理, HF网络管理员可以不仅可以通过修改节点的CRs进行扩容, 可以直接在Kubernetes中对PVC进行动态扩容。值得注意的是, 由于存储单元PVC扩容依赖于StorageClass, 当前只有AWS-EBS、GCE-PD、Azure磁盘、Azure文件、Glusterfs、Cinder、Portworx和Ceph RBD数据卷插件才能支撑数据扩容操作。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -203,10 +238,19 @@
     \label{db} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
+安全可靠, 原型工具通过可以以文件形式导出HF网络登记用户产生的密钥信息, 并可以通过Secret进行保存。当这些用户操作HF网络时, 原型工具会要求提供对应的密钥文件作为身份认证的方式。同时, 原型工具将所有的HF资源放在同一命名空间下, 并通过RBAC为该命名空间提供了两种类型的角色。当集群其他用户对已经部署的HF网络节点拥有超越权限的操作时, 原型工具会提示并不进行相关操作。在可靠性方面, 本文在使用原型工具搭建HF网络过程中有意输入错误的命令行参数, 输入不正确的密钥文件等, 原型工具都能在1s内给出参数的异常情况; 同时, 原型工具能够有效利用Prometheus监控体系对工具本身以及HF网络的所有节点、智能合约以及DB进行监控, 如图\ref{monitoring}展示了利用Prometheus与Grafana对Fabric Ca Resource进行监控的画面, 图中展示了Fabric Ca Resource的API、内存以及CPU的使用情况。在搭建完HF网络之后, 原型工具在两周内仅崩溃1次, 且能通过日志以及Prometheus的告警设置在5分钟内进行恢复。
 
-在安全性方面, 原型工具具备严格的权限访问控制机制以及密钥保存方式。原型工具将所有的HF资源放在同一命名空间下, 并为该命名空间提供了两种类型的角色。当用户拥有超越权限的操作时, 原型工具会提示并不进行相关操作。同时, 对于生成的HF网络用户而言, 原型工具提供Secret方式为其保存密钥。当这些用户操作HF网络时, 原型工具会要求提供对应的密钥文件作为身份认证的方式。
+云链结合, 重点是在可迁移性下的场景。本文通过Dockerfile将本工具打包成Docker镜像\footnotemark[1]\footnotetext[1]{\href{https://hub.docker.com/repository/docker/zhangfuli/hfoperator}{HFOperator镜像}}, 使用预先打包并经过检验的镜像, 并为该原型工具配备专用的Helm chart, 其中包含有关原型工具构建的所有必要信息, 这样可以以最少的时间部署。结果表明, 原型工具可以通过helm在支持Kubernetes 1.18版本以上的云平台上运行, 原型平台具备良好的可迁移性。
 
-\section{原型工具评估}
+\begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
+    \centering %使图片居中显示
+    \includegraphics[width=0.9\textwidth]{FIGs/chapter5/monitoring.pdf} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
+    \caption{Fabric Ca Resource监控图} %caption是用来给图片加上图题的
+    \label{monitoring} %这是添加标签，方便在文章中引用图片。
+\end{figure}%figure环境
+
+\textbf{5. 总体评估: }本文的原型工具可以有效利用Kubernetes Operator云化策略来提升HF网络的安全性、可扩展性以及可视运维能力。
+
 
 \subsection{五层成熟度模型}
 
@@ -258,14 +302,15 @@
 
 除上述通过定性分析的手段对运行工具进行评估外, 本文选取了Hyperledger官方推出的BaaS平台Cello进行定量数据的对比分析。本文重点关注的是对HF网络节点的云化问题, 所以需要在网络部署时间上对Cello以及原型工具进行对比。
 
-本文在云主机环境下拉取Cello的release-0.9.0-h3c并进行打包构建以及运行。如图\ref{cello}所示, Cello通过图形化的Cello Operator进行主机绑定、组织管理、网络管理以及用户管理。操作Cello Operator的就是HF网络管理员, 管理员首先在主机管理中添加主机, 主机就是Cello将要部署的目标Docker或者Kubernetes环境, 然后再依次创建组织并启动网络, 整个过程全都通过图形化界面的方式完成。
+本文在云主机环境下拉取Cello的release-0.9.0-h3c并进行打包构建以及运行。Cello通过图形化的Cello Operator进行主机绑定、组织管理、网络管理以及用户管理。操作Cello Operator的就是HF网络管理员, 管理员首先在主机管理中添加主机, 主机就是Cello将要部署的目标Docker或者Kubernetes环境, 然后再依次创建组织并启动网络, 整个过程全都通过图形化界面的方式完成。
 
-\begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
-    \centering %使图片居中显示
-    \includegraphics[width=0.95\textwidth]{FIGs/chapter5/cello.png} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
-    \caption{图形化Cello Operator} %caption是用来给图片加上图题的
-    \label{cello} %这是添加标签，方便在文章中引用图片。
-\end{figure}%figure环境
+% 如图\ref{cello}所示,
+% \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
+%     \centering %使图片居中显示
+%     \includegraphics[width=0.95\textwidth]{FIGs/chapter5/cello.png} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
+%     \caption{图形化Cello Operator} %caption是用来给图片加上图题的
+%     \label{cello} %这是添加标签，方便在文章中引用图片。
+% \end{figure}%figure环境
 
 由于现在在Docker环境中部署HF网络仍旧是主流, 所以本文利用Cello在Docker中部署作为测试基准。由于Cello的局限性, 仅支持在部署HF网络的1.4版本, 而原型工具能更优的支持HF网络的2.X以上版本。
 如表\ref{test_fabric_net}展示了本次工具对比所部署的HF网络各节点的版本信息, 测试基准为基于单组织单Peer的网络部署时间, 共识算法选择Solo, 数据存储选择LevelDB。
@@ -337,4 +382,4 @@
 
 \section{本章小结}
 
-本章介绍了对原型工具的测试与评估。首先介绍了本文涉及到的两个测试环境, 并以典型案例的方式对原型工具进行了功能性与非功能性测试, 最终的测试符合预期。其次, 本章利用定性与定量的方法, 分别对原型工具进行了评估。最终原型工具基本满足五层成熟度模型, 且原型工具相较于Cello在网络部署时间上更优且更稳定。
+本章介绍了对原型工具的测试与评估。首先介绍了本文涉及到的两个测试环境, 并以典型案例的方式对原型工具进行了功能性性测试, 最终的测试符合预期。其次, 本章利用SAAM、定性与定量的方法, 分别对原型工具进行了评估。
