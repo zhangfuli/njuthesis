@@ -1,12 +1,12 @@
 \chapter{测试与评估}
 
-本章将介绍面向Hyperledger Fabric的区块链云化框架的测试与评估工作。首先, 本章以典型案例的方式对原型工具进行测试;其次, 采用SAAM、定性与定量方法论\cite{tashakkori1998mixed}结合五层成熟度模型以及与官方工具Cello\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/cello}{Hyperledger Cello}}进行对比评估。
+本章将介绍面向Hyperledger Fabric的区块链云化框架的测试与评估工作。首先, 本章以典型案例的方式对原型工具进行测试;其次, 采用SAAM、定性与定量方法\cite{tashakkori1998mixed}结合五层成熟度模型以及与官方工具Cello\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/cello}{Hyperledger Cello}}进行对比评估。
 
 
 
 \section{测试环境}
 
-为全面对本文提出的区块链云化框架与工具进行测试, 本文对原型工具进行了功能性测试以及工具对比测试, 由于在本机环境下搭建Cello会出现诸多问题, 如文件挂载权限、编译等, 所以本文准备了两套测试环境。本文首先在本地环境进行第\ref{section:functional_test}节的功能性测试, 本地机器为MacBook Pro, 并采用Docker for Desktop搭建的单节点Kubernetes充当集群环境; 其次, 在第\ref{section: tool_comparison}节中, 为顺利运行对比工具Cello, 本文利用云主机Ubuntu 18.04搭建Minikube充当集群环境。上述两种环境具体配置如表\ref{computer}所示。
+为全面对本文提出的区块链云化框架与工具进行测试, 本文对原型工具进行了功能性测试、场景分析以及工具对比测试, 由于在本机环境下搭建Cello会出现诸多问题, 如文件挂载权限、编译等, 所以本文准备了两套测试环境。本文首先在本地环境进行功能方面的测试, 本地机器为MacBook Pro, 并采用Docker for Desktop搭建的单节点Kubernetes充当集群环境; 其次, 在第\ref{section: tool_comparison}节中, 为顺利运行对比工具Cello, 本文利用云主机Ubuntu 18.04搭建Minikube充当集群环境。上述两种环境具体配置如表\ref{computer}所示。
 
 {\footnotesize
 \begin{longtable}[h]{m{40pt}|m{100pt}|m{100pt}}
@@ -69,7 +69,7 @@
     \label{testcase1result} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-\textbf{步骤二：} 如表\ref{orderer_test}所示, HF网络管理员需要首先为OrdererMSP创建名为“ord-ca”的Ca节点; 其次, 在OrdererMSP中创建了名为“ord-node1”的Peer节点。如图\ref{testcase2result}所示为测试结果, 原型工具可以为Fabric网络管理员创建Orderer的Ca与Orderer节点, 其中包含但不限于Deployment、Service、Pod、Secret等。
+\textbf{步骤二：} 如表\ref{orderer_test}所示, HF网络管理员需要首先为OrdererMSP创建名为“ord-ca”的Ca节点; 其次, 在OrdererMSP中创建了名为“ord-node1”的Peer节点。如图\ref{testcase2result}所示为测试结果, 原型工具可以为HF网络管理员创建Orderer的Ca与Orderer节点, 其中包含但不限于Deployment、Service、Pod、Secret等。
 
 {\footnotesize
 \begin{longtable}[h]{m{45pt} m{45pt} m{180pt} m{50pt} m{20pt}}
@@ -165,7 +165,7 @@
 \end{figure}%figure环境
 
 
-经过上述步骤1-5, 最终的网络节点状态如图\ref{fabric_result}所示, 本文搭建了一个单Orderer以及单Org、单Peer的简单的Fabric网络, 并分别Orderer、以及Peer搭配Ca证书认证。在搭建了基本的网络之后, 分别为Orderer、Peer注册并登记用户, 最后在组织Org中搭建了一个通道并成功安装调用链码。测试结果可知, 本文的原型工具能够正常成功搭建HF网络及部署链码。
+经过上述步骤1-5, 最终的网络节点状态如图\ref{fabric_result}所示, 本文搭建了一个单Orderer以及单Org、单Peer的简单的HF网络, 并分别Orderer、以及Peer搭配Ca证书认证。在搭建了基本的网络之后, 分别为Orderer、Peer注册并登记用户, 最后在组织Org中搭建了一个通道并成功安装调用链码。测试结果可知, 本文的原型工具能够正常成功搭建HF网络及部署链码。
 
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
@@ -179,7 +179,7 @@
 
 \subsection{架构评估}
 
-在软件工程中, 常见的评估软件体系结构的方法有Software Architecture Analysis Method(SAAM)、Architecture Trade-off Analysis Method(ATAM), 以上都是基于场景的质量属性评估方法。SAAM相较于ATAM而言其结构以及评估过程相对简单, 需要准备的工作较少并且SAAM适用于对软件最终版本的的评估\cite{huhonglei2004}。本文首先对第\ref{section: framework_characteristics}节所涉及到的设计原则的描述映射到对应的质量属性, 然后采取SAAM方法对其进行评估。
+在软件工程中, 常见的评估软件体系结构的方法有Software Architecture Analysis Method(SAAM)、Architecture Trade-off Analysis Method(ATAM), 以上都是基于场景的质量属性评估方法\cite{ionita2002scenario}。SAAM相较于ATAM而言其结构以及评估过程相对简单, 需要准备的工作较少并且SAAM适用于对软件最终版本的评估\cite{huhonglei2004}。本文首先对第\ref{section: framework_characteristics}节所涉及到的设计原则的描述映射到对应的质量属性, 然后采取SAAM方法对其进行评估。
 
 在SAAM评估方法开始之前, 本文邀请了4位熟悉HF基本概念及网络搭建流程的软件开发工程师分别两两扮演HF网络管理员、HF开发人员, 1位熟悉Kubernetes操作的集群运维工程师扮演集群管理员, 以上5位分别为本次SAAM评估方法的风险承担者。本节实施SAAM评估方法涉及以下步骤:
 
@@ -203,23 +203,25 @@
         \hline
         T4&  HF开发人员 & 命令式操作链码 & 简单易用 & 功能需求 & 直接需求 &  高 \\
         \hline
-        T5&  HF网络管理员 & 扩容HF节点资源 & 灵活扩展 & 可扩展性 & 间接需求 &  中 \\
+        T5&  HF网络管理员 \newline HF开发人员 & 能在30min内启动完整网络 & 简单易用 & 易用性 & 间接需求 &  高 \\
         \hline
-        T6&  HF网络管理员 & 扩容账本存储单元 & 灵活扩展 & 可扩展性 & 间接需求 &  高 \\
+        T6&  HF网络管理员 & 扩容HF节点资源 & 灵活扩展 & 可扩展性 & 间接需求 &  中 \\
         \hline
-        T7&  HF开发人员 & 保存用户密钥 & 安全可靠 & 安全性 & 间接需求 &  高 \\
+        T7&  HF网络管理员 & 扩容账本存储单元 & 灵活扩展 & 可扩展性 & 间接需求 &  高 \\
         \hline
-        T8&  HF开发人员 & 操作网络时需要身份认证 & 安全可靠 & 安全性 & 间接需求 &  高 \\
+        T8&  HF开发人员 & 保存用户密钥 & 安全可靠 & 安全性 & 间接需求 &  高 \\
+        \hline
+        T9&  HF开发人员 & 操作网络时需要身份认证 & 安全可靠 & 安全性 & 间接需求 &  高 \\
         \hline    
-        T9&  k8s管理员 & HF网络与其他集群程序进行隔离 & 安全可靠 & 安全性 & 间接需求 &  高 \\
+        T10&  k8s管理员 & HF网络与其他集群程序进行隔离 & 安全可靠 & 安全性 & 间接需求 &  高 \\
         \hline
-        T10&  k8s管理员 & Operator限定管理HF网络节点 & 安全可靠 & 安全性 & 间接需求 &  高 \\
+        T11&  k8s管理员 & Operator限定管理HF网络节点 & 安全可靠 & 安全性 & 间接需求 &  高 \\
         \hline
-        T11&  HF网络管理员 \newline HF开发人员 & 良好异常反馈机制 & 安全可靠 & 可靠性 & 间接需求 &  高 \\
+        T12&  HF网络管理员 \newline HF开发人员 & 良好异常反馈机制 & 安全可靠 & 可靠性 & 间接需求 &  高 \\
         \hline
-        T12&  HF网络管理员 \newline HF开发人员 & HF网络节点的全面监控能力 & 可视运维 & 可靠性 & 间接需求 &  高 \\
+        T13&  HF网络管理员 \newline HF开发人员 & HF网络节点的全面监控能力 & 可视运维 & 可靠性 & 间接需求 &  高 \\
         \hline
-        T13&  HF网络管理员 \newline HF开发人员 & Operator在不同云平台之间迁移的便捷性 & 云链结合 & 可迁移性 & 间接需求 &  中 \\
+        T14&  HF网络管理员 \newline HF开发人员 & Operator在不同云平台之间迁移的便捷性 & 云链结合 & 可移植性 & 间接需求 &  中 \\
         \hline
     \end{longtable} 
 }
@@ -240,7 +242,7 @@
 
 安全可靠, 原型工具通过可以以文件形式导出HF网络登记用户产生的密钥信息, 并可以通过Secret进行保存。当这些用户操作HF网络时, 原型工具会要求提供对应的密钥文件作为身份认证的方式。同时, 原型工具将所有的HF资源放在同一命名空间下, 并通过RBAC为该命名空间提供了两种类型的角色。当集群其他用户对已经部署的HF网络节点拥有超越权限的操作时, 原型工具会提示并不进行相关操作。在可靠性方面, 本文在使用原型工具搭建HF网络过程中有意输入错误的命令行参数, 输入不正确的密钥文件等, 原型工具都能在1s内给出参数的异常情况; 同时, 原型工具能够有效利用Prometheus监控体系对工具本身以及HF网络的所有节点、智能合约以及DB进行监控, 如图\ref{monitoring}展示了利用Prometheus与Grafana对Fabric Ca Resource进行监控的画面, 图中展示了Fabric Ca Resource的API、内存以及CPU的使用情况。在搭建完HF网络之后, 原型工具在两周内仅崩溃1次, 且能通过日志以及Prometheus的告警设置在5分钟内进行恢复。
 
-云链结合, 重点是在可迁移性下的场景。本文通过Dockerfile将本工具打包成Docker镜像\footnotemark[1]\footnotetext[1]{\href{https://hub.docker.com/repository/docker/zhangfuli/hfoperator}{HFOperator镜像}}, 使用预先打包并经过检验的镜像, 并为该原型工具配备专用的Helm chart, 其中包含有关原型工具构建的所有必要信息, 这样可以以最少的时间部署。结果表明, 原型工具可以通过helm在支持Kubernetes 1.18版本以上的云平台上运行, 原型平台具备良好的可迁移性。
+云链结合, 重点是在可移植性下的场景。本文通过Dockerfile将本工具打包成Docker镜像\footnotemark[1]\footnotetext[1]{\href{https://hub.docker.com/repository/docker/zhangfuli/hfoperator}{HFOperator镜像}}, 使用预先打包并经过检验的镜像, 并为该原型工具配备专用的Helm chart, 其中包含有关原型工具构建的所有必要信息, 这样可以以最少的时间部署。结果表明, 原型工具可以通过Helm在支持Kubernetes 1.18版本以上的云平台上运行, 原型平台具备良好的可移植性性。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -249,7 +251,7 @@
     \label{monitoring} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-\textbf{5. 总体评估: }本文的原型工具可以有效利用Kubernetes Operator云化策略来提升HF网络的安全性、可扩展性以及可视运维能力。
+\textbf{5. 总体评估: }本文的原型工具可以有效利用Kubernetes Operator云化策略来提升HF网络的易用性、可扩展性、安全性、以及可靠性。
 
 
 \subsection{五层成熟度模型}
@@ -263,7 +265,7 @@
 
     \item 第三级: Full Lifecycle, 是否能达到该级别取决于Operator是否具备生命周期管理和的数据备份、恢复能力。在该级别上的Operator能够备份数据, 并在发生任何数据灾难时从备份数据中恢复数据。
 
-    \item 第四级: Deep Insights, Operator提供监控和报警等功能。在该级别, operator能够包含所有组件的运行状况指标, 并根据指标配备报警功能;
+    \item 第四级: Deep Insights, Operator提供监控和报警等功能。在该级别, Operator能够包含所有组件的运行状况指标, 并根据指标配备报警功能;
 
     \item 第五级: Auto Pilot, 最终级别拥有许多高级功能, 如自动伸缩。Operator可以通过收集到的指标来扩展工作负载。
 
@@ -286,7 +288,7 @@
 
 \textbf{Full Lifecycle}
 
-虽然原型工具能够在Mangager中对结合Helm对HF网络进行全生命周期管理, 但目前原型工具目前仍缺少数据备份和恢复的能力。要达到这一能力需要在CRs中指定远程备份的数据存储平台, 并在CRs中指定数据备份的凭证以及远程备份的链接。同时, 原型工具在一定的时间周期内将数据备份的到远程的数据存储平台上。
+虽然原型工具能够在Mangager中对结合Helm对HF网络进行全生命周期管理, 但目前原型工具目前仍缺少数据备份和恢复的能力。要达到这一能力需要在CRs中指定远程备份的数据存储平台, 并在CRs中指定数据备份的凭证以及远程备份的链接。同时, 原型工具需要在一定的时间周期内将数据备份的到远程的数据存储平台上。
 
 \textbf{Deep Insights}
 
@@ -296,7 +298,7 @@
 
 在Kubernetes中存在两种自动伸缩的插件, 即HPA、VPA。当负载超过一定的阈值时, 就会对其进行伸缩或配置更多的资源。然而在HF网络中, 每个Peer都有记录全部账本的职责, 并且只需要超过51\%的Peer节点保持一致即可, 所以针对于Peer并不需要根据监控进行自我伸缩的能力。在数据存储方面, 随着账本的膨胀, 原型工具可以针对链外存储进行扩容。
 
-综上, 通过定性分析, 本文原型工具利用Operator管理Fabric网络能够完美的具备第一级、第二级在第三级上能够支持全生命周期管理但是对于数据的备份能力依旧是存在欠缺, 借助原型工具实现了第四级的监控, 对于自动伸缩方面仅支持数据层面的扩展, 所以本文原型工具基本满足5层成熟度模型的功能。
+综上, 通过定性分析, 本文原型工具利用Operator管理HF网络能够完美的具备第一级、第二级在第三级上能够支持全生命周期管理但是对于数据的备份能力依旧是存在欠缺, 借助原型工具实现了第四级的监控, 对于自动伸缩方面支持资源及数据层面的扩展, 所以本文原型工具基本满足5层成熟度模型的功能。
 
 \subsection{工具对比} \label{section: tool_comparison}
 
@@ -312,31 +314,25 @@
 %     \label{cello} %这是添加标签，方便在文章中引用图片。
 % \end{figure}%figure环境
 
-由于现在在Docker环境中部署HF网络仍旧是主流, 所以本文利用Cello在Docker中部署作为测试基准。由于Cello的局限性, 仅支持在部署HF网络的1.4版本, 而原型工具能更优的支持HF网络的2.X以上版本。
-如表\ref{test_fabric_net}展示了本次工具对比所部署的HF网络各节点的版本信息, 测试基准为基于单组织单Peer的网络部署时间, 共识算法选择Solo, 数据存储选择LevelDB。
 
 {\footnotesize
-\begin{longtable}[h]{m{50pt} m{100pt} m{50pt}}
+\begin{longtable}[h]{m{100pt} m{100pt} m{100pt}}
     \caption[Hyperledger Fabric版本信息]{Hyperledger Fabric版本信息} \label{test_fabric_net} \\
         \hline  
-        \textbf{工具类型}&\textbf{镜像}&\textbf{版本}\\
+        \textbf{镜像}&\textbf{Cello版本}&\textbf{原型工具版本}\\
         \hline
-        \multirow{3}*{cello}
-        & Fabric-Ca & 1.4.2 \\
-        & Fabric-Peer & 1.4.2 \\
-        & Fabric-Orderer & 1.4.2 \\
-        \hline
-        \multirow{3}*{原型工具}
-        & Fabric-Ca & 1.4.9 \\
-        & Fabric-Peer & 2.4.1 \\
-        & Fabric-Orderer & 2.4.1 \\
+        Fabric-Ca & 1.4.2 & 1.4.9 \\
+        Fabric-Peer & 1.4.2 & 2.4.1 \\
+        Fabric-Orderer & 1.4.2 & 2.4.1 \\
         \hline
     \end{longtable}
 }
 
+由于现在在Docker环境中部署HF网络仍旧是主流, 所以本文利用Cello在Docker中部署作为测试基准。由于Cello的局限性, 仅支持在部署HF网络的1.4版本, 而原型工具能更优的支持HF网络的2.X以上版本。
+如表\ref{test_fabric_net}展示了本次工具对比所部署的HF网络各节点的版本信息, 测试基准为基于单组织单Peer的网络部署时间, 共识算法选择Solo, 数据存储选择LevelDB。
 
 
-为了避免人为的手工干扰, 获得更加准确的网络部署时间。本文提前在Cello Operator中创建好Orderer以及org1组织并为每个组织配置一个对应的节点。当点击提交网络时开始计时, 刚开始创建时, 网络节点的状态是“故障”, 当网络节点的状态从“故障”变成“正常”时停止计时, 随后删除该网络。重复10次上述操作, 且为避免后端镜像遗留干扰, 每次操作间隔3min～5min。在原型工具中, 为避免手工输入命令而带来的人为误差, 本文预先编写好创建网络的的脚本, 脚本中创建10次网络, 创建完成后删除该网络并在删除后休眠30s, 如此循环10次共得到10次网络启动时间如表\ref{net_deployment_time}所示。
+为了避免人为的手工干扰, 获得更加准确的网络部署时间。本文提前在Cello Operator中创建好Orderer以及org1组织并为每个组织配置一个对应的节点。当点击提交网络时开始计时, 刚开始创建时, 网络节点的状态是“故障”, 当网络节点的状态从“故障”变成“正常”时停止计时, 随后删除该网络。重复10次上述操作, 且为避免后端镜像遗留干扰, 每次操作间隔3min～5min。在原型工具中, 为避免手工输入命令而带来的人为误差, 本文预先编写好创建网络的脚本, 脚本中创建10次网络, 创建完成后删除该网络并在删除后休眠30s, 如此循环10次共得到10次网络启动时间如表\ref{net_deployment_time}所示。
 
 {\footnotesize
 \begin{longtable}[h]{m{35pt}|m{40pt}|m{15pt} m{15pt} m{15pt} m{15pt} m{15pt} m{15pt} m{15pt} m{15pt} m{15pt} m{15pt}|m{20pt}}
@@ -350,7 +346,7 @@
         \cline{3-12}
         & & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & \\
         \hline
-        cello & 整体网络 & 73 & 119 & 115 & 90 & 73 & 89 & 137 & 85 & 103 & 127 & 101.1\\
+        Cello & 整体网络 & 73 & 119 & 115 & 90 & 73 & 89 & 137 & 85 & 103 & 127 & 101.1\\
         \hline  
         \multirow{5}*{\parbox[c]{40pt}{原型工具}}
         & ca(peer) & 13 & 12 & 13 & 13 & 13 & 13 & 13 & 12 & 12 & 12 & 12.6 \\
@@ -363,8 +359,6 @@
     \end{longtable} 
 }
 
-如图\ref{plt_deployment}展示了原型工具和Cello分别部署HF网络的对比图。值得注意的是, 由于Cello采用图形化界面无法单独配置单个Ca的启停, 所以采用Cello部署的单Orderer单组织的HF网络仅在单个组织内部启动了一个Ca节点, 共计3个网络节点。 而采用原型工具部署的单Orderer单组织的HF网络分别为Orderer以及单组织部署了一个Ca节点, 共计4个网络节点。图\ref{plt_deployment}左侧展示了对着10次部署排序后的时间曲线图, 图中可以较为直观的看到原型工具比Cello部署的时间要少, 原型工具的部署整体网络的平均时间为76.2秒, 而Cello部署整体网络的平均时间为101.1秒; 经计算, 原型工具的总体标准偏差约为6.29, Cello的总体标准偏差约为21.41。图\ref{plt_deployment}右侧分别展示了两者的箱线图, 结合标准偏差可知原型工具部署时间相对而言更为稳定, 尤其在部署Ca节点时, 稳定在13秒左右。
-
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
     \includegraphics[width=1.0\textwidth]{FIGs/chapter5/plt_deployment.png} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
@@ -372,7 +366,9 @@
     \label{plt_deployment} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-通过分析源码\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/cello/blob/release-0.9.0-h3c/src/modules/blockchain_network.py}{cello create network}}可知, 当在Cello Operator前端中提交网络之后, Cello对应的Docker Agent会循环解析传入的HF网络节点信息及数量的数据结构, 解析完成后串行构建HF网络中的各类节点。构建过程中, 采用生成Docker Compose文件并启动对应的网络节点。同样, 在部署Kubernetes时根据Template模板在代码中硬编码生成yaml文件。由此可得, Cello网络部署时间会随着HF网络中节点数量的增加而递增。本文的原型工具, 因需要手动以命令的方式部署单个对应网络节点, 其部署时间也会随着节点数量增加而递增。因此, 只对单Orderer单Peer进行对比测试即可预估出不同网络规模下的网络部署时间。
+如图\ref{plt_deployment}展示了原型工具和Cello分别部署HF网络的对比图。值得注意的是, 由于Cello采用图形化界面无法单独配置单个Ca的启停, 所以采用Cello部署的单Orderer单组织的HF网络仅在单个组织内部启动了一个Ca节点, 共计3个网络节点。 而采用原型工具部署的单Orderer单组织的HF网络分别为Orderer以及单组织部署了一个Ca节点, 共计4个网络节点。图\ref{plt_deployment}左侧展示了对着10次部署排序后的时间曲线图, 图中可以较为直观的看到原型工具比Cello部署的时间要少, 原型工具的部署整体网络的平均时间为76.2秒, 而Cello部署整体网络的平均时间为101.1秒; 经计算, 原型工具的总体标准偏差约为6.29, Cello的总体标准偏差约为21.41。图\ref{plt_deployment}右侧分别展示了两者的箱线图, 结合标准偏差可知原型工具部署时间相对而言更为稳定, 尤其在部署Ca节点时, 稳定在13秒左右。
+
+通过分析源码\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/cello/blob/release-0.9.0-h3c/src/modules/blockchain_network.py}{cello create network}}可知, 当在Cello Operator前端中提交网络之后, Cello对应的Docker Agent会循环解析传入的HF网络节点信息及数量的数据结构, 解析完成后串行构建HF网络中的各类节点。构建过程中, 采用生成Docker Compose文件并启动对应的网络节点。同样, 当Cello选择在Kubernetes部署时根据Template模板在代码中硬编码生成yaml文件。由此可得, Cello网络部署时间会随着HF网络中节点数量的增加而线性递增。本文的原型工具, 因需要手动以命令的方式部署单个对应网络节点, 其部署时间也会随着节点数量增加而递增。因此, 只对单Orderer单Peer进行对比测试即可预估出不同网络规模下的网络部署时间。
 
 综上, 通过定量分析, 本文原型工具相较于Cello在具有更优的部署时间, 并且每次部署时间更加稳定。
 
@@ -382,4 +378,4 @@
 
 \section{本章小结}
 
-本章介绍了对原型工具的测试与评估。首先介绍了本文涉及到的两个测试环境, 并以典型案例的方式对原型工具进行了功能性性测试, 最终的测试符合预期。其次, 本章利用SAAM、定性与定量的方法, 分别对原型工具进行了评估。
+本章介绍了对原型工具的测试与评估。首先介绍了本文涉及到的两个测试环境, 并以典型案例的方式对原型工具进行了功能性测试, 最终的测试符合预期。其次, 本章利用SAAM、定性与定量的方法, 分别对原型工具进行了评估。

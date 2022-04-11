@@ -4,11 +4,11 @@
 
 \section{面向Hyperledger Fabric的区块链云化框架}\label{section: framework}
 
-随着BaaS的市场规模不断扩大以及区块链的成熟促进了去中心还应用的落地, 同时对云原生服务市场也促进明显。云的开放、动态可伸缩的能力成为了去中心化应用落地的最佳载体。结合\ref{section: policy_set_application}节所得的策略具体实施方案, 本文提出了面向Hyperledger Fabric的区块链云化框架。利用Kubernetes Operator方法将领域知识集成到Kubernetes API编排过程中\cite{henning2021reproducible}。Kubernetes API是云原生容器管理系统的大脑, 它是一个复杂的API, 具有多个层与各种资源\cite{Yilmaz2021}。该框架重点整合\ref{section: BaaS}节所展示的BaaS区块链层HF的联盟链能力以及计算资源层Kubernetes的计算资源、存储资源等资源为上层的区块链服务层提供完备的去中心化应用开发的能力。同时该框架能够隐式管理密码文件、按需配置调度Kubernetes资源, 解决HF生产部署效率、安全性、数据弹性等运营难题, 节约开发人员以及运维人员时间成本, 使得其更加专注于去中心化应用的逻辑。
+区块链的成熟以及BaaS的市场规模不断扩大促进了去中心还应用的落地, 同时对云原生服务市场也促进明显。云的开放、动态可伸缩的能力成为了去中心化应用落地的最佳载体。结合第\ref{section: policy_set_application}节所得的策略具体实施方案, 本文提出了面向Hyperledger Fabric的区块链云化框架。利用Kubernetes Operator方法将领域知识集成到Kubernetes API编排过程中\cite{henning2021reproducible}。Kubernetes API是云原生容器管理系统的大脑, 它是一个复杂的API, 具有多个层与各种资源\cite{Yilmaz2021}。该框架重点整合第\ref{section: BaaS}节所展示的BaaS区块链层HF的联盟链能力以及计算资源层Kubernetes的计算资源、存储资源等资源为上层的区块链服务层提供完备的去中心化应用开发的能力。同时该框架能够隐式管理密码文件、按需配置调度Kubernetes资源, 解决HF生产部署效率、安全性、数据弹性等运营难题, 节约开发人员以及运维人员时间成本, 使得其更加专注于去中心化应用的逻辑。
 
-Operator应该管理单一类型的应用程序, 遵循UNIX原则:只做一件事, 并把它做好\cite{d2020design}。本框架必须解决的主要任务是屏蔽HF及Kubernetes底层细节, 简化Fabric网络的各节点的部署, 以及有效利用Kubernetes代码化及云化的管理基础设施, 所以本框架需要分别对Ca、Orderer、Peer三种不同的网络节点分别进行完整生命周期管理。
+Operator应该管理单一类型的应用程序, 遵循UNIX原则:只做一件事, 并把它做好\cite{d2020design}。本框架必须解决的首要任务是屏蔽HF及Kubernetes底层细节, 简化HF网络的各节点的部署, 以及有效利用Kubernetes代码化及云化的管理基础设施, 所以本框架需要分别对Ca、Orderer、Peer三种不同的网络节点进行完整生命周期管理。
 
-如图\ref{framework}所示, 本框架的整体工作流程将分为几个步骤。首先, 将HF领域知识注入CRD, 这些属性包含HF网络中Ca、Orderer、Peer各节点所具备的功能、性能、监控等可插拔的基础属性。将CRD作为本框架的输入, 通过自定义命令完成静态CRD相关属性的配置。其次, Manager是本框架的处理单元, 其被设计成一个黑盒\cite{yu2020system}, 用户无需关心Manager的内部逻辑设计。 Manager自动生成部署的配置文件, 使用生成的配置文件并结合Helm可以轻松的将HF网络各节点部署进目标Kubernetes集群。除了部署之外, Manager将持续监控这些节点及其存储资源的状态。根据持续监测结果并调用Kubernetes及HF相关API将各节点调整到期望状态以维持HF网络的稳定。最后, HF网络是本框架的输出, 通过自定义命令完成动态通道、链码的增删查改。除HF网络各节点基本Deployment、Service外, 本框架采用Istio专用基础设施层完成高性能、适应性和可用性\cite{li2019service}\cite{larsson2020impact}的TLS通信负载均衡; 采用原生Role、Secret、PVC的方式管理HF网络的权限、密码及存储。
+如图\ref{framework}所示, 本框架的整体工作流程将分为几个步骤。首先, 将HF领域知识注入CRD, 这些属性包含HF网络中Ca、Orderer、Peer各节点所具备的功能、性能、监控等可插拔的基础属性。将CRD作为本框架的输入, 通过自定义命令完成静态CRD相关属性的配置。其次, Manager是本框架的处理单元, 其被设计成一个黑盒\cite{yu2020system}, 用户无需关心Manager的内部逻辑设计。 Manager自动生成部署的配置文件, 使用生成的配置文件并结合Helm可以轻松的将HF网络各节点部署进目标Kubernetes集群。除了部署之外, Manager将持续监控这些节点及其存储资源的状态。根据持续监测结果调用Kubernetes及HF相关API将各节点调整到期望状态以维持HF网络的稳定。最后, HF网络是本框架的输出, 通过自定义命令完成动态通道、链码的增删查改。除HF网络各节点基本Deployment、Service外, 本框架利用Istio基础设施层完成高性能、适应性和可用性\cite{li2019service}\cite{larsson2020impact}的TLS通信负载均衡; 采用原生Role、Secret、PVC的方式管理HF网络的权限、密码及存储。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -19,9 +19,9 @@ Operator应该管理单一类型的应用程序, 遵循UNIX原则:只做一件�
 
 \subsection{Custom Resource Definition}\label{section: Custom_Resource_Definition}
 
-虽然HF和Kubernetes形成了理想的匹配, 但许多HF网络管理员缺乏必要的Kubernetes专业知识, 集群管理员的区块链领域知识也相对匮乏。CRD则通过扩展Kubernetes API将具备领域知识资源类型注入进Kubernetes集群中。Kubernetes提供了标准资源ConfigMap, 也可用于使配置数据项供应用程序使用, 但这两种针对不同的情况。ConfigMap擅长为在集群上的Pod中运行的程序提供配置, 应用程序通常希望从Pod中读取此类配置, 例如文件或环境变量的值, 而不是从Kubernetes API中读取。CRs由标准的Kubernetes客户端创建和访问, 遵守Kubernetes规范。通过Controller可以监控CR运行, 这些代码可以反过来创建、更新或删除其他集群对象, 甚至集群外的任意资源。
+虽然HF和Kubernetes形成了理想的匹配, 但许多HF网络管理员缺乏必要的Kubernetes专业知识, 集群管理员的区块链领域知识也相对匮乏。CRD则通过扩展Kubernetes API将具备领域知识资源类型注入进Kubernetes集群中。Kubernetes提供了标准资源ConfigMap, 也可用于使配置数据项供应用程序使用, 但这两种针对不同的情况。ConfigMap擅长为Pod中运行的程序提供配置, 应用程序通常希望从Pod中读取此类配置, 例如文件或环境变量的值, 而不是从Kubernetes API中读取。CR由标准的Kubernetes客户端创建和访问, 遵守Kubernetes规范。通过Controller可以监控CR运行, 这些代码可以反过来创建、更新或删除其他集群对象, 甚至集群外的任意资源。
 
-HF作为一种去中心化的多方信息对接的网络, 具有一套标准化的数据结构与接口。本框架基于HF网络各节点自身功能及配置\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/fabric-ca/blob/main/cmd/fabric-ca-server/config.go}{Ca Config}}\footnotemark[2]\footnotetext[2]{\href{https://github.com/hyperledger/fabric/blob/main/sampleconfig/orderer.yaml}{Orderer Config}}\footnotemark[3]\footnotetext[3]{\href{https://github.com/hyperledger/fabric/blob/main/sampleconfig/core.yaml}{Peer Config}}设计三种HF静态资源类型作为输入(S2), 篇幅原因仅展示包括但不限于如表\ref{crd_description}所示的属性。额外的, 除上述针对不同网络节点的特殊属性外, 本框架需要为每个节点提供如副本数、镜像、Hosts、日志、ServiceMonitor等基本属性维持上述网络节点的基本运行状态。
+HF作为一种去中心化的多方信息对接的网络, 具有一套标准化的数据结构与接口。本框架基于HF网络各节点自身功能及配置\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/fabric-ca/blob/main/cmd/fabric-ca-server/config.go}{Ca Config}}\footnotemark[2]\footnotetext[2]{\href{https://github.com/hyperledger/fabric/blob/main/sampleconfig/orderer.yaml}{Orderer Config}}\footnotemark[3]\footnotetext[3]{\href{https://github.com/hyperledger/fabric/blob/main/sampleconfig/core.yaml}{Peer Config}}设计三种HF静态资源类型作为输入(S2), 包括但不限于如表\ref{crd_description}所示的属性, 篇幅原因仅展示部分内容。额外的, 除上述针对不同网络节点的特殊属性外, 本框架为每个节点提供如副本数、镜像、Hosts、日志、ServiceMonitor等基本属性维持上述网络节点的基本运行状态。
 
 {\footnotesize
 \begin{longtable}[h]{m{60pt}|m{100pt}|m{210pt}}
@@ -47,7 +47,7 @@ HF作为一种去中心化的多方信息对接的网络, 具有一套标准化�
         \hline 
         \multirow{7}*{\parbox[c]{60pt}{Peer Resource \\ Definition}}
         & Gossip & 确保Peer间通过Gossip协议来达到所有账本的最终一致性 \\\cline{2-3}
-        & LevelDB/CouchDB & Fabric提供levelDB与CouchDB用以保存Fabric账本信息, 用以灵活适应Peer不同数据库之间的转换 \\\cline{2-3}
+        & LevelDB/CouchDB & HF提供levelDB与CouchDB用以保存HF账本信息, 用以灵活适应Peer不同数据库之间的转换 \\\cline{2-3}
         & CouchDBExporter & 采集CouchDB的监控数据 \\\cline{2-3}
         & ExternalChaincodeBuilder & 提供外部链码构建的能力 \\\cline{2-3}
         & Secret & 包含Peer的数字签名以及与Ca通信所需的基本信息\\\cline{2-3}
@@ -59,7 +59,7 @@ HF作为一种去中心化的多方信息对接的网络, 具有一套标准化�
 
 \subsection{Manager}
 
-CRs本身仅为特定应用程序提供声明式API的数据项的集合, Controller负责对CR的不同事件做出反馈, 管理CRs的完整生命周期。
+CR本身仅为特定应用程序提供声明式API的数据项的集合, Controller负责对CR的不同事件做出反馈, 管理CR的完整生命周期。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -68,11 +68,11 @@ CRs本身仅为特定应用程序提供声明式API的数据项的集合, Contro
     \label{manager} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-在Manager内部管理了多个CRs, 就需要使用多个Controller进行协调循环。这有助于关注点分离和代码的可读性。如图\ref{manager}所展示的是Manager监听CRs的全过程。首先, 需要在CRs中指定HF网络各节点所期望的状态, CRDs会注册进入Scheme, 其提供了APIServer对应的集群中GVK(Group Version Kind, Kubernetes集群资源定义方式)与CRs资源类型的映射, 通过资源类型Controller就能获取CR所定义的期望状态; 其次, Cache通过List-Watch机制与APIServer进行通信用以同步监听Fabric网络各节点在Kubernetes集群中的创建、删除、更新等操作, Cache可以获取HF网络各节点的实际状态; 最后, Controller循环监听期望状态与实际状态, 若期望状态与实际状态不一致, 则通过调用Clients更新、缩放、扩展、备份等操作进行协调一致。
+在Manager内部管理了多个CRs, 就需要使用多个Controller进行协调循环。这有助于关注点分离和代码的可读性。如图\ref{manager}所展示的是Manager监听CR的全过程。首先, 需要在CR中指定HF网络各节点所期望的状态, CRD会注册进入Scheme, 其提供了APIServer中GVK(Group Version Kind)与CRs资源类型的映射, 通过资源类型Controller就能获取CR所定义的期望状态; 其次, Cache通过List-Watch机制与APIServer进行通信用以同步监听HF网络各节点在Kubernetes集群中的创建、删除、更新等操作, Cache可以获取HF网络各节点的实际状态; 最后, Controller循环监听期望状态与实际状态, 若期望状态与实际状态不一致, 则通过调用Clients更新、缩放、扩展、备份等操作进行协调一致。
 
-区块链云化框架遵循标准化原则为HF网络中的各网络节点提供了标准化的Helm chart模板。在Helm中复用HF网络节点镜像(S1)并利用Kubernetes进行编排和管理底层的物理资源。这可以使用户能够轻松地在集群之间移动和部署云化框架及HF网络, 确保区块链系统基础架构的云独立性, 取消对云提供商的强依赖性, 提升本框架的的可迁移性与通用性。
+区块链云化框架遵循标准化原则为HF网络中的各节点提供了标准化的Helm chart模板。在Helm中复用HF网络节点镜像(S1)并利用Kubernetes进行编排和管理底层的物理资源。这可以使用户能够轻松地在集群之间移动和部署云化框架及HF网络, 确保区块链系统基础架构的云独立性, 取消对云提供商的强依赖性, 提升本框架的可移植性与通用性。
 
-为提升区块链云化框架的生产效率, 本文设计了一套针对HF Helm的Controller(S3), 直接将提前配置好的Helm随CRD以及Controller一起部署进Kubernetes。Helm通过调用Kubernetes的APIServer逐个将Helm chart中的yaml推送给Kubernetes, 当且仅能进行安装。所以Helm的弊端是缺乏对资源的全生命期监控, 只有CRD才能持续的监听Kubernetes资源对象的变化事件, 进行全生命期的监控响应, 高可靠的完成部署交付。一旦创建新的CR, Controller根据对应的资源对象更新helm的模板参数并重新部署入Kubernetes集群。图\ref{controller}以spec.size为例展示了Controller更新Helm的流程。本框架不仅通过Helm简化部署流程, 并且还能实现带全生命周期管理的Helm效果。根据这个特性, 每个CRs中对应的属性一旦经过管理员更改即可反馈到Kubernetes以及HF网络中, 能够在不介入网络的情况下的修改、配置HF网络。
+为提升区块链云化框架的生产效率, 本文设计了一套针对HF Helm的Controller(S3), 直接将提前配置好的Helm随CRD以及Controller一起部署进Kubernetes。Helm通过调用Kubernetes的APIServer逐个将Helm chart中的yaml推送给Kubernetes。但Helm的弊端是缺乏对资源的全生命期监控, 只有CRD才能持续的监听Kubernetes资源对象的变化事件, 进行全生命期的监控响应, 高可靠的完成部署交付。一旦创建新的CR, Controller根据对应的资源对象更新Helm的模板参数并重新部署入Kubernetes集群。图\ref{controller}以spec.size为例展示了Controller更新Helm的流程。本框架不仅通过Helm简化部署流程, 并且还能实现带全生命周期管理的Helm效果。根据这个特性, 每个CR中对应的属性一旦经过管理员更改即可反馈到Kubernetes以及HF网络中, 能够在不介入网络的情况下的修改、配置HF网络。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -83,9 +83,9 @@ CRs本身仅为特定应用程序提供声明式API的数据项的集合, Contro
 
 
 % 存储扩展性
-除\ref{section: Custom_Resource_Definition}节所提到的利用CRD对HF网络配置进行模块化设计外, 本框架在Helm中为每个运行中的HF网络节点选择配置的PVC(S6)作为链外存储, 并为每个PVC中预留出一定的额外存储资源。这相较于对所有持久存储的服务使用一个PVC而言, 虽然分配存储远超必要范围增加额外的存储资源冗余, 但用拥有更对的PVC能够保障每个网络节点拥有足够的存储空间, 以便在不缺乏存储资源的情况下正确运行节点。拥有更多的PVC增加了首次部署难度及过度调配的风险, 但多PVC能够灵活针对不同节点运行情况利用Kubernetes进行有针对性的存储扩容, 增强框架对于存储的扩展性。尽管多PVC在管理方面存在一定的复杂性, 但在选择多PVC更加符合最佳实践, 并且效率更高\cite{d2020design}。具体地, 框架首先部署基础StorageClass并针对于HF网络中的所有Ca、Orderer、Peer节点都会设置专属PVC存储单元。这些存储单元会根据CRD的定义挂在到具体的网络节点, 网络节点生成的交易数据将会高效的写入可插拔式的持续久化介质里面。
+除\ref{section: Custom_Resource_Definition}节所提到的利用CRD对HF网络配置进行模块化设计外, 本框架在Helm中为每个运行中的HF网络节点选择PVC(S4)作为链外存储, 并为每个PVC中预留出一定的额外存储资源。这相较于对所有持久存储的服务使用一个PVC而言, 虽然增加额外的存储资源冗余, 但拥有更多的PVC能够保障每个网络节点拥有足够的存储空间, 以便在不缺乏存储资源的情况下正确运行节点。拥有更多的PVC增加了首次部署难度及过度调配的风险, 但多PVC能够灵活针对不同节点运行情况利用Kubernetes进行有针对性的存储扩容, 增强框架对于存储的扩展性。尽管多PVC在管理方面存在一定的复杂性, 但在选择多PVC更加符合最佳实践, 并且效率更高\cite{d2020design}。具体地, 框架首先部署基础StorageClass并针对于HF网络中的所有Ca、Orderer、Peer节点都会设置专属PVC存储单元。这些存储单元会根据CRD的定义挂在到具体的网络节点, 网络节点生成的交易数据将会高效的写入可插拔式的持续久化介质里面。
 
-如图\ref{pvc_sc}所示, 当创建Peer节点并输入需要多少容量的CouchDB时, 框架会为管理员定制生成对应的Peer CR, 并按照前面所述流程更新Helm并更新。此时, Kubernetes会根据PVC进行适配寻找合适的PV进行存储。PVC只是针对于存储的声明并不会进行真正的存储, 其服务于Peer Pod。框架在定义StorageClass时会将“allowVolumeExpansion”字段设置为“true”, 这会允许PVC的扩容操作。 当初始设定的初始存储值不够时, 可以通过修改CR中的PVC的容量进行动态的灵活扩容。链外存储的使得账本数据与操作独立实现, “账本数据生于链却独立于链”, 能够更好的支持数据治理。
+如图\ref{pvc_sc}所示, 当创建Peer节点并输入需要多少容量的CouchDB时, 框架会为管理员定制生成对应的Peer CR, 并按照前面所述流程更新Helm。此时, Kubernetes会根据PVC进行适配寻找合适的PV进行存储。PVC只是针对于存储的声明并不会进行真正的存储, 其服务于Peer Pod。框架在定义StorageClass时会将“allowVolumeExpansion”字段设置为“true”, 这会允许PVC的扩容操作。 当初始设定的初始存储值不够时, 可以通过修改CR中的PVC的容量进行动态的灵活扩容。链外存储使得账本数据与操作独立实现, “账本数据生于链却独立于链”, 能够更好的支持数据治理。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -95,7 +95,7 @@ CRs本身仅为特定应用程序提供声明式API的数据项的集合, Contro
 \end{figure}%figure环境
 
 % 安全性
-在安全性方面区块链云化框架复用Kubernetes的原生安全保障体系, 主要涉及到两方面。 一方面是Kubernetes集群中用户对框架操作的访问控制限制。区块链云化框架会生成很多清单文件向Kubernetes集群中部署HF网络, 此时框架将所有资源放入同一命名空间下(S10)。由于Kubernetes没有以用户身份进行身份验证, 所以框架采用RBAC(S7)将对同一命名空间下资源操作的最小权限映射到框架中的Manager及HF网络节点。对于自定义生成的资源, 设置了两种类型的角色(ClusterRole)分别是editor以及viewer, 如图\ref{safety}-I展示了viewer角色的权限, editor相较于viewer则增加了create、delete、update、patch的权限, 使用ClusterRoleBinding将角色与用户(ServiceAccount)进行捆绑。值得注意的是, 区块链云化框架无需以root身份运行, 在确保在允许HF网络正常工作的同时, 应尽可能限制访问。上述安全策略只是保护HF网络的第一道防线, 另一方面是防止非法用户参与HF网络内部交易流程以及数据篡改。在经过Ca节点生成用户密码后, 框架避免使用直接向节点镜像中注入环境变量的方式管理密码信息。如图\ref{safety}-II所示, 本框架采用Secret(S8)配合x509\cite{8249485}存储管理导出的敏感密钥数据, 这种方式不但能提高灵活性而且增加了密码的传输、存储、访问安全, 增强隐私保护。
+在安全性方面区块链云化框架复用Kubernetes的原生安全保障体系, 主要涉及到两方面。 一方面是Kubernetes集群中用户对框架操作的访问控制限制。区块链云化框架会生成很多清单文件向Kubernetes集群中部署HF网络, 此时框架将所有资源放入同一命名空间下(S7)。由于Kubernetes没有以用户身份进行身份验证, 所以框架采用RBAC(S5)将对同一命名空间下资源操作的最小权限映射到框架中的Manager及HF网络节点。对于自定义生成的资源, 设置了两种类型的角色(ClusterRole)分别是editor以及viewer, 如图\ref{safety}-I展示了viewer角色的权限, editor相较于viewer则增加了create、delete、update、patch的权限, 使用ClusterRoleBinding将角色与用户(ServiceAccount)进行捆绑。值得注意的是, 区块链云化框架无需以root身份运行, 在确保在允许HF网络正常工作的同时, 应尽可能限制访问。上述安全策略只是保护HF网络的第一道防线, 另一方面是防止非法用户参与HF网络内部交易流程以及数据篡改。在经过Ca节点生成用户密码后, 框架避免使用直接向节点镜像中注入环境变量的方式管理密码信息。如图\ref{safety}-II所示, 本框架采用Secret(S6)配合x509\cite{8249485}存储管理导出的敏感密钥数据, 这种方式不但能提高灵活性而且增加了密码的传输、存储、访问安全, 增强隐私保护。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -104,14 +104,13 @@ CRs本身仅为特定应用程序提供声明式API的数据项的集合, Contro
     \label{safety} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
-
-% 可视化运维
-本框架采用非介入式的云上监控方案Prometheus以及Grafana进行可视运维(S11), 在CRD中预留exporter、ServiceMonitor等属性, 对应的在Helm chart中定制抓取周期的相关配置对HF网络中的Ca、Orderer、Peer、CouchDB等进行可视化监控。同时, Grafana开源特性能够创建自定义插件, 以及图形化的方式运维区块链网络。通过Prometheus监控体系能够实时监控区块链网络的运行状态, 帮助HF网络运维人员及时发现并解决问题, 这极大的提升了本框架的可视运维能力。
+% 可靠性
+本框架配置Kubernetes的自启动策略(S8)保证HF网络节点的稳定性同时本框架采用非介入式的云上监控方案Prometheus以及Grafana进行可视运维(S9), 在CRD中预留exporter、ServiceMonitor等属性, 对应的在Helm chart中定制抓取周期等相关配置对HF网络中的Ca、Orderer、Peer、CouchDB等进行可视化监控。同时, Grafana开源特性能够创建自定义插件, 以及图形化的方式运维区块链网络。通过Prometheus监控体系能够实时监控区块链网络的运行状态, 帮助HF网络运维人员及时发现并解决问题, 提升了本框架的可靠性。
 
 % 命令式查询
-本框架对外采用动态命令式查询, 透明的命令式查询对内封装创建、更新、删除HF网路各节点以及通道、链码相关功能模块的各项操作。通过命令查询的方式, 可以大大降低区块链云化框架的使用门槛, 无需关心内部复杂的证书、网络等创建逻辑。
+本框架对外采用动态命令式查询(S10), 透明的命令式操作对内封装创建、更新、删除HF网络各节点以及通道、链码相关功能模块的各项操作。通过命令查询的方式, 可以大大降低区块链云化框架的使用门槛, 无需关心内部复杂的证书、网络等创建逻辑。
 
-\subsection{Fabric网络}
+\subsection{Hyperledger Fabric网络}
 
 HF网络一个复杂的分布式系统, 需要权衡速度、性能等条件对不同网络节点的部署状态进行合理设计。静态节点Ca、Orderer、Peer在首次启动网络时就需要部署在Kubernetes集群中并以Pod形式运行。Pod是Kubernetes中可以创建和部署的最小单位。在Kubernetes集群中, Pod有两种运行状态:
 
@@ -121,15 +120,15 @@ HF网络一个复杂的分布式系统, 需要权衡速度、性能等条件对�
     \item Pod中运行个容器: 当容器间需要紧密协作时可以在同一Pod中运行多容器。
 \end{itemize}
 
-Ca是Fabric的证书授权中心, Orderer负责交易的排序, 这两个节点在配置上需要满足可插拔式设计。 但在网络运行时, 需要各自在一个Pod中运行即可, 同时 在一个Pod中运行可以更好的有效的利用Kubernetes的自动缩放功能进行弹性伸缩。
+Ca是HF网络中的证书授权中心, Orderer负责交易的排序, 这两个节点在配置上需要满足可插拔式设计。 但在网络运行时, 需要各自在一个Pod中运行即可, 同时 在一个Pod中运行可以更好的有效的利用Kubernetes的自动缩放功能进行弹性伸缩。
 
-Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区块链数据的存储以及运行链码。由于Peer节点需要频繁的账本存储单元如CouchDB进行交互, 所以Peer容器应当与CouchDB容器存在于同一Pod中。在同一个Pod中, Peer容器与CouchDB紧密协作, 拥有相同的存活周期, 更优的, 相同Pod中的不同容器共享进程、IP地址和数据卷, 可以进行频繁的文件和数据交换。Peer支持外部链码部署, 即链码拥有自己独立的Pod运行环境与Peer解耦, 能够纳入智能合约微服务化流程\cite{zhangfuli2021smartcontract}进行快速响应与监控。 
+Peer是HF网络中被使用最多的模块, 是HF网络的基石, 其负责区块链数据的存储以及运行链码。由于Peer节点需要频繁的与账本存储单元如CouchDB进行交互, 所以Peer容器应当与CouchDB容器存在于同一Pod中。在同一个Pod中, Peer容器与CouchDB紧密协作, 拥有相同的存活周期, 更优的, 相同Pod中的不同容器共享进程、IP地址和数据卷, 可以进行频繁的文件和数据交换。Peer支持外部链码部署, 即链码拥有自己独立的Pod运行环境, 这能够纳入智能合约微服务化流程\cite{zhangfuli2021smartcontract}进行快速响应与监控。 
 
 \section{原型工具}
 
 \subsection{工具概述}
 
-云原生具有资源按需配置, 动态伸缩的特性。当前, BaaS虽然能够基于云平台构建区块链系统, 但仅提供脚本化的方式部署区块链网络及智能合约, 仍未深入云基础设施平台的底层有效利用云的特性管理区块链平台, 这导致了BaaS平台对云特性的严重浪费。因此, 一个支持区块链有效云化的工具十分重要。如图\ref{toolstotal}所示, 本文基于提出区块链云化框架提供配套的面向Hyperledger Fabric的区块链云化原型工具。原型工具建立在HF核心流程之上, 对外不仅完成以声明式的方式自动化配置HF网络中的Ca、Orderer、Peer实体组件而且能够以命令的方式动态管理整个HF网络, 包含静态HF组件以及通道、链码的全生命周期管理; 对内应当区块链领域知识注入进云平台Kubernetes中, 有效利用Kubernetes的安全性、数据扩展性、可监控等能力为HF网络赋能。
+云原生具有资源按需配置, 动态伸缩的特性。当前, BaaS虽然能够基于云平台构建区块链系统, 但仅提供脚本化的方式部署区块链网络及智能合约, 仍未深入云基础设施平台的底层有效利用云的特性管理区块链平台, 这导致了BaaS平台对云特性的严重浪费。因此, 一个支持区块链有效云化的工具十分重要。如图\ref{toolstotal}所示, 本文基于提出区块链云化框架提供配套的面向Hyperledger Fabric的区块链云化原型工具。原型工具建立在HF核心流程之上, 对外不仅完成以声明式的方式自动化配置HF网络中的Ca、Orderer、Peer实体组件而且能够以命令的方式动态管理整个HF网络, 包含静态HF组件以及通道、链码的全生命周期管理; 对内应当区块链领域知识注入进云平台Kubernetes中, 有效利用可移植性、可靠性、易用性、可扩展性以及安全性等策略为HF网络赋能。
 
 \begin{figure}[!htbp] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -140,12 +139,12 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
 
 \subsection{需求分析} \label{section: requirement}
 
-本节重点介绍原型工具的功能性需求, 其非功能性需求涵盖在\ref{section: framework_characteristics}节所述的设计原则内。如图\ref{fabric_use_case}所示, HF网络管理人员期望能够通过原型工具不影响原节点功能性的前提下对HF网络各节点分别进行命令式启停, 降低HF网络的启动时间成本。表\ref{ca_use_case}展示了Ca管理的用例描述, Ca管理需为HF网络管理人员提供灵活方便的启停Ca节点的功能, 同时提供管理注册、签发证书的功能。在启动过程中应以kubectl内置命令行参数配置的方式设置Ca启动所可选的配置项, 如Database、Host、CLRSizeLimit等。同样, Ca管理需要覆盖Ca节点原有基本的用户注册、用户登记的功能。
+本节重点介绍原型工具的功能性需求, 如图\ref{fabric_use_case}所示, HF网络管理人员期望能够通过原型工具对HF网络各节点分别进行命令式启停, 降低HF网络的启动时间成本。表\ref{ca_use_case}展示了Ca管理的用例描述, Ca管理需为HF网络管理人员提供灵活方便的启停Ca节点的功能, 同时提注册、签发证书的功能。在启动过程中应以命令行参数配置的方式设置Ca启动所可选的配置项, 如Database、Host、CLRSizeLimit等。同样, Ca管理需要覆盖Ca节点原有基本的用户注册、用户登记的功能。
 
 \begin{figure}[!htbp] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
-    \includegraphics[width=0.9\textwidth]{FIGs/chapter4/fabric_use_case.pdf} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
-    \caption{Fabric网络管理用例图} %caption是用来给图片加上图题的
+    \includegraphics[width=1.0\textwidth]{FIGs/chapter4/fabric_use_case.pdf} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
+    \caption{HF网络管理用例图} %caption是用来给图片加上图题的
     \label{fabric_use_case} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
 
@@ -165,10 +164,10 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
         \hline
         后置条件&无\\
         \hline
-        正常流程& (1)HF网络管理员输入“kubectl-hlf ca create”并以可选参数的形式输入其他如Ca名称、容量等配置项。
-        \newline (2)HF网络管理员输入“kubectl-hlf ca register”并以可选参数的形式输入其他如用户名、密码等配置项。
-        \newline (3)HF网络管理员输入“kubectl-hlf ca enroll”并输入已经注册过的用户名、密码等信息将注册的用户进行登记并导出证书信息;
-        \newline (4)可选的, HF网络管理员输入“kubectl-hlf ca delete”删除ca节点。\\
+        正常流程& (1)HF网络管理员输入“kubectl hf ca create”并以可选参数的形式输入其他如Ca名称、容量等配置项
+        \newline (2)HF网络管理员输入“kubectl hf ca register”并以可选参数的形式输入其他如用户名、密码等配置项
+        \newline (3)HF网络管理员输入“kubectl hf ca enroll”并输入已经注册过的用户名、密码等信息将注册的用户进行登记并导出证书信息
+        \newline (4)可选的, HF网络管理员输入“kubectl hf ca delete”删除ca节点 \\
         \hline
         异常流程&无\\
         \hline
@@ -176,6 +175,8 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
 }
 
 表\ref{peer_use_case}展示了Peer管理的用例描述, Peer管理需为HF网络管理人员提供灵活方便的启停Peer节点的功能, 在启动过程中应以内置命令行参数配置的方式设置Peer启动所可选的配置项, 如Peer对应的Ca名称账本存储类型、Gossip协议、组织信息等。
+
+\newpage
 
 {\footnotesize
 \begin{longtable}[h]{m{60pt}|m{280pt}}
@@ -193,8 +194,8 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
         \hline
         后置条件&无\\
         \hline
-        正常流程& (1)HF网络管理员输入“kubectl-hlf peer create”并以可选参数的形式输入其他如Peer名称、所属组织、账本存储类型等配置项。
-        \newline (2)可选的, HF网络管理员输入“kubectl-hlf peer delete”并输入peer-name以删除Peer节点。\\
+        正常流程& (1)HF网络管理员输入“kubectl hf peer create”并以可选参数的形式输入其他如Peer名称、所属组织、账本存储类型等配置项
+        \newline (2)可选的, HF网络管理员输入“kubectl hf peer delete”并输入peer-name以删除Peer节点 \\
         \hline
         异常流程& HF网络管理员输入的对应Ca名称匹配不上, 报错提示\\
         \hline
@@ -202,6 +203,7 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
 }
 
 表\ref{orderer_use_case}展示了Orderer管理的用例描述, Orderer管理需为HF网络管理人员提供灵活方便的启停Orderer节点的功能, 同时能够将Orderer加入到通道中,在启动过程中应以内置命令行参数配置的方式设置Orderer启动所可选的配置项, 如Orderer对应的Ca名称、自己的名称、组织、容量等信息。
+
 
 
 {\footnotesize
@@ -221,9 +223,9 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
         \hline
         后置条件&无\\
         \hline
-        正常流程& (1)HF网络管理员输入“kubectl-hlf ordnode create”并以可选参数的形式输入其他如Orderer名称、所属组织、所属组织的Ca名称等配置项。
-        \newline (2)HF网络管理员输入“kubectl-hlf ordnode join” 并以参数的形式输入名称、命名空间、输入创世区块信息、自己的证书文件。
-        \newline (3)HF网络管理员输入“kubectl-hlf ordnode delete”以删除Orderer。\\
+        正常流程& (1)HF网络管理员输入“kubectl hf orderer create”并以可选参数的形式输入其他如Orderer名称、所属组织、所属组织的Ca名称等配置项
+        \newline (2)HF网络管理员输入“kubectl hf orderer join” 并以参数的形式输入名称、命名空间、输入创世区块信息、自己的证书文件
+        \newline (3)HF网络管理员输入“kubectl hf orderer delete”以删除Orderer \\
         \hline 
         异常流程& (1) HF网络管理员输入的对应Ca名称匹配不上, 报错提示。
         \newline (2) Orderer节点证书文件验证不通过, 禁止加入。 \\
@@ -235,7 +237,7 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
 
 \begin{figure}[!htbp] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
-    \includegraphics[width=0.9\textwidth]{FIGs/chapter4/chan_cc_use_case.pdf} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
+    \includegraphics[width=1.0\textwidth]{FIGs/chapter4/chan_cc_use_case.pdf} %中括号中的参数是设置图片充满文档的大小，你也可以使用小数来缩小图片的尺寸。
     \caption{通道管理用例图} %caption是用来给图片加上图题的
     \label{chan_cc_use_case_pic} %这是添加标签，方便在文章中引用图片。
 \end{figure}%figure环境
@@ -256,10 +258,10 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
         \hline
         后置条件&无\\
         \hline
-        正常流程& (1)HF开发人员输入“kubectl-hlf channel generate”并以可选参数的形式输入所包含的组织名称以及输出的创世区块保存文件。
-        \newline (2)HF开发人员输入“kubectl-hlf channel join” 并以参数的形式输入应当加入该通道的节点名称、组织信息和用户。
-        \newline (3)HF开发人员员输入“kubectl-hlf channel addanchorpeer”并以参数的形式输入通道的名称用以向通道中加入锚节点。
-        \newline (4)HF开发人员员输入“kubectl-hlf channel top”并以参数的形式输入通道的名称用以向查询账本的高度。\\
+        正常流程& (1)HF开发人员输入“kubectl hf channel generate”并以可选参数的形式输入所包含的组织名称以及输出的创世区块保存文件
+        \newline (2)HF开发人员输入“kubectl hf channel join” 并以参数的形式输入应当加入该通道的节点名称、组织信息和用户
+        \newline (3)HF开发人员员输入“kubectl hf channel addanchorpeer”并以参数的形式输入通道的名称用以向通道中加入锚节点
+        \newline (4)HF开发人员员输入“kubectl hf channel top”并以参数的形式输入通道的名称用以向查询账本的高度 \\
         \hline 
         异常流程& 无 \\
         \hline
@@ -283,12 +285,12 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
         \hline
         后置条件&无\\
         \hline
-        正常流程& (1)HF开发人员输入“kubectl-hlf chaincode intall”并以可选参数的形式输入链码地址、链码语言、标签等参数用以安装链码。
-        \newline (2)HF开发人员输入“kubectl-hlf chaincode queryinstalled" 并以参数的形式传入组织名称、用户、Peer信息等参数用以展示已经安装的链码。
-         \newline (3)HF开发人员输入“kubectl-hlf chaincode approveformyorg" 并以参数的形式传入链码package-id、链码名称、组织信息、策略等参数用以所在组织审批链码。
-        \newline (4)HF开发人员输入“kubectl-hlf chaincode commit”并以参数的形式输入链码名称、策略等信息用以提交链码。
-        \newline (5)HF开发人员输入“kubectl-hlf chaincode invoke”并以参数的形式输入链码名称、调用方法等信息用以调用链码。
-        \newline (6)HF开发人员输入“kubectl-hlf chaincode query”并以参数的形式输入链码名称、调用方法等信息用以查询链码。\\
+        正常流程& (1)HF开发人员输入“kubectl hf chaincode intall”并以可选参数的形式输入链码地址、链码语言、标签等参数用以安装链码
+        \newline (2)HF开发人员输入“kubectl hf chaincode queryinstalled" 并以参数的形式传入组织名称、用户、Peer信息等参数用以展示已经安装的链码
+         \newline (3)HF开发人员输入“kubectl hf chaincode approveformyorg" 并以参数的形式传入链码package-id、链码名称、组织信息、策略等参数用以所在组织审批链码
+        \newline (4)HF开发人员输入“kubectl hf chaincode commit”并以参数的形式输入链码名称、策略等信息用以提交链码
+        \newline (5)HF开发人员输入“kubectl hf chaincode invoke”并以参数的形式输入链码名称、调用方法等信息用以调用链码
+        \newline (6)HF开发人员输入“kubectl hf chaincode query”并以参数的形式输入链码名称、调用方法等信息用以查询链码\\
         \hline 
         异常流程& (1)因网络原因安装链码时间过长而导致, 提示并报错。
         \newline (2)因输入组织信息有误而没有权限审批、调用、查询链码, 提示报错。\\
@@ -301,7 +303,7 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
 面向Hyperledger Fabric的区块链云化工具是一个基于Kubernetes Operator的应用, 其整合结合Helm用以完成HF网络的快速部署和节点的全生命周期管理。同时, 为完成命令式查询原型工具采用Cobra\footnotemark[1]\footnotetext[1]{\href{https://github.com/spf13/cobra}{cobra github地址}}完成命令的封装。由于原型工具在管理Ca、Orderer、Peer各节点时除其对应的CRD不同外, 处理逻辑存在重复性, 故本节将以Ca节点作为案例介绍详细介绍其针对需求分析的设计与实现。
 
 % create CRD
-当HF网络管理员需要创建Ca并输入对应的命令及参数时, 如图\ref{create_crd}所示, 原型工具首先会解析管理员输入参数的合法性, 然后将对应的输入参数填充到已经定义好的FabricCA模版中,最后调用Kubernetes Client将Fabric Ca Resource依据CRD的规则部署进入集群中。伪代码\ref{code1}展示了创建Ca Resource的伪代码。
+当HF网络管理员需要创建Ca并输入对应的命令及参数时, 如图\ref{create_crd}所示, 原型工具首先会解析管理员输入参数的合法性, 然后将对应的输入参数填充到已经定义好的FabricCA模版中,最后调用Kubernetes Client将Fabric Ca Resource依据CRD的规则部署进入集群中。伪代码\ref{code1}展示了创建Ca Resource的相关代码。
 
 \begin{figure}[!htbp] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -342,7 +344,7 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
     }
 \end{algorithm}
 
-当Fabric Ca Resource一旦被部署到集群中就会被处理单元Manager中的Ca  Controller探查到其存活。如图\ref{reconcile}所示, Ca Controller通过Reconcile循环探听Ca Resource。由于资源被删除后再也无法获取到被删除资源的信息, 所以利用Finalizer字段进行标识, GetDeletetionTimeStamp()用于获取CR被删除时的时间戳。一旦探听到Ca Resource的存在就会先处理Finalizer字段。DeletionTimestamp不为空时, Controller会轮询该CR的更新请求执行处理所有的Finalizer。随后, Ca Controller会检查当前是否存在Ca Helm Release, 若不存在则将当前状态Ca Resource所定义的TLS、CFG等信息生成Helm chart并将其部署进入集群中; 若存在则先获取当前Ca Resource的状态并对其进行更新之后再生成Helm chart部署。Helm chart中定义了Ca启动所需要的全部如Deployment、Service、Istio、ServiceMonitor等yaml, 通过启动Helm就可以一次性将其全部启动部署。伪代码\ref{code2}展示了Ca Controller Reconcile的伪代码。
+当Fabric Ca Resource一旦被部署到集群中就会被处理单元Manager中的Ca  Controller探查到其存活。如图\ref{reconcile}所示, Ca Controller通过Reconcile循环探听Ca Resource。由于资源被删除后再也无法获取到被删除资源的信息, 所以利用Finalizer字段进行标识, GetDeletetionTimeStamp()用于获取CR被删除时的时间戳。一旦探听到Ca Resource的存在就会先处理Finalizer字段。DeletionTimestamp不为空时, Controller会轮询该CR的更新请求执行处理所有的Finalizer。随后, Ca Controller会检查当前是否存在Ca Helm Release, 若不存在则将当前状态Ca Resource所定义的TLS、CFG等信息生成Helm chart并将其部署进入集群中; 若存在则先获取当前Ca Resource的状态并对其进行更新之后再生成Helm chart部署。Helm chart中定义了Ca启动所需要的全部如Deployment、Service、Istio、ServiceMonitor等yaml, 通过启动Helm就可以一次性将其全部启动部署。伪代码\ref{code2}展示了Ca Controller Reconcile的相关代码。
 
 \begin{figure}[!htbp] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -398,7 +400,7 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
     }
 \end{algorithm}
 
-当Ca成功在Kubernetes中启动后, 可以通过命令形式完成用户注册、用户登记的功能。如图\ref{enroll}所示, HF网络管理员输入Enroll命令以及相关参数, 原型工具会对其进行参数解析。当解析成功后, 原型工具会获取集群中Ca对外接口的相关信息, 包含URL、端口等。随后, 原型工具会生成Ca Client, 并将管理员输入的用户信息通过接口传递给Ca Server。Ca Server就是原Fabric Ca在集群中服务的状态所以其具备完整的Ca的功能, 当Enroll完成后会返回key以及cert, 原型工具会利用X509对其编码并保存到yaml中返回给管理员。伪代码\ref{code3}展示了Ca Enroll User的伪代码。
+当Ca成功在Kubernetes中启动后, 可以通过命令形式完成用户注册、用户登记的功能。如图\ref{enroll}所示, HF网络管理员输入Enroll命令以及相关参数, 原型工具会对其进行参数解析。当解析成功后, 原型工具会获取集群中Ca对外接口的相关信息, 包含URL、端口等。随后, 原型工具会生成Ca Client, 并将管理员输入的用户信息通过接口传递给Ca Server。Ca Server就是Fabric Ca在集群中的服务状态所以其具备完整的Ca的功能, 当Enroll完成后会返回key以及cert, 原型工具会利用X509对其编码并保存到yaml中返回给管理员。伪代码\ref{code3}展示了Ca Enroll User的相关代码。
 
 % Manager
 \begin{figure}[!htbp] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
@@ -447,7 +449,7 @@ Peer是Fabric中被使用最多的模块, 是Fabric网络的基石, 其负责区
 
 \section{本章小节}
 
-本章介绍了面向Hyperledger Fabric的区块链云化框架及其原型工具。首先, 根据\ref{section: policy_set_application}节所得的策略具体实施方案给出了云化框架的云化框架的工作流程、输入单元CRD、处理单元Manager以及输出单元HF网络节点运行状态。然后结合云化框架介绍了搭配原型工具的需求分析、设计与实现。
+本章介绍了面向Hyperledger Fabric的区块链云化框架及其原型工具。首先, 根据\ref{section: policy_set_application}节所得的策略具体实施方案给出了云化框架的工作流程、输入单元CRD、处理单元Manager以及输出单元HF网络节点运行状态。然后结合云化框架介绍了其原型工具的需求分析、设计与实现。
 
 
 % \begin{itemize}[itemindent=2em]

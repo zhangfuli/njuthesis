@@ -258,20 +258,6 @@
   charts for kubernetes-based cloud applications}\bibmark{[J]}\@.
   \bibjournal{arXiv preprint arXiv:1901.00644}\@, \bibyear{2019}\@.
 
-\bibitem{calcote2019istio}
-\bibauthor{CALCOTE L\@, BUTCHER Z}\@. \bibbooktitle{Istio: Up and running:
-  Using a service mesh to connect, secure, control, and
-  observe}\bibmark{[M]}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
-  }\bibpublisher{O'Reilly Media}\@, \bibyear{2019}\@.
-
-\bibitem{larsson2020impact}
-\bibauthor{LARSSON L\@, T{\"A}RNEBERG W\@, KLEIN C, et~al}\@. \bibtitle{Impact
-  of etcd deployment on Kubernetes, Istio, and application
-  performance}\bibmark{[J]}\@. \bibjournal{Software: Practice and
-  Experience}\@, \bibyear{2020}\@,
-  \bibvolume{50}\bibnumber{(10)}\thinspace{}\textnormal{:
-  }\bibpages{1986\thinspace{}\textnormal{--}\thinspace{}2007}\@.
-
 \bibitem{cartaxo2020rapid}
 \bibauthor{CARTAXO B\@, PINTO G\@, SOARES S}\@. \bibtitle{Rapid Reviews in
   Software Engineering}\bibmark{[G]} //\thinspace{}\bibbooktitle{Contemporary
@@ -376,12 +362,6 @@
   Workshop and Conference (CCWC)}\@. \bibyear{2019}\thinspace{}\textnormal{:
   }\bibpages{0184\thinspace{}\textnormal{--}\thinspace{}0189}\@.
 
-\bibitem{lopez2018access}
-\bibauthor{LOPEZ J\@, RUBIO J~E}\@. \bibtitle{Access control for cyber-physical
-  systems interconnected to the cloud}\bibmark{[J]}\@. \bibjournal{Computer
-  Networks}\@, \bibyear{2018}\@, \bibvolume{134}\thinspace{}\textnormal{:
-  }\bibpages{46\thinspace{}\textnormal{--}\thinspace{}54}\@.
-
 \bibitem{sukhija2019towards}
 \bibauthor{SUKHIJA N\@, BAUTISTA E}\@. \bibtitle{Towards a framework for
   monitoring and analyzing high performance computing environments using
@@ -392,6 +372,12 @@
   (SmartWorld/SCALCOM/UIC/ATC/CBDCom/IOP/SCI)}\@.
   \bibyear{2019}\thinspace{}\textnormal{:
   }\bibpages{257\thinspace{}\textnormal{--}\thinspace{}262}\@.
+
+\bibitem{lopez2018access}
+\bibauthor{LOPEZ J\@, RUBIO J~E}\@. \bibtitle{Access control for cyber-physical
+  systems interconnected to the cloud}\bibmark{[J]}\@. \bibjournal{Computer
+  Networks}\@, \bibyear{2018}\@, \bibvolume{134}\thinspace{}\textnormal{:
+  }\bibpages{46\thinspace{}\textnormal{--}\thinspace{}54}\@.
 
 \bibitem{Yilmaz2021}
 \bibauthor{YILMAZ O}\@. \bibtitle{Extending the Kubernetes API}\bibmark{[M/OL]}
@@ -421,6 +407,14 @@
   \bibyear{2019}\thinspace{}\textnormal{:
   }\bibpages{122\thinspace{}\textnormal{--}\thinspace{}1225}\@.
 
+\bibitem{larsson2020impact}
+\bibauthor{LARSSON L\@, T{\"A}RNEBERG W\@, KLEIN C, et~al}\@. \bibtitle{Impact
+  of etcd deployment on Kubernetes, Istio, and application
+  performance}\bibmark{[J]}\@. \bibjournal{Software: Practice and
+  Experience}\@, \bibyear{2020}\@,
+  \bibvolume{50}\bibnumber{(10)}\thinspace{}\textnormal{:
+  }\bibpages{1986\thinspace{}\textnormal{--}\thinspace{}2007}\@.
+
 \bibitem{8249485}
 \bibauthor{VUKASOVIć M\@, VESELINOVIć B\@, STANISAVLJEVIć �}\@. \bibtitle{A
   development of a configurable system for handling X509
@@ -435,6 +429,14 @@
   approaches\thinspace{}\textnormal{: }Vol~46}\bibmark{[M]}\@.
   \bibaddress{[S.l.]}\thinspace{}\textnormal{: }\bibpublisher{sage}\@,
   \bibyear{1998}\@.
+
+\bibitem{ionita2002scenario}
+\bibauthor{IONITA M~T\@, HAMMER D~K\@, OBBINK H}\@. \bibtitle{Scenario-based
+  software architecture evaluation methods: An overview}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Workshop on methods and techniques for software
+  architecture review and assessment at the international conference on
+  software engineering}\@. \bibyear{2002}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}12}\@.
 
 \bibitem{huhonglei2004}
 \bibauthor{胡红雷\@, 毋国庆\@, 梁正平, et~al}\@.
