@@ -1,10 +1,10 @@
-\chapter{区块链云化框架调研分析}
+\chapter{区块链网络节点云化方案}
 
-本章首先通过快速评审获得Kubernetes Operator赋能质量属性的策略集,  随后阐述区块链云化框架的设计原则, 最后结合区块链去中心化等特性以及设计原则分析筛选策略集形成面向Hyperledger Fabric的区块链云化框架的核心具体实施方案。
+本章首先通过快速评审获得Kubernetes Operator赋能质量属性的策略集,  随后阐述区块链云化框架的设计原则, 最后结合区块链去中心化等特性以及设计原则分析筛选策略集形成面向Hyperledger Fabric的区块链网络节点云化的核心具体实施方案。
 
 \section{快速评审}\label{section: rapid_reviews}
 
-软件工程中, 快速评审(Rapid Review)是一种轻量级的二级研究, 以实践为导向专注于及时的向研究人员提供证据\cite{cartaxo2020rapid}。本文对已发表的学术文章进行快速评审, 快速评审的目的是为了在较短时间内了解目前学术界使用Kubernetes Operator进行云化的现状, 以及如何使用Kubernetes对现有系统进行赋能。随后, 本文对快速评审所得到的结果进行整理归纳得到Kubernetes Operator如何为质量属性赋能的策略集。
+软件工程中, 快速评审(Rapid Review)是一种轻量级的二级研究, 以实践为导向专注于及时向研究人员提供证据\cite{cartaxo2020rapid}。本文对已发表的学术文章进行快速评审, 快速评审的目的是为了在较短时间内了解目前学术界使用Kubernetes Operator进行云化的现状, 以及如何使用Kubernetes对现有系统进行赋能。随后, 本文对快速评审所得到的结果进行整理归纳得到Kubernetes Operator如何为质量属性赋能的策略集。
 
 本文的快速评审过程分为以下步骤: 首先进行自动化的全文数据库检索, 再筛选出与Kubernetes Operator及架构改造强相关的文献, 接下来提取出质量属性及相关策略, 最后归纳整理出策略集。
 
@@ -14,20 +14,20 @@
         \toprule  
         \textbf{全文数据库}&\textbf{搜索字符串}&\textbf{文献数}\\
         \hline
-        IEEE Xplore &(“kubernetes AND operator”) OR (“k8s AND operator”) OR (“custom resource defination”) & 23 \\
+        IEEE Xplore &(“kubernetes AND operator”) OR (“k8s AND operator”) OR (“custom resource definition”) & 23 \\
 
         ACM & “kubernetes operator” OR “k8s operator” & 7 \\
 
-        Springer &((“kubernetes AND operator”) OR (“k8s AND operator”)）AND ((“custom resource defination”) OR "CRD") & 0 \\
+        Springer &((“kubernetes AND operator”) OR (“k8s AND operator”)）AND ((“custom resource definition”) OR "CRD") & 0 \\
 
-        ScienceDirect &(“kubernetes AND operator”) OR (“k8s AND operator”) OR (“custom resource defination”) & 0 \\
+        ScienceDirect &(“kubernetes AND operator”) OR (“k8s AND operator”) OR (“custom resource definition”) & 0 \\
         \hline
-        Scoups\&Google &“kubernetes operator”& 21(去重) \\
+        Scopus\&Google &“kubernetes operator”& 21(去重) \\
         \bottomrule
     \end{longtable}
 }
 
-如表\ref{search_string}所示, 为全面获取学术届对基于Kubernetes Operator云化的策略, 确定了本次检索的全文数据库以及搜索字符串。本次检索主要针对计算机与软件工程领域的全文数据库\cite{lisboa2010systematic}(包含ACM、IEEE Xplore、Springer、ScienceDirect), 同时检索Scoups以及谷歌学术进行补充。最终, 围绕“kubernetes operator”为检索主题得到的共51篇论文。在文献筛选阶段, 本文根据筛选标准筛选出15篇与Kubernetes Operator云化强相关的文献, 入选文献如表\ref{rapid_reviews}所示。文献筛选标准主要有:
+如表\ref{search_string}所示, 为全面获取学术届对基于Kubernetes Operator云化的策略, 确定了本次检索的全文数据库以及搜索字符串。本次检索主要针对计算机与软件工程领域的全文数据库\cite{lisboa2010systematic}(包含ACM、IEEE Xplore、Springer、ScienceDirect), 同时检索Scopus以及谷歌学术进行补充。最终, 本文围绕“kubernetes operator”为检索主题共得到51篇论文。在文献筛选阶段, 本文根据筛选标准筛选出15篇与Kubernetes Operator云化强相关的文献, 入选文献如表\ref{rapid_reviews}所示。文献筛选标准主要有:
 
 \begin{itemize}[itemindent=2em]
     \item 论文的主要目的是利用Kubernetes对原有系统进行云化;
@@ -76,7 +76,7 @@
     \end{longtable}
 }
 
-在数据提取阶段, 本文对5个提取项(文献标题、文献发表年份、质量属性、策略、所属领域)进行抽取, 共得到44条针对不同质量属性的相关策略。在数据归纳阶段, 由于不同的文献中对语义相同的质量属性用词存在明显差异, 本文根据国际软件质量评价标准ISO/IEC 25010:2011\footnotemark[1]\footnotetext[1]{\href{https://www.iso.org/standard/35733.html}{ISO/IEC 25010:2011 System and software quality models}}所定义的质量模型对收集到的文献中表述的质量属性进行映射, 同时对相同或相似的策略进行整理合并, 得到策略集如表所示。
+在数据提取阶段, 本文对5个提取项(文献标题、文献发表年份、质量属性、策略、所属领域)进行抽取, 共得到44条针对不同质量属性的相关策略。在数据归纳阶段, 由于不同的文献中对语义相同的质量属性用词存在明显差异, 本文根据国际软件质量评价标准ISO/IEC 25010:2011\footnotemark[1]\footnotetext[1]{\href{https://www.iso.org/standard/35733.html}{ISO/IEC 25010:2011 System and software quality models}}所定义的质量模型对收集到的文献中表述的质量属性进行映射, 同时对相同或相似的策略进行整理合并, 得到策略集如表\ref{policy_set}所示。
 
 {\footnotesize
 \begin{longtable}[h]{m{40pt}|m{40pt}|m{20pt}|m{130pt}|m{100pt}}
@@ -94,8 +94,8 @@
         & &T4&监控 & [P1, P5, P12, P13] \\\cline{3-5}
 
         \hline
-        \multirow{2}*{\parbox[c]{40pt}{生产效率 \\ 效率}} & \multirow{2}*{易用性}
-        &T5&支持用户初始化 & [P1, P2, P12-15] \\\cline{3-5}
+        \multirow{2}*{\parbox[c]{40pt}{生产效率}} & \multirow{2}*{易用性}
+        &T5&支持用户初始化 & [P1, P2, P12-P15] \\\cline{3-5}
         & &T6&支持系统初始化 & [P1, P4, P13] \\\cline{3-5}
 
         \hline
@@ -116,7 +116,7 @@
 
 \section{设计原则}\label{section: framework_characteristics}
 
-区块链云化框架致力于在BaaS一站式构建、管理、托管和运维区块链网络及其应用的基础上更深入云原生底层基础设施Kubernetes的底层, 有效利用云能力对HF基础设施赋能。BaaS在设计上以简单易用、成熟可扩展、安全可靠、可视运维等为主要方向\footnotemark[2]\footnotetext[2]{\href{http://www.caict.ac.cn/kxyj/qwfb/bps/201901/P020190111409291959654.pdf}{2019区块链即服务平台BaaS白皮书}}。区块链云化框架需要在上述设计原则的基础上进行适配与拓展:
+区块链云化框架致力于在BaaS一站式构建、管理、托管和运维区块链网络及其应用的基础上更深入云原生底层基础设施Kubernetes的底层, 有效利用云能力对HF基础设施节点赋能。BaaS在设计上以简单易用、成熟可扩展、安全可靠、可视运维等为主要方向\footnotemark[2]\footnotetext[2]{\href{http://www.caict.ac.cn/kxyj/qwfb/bps/201901/P020190111409291959654.pdf}{2019区块链即服务平台BaaS白皮书}}。区块链云化框架需要在上述设计原则的基础上进行适配与拓展:
 
 \begin{itemize}[itemindent=2em]
     \item 简单易用: BaaS平台需要具备帮助企业实现自动配置, 快速启动区块链的能力。区块链云化框架需要在Kubernetes上完成HF的全生命周期管理。在Kubernetes上启动管理HF网络并部署链码需要专业的领域知识, HF各节点的配置项繁多且与Kubernetes适配极易出错。区块链云化框架需屏蔽底层HF配置与Kubernetes逻辑, 帮助用户采用命令行配置的方式提供完整的HF各组件的全生命周期管理;
@@ -125,53 +125,53 @@
 
     \item 安全可靠: BaaS平台应具备有效的安全机制保证区块链服务的安全性。 区块链云化框架为满足上述原则, 需要具备有效的认证、鉴权、准入机制来确保区块链系统的安全性; 具备可插拔的共识算法确保区块链的去中心化、可追溯等特点, 支持完善的用户密钥授权、保存、隔离处理以及提供可靠的故障恢复能力;
 
-    \item 可视运维: BaaS平台要提供必要的运维接口和运维授权的能力。当前区块链系统缺乏一套涵盖不同层面的标准方法来监控区块链及其智能合约的运行\cite{zhangfuli2021smartcontract}。 区块链云化框架需提供基本运维能力, 有效复用云上监控方案为区块链系统提供7*24小时可视化资源监控能力;
+    \item 可视运维: BaaS平台要提供必要的运维接口和运维授权的能力。当前区块链系统缺乏一套涵盖不同层面的标准方法来监控区块链及其智能合约的运行。 区块链云化框架需提供基本运维能力, 有效复用云上监控方案为区块链系统提供7*24小时可视化资源监控能力;
 
-    \item 云链结合: BaaS平台需要结合云平台提供各种区块链所需的丰富资源。在此原则之上, 区块链云化框架需要具备高可迁移性, 具备基础架构的云独立性。本框架依托Kubernetes, 可以方便的迁移到支持Kubernetes的任何云;
+    \item 云链结合: BaaS平台需要结合云平台提供各种区块链所需的丰富资源。在此原则之上, 区块链云化框架需要具备高可迁移性, 具备基础架构的云独立性。本框架依托Kubernetes, 需要具备迁移到支持Kubernetes任何云的能力;
 
     \item 合作开放: BaaS平台应该和各个行业伙伴共同打造行业可信的区块链生态。为此, 区块链云化框架应该具备反馈机制的透明性。区块链云化框架需保证区块链上所有的交易记录是可追溯的、不可篡改的, 区块链交易过程以及获取交易产生的记录需要专业人员才能获取操作, 非专业人员难以理解, 框架需通过简单透明的方式获取交易记录。
 \end{itemize}
 
 \section{策略集应用}\label{section: policy_set_application}
 
-通过快速评审的方式形成的基于Kubernetes Operator云化策略集作为可选指导方案, 需要贴合区块链领域自身约束才能有效纳入区块链云化框架中落地。本节将围“所选策略为何能提升质量属性”以及“所选策略是否适用于HF”进行阐述。
+通过快速评审的方式形成的基于Kubernetes Operator云化策略集作为指导方案, 需要贴合区块链领域自身约束才能有效纳入区块链云化框架中落地。本节将围绕“所选策略为何能提升质量属性”以及“所选策略是否适用于HF”进行阐述。
 
 \textbf{T1: 沙盒}
 
-\textbf{原理: }沙盒将系统实例与现实世界隔离开来, 使系统运作能够消除现实世界的影响, 虚拟机与容器化都提供了沙盒的能力。 相较于虚拟机而言, 容器化在云原生应用程序中的拥有更高的部署效率\cite{zhou2021container}、可迁移性。容器化可以使每个软件应用程序在隔离的环境中运行, 其将应用程序及其库、配置文件和其他依赖项封装在一起, 确保了环境兼容性, 从而使用户能够轻松地在不同的环境中移动和部署程序。因此, 容器化使得应用程序具备极强的可移植性。Docker\footnotemark[1]\footnotetext[1]{\href{https://www.docker.com/}{Docker官网}}是容器化的典型代表, 其可以将运行态的容器打包成镜像(image)并储存在在线存储仓库中。Docker容器不是虚拟机, 这意味着它可以使用宿主机现有的网络接口\cite{shah2019building}。一旦创建了容器, 就可以为容器提供一个专用环回接口, 用于内部通信, 完成部署。
+\textbf{原理: }沙盒将系统实例与现实世界隔离开来, 使系统运作能够消除现实世界的影响, 虚拟机与容器化都提供了沙盒的能力。 相较于虚拟机而言, 容器化在云原生应用程序中的拥有更高的部署效率\cite{zhou2021container}、可迁移性。容器化可以使每个软件应用程序在隔离的环境中运行, 其将应用程序及库、配置文件和其他依赖项封装在一起, 确保了环境兼容性, 从而使用户能够轻松地在不同的环境中移动和部署程序。因此, 容器化使得应用程序具备极强的可移植性。Docker\footnotemark[1]\footnotetext[1]{\href{https://www.docker.com/}{Docker官网}}是容器化的典型代表, 其可以将运行态的容器打包成镜像(image)并储存在在线存储仓库中。Docker容器不是虚拟机, 这意味着它可以使用宿主机现有的网络接口\cite{shah2019building}。一旦创建了容器, 就可以为容器提供一个专用回环接口, 用于内部通信, 完成部署。
 
-\textbf{适配性: }HF官方提供了Binaries和Docker镜像两种安装方式\footnotemark[2]\footnotetext[2]{\href{https://github.com/hyperledger/fabric/blob/main/scripts/bootstrap.sh}{fabric\_bootstrap.sh}}, 其天然的满足容器化构建。
+\textbf{适配性: }HF官方提供了Binaries和Docker镜像两种安装方式\footnotemark[2]\footnotetext[2]{\href{https://github.com/hyperledger/fabric/blob/main/scripts/bootstrap.sh}{fabric\_bootstrap.sh}}, 其天然满足容器化构建。
 
 \textbf{T2: 升级重启}
 
 \textbf{原理: }当系统某部分发生故障时, 需要能够快速的从故障中重新引入新的可用组件。Kubernetes作为容器管理调度平台, 其具备自恢复能力。Kubernetes会自动打包应用程序, 并根据预设需求运行Pod并管理容器。Pod内置标准的自重启策略的字段(restartPolicy), 首先Kubernetes会对Pod进行健康检查, 若存在故障则根据Pod的自重启策略对其进行重启。利用这种机制, 可以自动重启在执行过程中失败的容器, 并杀死那些没有响应用户定义的健康检查的容器。但如果节点本身死亡, 那么它会替换并重新安排发生故障的容器到其他可用节点上。
 
-\textbf{适配性: }根据T1, HF网络可以采用容器化构建, 其自然而然的就可以通过Kubernetes托管。然而, 托管于Kubernetes需要为HF不同类型的网络节点提供编写多种的资源对象, 包含但不限于Deployment、Service等。一旦HF网络节点托管于Kubernetes, 即可原生的利用Kubernetes进行高可用的管理。
+\textbf{适配性: }根据T1, HF网络采用容器化构建, 自然就可以通过Kubernetes托管。然而, 托管于Kubernetes需要从零开始为HF不同类型的网络节点提供编写多种的资源对象, 包含但不限于Deployment、Service等。一旦HF网络节点托管于Kubernetes, 即可原生地利用Kubernetes进行高可用的管理。
 
 
 \textbf{T3: 主备切换}
 
-\textbf{原理: } 在具备严格高可用的系统中, 往往需要处理主备切换。主节点就是提供服务的节点, 备份节点就是不提供服务的控制节点。所谓的主备切换就是当主节点故障时, 系统自动切换备份节点接管服务。要保证主备切换往往涉及到多种复杂的机制, 如数据同步、探活、网络切换等。所有冗余组件并行响应事件, 所有组件都处于相同状态。但响应只使用了一个组件, 其余组件被丢弃。当发生故障时，停机时间通常不存在, 因为备份是当前的, 唯一的时间是恢复时间。Kubernetes Operator可以协助精简完成目标系统的主备切换任务, 并不丢失数据。
+\textbf{原理: } 在具备严格高可用的系统中, 往往需要处理主备切换。主节点就是提供服务的节点, 备份节点就是不提供服务的控制节点。所谓的主备切换就是当主节点故障时, 系统自动切换备份节点接管服务。要保证主备切换往往涉及到多种复杂的机制, 如数据同步、探活、网络切换等。所有冗余组件并行响应事件, 所有组件都处于相同状态。但响应只使用了一个组件, 其余组件被丢弃。当发生故障时, 停机时间通常不存在, 因为备份是当前的, 唯一的时间是恢复时间。Kubernetes Operator可以协助实现目标系统的主备切换任务, 并不丢失数据。
 
 \textbf{适配性: }区块链网络是去中心化的网络, 所有的节点共同参与记账, 只需要网络中的大多数(超过51\%)节点的账本状态一致即可, 并不需要所有网络中的所有的Peer节点时刻保持高可用状态。针对于Peer的主备切换意义并不大, 针对Orderer的主备切换目前仍然是研究的空白。
 
 \textbf{T4: 监控}
 
-\textbf{原理: }Prometheus\cite{sukhija2019towards}作为云原生领域的监控事实标准, 其是一个时序数据库又是一个监控系统, 有着强大的功能和良好的生态。Grafana可以与各种其他类似于Prometheus的数据源进行交互并进行可视化。基于Prometheus的监控体系可以收集开放的监控指标并进行多维度数据模型的灵活查询, 极大的增强了被监测系统的的可监控性。
+\textbf{原理: }Prometheus\cite{sukhija2019towards}作为云原生领域的监控事实标准, 其是一个时序数据库又是一个监控系统, 有着强大的功能和良好的生态。Grafana可以与各种其他类似于Prometheus的数据源进行交互并进行可视化。基于Prometheus的监控体系可以收集开放的监控指标并进行多维度数据模型的灵活查询, 极大增强了被监测系统的可监控性。
 
 \textbf{适配性: } Mahajan等人\cite{mahajan2020suture}指出, 只有58\%的人认为他们有工具来理解Operator在异常情况下的行为, 并且他们强调了对Operator事件日志与监控的不满。HF网络各节点的运行终态是Pod, 利用Prometheus监控体系可以无侵入式的收集HF网络各节点的监控指标, 并将指标数据以Grafana图表的方式展示, 做到7*24小时可视运维。
 
 
 \textbf{T5: 支持用户初始化}
 
-\textbf{原理: }支持用户初始化, 即支持用户纠正错误或提高效率。框架需要帮助用户自动化配置HF领域知识, 提升用户启动HF网络的效率。Kubernetes Operator提供的CRD方式可以插拔式地将领域知识注入进云基础设施内部, CRD就是领域专家自定义的资源范式, 其规定了领域资源应该具备何种属性。特定领域专家编写的CRD能够注册进入集群, 注册之后领域的开发人员即可以根据CRD定义的属性编写特定于自身业务的CR为CRD的属性进行赋值。CRD降低了集群管理人员对HF网络的二次学习成本, 集群管理人员无需了解特定领域的领域知识, 仅需要通过kubectl原生的方式即可管理陌生领域的应用程序。
+\textbf{原理: }支持用户初始化, 即支持用户纠正错误或提高效率。框架需要帮助用户自动化配置HF领域知识, 提升用户启动HF网络的效率。Kubernetes Operator提供的CRD方式可以插拔式地将领域知识注入进云基础设施内部, CRD就是领域专家自定义的资源范式, 其规定了领域资源应该具备何种属性。特定领域专家编写的CRD能够注册进入集群, 注册之后领域的开发人员即可以根据CRD定义的属性编写特定于自身业务的CR。CRD降低了集群管理人员对HF网络的二次学习成本, 集群管理人员无需了解特定领域的领域知识, 仅需要通过kubectl原生的方式即可管理陌生领域的应用程序。
 
-\textbf{适配性: }可以将HF网络节点通过CRD注册进入Kubernetes, 然而这存在一定的复杂性。编写HF领域CRD根据各网络节点的配置\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/fabric-ca/blob/main/cmd/fabric-ca-server/config.go}{Ca Config}}\footnotemark[2]\footnotetext[2]{\href{https://github.com/hyperledger/fabric/blob/main/sampleconfig/orderer.yaml}{Orderer Config}}\footnotemark[3]\footnotetext[3]{\href{https://github.com/hyperledger/fabric/blob/main/sampleconfig/core.yaml}{Peer Config}}以及网络预期状态设计需要注入的属性。以Ca为例, 其存在22种一级配置项, 在编写Ca CRD时就需要对这些配置项进行甄别与筛选, 选取出适合插拔配置以及使用频率较高的配置并利用编程语言对其进行编写转换。
+\textbf{适配性: }可以将HF网络节点通过CRD注册进入Kubernetes, 然而这存在一定的复杂性。编写HF领域CRD需要根据各网络节点的配置\footnotemark[1]\footnotetext[1]{\href{https://github.com/hyperledger/fabric-ca/blob/main/cmd/fabric-ca-server/config.go}{Ca Config}}\footnotemark[2]\footnotetext[2]{\href{https://github.com/hyperledger/fabric/blob/main/sampleconfig/orderer.yaml}{Orderer Config}}\footnotemark[3]\footnotetext[3]{\href{https://github.com/hyperledger/fabric/blob/main/sampleconfig/core.yaml}{Peer Config}}以及网络预期状态设计注入的属性。以Ca为例, 其存在22种一级配置项, 在编写Ca CRD时就需要对这些配置项进行甄别与筛选, 选取出适合插拔配置以及使用频率较高的配置并利用编程语言对其进行编写转换。
 
 \textbf{T6: 支持系统初始化}
 
-\textbf{原理: }本策略需要做到支持用于预测自身行为或用户意图的模型。具体表现为, 框架可以维护一个任务模型, 这能够使得框架了解用户正在尝试什么并实时提供反馈。本框架可以利用Operator与Helm相结合的方式, 通过Controller协调机制时刻监听用户CR的状态并将状态更新到Helm最终反馈到集群中。
-由于Helm能够自动化的在Kubernetes内构建部署应用程序, 但这是一个一次性部署动作, 仅仅成了一次性自动化构建、部署HF网络的任务。本质上与现有Blockchain Automation Framework采用脚本方式部署无异, 这虽然能在一定程度上提升HF网络的部署效率, 但这无法将HF复杂的领域知识以插拔化的方式配置进入云基础设施内部。通过Operator与HF Helm的结合, 不仅能够提升HF网络的部署效率, 也可以时刻监听Helm状态实现对整个网络进行完整生命周期管理。
+\textbf{原理: }本策略需要做到支持用于预测自身行为或用户意图的模型, 具体表现为: 框架可以维护一个任务模型, 这能够使得框架了解用户正在尝试什么并实时提供反馈。本框架可以利用Operator与Helm相结合的方式, 通过Controller协调机制时刻监听用户CR的状态并将状态更新到Helm最终反馈到集群中。
+由于Helm能够自动化地在Kubernetes内构建部署应用程序, 但这是一个一次性部署动作, 仅仅完成了一次性自动化构建、部署HF网络的任务。本质上与现有Blockchain Automation Framework采用脚本方式部署无异, 这虽然能在一定程度上提升HF网络的部署效率, 但这无法将HF复杂的领域知识以插拔化的方式配置进入云基础设施内部。通过Operator与HF Helm的结合, 不仅能够提升HF网络的部署效率, 也可以时刻监听Helm状态实现对整个网络进行完整生命周期管理。
 
 \textbf{适配性: } 根据T2, 将HF网络托管于Kubernetes就需要为其配置资源对象。一种是分别配置所需资源对象, 其次就是利用Helm为HF网络节点配置资源对象模板。若采用Helm, 需要利用模版语言配置HF网络节点, 并在Operator中对模板进行填充。
 
@@ -184,7 +184,7 @@
 
 \textbf{T8: 数据分发}
 
-\textbf{原理: } 虽然针对Peer节点的可伸缩性意义不大, 但从海量数据存储的角度来看, 使用云存储是加强区块链网络存储一种替代方法, 它减少了因区块存储空间有限而造成的限制\cite{gai2020blockchain}。云可以为区块链网络提供存储即服务(Storage as a Service, 简称SaaS)作为一种可扩展的链外解决方案。Kubernetes的SaaS通过服务的形式精细化使用存储资源, 实现了对存储定义(PVC)和存储申请(StorageClass)的灵活分离。这种链外存储机制可以使得HF网络能够通过Kubernetes的SaaS机制挂载外部存储单元不必关心存储资源的实际物理位置, 能够做到存储资源的即插即用。 
+\textbf{原理: } 虽然针对Peer节点的可伸缩性意义不大, 但从海量数据存储的角度来看, 使用云存储是加强区块链网络存储一种替代方法, 它减少了因区块存储空间有限而造成的限制\cite{gai2020blockchain}。云可以为区块链网络提供存储即服务(Storage as a Service, 简称SaaS)作为一种可扩展的链外解决方案。Kubernetes的SaaS通过服务的形式精细化使用存储资源, 实现了对存储定义(PVC)和存储申请(StorageClass)的灵活分离。这种链外存储机制可以使得HF网络能够通过Kubernetes的SaaS机制挂载外部存储单元而不必关心存储资源的实际物理位置, 能够做到存储资源的即插即用。 
 
 \textbf{适配性: }HF网络的世界状态是一种脱链的链外附加缓存机制, 其最终被保存在链外的LevelDB或CouchDB中。同时, 世界状态的丢失并不会对区块链中的数据产生影响。除世界状态的存储, 针对网络节点以及链码的存储都可以通过定制“PVC+StorageClass”机制对外进行挂载。
 
@@ -209,10 +209,10 @@
     \end{longtable}
 }
 
-云化框架需要在Kubernetes上部署管理HF网络, 需要限制Kubernetes上其他用户对HF网络节点运行时的权限。在DAC中, 合法用户(如云服务提供商)根据自主访问控制策略来允许其他用户(如云用户)访问操作对象\cite{lopez2018access}, 同时阻止非授权的用户访问。DAC操作简单, 云用户能够进行灵活的访问控制, 然而DAC不需要严格的规则造成了权限管理的过于分散, 不利于综合管理; MAC则解决了DAC权限控制过于分散的问题, MAC是通过预定义的信任策略实现且该策略不能动态更改, 目标是限制访问的用户对目标对象的操作能力, MAC过于强调保密性, 管理缺乏灵活性; ABAC将访问规则写在配置文件里以实现多粒度的权限控制, 但是由于定义权限时不易看出用户和对象间的关系, 很容易给集群管理者带来运维上的麻烦; RBAC基于角色的权限控制体系, 能够实现“以岗定人”的目标。
+云化框架需要在Kubernetes上部署HF节点和管理HF网络, 需要限制Kubernetes上其他用户对HF网络节点运行时的权限。在DAC中, 合法用户(如云服务提供商)根据自主访问控制策略来允许其他用户(如云用户)访问操作对象\cite{lopez2018access}, 同时阻止非授权的用户访问。DAC操作简单, 云用户能够进行灵活的访问控制, 然而DAC不需要严格的规则造成了权限管理的过于分散, 不利于综合管理; MAC则解决了DAC权限控制过于分散的问题, MAC是通过预定义的信任策略实现且该策略不能动态更改, 目标是限制访问的用户对目标对象的操作能力, MAC过于强调保密性, 管理缺乏灵活性; ABAC将访问规则写在配置文件里以实现多粒度的权限控制, 但是由于定义权限时不易看出用户和对象间的关系, 很容易给集群管理者带来运维上的麻烦; RBAC基于角色的权限控制体系, 能够实现“以岗定人”的目标。
 
 
-\textbf{适配性: }Mahajan等人\cite{mahajan2020suture}指出, 47\%的Operator缺乏安全性的配置。利用RBAC可以从Kubernetes层面对HF网络节点添加安全权限机制。虽然RBAC没有提供顺序操作的控制机制, 但能灵活的兼容Kubernetes, 有效的为操作HF网络各类节点提供安全保证机制, 防止集群中其他用户恶意增删HF节点。若现有的访问控制机制不能满足需求, 可以创建自定义的访问控制机制实现更加符合业务实践的安全权限管理。
+\textbf{适配性: }Mahajan等人\cite{mahajan2020suture}指出, 47\%的Operator缺乏安全性的配置。利用RBAC可以从Kubernetes层面对HF网络节点添加安全权限机制。虽然RBAC没有提供顺序操作的控制机制, 但能兼容Kubernetes, 有效的为操作HF网络各类节点提供安全保证机制, 防止集群中其他用户恶意增删HF节点。若现有的访问控制机制不能满足需求, 可以创建自定义的访问控制机制实现更加符合业务实践的安全权限管理。
 
 \textbf{T10: 认证授权}
 
@@ -229,7 +229,7 @@
 
 除上述策略外, HF致力于构建透明、公开、去中心化的企业级分布式应用, 区块链云化框架需要在以下方面满足透明性原则。首先, 区块链云化框架构建HF网络过程的透明性, 区块链云化框架需要具备完备的日志体系, 日志能够提供记录区块链云化框架操作HF网络的行为以及网络状态, 并能够规范的表达出来; 其次, 对于链上交易而言, HF网络本就是公开透明的。 区块链云化框架不能屏蔽这一特性, 需要对HF网络账本具备更加简易、公开、透明的命令式查询渠道, 如命令式查询交易记录。
 
-综上, 如图\ref{policy_set_application}所示, 在区块链HF网络场景下结合云化框架设计原则, 剔除了Kubernetes Operator云化策略集中不适用于HF网络的策略, 最终形成了面向Hyperledger Fabric的区块链云化框架的核心策略实施方案。
+综上, 如图\ref{policy_set_application}所示, 在区块链HF网络场景下结合云化框架设计原则, 剔除了Kubernetes Operator云化策略集中不适用于HF网络的策略, 最终形成了面向Hyperledger Fabric的区块链网络节点云化框架的核心策略实施方案。
 
 \begin{figure}[h] %figure环境，h默认参数是可以浮动，不是固定在当前位置。如果要不浮动，你就可以使用大写float宏包的H参数，固定图片在当前位置，禁止浮动。
     \centering %使图片居中显示
@@ -241,4 +241,4 @@
 
 \section{本章小结}
 
-本章为获得Kubernetes Operator如何云化传统领域并对质量属性赋能, 首先详细介绍了快速评审的过程并得到基于Kubernetes Operator云化策略集;其次, 本章重点介绍了面向Hyperledger Fabric的区块链云化框架所应满足的设计原则; 最后结合HF网络特性以及区块链云化设计原则对策略集进行筛选, 形成了面向Hyperledger Fabric的区块链云化框架的核心策略实施方案。
+首先详细介绍了快速评审的过程并得到基于Kubernetes Operator云化策略集;其次, 本章重点介绍了面向Hyperledger Fabric的区块链云化框架所应满足的设计原则; 最后结合HF网络特性以及区块链云化设计原则对策略集进行筛选, 形成了面向Hyperledger Fabric的区块链网络节点云化的核心策略实施方案。

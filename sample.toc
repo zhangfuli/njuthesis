@@ -4,47 +4,51 @@
 \contentsline {chapter}{\numberline {1}绪论}{1}{chapter.1}%
 \contentsline {section}{\numberline {1\,.\,1}研究背景及意义}{1}{section.1.1}%
 \contentsline {section}{\numberline {1\,.\,2}研究现状}{4}{section.1.2}%
-\contentsline {section}{\numberline {1\,.\,3}本文主要研究工作}{6}{section.1.3}%
-\contentsline {section}{\numberline {1\,.\,4}本文组织结构}{7}{section.1.4}%
-\contentsline {chapter}{\numberline {2}理论与技术支持}{8}{chapter.2}%
-\contentsline {section}{\numberline {2\,.\,1}区块链技术}{8}{section.2.1}%
-\contentsline {subsection}{\numberline {2\,.\,1\,.\,1}区块链基本概念}{8}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2\,.\,1\,.\,2}Hyperledger Fabric}{10}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2\,.\,1\,.\,3}Blockchain as a Service}{12}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2\,.\,2}云原生}{13}{section.2.2}%
-\contentsline {subsection}{\numberline {2\,.\,2\,.\,1}云原生基本概念}{13}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2\,.\,2\,.\,2}Kubernetes}{17}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2\,.\,3}其他相关技术}{19}{section.2.3}%
-\contentsline {subsection}{\numberline {2\,.\,3\,.\,1}Helm}{19}{subsection.2.3.1}%
-\contentsline {section}{\numberline {2\,.\,4}本章小结}{20}{section.2.4}%
-\contentsline {chapter}{\numberline {3}区块链云化框架调研分析}{21}{chapter.3}%
-\contentsline {section}{\numberline {3\,.\,1}快速评审}{21}{section.3.1}%
-\contentsline {section}{\numberline {3\,.\,2}设计原则}{23}{section.3.2}%
-\contentsline {section}{\numberline {3\,.\,3}策略集应用}{24}{section.3.3}%
-\contentsline {section}{\numberline {3\,.\,4}本章小结}{31}{section.3.4}%
-\contentsline {chapter}{\numberline {4}面向Hyperledger Fabric的区块链云化框架}{32}{chapter.4}%
-\contentsline {section}{\numberline {4\,.\,1}面向Hyperledger Fabric的区块链云化框架}{32}{section.4.1}%
-\contentsline {subsection}{\numberline {4\,.\,1\,.\,1}Custom Resource Definition}{33}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4\,.\,1\,.\,2}Manager}{35}{subsection.4.1.2}%
-\contentsline {subsection}{\numberline {4\,.\,1\,.\,3}Hyperledger Fabric网络}{39}{subsection.4.1.3}%
-\contentsline {section}{\numberline {4\,.\,2}原型工具}{39}{section.4.2}%
-\contentsline {subsection}{\numberline {4\,.\,2\,.\,1}工具概述}{39}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4\,.\,2\,.\,2}需求分析}{40}{subsection.4.2.2}%
-\contentsline {subsection}{\numberline {4\,.\,2\,.\,3}设计与实现}{44}{subsection.4.2.3}%
-\contentsline {section}{\numberline {4\,.\,3}本章小节}{48}{section.4.3}%
-\contentsline {chapter}{\numberline {5}测试与评估}{49}{chapter.5}%
-\contentsline {section}{\numberline {5\,.\,1}测试环境}{49}{section.5.1}%
-\contentsline {section}{\numberline {5\,.\,2}原型工具测试}{49}{section.5.2}%
-\contentsline {section}{\numberline {5\,.\,3}原型工具评估}{53}{section.5.3}%
-\contentsline {subsection}{\numberline {5\,.\,3\,.\,1}架构评估}{53}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5\,.\,3\,.\,2}五层成熟度模型}{56}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5\,.\,3\,.\,3}工具对比}{58}{subsection.5.3.3}%
-\contentsline {section}{\numberline {5\,.\,4}本章小结}{60}{section.5.4}%
-\contentsline {chapter}{\numberline {6}总结与展望}{61}{chapter.6}%
-\contentsline {section}{\numberline {6\,.\,1}总结}{61}{section.6.1}%
-\contentsline {section}{\numberline {6\,.\,2}局限}{62}{section.6.2}%
-\contentsline {section}{\numberline {6\,.\,3}展望}{63}{section.6.3}%
-\contentsline {chapter}{致\hspace {2em}谢}{65}{chapter*.38}%
-\contentsline {chapter}{参考文献}{66}{chapter*.39}%
-\contentsline {chapter}{简历与科研成果}{73}{chapter*.40}%
+\contentsline {section}{\numberline {1\,.\,3}本文贡献与主要研究工作}{6}{section.1.3}%
+\contentsline {section}{\numberline {1\,.\,4}本文组织结构}{8}{section.1.4}%
+\contentsline {chapter}{\numberline {2}理论与技术支持}{9}{chapter.2}%
+\contentsline {section}{\numberline {2\,.\,1}区块链技术}{9}{section.2.1}%
+\contentsline {subsection}{\numberline {2\,.\,1\,.\,1}区块链基本概念}{9}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2\,.\,1\,.\,2}Hyperledger Fabric}{11}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2\,.\,1\,.\,3}Blockchain as a Service}{13}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2\,.\,2}云原生}{14}{section.2.2}%
+\contentsline {subsection}{\numberline {2\,.\,2\,.\,1}云原生基本概念}{14}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2\,.\,2\,.\,2}Kubernetes}{18}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2\,.\,3}Helm}{20}{section.2.3}%
+\contentsline {section}{\numberline {2\,.\,4}本章小结}{21}{section.2.4}%
+\contentsline {chapter}{\numberline {3}区块链网络节点云化方案}{23}{chapter.3}%
+\contentsline {section}{\numberline {3\,.\,1}快速评审}{23}{section.3.1}%
+\contentsline {section}{\numberline {3\,.\,2}设计原则}{25}{section.3.2}%
+\contentsline {section}{\numberline {3\,.\,3}策略集应用}{26}{section.3.3}%
+\contentsline {section}{\numberline {3\,.\,4}本章小结}{33}{section.3.4}%
+\contentsline {chapter}{\numberline {4}智能合约微服务化开发运维方法}{35}{chapter.4}%
+\contentsline {section}{\numberline {4\,.\,1}研究目的}{35}{section.4.1}%
+\contentsline {section}{\numberline {4\,.\,2}设计原则}{36}{section.4.2}%
+\contentsline {section}{\numberline {4\,.\,3}智能合约微服务化改造}{37}{section.4.3}%
+\contentsline {section}{\numberline {4\,.\,4}智能合约微服务化开发运维流程}{40}{section.4.4}%
+\contentsline {section}{\numberline {4\,.\,5}原型工具与方法评估}{42}{section.4.5}%
+\contentsline {section}{\numberline {4\,.\,6}本章小结}{45}{section.4.6}%
+\contentsline {chapter}{\numberline {5}面向Hyperledger Fabric的区块链云化框架}{47}{chapter.5}%
+\contentsline {section}{\numberline {5\,.\,1}面向Hyperledger Fabric的区块链云化框架}{47}{section.5.1}%
+\contentsline {subsection}{\numberline {5\,.\,1\,.\,1}Custom Resource Definition}{48}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5\,.\,1\,.\,2}Manager}{50}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5\,.\,1\,.\,3}Hyperledger Fabric网络}{54}{subsection.5.1.3}%
+\contentsline {section}{\numberline {5\,.\,2}原型工具}{55}{section.5.2}%
+\contentsline {subsection}{\numberline {5\,.\,2\,.\,1}工具概述}{55}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5\,.\,2\,.\,2}需求分析}{56}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5\,.\,2\,.\,3}设计与实现}{60}{subsection.5.2.3}%
+\contentsline {section}{\numberline {5\,.\,3}本章小节}{64}{section.5.3}%
+\contentsline {chapter}{\numberline {6}测试与评估}{65}{chapter.6}%
+\contentsline {section}{\numberline {6\,.\,1}测试环境}{65}{section.6.1}%
+\contentsline {section}{\numberline {6\,.\,2}基本能力自证}{66}{section.6.2}%
+\contentsline {subsection}{\numberline {6\,.\,2\,.\,1}案例研究}{66}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6\,.\,2\,.\,2}架构评估}{70}{subsection.6.2.2}%
+\contentsline {section}{\numberline {6\,.\,3}成熟度衡量}{73}{section.6.3}%
+\contentsline {section}{\numberline {6\,.\,4}对比分析}{75}{section.6.4}%
+\contentsline {section}{\numberline {6\,.\,5}本章小结}{78}{section.6.5}%
+\contentsline {chapter}{\numberline {7}总结与展望}{79}{chapter.7}%
+\contentsline {section}{\numberline {7\,.\,1}总结}{79}{section.7.1}%
+\contentsline {section}{\numberline {7\,.\,2}局限}{80}{section.7.2}%
+\contentsline {section}{\numberline {7\,.\,3}展望}{81}{section.7.3}%
+\contentsline {chapter}{参考文献}{83}{chapter*.45}%
 \contentsfinish 

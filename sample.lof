@@ -2,46 +2,52 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{1}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 区块链云化框架及其原型工具\relax }}{3}{figure.caption.4}%
+\contentsline {figure}{\numberline {{1}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 研究内容\relax }}{3}{figure.caption.4}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 区块链示例图\relax }}{8}{figure.caption.5}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces Hyperledger Fabric网络架构\relax }}{10}{figure.caption.6}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces Hyperledger Fabric账本结构\relax }}{11}{figure.caption.7}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces BaaS与PaaS以及SaaS的对比\relax }}{12}{figure.caption.8}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces BaaS通用架构\relax }}{13}{figure.caption.9}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 云原生技术发展趋势\relax }}{14}{figure.caption.10}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 云原生技术范畴\relax }}{15}{figure.caption.11}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 国内外云原生技术现状\relax }}{16}{figure.caption.12}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces Kubernetes架构图\relax }}{17}{figure.caption.13}%
-\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{10}}{\ignorespaces Helm架构图\relax }}{20}{figure.caption.14}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 区块链示例图\relax }}{9}{figure.caption.5}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces Hyperledger Fabric网络架构\relax }}{11}{figure.caption.6}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces Hyperledger Fabric账本结构\relax }}{12}{figure.caption.7}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces BaaS与PaaS以及SaaS的对比\relax }}{13}{figure.caption.8}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces BaaS通用架构\relax }}{14}{figure.caption.9}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 云原生技术发展趋势\relax }}{15}{figure.caption.10}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 云原生技术范畴\relax }}{16}{figure.caption.11}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 国内外云原生技术现状\relax }}{17}{figure.caption.12}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces Kubernetes架构图\relax }}{18}{figure.caption.13}%
+\contentsline {figure}{\numberline {{2}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{10}}{\ignorespaces Helm架构图\relax }}{21}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 策略集应用\relax }}{30}{figure.caption.15}%
+\contentsline {figure}{\numberline {{3}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 策略集应用\relax }}{32}{figure.caption.15}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 面向Hyperledger Fabric的区块链云化框架\relax }}{33}{figure.caption.16}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces Manager监听CRs\relax }}{35}{figure.caption.17}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces Controller循环监听\relax }}{36}{figure.caption.18}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 原型工具存储策略\relax }}{37}{figure.caption.19}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 原型工具安全策略\relax }}{38}{figure.caption.20}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 原型工具总体功能\relax }}{40}{figure.caption.21}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces HF网络管理用例图\relax }}{41}{figure.caption.22}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 通道管理用例图\relax }}{43}{figure.caption.23}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces 创建Ca Resource时序图\relax }}{45}{figure.caption.24}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{10}}{\ignorespaces Ca Controller Reconcile逻辑时序图\relax }}{46}{figure.caption.25}%
-\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{11}}{\ignorespaces Ca Enroll User逻辑时序图\relax }}{47}{figure.caption.26}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 镜像方式发布微服务流程\relax }}{38}{figure.caption.16}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 智能合约微服务化改造流程\relax }}{38}{figure.caption.17}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 智能合约微服务化开发运维流程\relax }}{40}{figure.caption.18}%
+\contentsline {figure}{\numberline {{4}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces Mictract架构图\relax }}{43}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 测试网络\relax }}{50}{figure.caption.27}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces CRD部署结果\relax }}{50}{figure.caption.28}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces 创建Org1测试结果\relax }}{51}{figure.caption.29}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 创建Orderer测试结果\relax }}{51}{figure.caption.30}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 查看通道高度测试结果\relax }}{52}{figure.caption.31}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 查询链码\relax }}{53}{figure.caption.32}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 网络节点状态\relax }}{53}{figure.caption.33}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 网络存储状态\relax }}{55}{figure.caption.34}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces Fabric Ca Resource监控图\relax }}{56}{figure.caption.35}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{10}}{\ignorespaces 成熟度模型\relax }}{57}{figure.caption.36}%
-\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{11}}{\ignorespaces 网络部署时间对比图\relax }}{59}{figure.caption.37}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 面向Hyperledger Fabric的区块链云化框架\relax }}{48}{figure.caption.20}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces Manager监听CR\relax }}{50}{figure.caption.21}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces Controller循环监听\relax }}{51}{figure.caption.22}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 原型工具存储策略\relax }}{52}{figure.caption.23}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 原型工具安全策略\relax }}{53}{figure.caption.24}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 智能合约微服务部署原理\relax }}{54}{figure.caption.25}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 原型工具总体功能\relax }}{55}{figure.caption.26}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces HF网络管理用例图\relax }}{56}{figure.caption.27}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces 通道管理用例图\relax }}{58}{figure.caption.28}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{10}}{\ignorespaces 创建Ca Resource时序图\relax }}{60}{figure.caption.29}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{11}}{\ignorespaces Ca Controller Reconcile逻辑时序图\relax }}{61}{figure.caption.30}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{12}}{\ignorespaces Ca Enroll User逻辑时序图\relax }}{62}{figure.caption.31}%
+\contentsline {figure}{\numberline {{5}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{13}}{\ignorespaces 安装链码逻辑时序图\relax }}{63}{figure.caption.32}%
 \addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{1}}{\ignorespaces 评估体系\relax }}{65}{figure.caption.33}%
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{2}}{\ignorespaces 测试网络\relax }}{66}{figure.caption.34}%
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{3}}{\ignorespaces CRD部署结果\relax }}{67}{figure.caption.35}%
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{4}}{\ignorespaces 创建Org1测试结果\relax }}{67}{figure.caption.36}%
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{5}}{\ignorespaces 创建Orderer测试结果\relax }}{68}{figure.caption.37}%
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{6}}{\ignorespaces 查看通道高度测试结果\relax }}{69}{figure.caption.38}%
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{7}}{\ignorespaces 查询链码\relax }}{69}{figure.caption.39}%
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{8}}{\ignorespaces 网络节点状态\relax }}{70}{figure.caption.40}%
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{9}}{\ignorespaces 网络存储状态\relax }}{71}{figure.caption.41}%
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{10}}{\ignorespaces Ca CPU监控图\relax }}{72}{figure.caption.42}%
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{11}}{\ignorespaces 成熟度模型\relax }}{73}{figure.caption.43}%
+\contentsline {figure}{\numberline {{6}\kern .07em\rule [.5ex]{.4em}{.15ex}\kern .07em{12}}{\ignorespaces 网络部署时间对比图\relax }}{76}{figure.caption.44}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsfinish 

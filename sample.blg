@@ -6,7 +6,7 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Database file #1: sample.bib
-Repeated entry---line 416 of file sample.bib
+Repeated entry---line 422 of file sample.bib
  : @article{larsson2020impact
  :                           ,
 I'm skipping whatever remains of this entry
@@ -25,49 +25,50 @@ Warning--Require citedate: ZHANG20121791
 Warning--Require address: cartaxo2020rapid
 Warning--Require citedate: Shenoy2022496
 Warning--Require address: sharma2020proposed
+Warning--Require address: weber2018blockchain
 Warning--Require citedate: Yilmaz2021
 Warning--Require journal: d2020design
 Warning--Require citedate: 8249485
 Warning--Require address: tashakkori1998mixed
-You've used 59 entries,
+You've used 69 entries,
             3107 wiz_defined-function locations,
-            1058 strings with 19049 characters,
-and the built_in function-call counts, 109890 in all, are:
-= -- 12163
-> -- 215
-< -- 489
-+ -- 9889
-- -- 759
-* -- 2842
-:= -- 12485
+            1108 strings with 21205 characters,
+and the built_in function-call counts, 127843 in all, are:
+= -- 14096
+> -- 252
+< -- 573
++ -- 11375
+- -- 894
+* -- 3336
+:= -- 14426
 add.period$ -- 0
-call.type$ -- 59
-change.case$ -- 312
+call.type$ -- 69
+change.case$ -- 366
 chr.to.int$ -- 0
-cite$ -- 78
-duplicate$ -- 15430
-empty$ -- 4056
-format.name$ -- 624
-if$ -- 29501
+cite$ -- 89
+duplicate$ -- 18009
+empty$ -- 4821
+format.name$ -- 732
+if$ -- 34293
 int.to.chr$ -- 0
-int.to.str$ -- 59
+int.to.str$ -- 69
 missing$ -- 0
-newline$ -- 204
-num.names$ -- 59
-pop$ -- 1559
+newline$ -- 234
+num.names$ -- 69
+pop$ -- 1858
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 974
+skip$ -- 1141
 stack$ -- 0
-substring$ -- 12974
-swap$ -- 2793
+substring$ -- 15082
+swap$ -- 3282
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 19
-while$ -- 1467
-width$ -- 61
-write$ -- 818
+warning$ -- 20
+while$ -- 1738
+width$ -- 71
+write$ -- 947
 (There was 1 error message)

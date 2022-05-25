@@ -150,6 +150,22 @@
   }\bibpages{456\thinspace{}\textnormal{--}\thinspace{}466}\@.
   \newline\url{http://dx.doi.org/10.1109/CLOUD53861.2021.00060}\@.
 
+\bibitem{porru2017blockchain}
+\bibauthor{PORRU S\@, PINNA A\@, MARCHESI M, et~al}\@.
+  \bibtitle{Blockchain-oriented software engineering: challenges and new
+  directions}\bibmark{[C]} //\thinspace{}\bibbooktitle{2017 IEEE/ACM 39th
+  International Conference on Software Engineering Companion (ICSE-C)}\@.
+  \bibyear{2017}\thinspace{}\textnormal{:
+  }\bibpages{169\thinspace{}\textnormal{--}\thinspace{}171}\@.
+
+\bibitem{tonelli2018ethereum}
+\bibauthor{TONELLI R\@, PINNA A\@, BARALLA G, et~al}\@. \bibtitle{Ethereum
+  smart contracts as blockchain-oriented microservices}\bibmark{[C]}
+  //\thinspace{}\bibbooktitle{Proceedings of the 19th International Conference
+  on Agile Software Development: Companion}\@.
+  \bibyear{2018}\thinspace{}\textnormal{:
+  }\bibpages{1\thinspace{}\textnormal{--}\thinspace{}2}\@.
+
 \bibitem{8790849}
 \bibauthor{SHI Z\@, ZHOU H\@, HU Y, et~al}\@. \bibtitle{Operating Permissioned
   Blockchain in Clouds: A Performance Study of Hyperledger
@@ -349,12 +365,6 @@
   \bibyear{2019}\thinspace{}\textnormal{:
   }\bibpages{1969\thinspace{}\textnormal{--}\thinspace{}1972}\@.
 
-\bibitem{zhangfuli2021smartcontract}
-\bibauthor{张富利\@, 侯培宇\@, 李杉杉, et~al}\@.
-  \bibtitle{一种智能合约微服务化框架}\bibmark{[J]}\@.
-  \bibjournal{软件学报}\@, \bibyear{2021}\@,
-  \bibvolume{32}\bibnumber{(11)}\thinspace{}\textnormal{: }\bibpages{17}\@.
-
 \bibitem{shah2019building}
 \bibauthor{SHAH J\@, DUBARIA D}\@. \bibtitle{Building modern clouds: using
   docker, kubernetes \& Google cloud platform}\bibmark{[C]}
@@ -378,6 +388,70 @@
   systems interconnected to the cloud}\bibmark{[J]}\@. \bibjournal{Computer
   Networks}\@, \bibyear{2018}\@, \bibvolume{134}\thinspace{}\textnormal{:
   }\bibpages{46\thinspace{}\textnormal{--}\thinspace{}54}\@.
+
+\bibitem{sun2018technology}
+\bibauthor{SUN Y\@, FAN L\@, HONG X}\@. \bibtitle{Technology development and
+  application of blockchain: Current status and challenges}\bibmark{[J]}\@.
+  \bibjournal{Strategic Study of Chinese Academy of Engineering}\@,
+  \bibyear{2018}\@, \bibvolume{20}\bibnumber{(2)}\thinspace{}\textnormal{:
+  }\bibpages{27\thinspace{}\textnormal{--}\thinspace{}32}\@.
+
+\bibitem{yang2017application}
+\bibauthor{YANG X\@, LI X\@, WU H, et~al}\@. \bibtitle{The application model
+  and challenges of blockchain technology in education}\bibmark{[J]}\@.
+  \bibjournal{Modern distance education research}\@, \bibyear{2017}\@,
+  \bibvolume{2}\thinspace{}\textnormal{:
+  }\bibpages{34\thinspace{}\textnormal{--}\thinspace{}45}\@.
+
+\bibitem{rodler2018sereum}
+\bibauthor{RODLER M\@, LI W\@, KARAME G~O, et~al}\@. \bibtitle{Sereum:
+  Protecting existing smart contracts against re-entrancy
+  attacks}\bibmark{[J]}\@. \bibjournal{arXiv preprint arXiv:1812.05934}\@,
+  \bibyear{2018}\@.
+
+\bibitem{tiansong2019design}
+\bibauthor{TIANSONG L\@, YU L}\@. \bibtitle{Design and implementation of
+  second-hand goods renting system based on Ethereum smart
+  contract}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of the 2019
+  4th International Conference on Intelligent Information Processing}\@.
+  \bibyear{2019}\thinspace{}\textnormal{:
+  }\bibpages{346\thinspace{}\textnormal{--}\thinspace{}351}\@.
+
+\bibitem{bumblauskas2020blockchain}
+\bibauthor{BUMBLAUSKAS D\@, MANN A\@, DUGAN B, et~al}\@. \bibtitle{A blockchain
+  use case in food distribution: Do you know where your food has
+  been?}\bibmark{[J]}\@. \bibjournal{International Journal of Information
+  Management}\@, \bibyear{2020}\@, \bibvolume{52}\thinspace{}\textnormal{:
+  }\bibpages{102008}\@.
+
+\bibitem{han2019security}
+\bibauthor{HAN X\@, YUAN Y\@, WANG F-Y}\@. \bibtitle{Security problems on
+  blockchain: the state of the art and future trends}\bibmark{[J]}\@.
+  \bibjournal{Acta Automatica Sinica}\@, \bibyear{2019}\@,
+  \bibvolume{45}\bibnumber{(1)}\thinspace{}\textnormal{:
+  }\bibpages{206\thinspace{}\textnormal{--}\thinspace{}225}\@.
+
+\bibitem{li2020exploring}
+\bibauthor{LI S\@, XU Q\@, HOU P, et~al}\@. \bibtitle{Exploring the challenges
+  of developing and operating consortium blockchains: a case
+  study}\bibmark{[G]} //\thinspace{}\bibbooktitle{Proceedings of the Evaluation
+  and Assessment in Software Engineering}\@.
+  \bibyear{2020}\thinspace{}\textnormal{:
+  }\bibpages{398\thinspace{}\textnormal{--}\thinspace{}404}\@.
+
+\bibitem{weber2018blockchain}
+\bibauthor{WEBER I}\@. \bibtitle{Blockchain and Services--Exploring the
+  Links}\bibmark{[G]} //\thinspace{}\bibbooktitle{Service Research and
+  Innovation}\@. \bibaddress{[S.l.]}\thinspace{}\textnormal{:
+  }\bibpublisher{Springer}\@, \bibyear{2018}\thinspace{}\textnormal{:
+  }\bibpages{13\thinspace{}\textnormal{--}\thinspace{}21}\@.
+
+\bibitem{luu2016making}
+\bibauthor{LUU L\@, CHU D-H\@, OLICKEL H, et~al}\@. \bibtitle{Making smart
+  contracts smarter}\bibmark{[C]} //\thinspace{}\bibbooktitle{Proceedings of
+  the 2016 ACM SIGSAC conference on computer and communications security}\@.
+  \bibyear{2016}\thinspace{}\textnormal{:
+  }\bibpages{254\thinspace{}\textnormal{--}\thinspace{}269}\@.
 
 \bibitem{Yilmaz2021}
 \bibauthor{YILMAZ O}\@. \bibtitle{Extending the Kubernetes API}\bibmark{[M/OL]}

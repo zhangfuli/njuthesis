@@ -5,7 +5,7 @@
 %% 作者：njuhan: https://github.com/njuHan
 %% 源模版repo: https://github.com/njuHan/njuthesis-nju-thesis-template
 
-\documentclass[macfonts,master,oneside]{njuthesis}
+\documentclass[macfonts,master,twoside]{njuthesis}
 %% 审阅模式很重要，命令是下方使用的/blind
 %% njuthesis 文档类的可选参数有：
 %%   winfonts, linuxfonts, macfonts, adobefonts winfonts b选项使得文档使用Windows 系统提供的字体；linuxfonts 选项使得文档使用Linux 系统提供的字体；macfonts 选项使得文档使用Mac 系统提供的字体；adobefonts 选项使得文档使用Adobe提供的OTF中文字体(需自行下载安转)
@@ -100,10 +100,10 @@
 % 设置论文的英文封面
 
 % 论文的英文标题，不可换行
-\englishtitle{Research and Implementation of
-Cloudification Framework for Blockchain Based on Hyperledger Fabric}
+\englishtitle{Research and Implementation of A
+Blockchain Cloudification Framework for Hyperledger Fabric}
 \englishabstracttitlea{Research and Implementation of}
-\englishabstracttitleb{Cloudification Framework for Blockchain Based on Hyperledger Fabric}
+\englishabstracttitleb{A Blockchain Cloudification Framework for Hyperledger Fabric}
 % 论文作者姓名的拼音
 \englishauthor{Fuli Zhang}
 % 导师姓名职称的英文
@@ -144,7 +144,7 @@ Cloudification Framework for Blockchain Based on Hyperledger Fabric}
 %% 盲审命令，空白字段设置请看 .cls文件 \newcommand*{\blind}
 %% 此外，请按照盲审要求自行去掉个人简历、致谢等页面中的个人信息
 %%**********************！！！非常重要的盲审命令，送审前必选！！！****************
-% \blind
+\blind
 %%**********************！！！非常重要的盲审命令，送审前必选！！！****************
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -153,7 +153,7 @@ Cloudification Framework for Blockchain Based on Hyperledger Fabric}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % 制作国家图书馆封面（博士学位论文才需要）
-%\makenlctitle
+% \makenlctitle
 % 制作中文封面
 \maketitle
 % 制作英文封面
@@ -164,13 +164,13 @@ Cloudification Framework for Blockchain Based on Hyperledger Fabric}
 \frontmatter
 
 \begin{abstract}
-  区块链具有去中心化、不可篡改的特性, 被誉为下一代的新型生产关系。区块链的发展为传统领域带来了巨大变革, 去中心化应用逐步从理论论证阶段转变为工程化实践阶段。BaaS作为基于云原生技术体系的一种构建、管理、托管和运维区块链网络及去中心化应用的云服务平台大大降低了去中心化应用落地的门槛。
+  区块链具有去中心化、不可篡改的特性, 被誉为新型生产关系。区块链的发展为传统领域带来了巨大变革, 去中心化应用逐步从理论论证阶段转变为工程化实践阶段。BaaS作为一种构建、管理、托管和运维区块链网络及去中心化应用的云服务平台, 在一定程度上降低了去中心化应用落地的门槛。
 
-  然而, 当前BaaS平台的发展尤其是底层区块链基础设施层的建设依旧存在诸多问题。首先, 基础商业应用工具并不完善。BaaS平台尚在初级阶段, 研发投入巨大, 市场上BaaS平台被头部云厂商垄断, 行业马太效用明显。不同BaaS平台缺乏统一的顶层规划, 形成数据、信息孤岛。其次, BaaS平台利用云能力赋能区块链乏力。BaaS平台仅将云平台作为部署场所, 提供一种基于开源区块链平台的自动部署方案, 未深入区块链与云基础设施底层。无法挖掘云原生技术的潜力, 为区块链网络提供提供安全、可扩展、高可用的服务。
+  然而, 当前区块链的发展依旧存在诸多问题。首先, 区块链的基础商业应用工具不完善。BaaS平台尚在初级阶段, 研发投入巨大。市场上BaaS平台被头部云厂商垄断, 行业马太效应明显。不同BaaS平台缺乏统一的顶层规划, 形成数据孤岛。其次, BaaS平台利用云能力赋能区块链乏力。BaaS平台仅提供一种基于开源区块链平台的自动部署方案, 未深入区块链与云基础设施底层。因此, BaaS平台无法挖掘云原生技术的潜力, 提供安全、可扩展、高可用的区块链服务。最后, 智能合约缺少标准的开发运维流程, 缺少促进去中心化应用价值交付的有效手段。
   
-  国内, 云原生生产环境中72\%的工程师使用Kubernetes作为云基础设施, 同时Kubernetes Operator是将领域知识集成到Kubernetes API编排过程中的最新方法。针对上述问题, 本文通过快速评审的方法, 调研学术界如何利用Kubernetes Operator有效赋能传统领域。最终整理出11条赋能策略集, 再结合区块链云化的原则以及区块链本身特性筛选并获得区块链云化实施方案。基于区块链云化实施方案本文设计实现了面向Hyperledger Fabric的区块链云化框架及其原型平台。
+  因此, 针对上述挑战, 本文综合考虑区块链网络节点以及智能合约的开发运维两个维度, 提出了面向Hyperledger Fabric的区块链云化框架。首先, 本文通过快速评审的方法, 调研学术界如何利用Kubernetes Operator赋能传统领域, 最终整理出11条赋能策略集。本文结合区块链云化的原则和区块链本身特性筛选并获得区块链网络节点云化实施方案。其次, 本文对比了智能合约与微服务在设计原则上的相似性, 进行了智能合约微服务化改造, 并提出了智能合约微服务化开发运维流程。然后, 基于区块链网络节点云化实施方案以及智能合约微服务化开发运维流程, 本文设计实现了面向Hyperledger Fabric的区块链云化框架及其原型工具。
 
-  本文通过典型案例分析对原型工具进行了功能性测试, 通过SAAM架构评估方法验证质量属性, 通过Kubernetes Operator五层成熟度模型进行了定性评估, 通过与官方BaaS平台Cello对比进行了定量评估。测试与评估结果表明, 本文提出的框架及原型平台能够兼容基本BaaS功能前提下充分利用云的特性提升Hyperledger Fabric网络的可移植性、可靠性、易用性、可扩展性以及安全性, 基本满足五层成熟度的能力要求并且拥有更优的网络部署时间。
+  本文对框架及原型工具进行了基础功能自证、成熟度衡量、对比分析三维度的测试与评估。在基础功能自证方面, 通过典型案例对原型工具进行了功能可行性测试, 利用SAAM架构评估方法验证质量属性。在成熟度衡量方面, 本文结合Kubernetes Operator五层成熟度模型进行了定性评估。在对比分析方面, 本文与官方BaaS平台Cello对比进行了定量评估。结果表明, 本文提出的框架及原型平台在兼容BaaS基本功能前提下充分利用云的特性提升了Hyperledger Fabric网络的可移植性、可靠性、易用性、可扩展性以及安全性, 其基本满足五层成熟度的能力要求并且拥有更优的网络部署时间和链码交付效率。
 
 	% 同时应该注意到，空白页是故意留白，以便章节开头能够出现在偶数页。
 	% 中文关键词。关键词之间用中文全角分号隔开，末尾无标点符号。
@@ -180,13 +180,13 @@ Cloudification Framework for Blockchain Based on Hyperledger Fabric}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 论文的英文摘要
 \begin{englishabstract}
-  Blockchain has the advantages of decentralization and immutability. It is known as the new production relationship of the next generation. The development of blockchain has brought great changes to the traditional field, and decentralized applications have gradually shifted from the theoretical demonstration stage to the engineering practice stage. As a cloud service platform for building, managing, hosting and operating blockchain networks and decentralized applications, BaaS greatly reduces the threshold for implementing of decentralized applications.
+  Blockchain has the advantages of decentralization and immutability. It is known as the next production relationship. The development of blockchain has brought great changes to the traditional field, and decentralized applications have gradually shifted from the theoretical demonstration stage to the engineering practice stage. As a cloud service platform for building, managing, hosting and operating blockchain networks and decentralized applications, BaaS greatly reduces the threshold for implementation of decentralized applications.
 
-  However, there are still many problems in the current development of BaaS platforms, especially in the construction of the blockchain infrastructure layer. First, the basic business application tools are not perfect. The BaaS platform is still in its infancy, with huge R\&D investment. In the market, the BaaS platform is monopolized by the top cloud manufacturers, and the Matthew effect of the industry is obvious. Different BaaS platforms lack unified top-level planning, resulting in isolated islands of data and information. Secondly, the BaaS platform is weak in empowering the blockchain with cloud capabilities. The BaaS platform only uses the cloud platform as the deployment site, and provides an automatic deployment solution based on the open source blockchain platform, without going deep into the principles of the blockchain and cloud infrastructure. It is difficult to tap the potential of cloud-native technology to provide secure, scalable, and highly available services for blockchain networks.
+  However, there are still many problems in the current development of blockchain-based systems. First, the commercial tools of blockchain are not perfect. The BaaS platform is still in its infancy, with huge R\&D investment. In the market, the BaaS platform is monopolized by the top cloud manufacturers, and the Matthew effect of the industry is obvious. Different BaaS platforms lack unified top-level planning, resulting in isolated islands of data. Secondly, the BaaS platform is weak in empowering the blockchain with cloud capabilities. The BaaS platform only provides an automatic deployment solution based on the open source blockchain platform, without going deep into the principles of the blockchain and cloud infrastructure. Therefore, the BaaS platform cannot tap the potential of cloud-native technology to provide secure, scalable and highly available blockchain services. Finally, smart contracts lack standard development and operation processes, and lack effective means to promote the value delivery of decentralized applications.
 
-  In China, 72\% of engineers use Kubernetes as cloud infrastructure, and Kubernetes Operator is the latest method to integrate domain knowledge into the Kubernetes API orchestration process. In response to the above problems, this thesis surveys how academia uses Kubernetes Operator to empower traditional fields through a rapid review method. Finally, eleven enabling strategy sets are sorted out, and then the blockchain cloudification implementation plan is obtained by filtering the principles of blockchain cloudification and the characteristics of blockchain itself. Based on the blockchain cloud implementation plan, this thesis designs and implements the blockchain cloudification framework and its prototype platform for Hyperledger Fabric.
+  Therefore, in response to the problems, this thesis proposes a cloudification framework for blockchain based on Hyperledger Fabric by comprehensively considering the blockchain network nodes and smart contracts. Firstly, this thesis surveys how academia uses Kubernetes Operator to empower traditional fields through a rapid review method and sorts out eleven enabling strategy sets. The blockchain nodes cloudification plan is obtained by filtering the principles of blockchain cloudification and the characteristics of blockchain itself. Secondly, this thesis compares the similarities between smart contract and microservice in design principles, carries out the refactor of smart contract into microservice, and proposes the process of developing and operating microservices for smart contracts. Then, based on the cloud implementation plan of blockchain network nodes and the process of smart contract microservices, this thesis designs and implements the blockchain cloudification framework and its prototype platform for Hyperledger Fabric.
 
-  This thesis conducts functional testing of prototype tools through typical case studies and verifies quality attribute through SAAM. The qualitative evaluation is carried out through the five maturity levels of the operator, and the quantitative evaluation is carried out through the comparison with the official BaaS platform named Cello. The test and evaluation results show that the framework and prototype platform proposed in this thesis can make full use of the characteristics of the cloud to improve the portability, reliability, usability, scalability, and security of Hyperledger Fabric network. The prototype tool basically meets the requirements of five maturity levels and has faster network deployment time than Cello.
+  In this thesis, the framework and prototype tool are tested and evaluated in three dimensions: self-validation of basic functions, maturity measurement, and comparative analysis. In terms of self-certification of basic functions, the functional feasibility test of the prototype tool is carried out through a typical case analysis, and the quality attribute is verified by the SAAM architecture evaluation method. In terms of maturity measurement, this thesis conducts a qualitative evaluation based on the five maturity levels of Kubernetes Operator. In terms of comparative analysis, this thesis conducts a quantitative evaluation compared with the official BaaS platform Cello.The test and evaluation results show that the framework and prototype tool can make full use of the characteristics of the cloud to improve the portability, reliability, usability, scalability, and security of Hyperledger Fabric network. The prototype tool basically meets the requirements of five maturity levels and has better results than Cello in terms of deployment time and delivery efficiency.
   
   \englishkeywords{Blockchain, Cloud Native, BaaS, Kubernetes Operator}
 \end{englishabstract}
@@ -233,6 +233,8 @@ Cloudification Framework for Blockchain Based on Hyperledger Fabric}
 
 \input{chapters/Research And Analysis.tex}
 
+\input{chapters/Smart Contract Microservice.tex}
+
 \input{chapters/Framework Design And implementation.tex}
 
 \input{chapters/Test And Compare.tex}
@@ -243,20 +245,20 @@ Cloudification Framework for Blockchain Based on Hyperledger Fabric}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 致谢，应放在结论之后
-\begin{acknowledgement}
+% \begin{acknowledgement}
 
-论文结束之际, 我百感交集。求学路途十九载, 我想真诚感激一路走来帮助我的师长、结伴同行的挚友以及令人难忘的经历, 与你们在结识才铸就了现在的我。
+% 论文结束之际, 我百感交集。求学路途十九载, 我想真诚感激一路走来帮助我的师长、结伴同行的挚友以及令人难忘的经历, 与你们在结识才铸就了现在的我。
 
-在南京大学的三年, 我感谢张贺教授对我的精心指导与帮助。在研究生的三年中, 是我成长的三年、收获的三年。经过张老师的栽培, 我不仅在学术水平上有了显著提升, 更扩宽了我的国际视野, 提升我对理解问题本质的深度与广度。这对我以后的工作生活都受益匪浅。
+% 在南京大学的三年, 我感谢张贺教授对我的精心指导与帮助。在研究生的三年中, 是我成长的三年、收获的三年。经过张老师的栽培, 我不仅在学术水平上有了显著提升, 更扩宽了我的国际视野, 提升我对理解问题本质的深度与广度。这对我以后的工作生活都受益匪浅。
 
-其次, 我要感谢实验室的同门兄弟姐妹们, 感谢你们在研究生三年来对我工作上的指导以及生活上的帮助。忘不了杨岚心师兄在我论文投稿前的字字锱铢, 也忘不掉李杉杉师姐对我完成毕设论文过程中提出的宝贵意见。得益于他们的帮助, 我才能开心顺利地完成我的研究生学业。
+% 其次, 我要感谢实验室的同门兄弟姐妹们, 感谢你们在研究生三年来对我工作上的指导以及生活上的帮助。忘不了杨岚心师兄在我论文投稿前的字字锱铢, 也忘不掉李杉杉师姐对我完成毕设论文过程中提出的宝贵意见。得益于他们的帮助, 我才能开心顺利地完成我的研究生学业。
 
-最后, 更应该感谢一直陪伴着我的父母与家人, 感谢你们背后不辞劳累的支持我, 我很幸运有一个温暖的家。
+% 最后, 更应该感谢一直陪伴着我的父母与家人, 感谢你们背后不辞劳累的支持我, 我很幸运有一个温暖的家。
 
-踏出校门, 走进社会。我定会秉承南大“嚼得菜根, 做得大事”的优良品质, 敢于拼搏不畏艰难, 为社会、家人贡献自己的全部。
+% 踏出校门, 走进社会。我定会秉承南大“嚼得菜根, 做得大事”的优良品质, 敢于拼搏不畏艰难, 为社会、家人贡献自己的全部。
 
 
-\end{acknowledgement}
+% \end{acknowledgement}
 
 
 % 参考文献。应放在\backmatter之前。
@@ -275,34 +277,34 @@ Cloudification Framework for Blockchain Based on Hyperledger Fabric}
 \backmatter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 作者简历与科研成果页，应放在backmatter之后
-\begin{resume}
-% 论文作者身份简介，一句话即可。
-  \begin{authorinfo}
-    \noindent 张富利，男，汉族，1997年8月出生，山东省临沂人。
-  \end{authorinfo}
-  % 论文作者教育经历列表，按日期从近到远排列，不包括将要申请的学位。
-  \begin{education}
-    \item[2015年9月 --- 2019年6月] 中国石油大学(华东)计算机与通信工程学院 \hfill 本科
-  \end{education}
-  % 论文作者在攻读学位期间所发表的文章的列表，按发表日期从近到远排列。
-  \begin{publications}
+% \begin{resume}
+% % 论文作者身份简介，一句话即可。
+%   \begin{authorinfo}
+%     \noindent 张富利，男，汉族，1997年8月出生，山东省临沂人。
+%   \end{authorinfo}
+%   % 论文作者教育经历列表，按日期从近到远排列，不包括将要申请的学位。
+%   \begin{education}
+%     \item[2015年9月 --- 2019年6月] 中国石油大学(华东)计算机与通信工程学院 \hfill 本科
+%   \end{education}
+%   % 论文作者在攻读学位期间所发表的文章的列表，按发表日期从近到远排列。
+%   \begin{publications}
+%       \item \textbf{Fuli Zhang}, Shanshan Li, He Zhang, Hongyu Kuang, Jingyue Li, ``A Blockchain Cloudification Framework for Hyperledger Fabric,'' in Proc. 23rd ACM/IFIP International Middleware Conference(MIDDLEWARE), May. 2022.(Under Review)
 
-      \item Lanxin Yang, He Zhang, \textbf{Fuli Zhang}, Xiaodong Zhang, Guoping Rong, ``An Industrial Experience Report on Retro-inspection,'' in \textsl{Proc. International Conference on Software Engineering, Software Engineering in Practice(ICSE-SEIP)}, Jan. 2022.(Accept for Publication)
+%       \item \textbf{张富利},侯培宇,李杉杉,荣国平,李质颖,丁梦洁, ``一种智能合约微服务化框架, '' \textsl{软件学报},2021,32(11):3423-3439.
 
-      \item Guoping Rong, Yifan Zhang, Lanxin Yang, \textbf{Fuli Zhang}, Hongyu Kuang, He Zhang, ``Modeling Review History for Reviewer Recommendation: A Hypergraph Approach,'' in \textsl{Proc. International Conference on Software Engineering(ICSE)}, Dec. 2021.(Accept for Publication)
+%       \item Lanxin Yang, He Zhang, \textbf{Fuli Zhang}, Xiaodong Zhang, Guoping Rong, ``An Industrial Experience Report on Retro-inspection,'' in \textsl{Proc. International Conference on Software Engineering, Software Engineering in Practice(ICSE-SEIP)}, May. 2022.
 
-      \item \textbf{张富利},侯培宇,李杉杉,荣国平,李质颖,丁梦洁, ``一种智能合约微服务化框架, '' \textsl{软件学报},2021,32(11):3423-3439.
+%       \item Guoping Rong, Yifan Zhang, Lanxin Yang, \textbf{Fuli Zhang}, Hongyu Kuang, He Zhang, ``Modeling Review History for Reviewer Recommendation: A Hypergraph Approach,'' in \textsl{Proc. International Conference on Software Engineering(ICSE)}, May. 2022.
 
-  \end{publications}
+%   \end{publications}
  
 
-  \begin{projects}
-    \item 国家重点研发计划(政府间国际科技创新合作)项目:中挪联合面向供
-应链的高性能区块链系统支撑平台关键技术研究(2019YFE0105500), 2020-2022, 负责智能合约微服务化开发方法
-    \item 通信软件系统的微服务架构提升, 2019-2020.
+%   \begin{projects}
+%     \item 国家重点研发计划(政府间国际科技创新合作)项目:中挪联合面向供应链的高性能区块链系统支撑平台关键技术研究(2019YFE0105500), 2020-2022, 负责智能合约微服务化开发方法
+%     \item 通信软件系统的微服务架构提升, 2019-2020.
 
-  \end{projects}
-\end{resume}
+%   \end{projects}
+% \end{resume}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % 生成《学位论文出版授权书》页面，应放在最后一页
